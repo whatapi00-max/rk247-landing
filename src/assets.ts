@@ -1,0 +1,35 @@
+// Central map of all static assets (served from /public/assets).
+export const A = {
+  heroMan: "/assets/hero.5jSiJh2V_Vf4Tc.webp",
+  eleven: "/assets/bg.Bd9RjB8Z_23Dnv0.webp",
+  elevenAlt: "/assets/bg.CF-8HQYA_y1oO5.webp",
+  earth: "/assets/bg.L1yfV3aR_Z25XIeN.webp",
+  hand: "/assets/hand.B8DUGbiV_ZOFSFU.webp",
+  phoneScreen: "/assets/hero-temp-fx.Ckgih9J__Z1NqmOC.webp",
+  demoWoman: "/assets/desktop_v2.DJuPOcbc_sEbRn.webp",
+  riskFreePhone: "/assets/image.D6JQG9Io_Z20MSwS.webp",
+  shield3d: "/assets/image.CTF7lwiU_bLD0X.webp",
+  carabiner: "/assets/image_condenced.CdPcjJqo_Z2tQO06.webp",
+  coin10: "/assets/image.BbfTrYMP_2aCFrt.webp",
+  blob93: "/assets/image.C1t-ADnt_Z230jqt.webp",
+  supportMan: "/assets/image.DmPlMRNV_ZvzkfC.webp",
+  strategyIcons: "/assets/image.xwLxyY5h_Jxs7s.webp",
+  people: "/assets/ppl.C7UL-EEl_1sjWFf.webp",
+  particles: "/assets/particles-default.Cob3IgPK_nrgTQ.webp",
+  appBanner: "/assets/banner.Bq4zFx9X_15mkAG.webp",
+  regulationIcons: "/assets/regulation_icons.fPuDZdgd_10kR8P.webp",
+  bonusBottle: "/assets/imagePopupDefault.DsxEtymm_Z1ztBBm.webp",
+  yt1: "/assets/yt_preview_1.B0kribA7_Z1lvXFT.webp",
+  yt2: "/assets/yt_preview_2.DdlOLyy9_Z1vMfRj.webp",
+  yt3: "/assets/yt_preview_3.C3nr8TnV_q0BEz.webp",
+  // emoji-style icons
+  fire: "/assets/fire.Cm0nrSyK.png",
+  books: "/assets/books.FC5gSHox.png",
+  finish: "/assets/finish.D3vlJEYW.png",
+  love: "/assets/love.C_skyr8g.png",
+  money: "/assets/money.Bic8ryUY.png",
+  shield: "/assets/shield.BVdy6JFV.png",
+  logo: "/assets/logo.png",
+} as const;
+
+export type AssetKey = keyof typeof A;

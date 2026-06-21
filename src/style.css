@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    background: #000;
+  }
+  ::selection {
+    background: rgba(21, 227, 114, 0.3);
+  }
+}
+
+@layer components {
+  .container-rk {
+    @apply mx-auto w-full max-w-[1200px] px-4 sm:px-6;
+  }
+
+  .btn-green {
+    @apply inline-flex items-center justify-center rounded-full bg-rk-green px-6 py-3 text-sm font-semibold text-black transition-all duration-300 hover:bg-rk-greenBright hover:shadow-green-glow;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-full bg-white/10 px-5 py-2.5 text-sm font-medium text-white transition-colors duration-300 hover:bg-white/20;
+  }
+
+  .card {
+    @apply relative overflow-hidden rounded-3xl bg-ink-850 ring-1 ring-white/5;
+  }
+
+  .nav-link {
+    @apply inline-flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-white/80 transition-colors hover:text-white;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-white/[0.06] px-3.5 py-2 text-xs font-medium text-white/85 ring-1 ring-white/5 backdrop-blur;
+  }
+}
+
+/* Reveal animation defaults (GSAP toggles these) */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* Gradient text */
+.text-gradient-green {
+  background: linear-gradient(180deg, #4dff95 0%, #15e372 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Glow blobs */
+.glow-green {
+  background: radial-gradient(
+    circle,
+    rgba(21, 227, 114, 0.55) 0%,
+    rgba(21, 227, 114, 0.12) 35%,
+    rgba(0, 0, 0, 0) 70%
+  );
+  filter: blur(10px);
+}
+
+/* Hide scrollbar for marquee rows */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Header blur on scroll */
+.header-scrolled {
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(14px);
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Dropdown menu */
+.dropdown {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+}
+.dropdown-wrap:hover .dropdown,
+.dropdown-wrap:focus-within .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Hero decorative bars */
+.hero-bar {
+  width: clamp(40px, 9vw, 110px);
+}
+
+/* Spotlight under the 11 */
+.spotlight {
+  background: radial-gradient(
+    ellipse 60% 50% at 50% 50%,
+    rgba(21, 227, 114, 0.45) 0%,
+    rgba(0, 0, 0, 0) 70%
+  );
+}
