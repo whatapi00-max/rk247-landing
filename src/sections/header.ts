@@ -82,19 +82,23 @@ export function Header(): string {
     </div>
 
     <!-- Mobile menu -->
-    <div id="mobile-menu" class="fixed inset-0 z-50 hidden bg-ink-950/95 backdrop-blur-lg lg:hidden">
-      <div class="container-rk flex h-16 items-center justify-between">
+    <div id="mobile-menu" class="fixed inset-0 z-[9999] hidden bg-black lg:hidden overflow-hidden flex flex-col">
+      <div class="h-16 flex items-center justify-between border-b border-white/10 px-4 flex-shrink-0">
         <a href="#top" class="flex items-center font-extrabold bg-white p-1 rounded"><img src="${A.logo}" alt="RK247" class="h-6 w-auto" /></a>
         <button id="menu-close" class="text-white" aria-label="Close menu">${icons.close}</button>
       </div>
-      <div class="container-rk mt-4 flex flex-col gap-1 overflow-y-auto pb-10">
-        ${[...tradingMenu.slice(0, 6), ...aboutMenu.slice(0, 4), ...helpMenu]
-          .map(
-            (i) =>
-              `<a href="${i.href}" class="mobile-link rounded-xl px-2 py-3 text-lg font-medium text-white/80 hover:text-white">${i.label}</a>`
-          )
-          .join("")}
-        <div class="mt-4 flex gap-3">
+      <div class="flex-1 overflow-y-auto">
+        <div class="px-4 py-4 flex flex-col gap-1">
+          ${[...tradingMenu.slice(0, 6), ...aboutMenu.slice(0, 4), ...helpMenu]
+            .map(
+              (i) =>
+                `<a href="${i.href}" class="mobile-link rounded-xl px-2 py-3 text-lg font-medium text-white/80 hover:text-white">${i.label}</a>`
+            )
+            .join("")}
+        </div>
+      </div>
+      <div class="h-auto border-t border-white/10 px-4 py-4 flex-shrink-0">
+        <div class="flex gap-3">
           <button class="btn-ghost flex-1">Sign in</button>
           <a href="#cta" class="btn-green flex-1">Try for free</a>
         </div>
