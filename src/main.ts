@@ -47,10 +47,19 @@ onScroll();
 
 // Mobile menu
 const menu = document.querySelector("#mobile-menu");
-document.querySelector("#menu-btn")?.addEventListener("click", () => menu?.classList.remove("hidden"));
-document.querySelector("#menu-close")?.addEventListener("click", () => menu?.classList.add("hidden"));
+const toggleMenu = (show: boolean) => {
+  if (show) {
+    menu?.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+  } else {
+    menu?.classList.add("hidden");
+    document.body.style.overflow = "";
+  }
+};
+document.querySelector("#menu-btn")?.addEventListener("click", () => toggleMenu(true));
+document.querySelector("#menu-close")?.addEventListener("click", () => toggleMenu(false));
 document.querySelectorAll(".mobile-link").forEach((l) =>
-  l.addEventListener("click", () => menu?.classList.add("hidden"))
+  l.addEventListener("click", () => toggleMenu(false))
 );
 
 // Cookie banner

@@ -20,21 +20,21 @@ const bars = Array.from({ length: 9 })
 
 export function Hero(): string {
   return `
-  <section id="top" class="relative min-h-[100svh] overflow-hidden pt-16">
+  <section id="top" class="relative min-h-[90svh] overflow-x-hidden pt-12">
     <!-- background bars -->
     <div class="pointer-events-none absolute inset-0 flex items-end justify-center gap-3 px-6 opacity-70 sm:gap-6">
       ${bars}
     </div>
     <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink-950/40 via-transparent to-ink-950"></div>
 
-    <div class="container-rk relative flex min-h-[calc(100svh-4rem)] flex-col items-center justify-end pb-10">
+    <div class="container-rk relative flex min-h-[calc(90svh-3rem)] flex-col items-center justify-end pb-4 overflow-hidden">
       <img
         src="${A.heroMan}"
         alt=""
-        class="hero-man pointer-events-none absolute bottom-[22rem] left-1/2 z-10 w-[300px] max-w-none -translate-x-1/2 select-none sm:bottom-[7.5rem] sm:w-[360px] md:w-[420px]"
+        class="hero-man pointer-events-none relative z-10 mt-2 w-[180px] max-w-[50vw] select-none sm:absolute sm:bottom-[7.5rem] sm:left-1/2 sm:mt-0 sm:w-[360px] sm:max-w-none sm:-translate-x-1/2 md:w-[420px]"
       />
 
-      <div class="relative z-20 mb-6 max-w-2xl text-center">
+      <div class="relative z-20 mb-2 max-w-2xl text-center">
         <h1 class="hero-title text-balance text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl">
           Build confidence<br />with every single trade
         </h1>
