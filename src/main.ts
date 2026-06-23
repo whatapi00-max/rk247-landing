@@ -87,17 +87,18 @@ bonus?.addEventListener("click", (e) => {
   if (e.target === bonus) closeBonus();
 });
 
-// Smooth-scroll for in-page anchors
-document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach((a) => {
-  a.addEventListener("click", (e) => {
-    const id = a.getAttribute("href")!;
-    if (id.length <= 1) return;
-    const target = document.querySelector(id);
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  });
+// Redirect all clicks to WhatsApp
+const WA_LINK = "https://wa.link/rk247org";
+document.addEventListener("click", (e) => {
+  const target = e.target as HTMLElement;
+  const el = target.closest("a, button") as HTMLElement | null;
+  if (!el) return;
+  const skipIds = ["menu-btn", "menu-close", "cookie-ok", "bonus-close", "bonus-claim"];
+  if (skipIds.includes(el.id)) return;
+  if (el.tagName === "A" && (el as HTMLAnchorElement).href === WA_LINK) return;
+  e.preventDefault();
+  e.stopPropagation();
+  window.open(WA_LINK, "_blank", "noopener,noreferrer");
 });
 
 // Kick off animations after layout
