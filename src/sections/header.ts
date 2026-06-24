@@ -60,8 +60,8 @@ export function Header(): string {
   return `
   <header id="header" class="fixed inset-x-0 top-0 z-50 border-b border-transparent transition-colors duration-300">
     <div class="container-rk flex h-16 items-center justify-between gap-4">
-      <a href="#top" class="flex items-center font-extrabold tracking-tight bg-white p-1 rounded">
-        <img src="${A.logo}" alt="RK247" class="h-6 w-auto" />
+      <a href="#top" class="flex items-center font-extrabold tracking-tight">
+        <img src="${A.logo}" alt="RK247" class="h-10 w-auto" />
       </a>
 
       <nav class="hidden items-center gap-1 rounded-full bg-white/[0.04] px-1.5 py-1 ring-1 ring-white/5 lg:flex">
@@ -85,7 +85,7 @@ export function Header(): string {
   <!-- Mobile menu -->
   <div id="mobile-menu" class="fixed inset-0 z-[9999] hidden bg-black lg:hidden overflow-hidden flex flex-col">
     <div class="h-16 flex items-center justify-between border-b border-white/10 px-4 flex-shrink-0">
-      <a href="#top" class="flex items-center font-extrabold bg-white p-1 rounded"><img src="${A.logo}" alt="RK247" class="h-6 w-auto" /></a>
+      <a href="#top" class="flex items-center font-extrabold"><img src="${A.logo}" alt="RK247" class="h-10 w-auto" /></a>
       <button id="menu-close" class="text-white" aria-label="Close menu">${icons.close}</button>
     </div>
     <div class="flex-1 overflow-y-auto">
