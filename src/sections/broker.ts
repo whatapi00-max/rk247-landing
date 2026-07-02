@@ -39,11 +39,6 @@ export function Broker(): string {
       <h2 class="reveal text-2xl font-bold sm:text-3xl">RK247 is a licensed<br />and regulated online broker</h2>
       <img src="${A.regulationIcons}" alt="Regulators" class="reveal mx-auto mt-6 h-10 w-auto opacity-90" />
       <a href="#footer" class="reveal mt-3 inline-flex items-center gap-1 text-xs font-semibold text-rk-green hover:text-rk-greenBright">Learn more ${icons.chevronRight}</a>
-
-      <div class="relative mx-auto mt-10 flex max-w-xl items-center justify-center">
-        <div class="glow-green absolute bottom-0 h-40 w-full scale-110"></div>
-        <img src="${A.carabiner}" alt="Safety carabiner representing broker security and protection" class="broker-logo relative w-72 max-w-full sm:w-96" />
-      </div>
     </div>
   </section>`;
 }
