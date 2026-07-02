@@ -6,11 +6,11 @@ export function Globe(): string {
   <section class="relative overflow-hidden bg-ink-950">
     <!-- earth -->
     <div class="relative">
-      <img src="${A.earth}" alt="" class="globe-img mx-auto w-full max-w-5xl select-none" />
+      <img src="${A.earth}" alt="World globe showing RK247 global presence in 130+ countries" class="globe-img mx-auto w-full max-w-5xl select-none" />
       <div class="absolute inset-x-0 top-1/2 flex -translate-y-1/2 flex-col items-center px-4 text-center">
         <h2 class="reveal text-2xl font-bold sm:text-3xl">RK247 operates<br />in 130+ countries</h2>
         <div class="reveal mt-5 flex items-center -space-x-3">
-          <img src="${A.people}" alt="" class="h-12 w-auto" />
+          <img src="${A.people}" alt="Avatar icons representing global users" class="h-12 w-auto" />
           <span class="grid h-12 w-12 place-items-center rounded-full bg-rk-green text-2xl font-bold text-black ring-4 ring-ink-950">+</span>
         </div>
         <a href="#footer" class="reveal mt-3 inline-flex items-center gap-1 text-xs font-semibold text-rk-green hover:text-rk-greenBright">Join our communities ${icons.chevronRight}</a>
@@ -40,7 +40,7 @@ export function CtaFinal(): string {
         <article class="reveal card relative flex min-h-[260px] flex-col items-center justify-center overflow-hidden p-6 sm:p-8 text-center">
           <h3 class="relative z-10 text-lg font-bold">11 years of excellence</h3>
           <div class="spotlight absolute inset-0 scale-125"></div>
-          <img src="${A.elevenAlt}" alt="" class="relative z-10 mt-2 w-48" />
+          <img src="${A.elevenAlt}" alt="11 years of excellence badge" class="relative z-10 mt-2 w-48" />
           <div class="relative z-10 mt-2 flex gap-3 text-[10px] text-white/40">
             <span>2018</span><span class="rounded-full bg-white px-2 py-0.5 text-black">2019</span><span>2020</span>
           </div>

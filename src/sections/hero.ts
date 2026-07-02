@@ -30,7 +30,7 @@ export function Hero(): string {
     <div class="container-rk relative flex min-h-[calc(90svh-3rem)] flex-col items-center justify-end pb-4 overflow-hidden">
       <img
         src="${A.heroMan}"
-        alt=""
+        alt="Confident trader using RK247 platform"
         class="hero-man pointer-events-none relative z-10 mt-2 w-[180px] max-w-[50vw] select-none sm:absolute sm:bottom-[7.5rem] sm:left-1/2 sm:mt-0 sm:w-[360px] sm:max-w-none sm:-translate-x-1/2 md:w-[420px]"
       />
 
@@ -49,7 +49,7 @@ export function Hero(): string {
       <div class="relative z-20 flex max-w-full flex-wrap items-center justify-center gap-2">
         ${chips
           .map(
-            (c) => `<span class="chip"><img src="${c.icon}" alt="" class="h-4 w-4" />${c.label}</span>`
+            (c) => `<span class="chip"><img src="${c.icon}" alt="${c.label}" class="h-4 w-4" />${c.label}</span>`
           )
           .join("")}
       </div>

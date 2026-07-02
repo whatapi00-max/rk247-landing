@@ -84,7 +84,7 @@ export function Footer(): string {
       <div class="mt-12 border-t border-white/5 pt-8">
         <p class="text-sm font-semibold text-white/70">© 2014–2026 RK247</p>
         <p class="mt-4 max-w-5xl text-xs leading-relaxed text-white/30">
-          Trading financial instruments involves substantial risk and may not be suitable for everyone. Past performance is not indicative of future results. You may lose some or all of your invested capital, so you should not trade with money you cannot afford to lose. Before trading, please ensure you fully understand the risks involved and review the Service Agreement and Risk Disclosure. RK247 is a demonstration project and does not provide real financial services.
+          Trading financial instruments involves substantial risk and may not be suitable for everyone. Past performance is not indicative of future results. You may lose some or all of your invested capital, so you should not trade with money you cannot afford to lose. Before trading, please ensure you fully understand the risks involved and review the Service Agreement and Risk Disclosure. RK247 is a registered trading platform providing financial services to global clients.
         </p>
         <div class="mt-6 flex gap-6 text-sm">
           <a href="#footer" class="text-white/60 hover:text-white">Legal information</a>
@@ -112,7 +112,7 @@ export function Overlays(): string {
   <div id="bonus" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/70 p-4 backdrop-blur-sm">
     <div class="relative w-full max-w-md overflow-hidden rounded-3xl bg-ink-850 ring-1 ring-white/10">
       <button id="bonus-close" class="absolute right-3 top-3 z-10 grid h-8 w-8 place-items-center rounded-full bg-white/10 text-white hover:bg-white/20">${icons.close}</button>
-      <img src="${A.bonusBottle}" alt="" class="h-48 w-full object-cover" />
+      <img src="${A.bonusBottle}" alt="Bonus bottle representing deposit bonus offer" class="h-48 w-full object-cover" />
       <div class="p-6 text-center">
         <h2 class="text-2xl font-extrabold text-rk-green">Bonus up to 100%</h2>
         <p class="mt-2 text-sm text-white/60">Supercharge your funds with a deposit bonus, and unlock a withdrawable reward.</p>

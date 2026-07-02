@@ -18,14 +18,14 @@ export function RiskFree(): string {
             <a href="#cta" class="btn-green mt-4">Try now</a>
             ${learn("#cta")}
           </div>
-          <img src="${A.demoWoman}" alt="" class="h-44 w-auto object-contain sm:h-52" />
+          <img src="${A.demoWoman}" alt="Woman using demo trading account on phone" class="h-44 w-auto object-contain sm:h-52" />
         </article>
 
         <!-- Risk-free trades -->
         <article class="reveal card p-6 sm:p-8">
           <h3 class="text-lg font-bold">Risk-free trades <span class="text-white/55">allow you to trade confidently</span></h3>
           ${learn()}
-          <img src="${A.riskFreePhone}" alt="" class="mx-auto mt-5 w-56 rounded-2xl" />
+          <img src="${A.riskFreePhone}" alt="Risk-free trading phone interface" class="mx-auto mt-5 w-56 rounded-2xl" />
         </article>
 
         <!-- Right column: insured + negative balance -->
@@ -33,11 +33,11 @@ export function RiskFree(): string {
           <article class="reveal card flex-1 p-6 sm:p-8">
             <h3 class="text-lg font-bold">Insured deposits</h3>
             ${learn()}
-            <img src="${A.shield3d}" alt="" class="mx-auto mt-4 w-full max-w-[320px]" />
+            <img src="${A.shield3d}" alt="3D shield icon representing insured deposits" class="mx-auto mt-4 w-full max-w-[320px]" />
           </article>
           <article class="reveal card flex-1 overflow-hidden p-6 sm:p-8">
             <h3 class="text-lg font-bold">Negative balance protection <span class="text-white/55">so you only risk your trade amount</span></h3>
-            <img src="${A.carabiner}" alt="" class="mx-auto mt-4 w-full max-w-[280px]" />
+            <img src="${A.carabiner}" alt="Carabiner safety clip representing negative balance protection" class="mx-auto mt-4 w-full max-w-[280px]" />
           </article>
         </div>
 

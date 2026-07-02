@@ -11,7 +11,7 @@ export function Confident(): string {
         <!-- 24/7 support -->
         <article class="reveal card relative min-h-[260px] overflow-hidden p-6 sm:p-8">
           <h3 class="text-lg font-bold">24/7 support <span class="text-white/55">in your language</span></h3>
-          <img src="${A.supportMan}" alt="" class="pointer-events-none absolute -bottom-2 right-0 w-64 object-contain" />
+          <img src="${A.supportMan}" alt="Customer support representative" class="pointer-events-none absolute -bottom-2 right-0 w-64 object-contain" />
         </article>
 
         <!-- Trading signals -->
@@ -28,7 +28,7 @@ export function Confident(): string {
         <article class="reveal card relative min-h-[260px] overflow-hidden p-6 sm:p-8">
           <h3 class="text-lg font-bold">Ready-to-use <span class="text-white/55">trading strategies</span></h3>
           <a href="#cta" class="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-rk-green hover:text-rk-greenBright">Try for free ${icons.chevronRight}</a>
-          <img src="${A.strategyIcons}" alt="" class="pointer-events-none absolute bottom-0 left-0 w-full object-cover opacity-90" />
+          <img src="${A.strategyIcons}" alt="Trading strategy icons and charts" class="pointer-events-none absolute bottom-0 left-0 w-full object-cover opacity-90" />
         </article>
 
         <!-- Learning materials -->
@@ -36,9 +36,9 @@ export function Confident(): string {
           <h3 class="text-lg font-bold">In-app learning materials <span class="text-white/55">and YouTube tutorials</span></h3>
           <a href="#cta" class="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-rk-green hover:text-rk-greenBright">Start learning ${icons.chevronRight}</a>
           <div class="mt-5 grid grid-cols-3 gap-2">
-            <img src="${A.yt1}" alt="" class="aspect-video w-full rounded-lg object-cover" />
-            <img src="${A.yt2}" alt="" class="aspect-video w-full rounded-lg object-cover" />
-            <img src="${A.yt3}" alt="" class="aspect-video w-full rounded-lg object-cover" />
+            <img src="${A.yt1}" alt="YouTube tutorial video thumbnail 1" class="aspect-video w-full rounded-lg object-cover" />
+            <img src="${A.yt2}" alt="YouTube tutorial video thumbnail 2" class="aspect-video w-full rounded-lg object-cover" />
+            <img src="${A.yt3}" alt="YouTube tutorial video thumbnail 3" class="aspect-video w-full rounded-lg object-cover" />
           </div>
         </article>
       </div>

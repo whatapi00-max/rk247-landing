@@ -9,7 +9,7 @@ export function Platform(): string {
 
       <div class="relative mx-auto mt-10 flex max-w-md flex-col items-center">
         <div class="platform-phone relative w-[260px] sm:w-[300px]">
-          <img src="${A.hand}" alt="" class="relative z-20 w-full select-none" />
+          <img src="${A.hand}" alt="Hand holding smartphone with trading app" class="relative z-20 w-full select-none" />
           <!-- phone screen content clipped to the device frame -->
           <div class="absolute left-[7.6%] top-[1%] z-10 w-[38%] overflow-hidden rounded-[1.1rem]" style="aspect-ratio:9/19.2">
             <img src="${A.phoneScreen}" alt="RK247 trading terminal" class="h-full w-full object-cover object-top" />

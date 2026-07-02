@@ -31,7 +31,7 @@ export function Smooth(): string {
       <div class="mt-10 grid gap-4 sm:grid-cols-2">
         <article class="reveal card min-h-[220px] p-6 sm:p-8">
           <h3 class="text-lg font-bold">Deposit just $10 <span class="text-white/55">to start trading</span></h3>
-          <img src="${A.coin10}" alt="" class="mx-auto mt-2 w-44" />
+          <img src="${A.coin10}" alt="10 dollar coin representing minimum deposit" class="mx-auto mt-2 w-44" />
         </article>
         <article class="reveal card relative min-h-[220px] overflow-hidden p-6 sm:p-8">
           <h3 class="text-lg font-bold">24/7 local assets</h3>
@@ -44,7 +44,7 @@ export function Smooth(): string {
         </article>
         <article class="reveal card relative min-h-[220px] overflow-hidden p-6 sm:p-8">
           <h3 class="relative z-10 text-lg font-bold">Increased profitability <span class="text-white/55">of up to 93%</span></h3>
-          <img src="${A.blob93}" alt="" class="pointer-events-none absolute -bottom-4 left-1/2 w-64 -translate-x-1/2" />
+          <img src="${A.blob93}" alt="93% profitability indicator" class="pointer-events-none absolute -bottom-4 left-1/2 w-64 -translate-x-1/2" />
         </article>
         <article class="reveal card relative min-h-[220px] overflow-hidden p-6 sm:p-8">
           <h3 class="text-lg font-bold">Personal trading advice <span class="text-white/55">from experts</span></h3>

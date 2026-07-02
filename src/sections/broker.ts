@@ -42,7 +42,7 @@ export function Broker(): string {
 
       <div class="relative mx-auto mt-10 flex max-w-xl items-center justify-center">
         <div class="glow-green absolute bottom-0 h-40 w-full scale-110"></div>
-        <img src="${A.carabiner}" alt="" class="broker-logo relative w-72 max-w-full sm:w-96" />
+        <img src="${A.carabiner}" alt="Safety carabiner representing broker security and protection" class="broker-logo relative w-72 max-w-full sm:w-96" />
       </div>
     </div>
   </section>`;
