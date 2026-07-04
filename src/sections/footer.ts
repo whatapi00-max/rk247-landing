@@ -1,11 +1,47 @@
 import { A } from "../assets";
 import { icons } from "../icons";
 
+const colLinks: Record<string, Record<string, string>> = {
+  Trading: {
+    "Flex": "#/trading/flex",
+    "Fixed Time": "#/trading/fixed-time",
+    "Forex": "#/trading/forex",
+    "Stocks": "#/trading/stocks",
+    "How to trade": "#/trading/how-to-trade",
+    "Account": "#/trading/account",
+    "Islamic Account": "#/trading/islamic-account",
+    "Free demo account": "#/trading/demo",
+    "Promotions": "#/trading/promotions",
+    "Withdrawals": "#/trading/withdrawals",
+    "Assets & Trading Conditions": "#/trading/assets",
+  },
+  About: {
+    "Social media": "#/about/social",
+    "Contacts": "#/about/contacts",
+    "News": "#/about/news",
+    "Awards": "#/about/awards",
+    "Affiliate Program": "#/about",
+    "Reviews": "#/about/reviews",
+  },
+  "Download App": {
+    "Android": "#/download/android",
+    "Android APK": "#/download/android-apk",
+    "iOS": "#/download",
+    "Web App (PWA)": "#/download/web-app",
+    "Desktop": "#/download/desktop",
+  },
+  Help: {
+    "FAQ": "#/help/faq",
+    "Support": "#/help/support",
+    "Learning Center": "#/help/learning",
+  },
+};
+
 const cols = {
-  Trading: ["Flex", "Fixed Time", "Forex", "Stocks", "How to trade", "Account", "Islamic Account", "Free demo account", "Promotions", "Withdrawals", "Assets & Trading Conditions"],
-  About: ["Social media", "Contacts", "News", "Awards", "Affiliate Program", "Reviews"],
-  "Download App": ["Android", "Android APK", "iOS", "Web App (PWA)", "Desktop"],
-  Help: ["FAQ", "Support", "Learning Center"],
+  Trading: Object.keys(colLinks.Trading),
+  About: Object.keys(colLinks.About),
+  "Download App": Object.keys(colLinks["Download App"]),
+  Help: Object.keys(colLinks.Help),
 };
 
 export function SeoText(): string {
@@ -51,7 +87,7 @@ export function Footer(): string {
             ${[icons.facebook, icons.instagram, icons.telegram, icons.youtube]
               .map(
                 (s) =>
-                  `<a href="#footer" class="grid h-9 w-9 place-items-center rounded-full bg-white/5 text-white/70 ring-1 ring-white/10 transition-colors hover:bg-white/10 hover:text-white">${s}</a>`
+                  `<a href="#/about/social" class="grid h-9 w-9 place-items-center rounded-full bg-white/5 text-white/70 ring-1 ring-white/10 transition-colors hover:bg-white/10 hover:text-white">${s}</a>`
               )
               .join("")}
           </div>
@@ -62,7 +98,7 @@ export function Footer(): string {
           </div>
           <div>
             <p class="text-sm font-bold leading-tight">Your financial future<br />is in your hands</p>
-            <a href="#download" class="mt-1 inline-flex items-center gap-1 text-xs font-bold text-rk-green hover:text-rk-greenBright">Download app now ${icons.chevronRight}</a>
+            <a href="#/download" class="mt-1 inline-flex items-center gap-1 text-xs font-bold text-rk-green hover:text-rk-greenBright">Download app now ${icons.chevronRight}</a>
           </div>
         </div>
       </div>
@@ -74,7 +110,7 @@ export function Footer(): string {
           <div>
             <p class="flex items-center gap-1 text-sm font-bold">${title} ${icons.arrowUpRight}</p>
             <ul class="mt-4 space-y-2.5">
-              ${links.map((l) => `<li><a href="#footer" class="text-sm text-white/45 transition-colors hover:text-white">${l}</a></li>`).join("")}
+              ${links.map((l) => `<li><a href="${colLinks[title][l]}" class="text-sm text-white/45 transition-colors hover:text-white">${l}</a></li>`).join("")}
             </ul>
           </div>`
           )
@@ -98,7 +134,7 @@ export function Footer(): string {
 export function Overlays(): string {
   return `
   <!-- Chat widget -->
-  <button class="fixed bottom-5 right-5 z-40 grid h-12 w-12 place-items-center rounded-full bg-rk-green text-black shadow-green-glow transition-transform hover:scale-105" aria-label="Chat">
+  <button class="fixed bottom-5 right-5 z-40 grid h-12 w-12 place-items-center rounded-full bg-rk-green text-black shadow-green-glow transition-transform hover:scale-105" aria-label="Chat" data-wa>
     ${icons.chat}
   </button>
 
@@ -116,7 +152,7 @@ export function Overlays(): string {
       <div class="p-6 text-center">
         <h2 class="text-2xl font-extrabold text-rk-green">Bonus up to 100%</h2>
         <p class="mt-2 text-sm text-white/60">Supercharge your funds with a deposit bonus, and unlock a withdrawable reward.</p>
-        <button id="bonus-claim" class="btn-green mt-5 w-full py-3.5">Claim now</button>
+        <button id="bonus-claim" class="btn-green mt-5 w-full py-3.5" data-wa>Claim now</button>
       </div>
     </div>
   </div>`;
