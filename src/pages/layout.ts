@@ -19,12 +19,12 @@ export function PageHero(
   breadcrumb?: string
 ): string {
   return `
-  <section class="relative pt-32 pb-20 bg-ink-950 overflow-hidden">
+  <section class="relative pt-28 sm:pt-32 pb-16 sm:pb-20 bg-ink-950 overflow-hidden">
     <div class="pointer-events-none absolute inset-0" style="background:radial-gradient(ellipse at 50% -10%,rgba(21,227,114,0.35) 0%,rgba(0,0,0,0) 65%)"></div>
     <div class="container-rk relative text-center">
       ${breadcrumb ? `<p class="mb-3 text-xs font-semibold uppercase tracking-widest text-rk-green">${breadcrumb}</p>` : ""}
-      <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">${title}</h1>
-      <p class="mt-4 text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">${subtitle}</p>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">${title}</h1>
+      <p class="mt-4 text-base sm:text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">${subtitle}</p>
     </div>
   </section>`;
 }

@@ -193,8 +193,47 @@ export function MarketAnalysisDetailPage(slug: string): string {
 
               <div>
                 <h2 class="text-lg font-bold text-white mb-3">Technical Summary</h2>
-                <div class="overflow-x-auto">
-                  <table class="w-full text-left text-xs sm:text-sm border border-white/10 rounded-xl overflow-hidden">
+
+                <!-- Mobile card view -->
+                <div class="grid gap-3 sm:hidden">
+                  ${report.pairs
+                    .map(
+                      (p) => `
+                    <div class="card p-4">
+                      <div class="flex items-center justify-between mb-3">
+                        <span class="font-bold text-white">${p.pair}</span>
+                        <span class="text-xs ${sentimentColor(p.sentiment)}">${p.sentiment}</span>
+                      </div>
+                      <div class="grid grid-cols-2 gap-2 text-xs mb-3">
+                        <div class="bg-white/5 rounded-lg p-2">
+                          <span class="text-white/50 block">Direction</span>
+                          <span class="font-semibold text-white">${p.direction}</span>
+                        </div>
+                        <div class="bg-white/5 rounded-lg p-2">
+                          <span class="text-white/50 block">RSI</span>
+                          <span class="font-semibold text-white">${p.rsi}</span>
+                        </div>
+                        <div class="bg-white/5 rounded-lg p-2">
+                          <span class="text-white/50 block">Resistance</span>
+                          <span class="font-semibold text-white">${p.resistance}</span>
+                        </div>
+                        <div class="bg-white/5 rounded-lg p-2">
+                          <span class="text-white/50 block">Support</span>
+                          <span class="font-semibold text-white">${p.support}</span>
+                        </div>
+                      </div>
+                      <div class="bg-white/5 rounded-lg p-2 text-xs">
+                        <span class="text-white/50 block mb-1">Trade Suggestion</span>
+                        <span class="font-semibold text-white">${p.suggestion}</span>
+                      </div>
+                    </div>`
+                    )
+                    .join("")}
+                </div>
+
+                <!-- Desktop/Tablet table view -->
+                <div class="hidden sm:block overflow-x-auto -mx-6 px-6">
+                  <table class="min-w-full text-left text-xs sm:text-sm border border-white/10 rounded-xl overflow-hidden">
                     <thead class="bg-white/5 text-white/80">
                       <tr>
                         <th class="px-3 py-2 font-semibold">Pair</th>
