@@ -108,12 +108,17 @@
   margin-right: auto;
   height: auto;
   aspect-ratio: auto;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
 }
 
 @media (max-width: 640px) {
   .hero-man {
     width: 180px !important;
     max-width: 50vw !important;
+    position: relative !important;
+    left: auto !important;
+    transform: none !important;
   }
 }
 
