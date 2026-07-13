@@ -18,6 +18,7 @@ const colLinks: Record<string, Record<string, string>> = {
   About: {
     "Social media": "#/about/social",
     "Contacts": "#/about/contacts",
+    "Market Analysis": "#/market-analysis",
     "News": "#/about/news",
     "Awards": "#/about/awards",
     "Affiliate Program": "#/about",

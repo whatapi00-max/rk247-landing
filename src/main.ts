@@ -26,6 +26,7 @@ import {
 import {
   SupportPage, FaqPage, LearningPage,
 } from "./pages/help";
+import { MarketAnalysisPage } from "./pages/market-analysis";
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -61,6 +62,7 @@ const routes: Record<string, () => string> = {
   "/help/support":           () => PageLayout(SupportPage()),
   "/help/faq":               () => PageLayout(FaqPage()),
   "/help/learning":          () => PageLayout(LearningPage()),
+  "/market-analysis":        () => PageLayout(MarketAnalysisPage()),
 };
 
 function renderHome(): string {

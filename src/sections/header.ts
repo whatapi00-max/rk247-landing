@@ -5,6 +5,7 @@ type MenuGroup = { label: string; href: string };
 
 const tradingMenu: MenuGroup[] = [
   { label: "Trading", href: "#/trading" },
+  { label: "Market Analysis", href: "#/market-analysis" },
   { label: "Flex", href: "#/trading/flex" },
   { label: "Fixed Time", href: "#/trading/fixed-time" },
   { label: "Forex", href: "#/trading/forex" },
