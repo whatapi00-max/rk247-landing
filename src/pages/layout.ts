@@ -19,7 +19,7 @@ export function PageHero(
   breadcrumb?: string
 ): string {
   return `
-  <section class="relative pt-28 sm:pt-32 pb-16 sm:pb-20 bg-ink-950 overflow-hidden">
+  <section class="relative pt-36 sm:pt-40 pb-16 sm:pb-20 bg-ink-950 overflow-hidden">
     <div class="pointer-events-none absolute inset-0" style="background:radial-gradient(ellipse at 50% -10%,rgba(21,227,114,0.35) 0%,rgba(0,0,0,0) 65%)"></div>
     <div class="container-rk relative text-center">
       <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">${title}</h1>
