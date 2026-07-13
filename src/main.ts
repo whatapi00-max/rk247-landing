@@ -26,7 +26,7 @@ import {
 import {
   SupportPage, FaqPage, LearningPage,
 } from "./pages/help";
-import { MarketAnalysisPage } from "./pages/market-analysis";
+import { MarketAnalysisPage, MarketAnalysisDetailPage } from "./pages/market-analysis";
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -92,6 +92,16 @@ function renderHome(): string {
 function render(path: string): void {
   // Kill existing GSAP ScrollTriggers to avoid stale triggers on re-render
   ScrollTrigger.getAll().forEach((t) => t.kill());
+
+  // Dynamic market-analysis detail routes
+  if (path.startsWith("/market-analysis/")) {
+    const slug = path.slice("/market-analysis/".length);
+    app.innerHTML = PageLayout(MarketAnalysisDetailPage(slug));
+    attachListeners();
+    requestAnimationFrame(() => initAnimations());
+    window.scrollTo({ top: 0 });
+    return;
+  }
 
   const handler = routes[path] ?? routes["/"];
   app.innerHTML = handler();
