@@ -30,6 +30,61 @@ type MarketReport = {
  */
 export const marketReports: MarketReport[] = [
   {
+    slug: "indices-july-13-2026",
+    date: "July 13, 2026",
+    tag: "Indices",
+    title: "Global Indices Trade Mixed as Investors Await Key Inflation Data",
+    image: "/assets/Indices july 13.jpeg",
+    summary:
+      "Global stock indices traded with mixed momentum on July 13, 2026, as investors remained cautious ahead of key U.S. inflation data and central bank commentary. While U.S. futures held firm, European and Asian markets posted mixed performances amid geopolitical uncertainty and earnings expectations.",
+    overview:
+      "Global equity markets started the week on a cautious note as traders balanced strong corporate earnings expectations against concerns over inflation, interest rates, and geopolitical developments. U.S. index futures remained relatively stable after recent gains, while European markets traded sideways. Asian indices showed mixed performance as investors evaluated China's economic outlook and the Bank of Japan's policy stance. Market participants are closely watching upcoming U.S. CPI inflation, Federal Reserve commentary, and the beginning of the quarterly earnings season, which could determine the next major direction for global equity markets.",
+    bullets: [
+      "S&P 500 futures remain steady ahead of U.S. inflation data.",
+      "Nasdaq continues outperforming as AI-related technology stocks remain resilient.",
+      "Dow Jones trades in a narrow consolidation range.",
+      "Nikkei 225 remains supported by a weaker Japanese yen.",
+      "Investors focus on earnings season and Federal Reserve guidance.",
+    ],
+    pairs: [
+      { pair: "S&P 500", sentiment: "Bullish", direction: "Buy", rsi: "61", resistance: "6,450 / 6,520", support: "6,320 / 6,250", suggestion: "Buy above 6,350 / TP 6,450 / SL 6,290" },
+      { pair: "Nasdaq 100", sentiment: "Bullish", direction: "Buy", rsi: "64", resistance: "23,900 / 24,200", support: "23,300 / 22,950", suggestion: "Buy above 23,450 / TP 23,900 / SL 23,150" },
+      { pair: "Dow Jones", sentiment: "Neutral-Bullish", direction: "Buy", rsi: "57", resistance: "45,200 / 45,600", support: "44,500 / 44,000", suggestion: "Buy above 44,700 / TP 45,200 / SL 44,300" },
+      { pair: "Nikkei 225", sentiment: "Bullish", direction: "Buy", rsi: "60", resistance: "42,300 / 42,900", support: "41,400 / 40,800", suggestion: "Buy above 41,600 / TP 42,300 / SL 41,150" },
+    ],
+    commentary: [
+      {
+        pair: "S&P 500",
+        text: "The S&P 500 continues trading near record highs as investors remain optimistic about corporate earnings and resilient economic growth. Momentum indicators remain positive, with price holding above major moving averages. A breakout above 6,450 could extend gains toward 6,520, while a decline below 6,320 may trigger short-term profit-taking.",
+      },
+      {
+        pair: "Nasdaq 100",
+        text: "The Nasdaq remains the strongest-performing major U.S. index, supported by continued demand for AI, semiconductor, and large-cap technology stocks. Technical indicators continue to favor buyers. A sustained move above 23,900 could open the path toward 24,200, while support near 23,300 remains critical for maintaining the current bullish trend.",
+      },
+      {
+        pair: "Dow Jones",
+        text: "The Dow Jones Industrial Average remains range-bound as investors rotate between defensive and cyclical sectors. Momentum remains moderately positive. A move above 45,200 would reinforce bullish sentiment, while a break below 44,500 could increase downside pressure.",
+      },
+      {
+        pair: "Nikkei 225",
+        text: "Japan's Nikkei 225 continues benefiting from a relatively weaker yen and improving corporate earnings expectations. Technical indicators remain bullish. A breakout above 42,300 would strengthen the uptrend, while a fall below 41,400 could signal a short-term correction.",
+      },
+    ],
+    qa: [
+      { q: "Why are global indices trading sideways?", a: "Investors are waiting for U.S. inflation data, Federal Reserve commentary, and the latest corporate earnings before taking larger positions." },
+      { q: "Which index currently has the strongest momentum?", a: "The Nasdaq 100 continues to lead major global indices, driven by strong performance in technology and AI-related stocks." },
+      { q: "What is the key risk for equity markets this week?", a: "Higher-than-expected inflation could delay interest-rate cuts and increase market volatility." },
+      { q: "Which event could move global indices the most?", a: "The U.S. CPI inflation report and upcoming earnings releases are expected to be the primary market-moving events." },
+    ],
+    takeaways: [
+      "Global equity markets remain cautious ahead of major economic events.",
+      "The Nasdaq continues outperforming due to strength in technology stocks.",
+      "The S&P 500 remains close to record highs with a bullish technical outlook.",
+      "The Dow Jones and Nikkei 225 continue trading with positive momentum.",
+      "U.S. inflation data, Federal Reserve commentary, and corporate earnings are expected to determine the next major direction for global stock indices.",
+    ],
+  },
+  {
     slug: "crypto-july-13-2026",
     date: "July 13, 2026",
     tag: "Crypto",
