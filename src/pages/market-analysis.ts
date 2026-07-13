@@ -1,78 +1,5 @@
 import { PageHero, CtaSection, BackLink, icons } from "./layout";
 
-export type MarketUpdate = {
-  id: string;
-  date: string;
-  tag: string;
-  title: string;
-  summary: string;
-  content: string;
-  instruments: string[];
-};
-
-/**
- * Daily market analysis updates.
- * Replace or extend this array with fresh content every day.
- */
-const updates: MarketUpdate[] = [
-  {
-    id: "1",
-    date: "13 July 2026",
-    tag: "Daily Trend",
-    title: "EUR/USD Tests Key Resistance Ahead of US Inflation Data",
-    summary:
-      "The euro is pushing against the 1.0950 resistance zone as traders position for the upcoming US CPI release. A breakout could open the door to 1.1020.",
-    content:
-      "EUR/USD has gained momentum for three consecutive sessions, supported by improving Eurozone sentiment and a softer US dollar. Price action is currently testing the 1.0950 resistance level, which has held since early June. If today's US CPI prints below expectations, a break above 1.0950 may target 1.1020. On the downside, support sits at 1.0880 and 1.0840. Traders should watch the 1-hour close for confirmation.",
-    instruments: ["EUR/USD", "USD Index", "Gold"],
-  },
-  {
-    id: "2",
-    date: "13 July 2026",
-    tag: "Crypto",
-    title: "Bitcoin Holds Above $58,000 as ETF Inflows Resume",
-    summary:
-      "Bitcoin finds steady bids above the $58,000 support after renewed spot ETF inflows. Short-term resistance is seen near $60,500.",
-    content:
-      "BTC/USD is consolidating in a tight range between $58,000 and $60,500 after spot Bitcoin ETFs posted their strongest weekly inflow since May. The 4-hour structure remains bullish above $57,200, with the next target at $61,800 if buyers clear the $60,500 barrier. Ethereum is lagging but holding above $3,100, while Solana shows relative strength near $145.",
-    instruments: ["BTC/USD", "ETH/USD", "SOL/USD"],
-  },
-  {
-    id: "3",
-    date: "12 July 2026",
-    tag: "Stocks",
-    title: "Tech Sector Leads Wall Street Higher as Earnings Season Begins",
-    summary:
-      "Major US indices closed higher on Friday, led by technology and semiconductor names. This week brings earnings from several large banks and tech giants.",
-    content:
-      "The S&P 500 gained 0.8% and the Nasdaq 100 rose 1.2% on Friday, with chipmakers and cloud providers leading the way. Investors are optimistic about AI-driven demand and margin expansion. This week's earnings calendar includes major banks and consumer tech companies, which could set the tone for the rest of the quarter. Key levels to watch: S&P 500 support at 5,580 and Nasdaq 100 resistance at 20,800.",
-    instruments: ["S&P 500", "Nasdaq 100", "NVDA", "AAPL"],
-  },
-];
-
-function UpdateCard(u: MarketUpdate): string {
-  return `
-  <article class="reveal card p-6 sm:p-8" id="market-update-${u.id}">
-    <div class="flex flex-wrap items-center gap-3 mb-4">
-      <span class="text-xs font-semibold text-rk-green bg-rk-green/10 rounded-full px-2.5 py-1">${u.tag}</span>
-      <span class="text-xs text-white/40">${u.date}</span>
-    </div>
-    <h2 class="text-xl sm:text-2xl font-bold mb-3 leading-tight">${u.title}</h2>
-    <p class="text-white/60 leading-relaxed mb-4">${u.summary}</p>
-    <div class="prose prose-invert max-w-none text-white/55 text-sm leading-relaxed mb-5">
-      <p>${u.content}</p>
-    </div>
-    <div class="flex flex-wrap gap-2">
-      ${u.instruments
-        .map(
-          (inst) =>
-            `<span class="rounded-full bg-white/5 px-3 py-1 text-xs font-medium text-white/70">${inst}</span>`
-        )
-        .join("")}
-    </div>
-  </article>`;
-}
-
 export function MarketAnalysisPage(): string {
   return `
   ${BackLink()}
@@ -82,12 +9,154 @@ export function MarketAnalysisPage(): string {
     "Research"
   )}
 
-  <section class="py-16 bg-ink-950">
+  <article class="py-16 bg-ink-950">
     <div class="container-rk">
       <div class="grid gap-8 lg:grid-cols-3">
-        <!-- Main feed -->
-        <div class="lg:col-span-2 space-y-6">
-          ${updates.map(UpdateCard).join("")}
+        <!-- Main content -->
+        <div class="lg:col-span-2 space-y-8">
+          <div class="reveal card p-6 sm:p-8">
+            <div class="flex flex-wrap items-center gap-3 mb-4">
+              <span class="text-xs font-semibold text-rk-green bg-rk-green/10 rounded-full px-2.5 py-1">Forex</span>
+              <span class="text-xs text-white/40">July 13, 2026</span>
+            </div>
+            <h1 class="text-2xl sm:text-3xl font-bold mb-4 leading-tight">Forex Market Mixed as Safe-Haven Dollar Gains on Geopolitical Tensions</h1>
+
+            <div class="space-y-6 text-white/60 leading-relaxed">
+              <div>
+                <h2 class="text-lg font-bold text-white mb-2">Headline Summary</h2>
+                <p>The forex market opened the week cautiously as the U.S. dollar strengthened on renewed safe-haven demand following escalating geopolitical tensions. Traders are now focused on U.S. CPI inflation data, Fed Chair testimony, UK GDP, and the Bank of Canada policy decision for the next major directional move.</p>
+              </div>
+
+              <div>
+                <h2 class="text-lg font-bold text-white mb-2">Market Overview</h2>
+                <p>Global currency markets remain relatively range-bound despite increased volatility caused by geopolitical developments in the Middle East. The U.S. dollar attracted fresh buying as investors sought safety after higher oil prices increased inflation concerns.</p>
+                <p class="mt-3">EUR/USD remains under pressure below key resistance, while GBP/USD has pulled back after recent gains. USD/JPY continues trading near multi-year highs as the Bank of Japan maintains an accommodative stance. Commodity-linked currencies including AUD and NZD remain weak due to stronger dollar demand and global risk aversion.</p>
+              </div>
+
+              <div>
+                <h2 class="text-lg font-bold text-white mb-3">Major News Bullets</h2>
+                <ul class="space-y-2">
+                  <li class="flex gap-2"><span class="text-rk-green">•</span> U.S. Dollar strengthens as investors seek safe-haven assets.</li>
+                  <li class="flex gap-2"><span class="text-rk-green">•</span> EUR/USD remains capped below 1.1450 resistance.</li>
+                  <li class="flex gap-2"><span class="text-rk-green">•</span> GBP/USD slips as higher oil prices weigh on sterling.</li>
+                  <li class="flex gap-2"><span class="text-rk-green">•</span> USD/JPY trades near long-term highs with bullish momentum intact.</li>
+                  <li class="flex gap-2"><span class="text-rk-green">•</span> Traders await U.S. CPI, Fed testimony and UK GDP for fresh market direction.</li>
+                </ul>
+              </div>
+
+              <div>
+                <h2 class="text-lg font-bold text-white mb-3">Technical Summary</h2>
+                <div class="overflow-x-auto">
+                  <table class="w-full text-left text-xs sm:text-sm border border-white/10 rounded-xl overflow-hidden">
+                    <thead class="bg-white/5 text-white/80">
+                      <tr>
+                        <th class="px-3 py-2 font-semibold">Pair</th>
+                        <th class="px-3 py-2 font-semibold">Sentiment</th>
+                        <th class="px-3 py-2 font-semibold">Direction</th>
+                        <th class="px-3 py-2 font-semibold">RSI</th>
+                        <th class="px-3 py-2 font-semibold">Resistance</th>
+                        <th class="px-3 py-2 font-semibold">Support</th>
+                        <th class="px-3 py-2 font-semibold">Trade Suggestion</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-white/5">
+                      <tr>
+                        <td class="px-3 py-2 font-semibold">EUR/USD</td>
+                        <td class="px-3 py-2 text-red-400">Bearish</td>
+                        <td class="px-3 py-2">Sell</td>
+                        <td class="px-3 py-2">42</td>
+                        <td class="px-3 py-2">1.1438 / 1.1456</td>
+                        <td class="px-3 py-2">1.1364 / 1.1347</td>
+                        <td class="px-3 py-2">Sell below 1.1360</td>
+                      </tr>
+                      <tr>
+                        <td class="px-3 py-2 font-semibold">GBP/USD</td>
+                        <td class="px-3 py-2 text-yellow-400">Neutral-Bearish</td>
+                        <td class="px-3 py-2">Sell</td>
+                        <td class="px-3 py-2">45</td>
+                        <td class="px-3 py-2">1.3450 / 1.3550</td>
+                        <td class="px-3 py-2">1.3330 / 1.3200</td>
+                        <td class="px-3 py-2">Sell below 1.3330</td>
+                      </tr>
+                      <tr>
+                        <td class="px-3 py-2 font-semibold">USD/JPY</td>
+                        <td class="px-3 py-2 text-rk-green">Bullish</td>
+                        <td class="px-3 py-2">Buy</td>
+                        <td class="px-3 py-2">63</td>
+                        <td class="px-3 py-2">162.80 / 164.00</td>
+                        <td class="px-3 py-2">160.80 / 159.60</td>
+                        <td class="px-3 py-2">Buy above 161.20</td>
+                      </tr>
+                      <tr>
+                        <td class="px-3 py-2 font-semibold">AUD/USD</td>
+                        <td class="px-3 py-2 text-red-400">Bearish</td>
+                        <td class="px-3 py-2">Sell</td>
+                        <td class="px-3 py-2">41</td>
+                        <td class="px-3 py-2">0.7000 / 0.7050</td>
+                        <td class="px-3 py-2">0.6920 / 0.6880</td>
+                        <td class="px-3 py-2">Sell below 0.6920</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div>
+                <h2 class="text-lg font-bold text-white mb-3">Analyst Commentary Per Pair</h2>
+                <div class="space-y-4">
+                  <div>
+                    <h3 class="font-semibold text-white mb-1">EUR/USD</h3>
+                    <p>EUR/USD continues consolidating below the important 1.1450 resistance zone as demand for the U.S. dollar remains firm. Rising energy prices and stronger dollar sentiment continue to pressure the euro. Technical indicators remain slightly bearish, and a break below 1.1360 could expose the 1.1300 support area. A sustained move above 1.1450 would invalidate the immediate bearish outlook.</p>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-white mb-1">GBP/USD</h3>
+                    <p>GBP/USD has retreated after reaching recent highs as geopolitical uncertainty and stronger dollar demand reduced sterling's momentum. The pair remains supported above 1.3300, but failure to hold this area could trigger additional downside toward 1.3200. Bulls need a break above 1.3450 to regain control.</p>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-white mb-1">USD/JPY</h3>
+                    <p>USD/JPY remains one of the strongest major currency pairs, supported by widening interest-rate differentials and continued demand for the U.S. dollar. Momentum indicators remain positive. A move above 162.80 could extend the rally toward 164.00, while a drop below 160.80 would weaken the bullish structure.</p>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-white mb-1">AUD/USD</h3>
+                    <p>AUD/USD remains under pressure as risk sentiment weakens and investors rotate into the U.S. dollar. The pair continues trading below major moving averages, with sellers targeting 0.6880 if 0.6920 support fails. Recovery above 0.7000 would improve the near-term outlook.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h2 class="text-lg font-bold text-white mb-3">AI Q&A</h2>
+                <div class="space-y-3">
+                  <div>
+                    <p class="font-semibold text-white">Q: Why is the U.S. dollar strengthening?</p>
+                    <p class="text-white/55">A: Safe-haven demand has increased due to geopolitical tensions and expectations that higher energy prices could keep inflation elevated.</p>
+                  </div>
+                  <div>
+                    <p class="font-semibold text-white">Q: What is the key level for EUR/USD?</p>
+                    <p class="text-white/55">A: 1.1450 remains the major resistance, while 1.1360 is the immediate support.</p>
+                  </div>
+                  <div>
+                    <p class="font-semibold text-white">Q: Why is USD/JPY still bullish?</p>
+                    <p class="text-white/55">A: Higher U.S. yields and policy divergence between the Federal Reserve and Bank of Japan continue supporting the pair.</p>
+                  </div>
+                  <div>
+                    <p class="font-semibold text-white">Q: Which events could move the forex market this week?</p>
+                    <p class="text-white/55">A: U.S. CPI inflation, Fed Chair testimony, UK GDP, and the Bank of Canada interest-rate decision are expected to be the primary market catalysts.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h2 class="text-lg font-bold text-white mb-3">Key Takeaways</h2>
+                <ul class="space-y-2">
+                  <li class="flex gap-2"><span class="text-rk-green">•</span> Safe-haven demand continues supporting the U.S. Dollar.</li>
+                  <li class="flex gap-2"><span class="text-rk-green">•</span> EUR/USD and GBP/USD remain under bearish pressure below major resistance.</li>
+                  <li class="flex gap-2"><span class="text-rk-green">•</span> USD/JPY continues trading with a bullish bias.</li>
+                  <li class="flex gap-2"><span class="text-rk-green">•</span> AUD/USD remains vulnerable as risk sentiment weakens.</li>
+                  <li class="flex gap-2"><span class="text-rk-green">•</span> This week's U.S. inflation data and central bank events are likely to determine the next major trend across the forex market.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Sidebar -->
@@ -97,17 +166,17 @@ export function MarketAnalysisPage(): string {
               <span class="text-rk-green">${icons.arrowUpRight}</span> Today's Highlights
             </h3>
             <ul class="space-y-3 text-sm text-white/60">
-              <li class="flex gap-2"><span class="text-rk-green">•</span> EUR/USD testing 1.0950 resistance</li>
-              <li class="flex gap-2"><span class="text-rk-green">•</span> Bitcoin holding above $58,000</li>
-              <li class="flex gap-2"><span class="text-rk-green">•</span> Tech sector leads US indices higher</li>
-              <li class="flex gap-2"><span class="text-rk-green">•</span> US CPI data due this week</li>
+              <li class="flex gap-2"><span class="text-rk-green">•</span> U.S. Dollar strengthens on safe-haven demand</li>
+              <li class="flex gap-2"><span class="text-rk-green">•</span> EUR/USD capped below 1.1450</li>
+              <li class="flex gap-2"><span class="text-rk-green">•</span> USD/JPY near long-term highs</li>
+              <li class="flex gap-2"><span class="text-rk-green">•</span> U.S. CPI and Fed testimony due this week</li>
             </ul>
           </div>
 
           <div class="reveal card p-6">
             <h3 class="font-bold mb-4">Popular Instruments</h3>
             <div class="flex flex-wrap gap-2">
-              ${["EUR/USD", "GBP/USD", "USD/JPY", "Gold", "BTC/USD", "ETH/USD", "S&P 500", "Nasdaq 100"]
+              ${["EUR/USD", "GBP/USD", "USD/JPY", "AUD/USD", "Gold", "USD Index", "U.S. CPI"]
                 .map(
                   (i) =>
                     `<span class="rounded-full bg-white/5 px-3 py-1.5 text-xs font-medium text-white/70">${i}</span>`
@@ -124,7 +193,7 @@ export function MarketAnalysisPage(): string {
         </aside>
       </div>
     </div>
-  </section>
+  </article>
 
-  ${CtaSection("Start Trading the Markets", "Apply today's analysis on RK247 with a free demo or live account.")}`;
+  ${CtaSection("Trade the Market Today", "Apply today's analysis on RK247 with a free demo or live account.")}`;
 }
