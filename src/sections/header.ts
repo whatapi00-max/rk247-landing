@@ -73,12 +73,12 @@ export function Header(): string {
       </nav>
 
       <div class="flex items-center gap-2 sm:gap-3">
-        <button class="nav-link hidden sm:inline-flex" aria-label="Language">
+        <button class="nav-link hidden lg:inline-flex" aria-label="Language">
           ${icons.globe}<span class="hidden md:inline">EN</span>
         </button>
-        <button class="btn-ghost hidden sm:inline-flex" data-wa aria-label="Sign in">Sign in</button>
-        <button class="btn-green" data-wa>Try for free</button>
-        <button id="menu-btn" class="text-white lg:hidden" aria-label="Open menu">${icons.menu}</button>
+        <button class="btn-ghost hidden lg:inline-flex" data-wa aria-label="Sign in">Sign in</button>
+        <button class="btn-green hidden lg:inline-flex" data-wa>Try for free</button>
+        <button id="menu-btn" class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white lg:hidden hover:bg-white/20" aria-label="Open menu">${icons.menu}</button>
       </div>
     </div>
   </header>
@@ -87,7 +87,7 @@ export function Header(): string {
   <div id="mobile-menu" class="fixed inset-0 z-[9999] hidden bg-black lg:hidden overflow-hidden flex flex-col">
     <div class="h-16 flex items-center justify-between border-b border-white/10 px-4 flex-shrink-0">
       <a href="#/" class="flex items-center font-extrabold"><img src="${A.logo}" alt="RK247" class="h-10 w-auto" /></a>
-      <button id="menu-close" class="text-white" aria-label="Close menu">${icons.close}</button>
+      <button id="menu-close" class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20" aria-label="Close menu">${icons.close}</button>
     </div>
     <div class="flex-1 overflow-y-auto">
       <div class="px-4 py-4 flex flex-col gap-1">
