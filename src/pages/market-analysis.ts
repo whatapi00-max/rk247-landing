@@ -30,6 +30,61 @@ type MarketReport = {
  */
 export const marketReports: MarketReport[] = [
   {
+    slug: "commodity-july-13-2026",
+    date: "July 13, 2026",
+    tag: "Commodity",
+    title: "Commodity Markets Mixed as Gold Holds Firm While Oil Extends Gains",
+    image: "/assets/Commodity july13.jpeg",
+    summary:
+      "Commodity markets traded with mixed momentum as gold remained supported by safe-haven demand, while crude oil extended its rally amid geopolitical tensions and supply concerns. Industrial metals were largely range-bound as investors awaited fresh inflation data and central bank guidance.",
+    overview:
+      "Global commodity markets began the week cautiously as investors balanced geopolitical risks against expectations for upcoming economic data. Gold continued to attract defensive buying due to uncertainty in global markets, while silver followed with moderate gains. Crude oil prices remained elevated on concerns over potential supply disruptions and stronger seasonal demand. Meanwhile, copper traded sideways as traders assessed China's economic outlook and global manufacturing activity. Market participants are closely watching this week's U.S. CPI inflation report, Federal Reserve commentary, and Chinese economic releases, which could significantly influence commodity prices.",
+    bullets: [
+      "Gold remains above key support as safe-haven demand strengthens.",
+      "WTI and Brent crude extend gains amid geopolitical tensions.",
+      "Silver continues consolidating near recent highs.",
+      "Copper trades sideways as investors await fresh China data.",
+      "Traders focus on U.S. inflation and central bank events for the next major catalyst.",
+    ],
+    pairs: [
+      { pair: "Gold (XAU/USD)", sentiment: "Bullish", direction: "Buy", rsi: "61", resistance: "3,420 / 3,465", support: "3,330 / 3,280", suggestion: "Buy above 3,345 / TP 3,420 / SL 3,305" },
+      { pair: "Silver (XAG/USD)", sentiment: "Bullish", direction: "Buy", rsi: "58", resistance: "39.20 / 40.00", support: "37.80 / 36.90", suggestion: "Buy above 38.10 / TP 39.20 / SL 37.40" },
+      { pair: "WTI Crude Oil", sentiment: "Bullish", direction: "Buy", rsi: "65", resistance: "74.80 / 76.50", support: "71.90 / 70.30", suggestion: "Buy above 72.50 / TP 74.80 / SL 71.30" },
+      { pair: "Copper", sentiment: "Neutral", direction: "Hold", rsi: "51", resistance: "5.78 / 5.92", support: "5.55 / 5.42", suggestion: "Buy above 5.60 / TP 5.78 / SL 5.48" },
+    ],
+    commentary: [
+      {
+        pair: "Gold (XAU/USD)",
+        text: "Gold continues trading with a positive bias as investors seek safety amid geopolitical uncertainty and expectations that global central banks may gradually ease monetary policy later this year. Momentum indicators remain constructive, with price holding above major moving averages. A sustained break above $3,420 could trigger another leg higher toward $3,465, while a fall below $3,330 may encourage short-term profit-taking.",
+      },
+      {
+        pair: "Silver (XAG/USD)",
+        text: "Silver remains supported by both industrial demand expectations and safe-haven buying. Technical indicators suggest buyers still maintain control despite recent consolidation. A move above $39.20 would strengthen bullish momentum, while failure to hold $37.80 could lead to a correction toward $36.90.",
+      },
+      {
+        pair: "WTI Crude Oil",
+        text: "WTI crude oil continues extending gains as geopolitical tensions increase concerns over global supply while seasonal fuel demand remains supportive. Most moving averages continue pointing higher, reinforcing the bullish structure. A breakout above $74.80 could open the door toward $76.50, whereas a decline below $71.90 would weaken the near-term outlook.",
+      },
+      {
+        pair: "Copper",
+        text: "Copper remains trapped in a narrow trading range as investors wait for stronger economic signals from China and other major manufacturing economies. Momentum indicators remain neutral, suggesting consolidation may continue. A breakout above 5.78 could attract fresh buying interest, while a break below 5.55 may increase downside pressure.",
+      },
+    ],
+    qa: [
+      { q: "Why is gold remaining strong?", a: "Safe-haven demand and expectations of future monetary policy easing continue supporting gold prices." },
+      { q: "Why are oil prices rising?", a: "Geopolitical tensions, supply concerns, and stronger seasonal demand are supporting crude oil." },
+      { q: "What is the biggest risk for commodity markets this week?", a: "The U.S. CPI inflation report and central bank commentary could significantly impact both precious metals and energy markets." },
+      { q: "Which commodity currently has the strongest technical outlook?", a: "WTI crude oil and gold continue showing the strongest bullish momentum among major commodities." },
+    ],
+    takeaways: [
+      "Gold remains supported by strong safe-haven demand.",
+      "Crude oil continues trading with a bullish bias amid supply concerns.",
+      "Silver maintains a positive structure despite short-term consolidation.",
+      "Copper remains range-bound while traders await stronger economic data.",
+      "U.S. inflation figures and central bank commentary are expected to determine the next major move across commodity markets.",
+    ],
+  },
+  {
     slug: "july-13-2026",
     date: "July 13, 2026",
     tag: "Forex",
