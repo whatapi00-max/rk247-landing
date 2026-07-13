@@ -30,6 +30,61 @@ type MarketReport = {
  */
 export const marketReports: MarketReport[] = [
   {
+    slug: "crypto-july-13-2026",
+    date: "July 13, 2026",
+    tag: "Crypto",
+    title: "Crypto Markets Consolidate as Bitcoin Holds Key Support Ahead of Macro Catalysts",
+    image: "/assets/crypto july 13.jpeg",
+    summary:
+      "The cryptocurrency market traded cautiously on July 13, 2026, with Bitcoin holding above a critical support zone, Ethereum consolidating near major resistance, and altcoins showing mixed performance. Investors remain focused on upcoming U.S. inflation data and Federal Reserve commentary for the next directional catalyst.",
+    overview:
+      "The crypto market opened the week with limited volatility as traders adopted a wait-and-see approach ahead of key macroeconomic events. Bitcoin continues to trade within a well-defined consolidation range after a strong recovery in recent weeks. Ethereum remains resilient above psychological support, while XRP and Solana are attempting to maintain bullish market structures. Dogecoin remains range-bound as meme coin activity slows. Institutional participation remains steady, while ETF inflows and expectations surrounding future monetary policy continue to influence overall market sentiment.",
+    bullets: [
+      "Bitcoin continues consolidating above key technical support.",
+      "Ethereum trades sideways as buyers defend the $3,000 psychological zone.",
+      "XRP stabilizes after recent volatility with support holding firm.",
+      "Solana remains one of the strongest large-cap altcoins.",
+      "Traders await U.S. CPI data and Federal Reserve commentary for the next major crypto move.",
+    ],
+    pairs: [
+      { pair: "Bitcoin (BTC)", sentiment: "Bullish", direction: "Buy", rsi: "59", resistance: "118,500 / 121,000", support: "114,000 / 110,500", suggestion: "Buy above 115,000 / TP 118,500 / SL 112,800" },
+      { pair: "Ethereum (ETH)", sentiment: "Bullish", direction: "Buy", rsi: "57", resistance: "3,150 / 3,300", support: "2,940 / 2,820", suggestion: "Buy above 3,000 / TP 3,150 / SL 2,920" },
+      { pair: "XRP", sentiment: "Neutral-Bullish", direction: "Buy", rsi: "54", resistance: "2.72 / 2.90", support: "2.48 / 2.30", suggestion: "Buy above 2.50 / TP 2.72 / SL 2.38" },
+      { pair: "Solana (SOL)", sentiment: "Bullish", direction: "Buy", rsi: "62", resistance: "172 / 180", support: "158 / 150", suggestion: "Buy above 160 / TP 172 / SL 154" },
+    ],
+    commentary: [
+      {
+        pair: "Bitcoin (BTC)",
+        text: "Bitcoin continues trading above the $114,000 support zone after several sessions of sideways consolidation. Buyers remain active near lower levels, while resistance around $118,500 continues to cap upside momentum. Technical indicators remain constructive, with price trading above major moving averages. A breakout above $118,500 could open the path toward $121,000, while a close below $114,000 may trigger a deeper correction toward $110,500.",
+      },
+      {
+        pair: "Ethereum (ETH)",
+        text: "Ethereum remains stable above the important $3,000 psychological level despite reduced trading volume. Momentum indicators continue pointing higher, suggesting buyers remain in control. A break above $3,150 would strengthen bullish momentum toward $3,300, while failure to hold $2,940 could invite short-term selling pressure.",
+      },
+      {
+        pair: "XRP",
+        text: "XRP continues consolidating after recent gains as buyers defend support near $2.50. Moving averages remain broadly supportive, while momentum indicators remain neutral. Holding above current support could allow another attempt toward $2.72, whereas a break below $2.48 may weaken the short-term outlook.",
+      },
+      {
+        pair: "Solana (SOL)",
+        text: "Solana continues outperforming many large-cap cryptocurrencies, supported by strong ecosystem activity and improving market sentiment. Technical indicators remain bullish, with the next resistance located near $172. Sustained trading above $160 would keep the positive structure intact, while a decline below $158 could trigger temporary profit-taking.",
+      },
+    ],
+    qa: [
+      { q: "Why is Bitcoin consolidating?", a: "Investors are waiting for major macroeconomic events, including U.S. inflation data and Federal Reserve commentary, before establishing new positions." },
+      { q: "What is Bitcoin's key breakout level?", a: "A sustained move above $118,500 could confirm renewed bullish momentum." },
+      { q: "Why is Ethereum holding above $3,000?", a: "Strong institutional demand and continued buying around psychological support have helped Ethereum remain resilient." },
+      { q: "Which altcoin currently shows the strongest momentum?", a: "Among the major altcoins, Solana continues displaying one of the strongest technical structures with bullish momentum remaining intact." },
+    ],
+    takeaways: [
+      "Bitcoin remains in a healthy consolidation above major support.",
+      "Ethereum continues holding the important $3,000 psychological level.",
+      "XRP remains stable while Solana maintains bullish momentum.",
+      "Overall crypto market sentiment remains cautiously optimistic.",
+      "U.S. inflation data and Federal Reserve commentary are expected to be the primary catalysts for the next major move across cryptocurrency markets.",
+    ],
+  },
+  {
     slug: "commodity-july-13-2026",
     date: "July 13, 2026",
     tag: "Commodity",
