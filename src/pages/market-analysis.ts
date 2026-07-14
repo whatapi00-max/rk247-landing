@@ -30,6 +30,62 @@ type MarketReport = {
  */
 export const marketReports: MarketReport[] = [
   {
+    slug: "indices-july-14-2026",
+    date: "July 14, 2026",
+    tag: "Indices",
+    title: "Global Indices Decline: Geopolitical Risks and Inflation Concerns Weigh on Sentiment",
+    image: "/assets/global july 14.jpeg",
+    summary:
+      "Global equity markets traded lower on July 14, 2026, as investors reacted to renewed geopolitical tensions in the Middle East, rising oil prices, and caution ahead of the U.S. CPI report and Federal Reserve Chair Kevin Warsh's congressional testimony.",
+    overview:
+      "Global stock markets opened the session under pressure after escalating tensions between the United States and Iran boosted crude oil prices and reduced investors' appetite for risk. Wall Street closed lower overnight, led by weakness in technology shares, while most Asian markets also declined. European index futures pointed to a softer open as investors awaited U.S. inflation data and the start of the earnings season from major U.S. banks. Chinese equities outperformed regional peers after stronger-than-expected trade data helped support sentiment.",
+    bullets: [
+      "Global equities decline as geopolitical tensions intensify.",
+      "Nasdaq leads U.S. market losses amid technology sector weakness.",
+      "Oil prices surge, increasing inflation concerns.",
+      "Chinese stocks outperform after stronger trade data.",
+      "Investors focus on U.S. CPI, Fed testimony, and major bank earnings.",
+    ],
+    pairs: [
+      { pair: "S&P 500", sentiment: "Neutral-Bearish", direction: "Sell", rsi: "48", resistance: "6,310 / 6,380", support: "6,180 / 6,100", suggestion: "Sell below 6,180 / TP 6,100 / SL 6,260" },
+      { pair: "Nasdaq 100", sentiment: "Bearish", direction: "Sell", rsi: "44", resistance: "22,950 / 23,250", support: "22,300 / 22,000", suggestion: "Sell below 22,350 / TP 22,000 / SL 22,850" },
+      { pair: "Dow Jones", sentiment: "Neutral", direction: "Hold", rsi: "50", resistance: "44,850 / 45,150", support: "44,200 / 43,900", suggestion: "Buy above 44,400 / TP 44,850 / SL 44,000" },
+      { pair: "Nikkei 225", sentiment: "Bearish", direction: "Sell", rsi: "45", resistance: "40,600 / 41,100", support: "39,700 / 39,200", suggestion: "Sell below 39,900 / TP 39,300 / SL 40,500" },
+    ],
+    commentary: [
+      {
+        pair: "S&P 500",
+        text: "The S&P 500 retreated as higher oil prices and geopolitical uncertainty prompted investors to reduce exposure to risk assets. Market participants are also waiting for today's U.S. inflation data before taking larger positions. A move above 6,310 could stabilize sentiment, while a break below 6,180 may increase downside pressure.",
+      },
+      {
+        pair: "Nasdaq 100",
+        text: "The Nasdaq underperformed major U.S. indices as semiconductor and AI-related technology stocks extended recent losses. Momentum indicators remain weak. A break below 22,300 could trigger additional selling, while a recovery above 22,950 would improve the short-term outlook.",
+      },
+      {
+        pair: "Dow Jones",
+        text: "The Dow Jones proved relatively resilient as gains in energy companies partially offset weakness across technology and growth sectors. Holding above 44,200 keeps the broader structure stable, while a breakout above 44,850 could attract renewed buying interest.",
+      },
+      {
+        pair: "Nikkei 225",
+        text: "Japan's Nikkei 225 declined as global risk sentiment weakened, although a softer yen continued providing some support to exporters. A sustained move above 40,600 could encourage recovery, while a fall below 39,700 would strengthen the bearish outlook.",
+      },
+    ],
+    qa: [
+      { q: "Why are global stock markets falling today?", a: "Rising geopolitical tensions, higher oil prices, and caution ahead of the U.S. CPI report have reduced investor risk appetite." },
+      { q: "Why is the Nasdaq underperforming?", a: "Technology and semiconductor stocks came under pressure, making the Nasdaq the weakest major U.S. index." },
+      { q: "What is today's biggest market event?", a: "The U.S. Consumer Price Index (CPI) release and Federal Reserve Chair Kevin Warsh's testimony are expected to drive market direction." },
+      { q: "Which sector is outperforming today?", a: "Energy stocks are benefiting from higher crude oil prices despite weakness across the broader market." },
+    ],
+    takeaways: [
+      "Global equity markets remain under pressure from geopolitical tensions.",
+      "Higher oil prices have increased inflation concerns and reduced risk appetite.",
+      "The Nasdaq continues to lead declines due to weakness in technology shares.",
+      "Energy stocks remain comparatively resilient.",
+      "U.S. inflation data, Federal Reserve commentary, and major corporate earnings are expected to determine the next major move for global stock indices.",
+      "This report is for informational purposes only and does not constitute financial advice.",
+    ],
+  },
+  {
     slug: "crypto-july-14-2026",
     date: "July 14, 2026",
     tag: "Crypto",
