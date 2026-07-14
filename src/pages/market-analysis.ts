@@ -30,6 +30,62 @@ type MarketReport = {
  */
 export const marketReports: MarketReport[] = [
   {
+    slug: "crypto-july-14-2026",
+    date: "July 14, 2026",
+    tag: "Crypto",
+    title: "Crypto Markets Stabilize: Bitcoin Holds Support Ahead of U.S. CPI",
+    image: "/assets/crypto july 14.jpeg",
+    summary:
+      "The cryptocurrency market traded cautiously on July 14, 2026, with Bitcoin holding above the $62,000 support zone despite continued geopolitical tensions and ETF outflows. Investors are awaiting the U.S. CPI inflation report and Federal Reserve commentary for the next major catalyst.",
+    overview:
+      "The crypto market remained relatively stable despite risk-off sentiment across global financial markets. Bitcoin and Ethereum traded in narrow ranges as traders refrained from opening large positions ahead of today's high-impact U.S. inflation data. Institutional demand remained mixed, with continued spot Bitcoin ETF outflows weighing on sentiment. However, buyers continued defending key technical support levels, helping the broader crypto market avoid another sharp decline. Major altcoins including Ethereum, XRP, Solana, and Dogecoin also consolidated as investors monitored macroeconomic developments and geopolitical risks.",
+    bullets: [
+      "Bitcoin remains above the $62,000 support zone.",
+      "Ethereum trades sideways as buyers defend key support.",
+      "Spot Bitcoin ETF outflows continue to pressure sentiment.",
+      "Altcoins remain range-bound ahead of U.S. CPI.",
+      "Traders await Federal Reserve commentary for the next market catalyst.",
+    ],
+    pairs: [
+      { pair: "Bitcoin (BTC)", sentiment: "Neutral", direction: "Hold", rsi: "47", resistance: "64,200 / 66,000", support: "62,000 / 60,000", suggestion: "Buy above 62,500 / TP 64,200 / SL 61,200" },
+      { pair: "Ethereum (ETH)", sentiment: "Neutral", direction: "Hold", rsi: "45", resistance: "3,020 / 3,150", support: "2,900 / 2,780", suggestion: "Buy above 2,930 / TP 3,020 / SL 2,860" },
+      { pair: "XRP", sentiment: "Neutral-Bearish", direction: "Hold", rsi: "44", resistance: "2.52 / 2.65", support: "2.34 / 2.20", suggestion: "Buy above 2.40 / TP 2.52 / SL 2.30" },
+      { pair: "Solana (SOL)", sentiment: "Neutral", direction: "Hold", rsi: "48", resistance: "150 / 158", support: "140 / 132", suggestion: "Buy above 144 / TP 150 / SL 138" },
+    ],
+    commentary: [
+      {
+        pair: "Bitcoin (BTC)",
+        text: "Bitcoin continues trading above the important $62,000 support area despite persistent ETF outflows and geopolitical uncertainty. The broader trend remains cautious as traders await today's U.S. inflation report. A sustained move above $64,200 would improve the short-term outlook, while a break below $62,000 could expose the next support near $60,000.",
+      },
+      {
+        pair: "Ethereum (ETH)",
+        text: "Ethereum remains trapped in a narrow consolidation range as buyers defend the $2,900 support zone. Momentum indicators remain neutral. A breakout above $3,020 could trigger renewed buying interest, while a decline below $2,900 may increase selling pressure.",
+      },
+      {
+        pair: "XRP",
+        text: "XRP continues trading sideways with mixed momentum as the broader crypto market lacks a strong directional catalyst. Holding above $2.34 keeps the structure stable, while a move above $2.52 would strengthen the bullish outlook.",
+      },
+      {
+        pair: "Solana (SOL)",
+        text: "Solana remains relatively resilient despite weakness across the broader crypto sector. Price continues holding above major support levels. A breakout above $150 could signal renewed bullish momentum, while a decline below $140 would weaken the near-term outlook.",
+      },
+    ],
+    qa: [
+      { q: "Why is Bitcoin moving sideways?", a: "Investors are waiting for the U.S. CPI inflation report and Federal Reserve commentary before taking larger positions." },
+      { q: "Why is crypto market sentiment cautious?", a: "Geopolitical tensions, higher interest-rate expectations, and continued ETF outflows are limiting risk appetite." },
+      { q: "What is Bitcoin's key support level?", a: "The $62,000 area remains the most important near-term support for Bitcoin." },
+      { q: "What could move the crypto market today?", a: "The U.S. CPI inflation report and Federal Reserve commentary are expected to be the primary drivers of cryptocurrency prices." },
+    ],
+    takeaways: [
+      "Bitcoin remains stable above the critical $62,000 support level.",
+      "Ethereum, XRP, and Solana continue consolidating in narrow ranges.",
+      "ETF outflows continue to weigh on institutional sentiment.",
+      "Traders are focused on today's U.S. inflation data and Federal Reserve guidance.",
+      "A breakout from current consolidation ranges is likely to determine the next major move across the cryptocurrency market.",
+      "This report is for informational purposes only and does not constitute financial advice.",
+    ],
+  },
+  {
     slug: "commodity-july-14-2026",
     date: "July 14, 2026",
     tag: "Commodity",
