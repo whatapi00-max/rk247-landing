@@ -30,6 +30,62 @@ type MarketReport = {
  */
 export const marketReports: MarketReport[] = [
   {
+    slug: "commodity-july-14-2026",
+    date: "July 14, 2026",
+    tag: "Commodity",
+    title: "Commodity Markets Mixed: Gold Rebounds While Oil Climbs on Supply Concerns",
+    image: "/assets/Commodity july14.jpeg",
+    summary:
+      "Commodity markets traded with mixed momentum on July 14, 2026, as gold recovered from a two-week low while crude oil surged to a one-month high amid escalating geopolitical tensions in the Middle East. Investors are also awaiting the U.S. CPI report and Federal Reserve commentary for fresh direction.",
+    overview:
+      "Global commodity markets remained volatile as geopolitical risks continued to dominate investor sentiment. Gold rebounded after Monday's sharp decline, supported by bargain buying ahead of key U.S. inflation data. However, expectations that inflation could remain elevated and keep interest rates higher continue to limit the metal's upside. Meanwhile, crude oil extended its rally after renewed conflict involving the U.S. and Iran raised concerns over potential disruptions to oil shipments through the Strait of Hormuz. Industrial metals, including copper, remained relatively stable as traders monitored Chinese economic data and global manufacturing demand.",
+    bullets: [
+      "Gold rebounds after falling to a two-week low.",
+      "Brent and WTI crude oil hit one-month highs on Middle East tensions.",
+      "Silver posts modest gains while platinum trades slightly lower.",
+      "Copper remains range-bound as investors assess China's economic outlook.",
+      "Traders await U.S. CPI inflation data and Federal Reserve testimony.",
+    ],
+    pairs: [
+      { pair: "Gold (XAU/USD)", sentiment: "Neutral-Bullish", direction: "Buy", rsi: "56", resistance: "4,050 / 4,100", support: "3,980 / 3,920", suggestion: "Buy above 4,020 / TP 4,080 / SL 3,975" },
+      { pair: "Silver (XAG/USD)", sentiment: "Bullish", direction: "Buy", rsi: "59", resistance: "58.40 / 59.80", support: "56.80 / 55.90", suggestion: "Buy above 57.80 / TP 58.80 / SL 56.90" },
+      { pair: "WTI Crude Oil", sentiment: "Bullish", direction: "Buy", rsi: "69", resistance: "81.20 / 83.00", support: "77.80 / 75.90", suggestion: "Buy above 79.00 / TP 81.20 / SL 77.80" },
+      { pair: "Copper", sentiment: "Neutral", direction: "Hold", rsi: "51", resistance: "5.85 / 5.98", support: "5.62 / 5.48", suggestion: "Buy above 5.68 / TP 5.85 / SL 5.56" },
+    ],
+    commentary: [
+      {
+        pair: "Gold (XAU/USD)",
+        text: "Gold recovered after touching a two-week low as investors positioned ahead of today's U.S. CPI report. While safe-haven demand offered support, higher bond yields and expectations of tighter monetary policy continue limiting upside momentum. A sustained move above $4,050 could strengthen bullish momentum toward $4,100, while a break below $3,980 may trigger another wave of selling.",
+      },
+      {
+        pair: "Silver (XAG/USD)",
+        text: "Silver continues trading with a constructive bias, benefiting from both precious metal demand and improving industrial sentiment. Technical indicators remain positive. A breakout above $58.40 could open the path toward $59.80, while support at $56.80 remains critical for maintaining the current uptrend.",
+      },
+      {
+        pair: "WTI Crude Oil",
+        text: "WTI crude oil remains the strongest-performing major commodity as geopolitical tensions increase fears of supply disruptions through the Strait of Hormuz. Momentum indicators remain firmly bullish. A break above $81.20 could accelerate gains toward $83.00, while support near $77.80 is expected to attract buyers on pullbacks.",
+      },
+      {
+        pair: "Copper",
+        text: "Copper continues moving sideways as investors evaluate Chinese economic activity and the outlook for global manufacturing demand. A breakout above 5.85 would improve the technical outlook, while a decline below 5.62 could trigger additional selling pressure.",
+      },
+    ],
+    qa: [
+      { q: "Why did gold recover today?", a: "Gold rebounded after reaching a two-week low as investors positioned ahead of the U.S. CPI report, although expectations of higher interest rates continue to cap gains." },
+      { q: "Why are oil prices rising?", a: "Oil prices surged because escalating U.S.–Iran tensions increased concerns over potential supply disruptions through the Strait of Hormuz." },
+      { q: "What is today's biggest event for commodity markets?", a: "The U.S. Consumer Price Index (CPI) release and Federal Reserve commentary are expected to have the greatest impact on gold, silver, and energy markets." },
+      { q: "Which commodity currently has the strongest momentum?", a: "WTI crude oil continues displaying the strongest bullish technical structure as geopolitical risks support higher prices." },
+    ],
+    takeaways: [
+      "Gold has rebounded after a sharp decline but remains sensitive to inflation and interest-rate expectations.",
+      "Crude oil continues trading near one-month highs as geopolitical tensions threaten global supply.",
+      "Silver maintains a constructive technical outlook.",
+      "Copper remains range-bound while traders monitor economic data from China.",
+      "Today's U.S. CPI report and Federal Reserve commentary are expected to determine the next major move across commodity markets.",
+      "This report is for informational purposes only and does not constitute financial advice.",
+    ],
+  },
+  {
     slug: "forex-july-14-2026",
     date: "July 14, 2026",
     tag: "Forex",
