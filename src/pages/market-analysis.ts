@@ -30,6 +30,62 @@ type MarketReport = {
  */
 export const marketReports: MarketReport[] = [
   {
+    slug: "forex-july-14-2026",
+    date: "July 14, 2026",
+    tag: "Forex",
+    title: "Forex Markets Hold Steady: Dollar Awaits U.S. CPI Report and Federal Reserve Testimony",
+    image: "/assets/forex july 14.jpeg",
+    summary:
+      "Global forex markets traded cautiously on July 14, 2026, with the U.S. Dollar holding firm ahead of the June U.S. CPI report and Federal Reserve testimony. Safe-haven demand remains elevated due to ongoing Middle East tensions, while traders await fresh inflation data for clues on the Fed's next policy move.",
+    overview:
+      "The U.S. Dollar Index (DXY) remained near recent highs as investors refrained from taking aggressive positions before today's key economic events. EUR/USD and GBP/USD traded in narrow ranges, while USD/JPY stayed close to multi-decade highs as pressure on the Japanese yen persisted. Commodity-linked currencies, including the Australian and New Zealand dollars, were supported by stronger commodity prices but remained sensitive to overall risk sentiment. Markets are primarily focused on the U.S. Consumer Price Index (CPI), Fed Chair Kevin Warsh's congressional testimony, and additional speeches from Federal Reserve officials, all of which could determine the short-term direction of major currency pairs.",
+    bullets: [
+      "U.S. Dollar remains firm ahead of today's CPI inflation report.",
+      "EUR/USD consolidates near 1.1400 as traders await fresh catalysts.",
+      "Japanese Yen remains under pressure despite intervention concerns.",
+      "Australian and New Zealand dollars recover modestly.",
+      "Middle East tensions continue supporting safe-haven demand for the U.S. Dollar.",
+    ],
+    pairs: [
+      { pair: "EUR/USD", sentiment: "Neutral-Bearish", direction: "Sell", rsi: "45", resistance: "1.1435 / 1.1470", support: "1.1365 / 1.1320", suggestion: "Sell below 1.1365 / TP 1.1320 / SL 1.1445" },
+      { pair: "GBP/USD", sentiment: "Neutral", direction: "Hold", rsi: "49", resistance: "1.3400 / 1.3460", support: "1.3320 / 1.3270", suggestion: "Buy above 1.3360 / TP 1.3450 / SL 1.3300" },
+      { pair: "USD/JPY", sentiment: "Bullish", direction: "Buy", rsi: "64", resistance: "163.00 / 164.20", support: "161.60 / 160.80", suggestion: "Buy above 162.00 / TP 163.80 / SL 161.20" },
+      { pair: "AUD/USD", sentiment: "Neutral-Bearish", direction: "Sell", rsi: "46", resistance: "0.7015 / 0.7060", support: "0.6945 / 0.6900", suggestion: "Sell below 0.6945 / TP 0.6900 / SL 0.7015" },
+    ],
+    commentary: [
+      {
+        pair: "EUR/USD",
+        text: "EUR/USD continues consolidating around the 1.1400 area as traders await the U.S. inflation report. Momentum remains weak while the stronger U.S. Dollar limits upside potential. A sustained move above 1.1435 could improve sentiment toward 1.1470, while a break below 1.1365 may expose 1.1320.",
+      },
+      {
+        pair: "GBP/USD",
+        text: "Sterling remains relatively stable after recent volatility. Traders are balancing expectations for U.K. economic growth against continued strength in the U.S. Dollar. Holding above 1.3320 keeps the short-term structure intact, while a breakout above 1.3400 could encourage further buying.",
+      },
+      {
+        pair: "USD/JPY",
+        text: "USD/JPY continues trading near long-term highs as interest-rate differentials favor the U.S. Dollar. Momentum indicators remain bullish. A break above 163.00 could extend gains toward 164.20, while intervention concerns may increase volatility if prices rise further.",
+      },
+      {
+        pair: "AUD/USD",
+        text: "The Australian Dollar remains under pressure despite improved commodity prices. Traders remain cautious ahead of U.S. inflation data and broader global risk developments. Support at 0.6945 remains critical. A break lower could accelerate losses toward 0.6900, while recovery above 0.7015 would improve the short-term outlook.",
+      },
+    ],
+    qa: [
+      { q: "Why is the forex market quiet today?", a: "Investors are waiting for the U.S. CPI report and Federal Reserve testimony before taking larger positions." },
+      { q: "Why is the U.S. Dollar remaining strong?", a: "Safe-haven demand, rising oil prices, and expectations that inflation could remain elevated continue supporting the Dollar." },
+      { q: "What is today's biggest forex event?", a: "The U.S. Consumer Price Index (CPI) release, followed by Federal Reserve Chair Kevin Warsh's testimony before Congress." },
+      { q: "Which currency pair looks strongest technically?", a: "USD/JPY continues displaying the strongest bullish momentum among the major currency pairs." },
+    ],
+    takeaways: [
+      "Forex markets remain cautious ahead of today's major U.S. economic events.",
+      "The U.S. Dollar continues benefiting from safe-haven demand.",
+      "USD/JPY maintains the strongest bullish technical structure.",
+      "EUR/USD and GBP/USD remain trapped in consolidation ranges.",
+      "The CPI report and Federal Reserve commentary are expected to determine the next major move across the forex market.",
+      "This report is for informational purposes only and does not constitute financial advice.",
+    ],
+  },
+  {
     slug: "indices-july-13-2026",
     date: "July 13, 2026",
     tag: "Indices",
