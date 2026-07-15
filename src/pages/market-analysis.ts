@@ -30,6 +30,62 @@ type MarketReport = {
  */
 export const marketReports: MarketReport[] = [
   {
+    slug: "indices-july-15-2026",
+    date: "July 15, 2026",
+    tag: "Indices",
+    title: "Global Indices Trade Mixed: Investors Assess Inflation Outlook and Earnings Season",
+    image: "/assets/Indices july 15.jpeg",
+    summary:
+      "Global stock markets traded mixed on July 15, 2026, as investors welcomed softer U.S. inflation data but remained cautious ahead of major corporate earnings and additional Federal Reserve commentary. Lower Treasury yields supported technology stocks, while geopolitical tensions continued to limit overall market optimism.",
+    overview:
+      "Global equity markets showed mixed performance following the release of softer-than-expected U.S. CPI data. The easing inflation reading strengthened expectations that the Federal Reserve could adopt a less aggressive monetary policy stance later this year. U.S. futures edged higher, led by gains in technology stocks, while European markets remained cautious. Asian markets closed mostly positive as improving investor sentiment outweighed concerns over global economic growth. Market participants are now focusing on major U.S. bank earnings, Producer Price Index (PPI) data, and speeches from Federal Reserve officials for further market direction.",
+    bullets: [
+      "U.S. stock futures rise after softer inflation data.",
+      "Nasdaq leads gains as technology shares strengthen.",
+      "S&P 500 remains near record highs.",
+      "Investors await major U.S. bank earnings this week.",
+      "Markets shift focus toward U.S. PPI and Federal Reserve commentary.",
+    ],
+    pairs: [
+      { pair: "S&P 500", sentiment: "Bullish", direction: "Buy", rsi: "60", resistance: "6,380 / 6,450", support: "6,270 / 6,200", suggestion: "Buy above 6,300 / TP 6,380 / SL 6,240" },
+      { pair: "Nasdaq 100", sentiment: "Bullish", direction: "Buy", rsi: "63", resistance: "23,250 / 23,600", support: "22,700 / 22,350", suggestion: "Buy above 22,900 / TP 23,250 / SL 22,650" },
+      { pair: "Dow Jones", sentiment: "Neutral-Bullish", direction: "Buy", rsi: "56", resistance: "45,000 / 45,350", support: "44,300 / 43,950", suggestion: "Buy above 44,500 / TP 45,000 / SL 44,150" },
+      { pair: "Nikkei 225", sentiment: "Bullish", direction: "Buy", rsi: "58", resistance: "40,950 / 41,400", support: "40,100 / 39,650", suggestion: "Buy above 40,300 / TP 40,950 / SL 39,900" },
+    ],
+    commentary: [
+      {
+        pair: "S&P 500",
+        text: "The S&P 500 remains supported by improving expectations for Federal Reserve policy following softer U.S. inflation. Investors are optimistic that lower inflation could benefit corporate earnings and equity valuations. A breakout above 6,380 could extend gains toward 6,450, while 6,270 remains the first key support.",
+      },
+      {
+        pair: "Nasdaq 100",
+        text: "The Nasdaq 100 continues outperforming global indices as technology and AI-related companies attract renewed investor interest. Momentum indicators remain bullish. A sustained move above 23,250 could open the path toward 23,600, while 22,700 remains the nearest support.",
+      },
+      {
+        pair: "Dow Jones",
+        text: "The Dow Jones continues trading with moderate bullish momentum as investors rotate into financial and industrial sectors ahead of earnings season. Holding above 44,300 keeps the short-term uptrend intact, while a breakout above 45,000 would strengthen the bullish outlook.",
+      },
+      {
+        pair: "Nikkei 225",
+        text: "Japan's Nikkei 225 posted gains as improved global risk sentiment and a relatively weaker yen supported export-oriented companies. A move above 40,950 would confirm continued bullish momentum, while 40,100 remains an important support level.",
+      },
+    ],
+    qa: [
+      { q: "Why are stock markets improving today?", a: "Softer U.S. inflation data increased expectations that the Federal Reserve may take a less aggressive approach to monetary policy, supporting equity markets." },
+      { q: "Which index is showing the strongest momentum?", a: "The Nasdaq 100 continues to outperform due to strength in technology and artificial intelligence stocks." },
+      { q: "What is the biggest event for equity markets now?", a: "Investors are closely watching major U.S. corporate earnings, U.S. PPI inflation data, and further comments from Federal Reserve officials." },
+      { q: "Which sectors are leading the market?", a: "Technology, communication services, and selected financial stocks are currently leading global equity markets." },
+    ],
+    takeaways: [
+      "Global stock markets remain supported by softer U.S. inflation.",
+      "Technology shares continue driving gains in the Nasdaq.",
+      "The S&P 500 remains close to record highs.",
+      "Investors are focused on corporate earnings and U.S. PPI data.",
+      "Federal Reserve guidance will likely determine the next major direction for global equity markets.",
+      "This report is for informational purposes only and does not constitute financial advice.",
+    ],
+  },
+  {
     slug: "indices-july-14-2026",
     date: "July 14, 2026",
     tag: "Indices",
