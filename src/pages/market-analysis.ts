@@ -30,6 +30,62 @@ type MarketReport = {
  */
 export const marketReports: MarketReport[] = [
   {
+    slug: "crypto-july-15-2026",
+    date: "July 15, 2026",
+    tag: "Crypto",
+    title: "Crypto Markets Recover: Bitcoin Climbs on Weaker Dollar and Improving Risk Sentiment",
+    image: "/assets/crypto july 15.jpeg",
+    summary:
+      "The cryptocurrency market traded higher on July 15, 2026, with Bitcoin and Ethereum posting gains after softer U.S. inflation data weakened the U.S. Dollar and improved investor appetite for risk assets. Traders are now monitoring U.S. PPI data and further Federal Reserve commentary for the next major catalyst.",
+    overview:
+      "Digital asset markets strengthened following the release of lower-than-expected U.S. CPI figures, which reduced expectations for near-term Federal Reserve tightening. The weaker U.S. Dollar supported risk assets, helping Bitcoin reclaim higher levels while Ethereum and major altcoins followed. Institutional interest remained stable, and overall crypto market sentiment improved as investors anticipated a more accommodative monetary policy environment. However, trading volumes remained moderate ahead of additional U.S. economic data.",
+    bullets: [
+      "Bitcoin extends gains after softer U.S. inflation data.",
+      "Ethereum outperforms as market sentiment improves.",
+      "Solana and XRP trade higher alongside Bitcoin.",
+      "Crypto market capitalization rebounds as the U.S. Dollar weakens.",
+      "Investors await U.S. PPI data and further Federal Reserve guidance.",
+    ],
+    pairs: [
+      { pair: "Bitcoin (BTC)", sentiment: "Bullish", direction: "Buy", rsi: "61", resistance: "66,800 / 68,500", support: "64,200 / 62,800", suggestion: "Buy above 64,800 / TP 66,800 / SL 63,900" },
+      { pair: "Ethereum (ETH)", sentiment: "Bullish", direction: "Buy", rsi: "60", resistance: "3,180 / 3,320", support: "3,020 / 2,900", suggestion: "Buy above 3,050 / TP 3,180 / SL 2,980" },
+      { pair: "XRP", sentiment: "Neutral-Bullish", direction: "Buy", rsi: "56", resistance: "2.62 / 2.75", support: "2.42 / 2.30", suggestion: "Buy above 2.48 / TP 2.62 / SL 2.38" },
+      { pair: "Solana (SOL)", sentiment: "Bullish", direction: "Buy", rsi: "63", resistance: "156 / 165", support: "146 / 140", suggestion: "Buy above 148 / TP 156 / SL 143" },
+    ],
+    commentary: [
+      {
+        pair: "Bitcoin (BTC)",
+        text: "Bitcoin extended its recovery as softer U.S. inflation data boosted demand for risk assets. The decline in the U.S. Dollar and Treasury yields provided additional support for the world's largest cryptocurrency. A sustained move above $66,800 could accelerate bullish momentum toward $68,500, while $64,200 remains the key support zone.",
+      },
+      {
+        pair: "Ethereum (ETH)",
+        text: "Ethereum continued moving higher alongside Bitcoin as improving market sentiment encouraged fresh buying. Technical indicators remain constructive. A breakout above $3,180 could pave the way toward $3,320, while $3,020 remains immediate support.",
+      },
+      {
+        pair: "XRP",
+        text: "XRP maintained a positive bias as buyers defended the $2.42 support level. A move above $2.62 would strengthen bullish momentum, while a break below $2.42 could trigger short-term weakness.",
+      },
+      {
+        pair: "Solana (SOL)",
+        text: "Solana remained one of the strongest-performing major cryptocurrencies, supported by positive ecosystem activity and improving investor confidence. Holding above $146 keeps the bullish trend intact, while a breakout above $156 could open the path toward $165.",
+      },
+    ],
+    qa: [
+      { q: "Why is the crypto market rising today?", a: "Softer U.S. inflation data weakened the U.S. Dollar, improving investor appetite for risk assets such as cryptocurrencies." },
+      { q: "Why is Bitcoin gaining strength?", a: "Lower expectations for additional Federal Reserve tightening supported Bitcoin as investors shifted toward higher-risk assets." },
+      { q: "What is Bitcoin's next major resistance?", a: "The $66,800 level is the next important resistance, followed by $68,500." },
+      { q: "What could move crypto markets next?", a: "Upcoming U.S. PPI data and additional Federal Reserve commentary are expected to influence short-term cryptocurrency price action." },
+    ],
+    takeaways: [
+      "Bitcoin and Ethereum strengthened following softer U.S. inflation data.",
+      "The weaker U.S. Dollar improved overall crypto market sentiment.",
+      "Solana continues to outperform many large-cap cryptocurrencies.",
+      "XRP remains stable above key technical support.",
+      "U.S. PPI data and Federal Reserve guidance are expected to determine the next major move across the cryptocurrency market.",
+      "This report is for informational purposes only and does not constitute financial advice.",
+    ],
+  },
+  {
     slug: "indices-july-15-2026",
     date: "July 15, 2026",
     tag: "Indices",
