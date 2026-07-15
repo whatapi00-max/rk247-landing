@@ -30,6 +30,62 @@ type MarketReport = {
  */
 export const marketReports: MarketReport[] = [
   {
+    slug: "commodity-july-15-2026",
+    date: "July 15, 2026",
+    tag: "Commodity",
+    title: "Commodity Markets Rally: Gold Extends Gains and Oil Holds Firm",
+    image: "/assets/Commodity july 15.jpeg",
+    summary:
+      "Commodity markets traded higher on July 15, 2026, with gold advancing after softer U.S. inflation data weakened the U.S. Dollar, while crude oil remained elevated on ongoing Middle East supply concerns. Investors are now focused on U.S. Producer Price Index (PPI) data and further Federal Reserve commentary.",
+    overview:
+      "Global commodity markets strengthened as weaker-than-expected U.S. inflation boosted expectations that the Federal Reserve may adopt a less aggressive monetary policy stance. Gold benefited from a weaker U.S. Dollar and lower Treasury yields, while silver also moved higher following improved precious metal sentiment. Crude oil remained near recent highs as geopolitical tensions continued to support supply-risk premiums. Copper traded with a modest positive bias after encouraging Chinese economic data improved industrial demand expectations.",
+    bullets: [
+      "Gold climbs as softer U.S. inflation weakens the Dollar.",
+      "Silver extends gains alongside precious metals.",
+      "WTI and Brent crude remain supported by supply concerns.",
+      "Copper edges higher on improving China demand outlook.",
+      "Markets await U.S. PPI data and further Fed comments.",
+    ],
+    pairs: [
+      { pair: "Gold (XAU/USD)", sentiment: "Bullish", direction: "Buy", rsi: "61", resistance: "4,085 / 4,130", support: "4,010 / 3,960", suggestion: "Buy above 4,030 / TP 4,085 / SL 3,995" },
+      { pair: "Silver (XAG/USD)", sentiment: "Bullish", direction: "Buy", rsi: "60", resistance: "58.90 / 59.70", support: "57.40 / 56.60", suggestion: "Buy above 57.80 / TP 58.90 / SL 57.00" },
+      { pair: "WTI Crude Oil", sentiment: "Bullish", direction: "Buy", rsi: "67", resistance: "82.00 / 83.50", support: "78.60 / 77.20", suggestion: "Buy above 79.40 / TP 82.00 / SL 78.20" },
+      { pair: "Copper", sentiment: "Neutral-Bullish", direction: "Buy", rsi: "54", resistance: "5.92 / 6.05", support: "5.68 / 5.55", suggestion: "Buy above 5.72 / TP 5.92 / SL 5.62" },
+    ],
+    commentary: [
+      {
+        pair: "Gold (XAU/USD)",
+        text: "Gold continued higher after the softer U.S. CPI report weakened the U.S. Dollar and lowered Treasury yields. The decline in real yields increased demand for non-yielding assets such as gold. A sustained move above $4,085 could extend the rally toward $4,130, while $4,010 remains the first important support level.",
+      },
+      {
+        pair: "Silver (XAG/USD)",
+        text: "Silver maintained positive momentum as improving precious metal sentiment attracted fresh buying. Technical indicators remain constructive, with resistance near $58.90. Holding above $57.40 keeps the bullish structure intact.",
+      },
+      {
+        pair: "WTI Crude Oil",
+        text: "WTI crude oil remained firm despite the weaker U.S. Dollar as traders continued pricing in geopolitical supply risks and resilient global energy demand. A breakout above $82.00 could open the way toward $83.50, while $78.60 remains strong near-term support.",
+      },
+      {
+        pair: "Copper",
+        text: "Copper traded with a slight positive bias after stronger Chinese economic indicators improved expectations for industrial demand. A move above 5.92 would strengthen the bullish outlook, while a decline below 5.68 could lead to short-term weakness.",
+      },
+    ],
+    qa: [
+      { q: "Why is gold rising today?", a: "Gold is benefiting from a weaker U.S. Dollar and lower Treasury yields following softer U.S. inflation data." },
+      { q: "Why are oil prices staying elevated?", a: "Ongoing geopolitical tensions and supply concerns continue supporting crude oil prices." },
+      { q: "What is today's biggest event for commodity markets?", a: "Investors are watching the U.S. Producer Price Index (PPI) and additional Federal Reserve comments for clues about future interest-rate policy." },
+      { q: "Which commodity has the strongest technical outlook?", a: "Gold and WTI crude oil currently show the strongest bullish momentum based on prevailing technical indicators." },
+    ],
+    takeaways: [
+      "Gold continues advancing as the U.S. Dollar weakens.",
+      "Silver remains supported by improving precious metal sentiment.",
+      "Crude oil holds near recent highs on supply concerns.",
+      "Copper is stabilizing as China's demand outlook improves.",
+      "U.S. PPI data and Federal Reserve commentary are expected to drive the next major move across commodity markets.",
+      "This report is for informational purposes only and does not constitute financial advice.",
+    ],
+  },
+  {
     slug: "crypto-july-15-2026",
     date: "July 15, 2026",
     tag: "Crypto",
