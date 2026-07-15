@@ -30,6 +30,62 @@ type MarketReport = {
  */
 export const marketReports: MarketReport[] = [
   {
+    slug: "forex-july-15-2026",
+    date: "July 15, 2026",
+    tag: "Forex",
+    title: "Forex Markets Rebound: Softer U.S. Inflation Pressures the Dollar",
+    image: "/assets/forex july 15.jpeg",
+    summary:
+      "The forex market turned more active on July 15, 2026, after a softer-than-expected U.S. Consumer Price Index (CPI) reduced expectations of an immediate Federal Reserve rate hike. The U.S. Dollar weakened against most major currencies, while the euro, pound, and New Zealand dollar advanced.",
+    overview:
+      "Global currency markets traded with a risk-on tone after U.S. inflation slowed more than economists had expected. The weaker inflation reading eased pressure on the Federal Reserve to tighten monetary policy in the near term, pushing U.S. Treasury yields and the U.S. Dollar lower. EUR/USD and GBP/USD gained modestly, while USD/JPY retreated from recent highs. Commodity-linked currencies such as the Australian and New Zealand dollars also benefited from the weaker dollar, although elevated oil prices continued to limit broader optimism due to ongoing geopolitical tensions.",
+    bullets: [
+      "U.S. Dollar falls after softer-than-expected CPI data.",
+      "Markets reduce expectations for a July Federal Reserve rate hike.",
+      "EUR/USD and GBP/USD strengthen against the weaker dollar.",
+      "USD/JPY slips as Treasury yields decline.",
+      "Traders shift focus to U.S. PPI data and additional Federal Reserve comments.",
+    ],
+    pairs: [
+      { pair: "EUR/USD", sentiment: "Bullish", direction: "Buy", rsi: "58", resistance: "1.1470 / 1.1510", support: "1.1400 / 1.1360", suggestion: "Buy above 1.1420 / TP 1.1470 / SL 1.1380" },
+      { pair: "GBP/USD", sentiment: "Bullish", direction: "Buy", rsi: "57", resistance: "1.3450 / 1.3500", support: "1.3360 / 1.3310", suggestion: "Buy above 1.3380 / TP 1.3450 / SL 1.3330" },
+      { pair: "USD/JPY", sentiment: "Bearish", direction: "Sell", rsi: "43", resistance: "162.80 / 163.60", support: "161.20 / 160.40", suggestion: "Sell below 161.80 / TP 161.20 / SL 162.60" },
+      { pair: "AUD/USD", sentiment: "Bullish", direction: "Buy", rsi: "54", resistance: "0.7020 / 0.7070", support: "0.6950 / 0.6910", suggestion: "Buy above 0.6980 / TP 0.7020 / SL 0.6940" },
+    ],
+    commentary: [
+      {
+        pair: "EUR/USD",
+        text: "EUR/USD strengthened after the U.S. Dollar weakened on softer inflation data. Lower Fed rate-hike expectations have improved near-term sentiment for the euro. A sustained move above 1.1470 could extend gains toward 1.1510, while 1.1400 remains the first major support.",
+      },
+      {
+        pair: "GBP/USD",
+        text: "The British pound continued higher as traders reduced long-dollar positions following the CPI release. Technical momentum has improved, with buyers targeting 1.3450. A break below 1.3360 would weaken the current bullish outlook.",
+      },
+      {
+        pair: "USD/JPY",
+        text: "USD/JPY retreated as falling U.S. Treasury yields reduced demand for the dollar against the Japanese yen. The pair remains vulnerable below 162.80. A move under 161.20 could trigger additional selling pressure.",
+      },
+      {
+        pair: "AUD/USD",
+        text: "The Australian dollar edged higher as the weaker U.S. Dollar offset concerns about slowing global growth. Holding above 0.6950 keeps the short-term outlook positive. A break above 0.7020 would strengthen bullish momentum.",
+      },
+    ],
+    qa: [
+      { q: "Why did the U.S. Dollar weaken today?", a: "The June U.S. CPI report came in below expectations, reducing the likelihood of an immediate Federal Reserve rate hike." },
+      { q: "Which currency benefited the most?", a: "The euro and British pound gained as traders sold the U.S. Dollar following the inflation report." },
+      { q: "What is the key event after CPI?", a: "Investors are now focused on U.S. Producer Price Index (PPI) data and further comments from Federal Reserve officials." },
+      { q: "Which pair has the strongest technical outlook?", a: "EUR/USD currently shows the strongest bullish structure after breaking higher on the softer inflation data." },
+    ],
+    takeaways: [
+      "Softer U.S. inflation pushed the U.S. Dollar lower.",
+      "EUR/USD and GBP/USD benefited from reduced Fed rate-hike expectations.",
+      "USD/JPY weakened as Treasury yields declined.",
+      "AUD/USD recovered alongside improving market sentiment.",
+      "Traders now await U.S. PPI data and additional Federal Reserve guidance for the next major move.",
+      "This report is for informational purposes only and does not constitute financial advice.",
+    ],
+  },
+  {
     slug: "commodity-july-15-2026",
     date: "July 15, 2026",
     tag: "Commodity",
