@@ -98,6 +98,7 @@ function render(path: string): void {
     const slug = path.slice("/market-analysis/".length);
     app.innerHTML = PageLayout(MarketAnalysisDetailPage(slug));
     attachListeners();
+    requestAnimationFrame(() => initAnimations());
     window.scrollTo({ top: 0 });
     return;
   }
@@ -106,12 +107,7 @@ function render(path: string): void {
   app.innerHTML = handler();
 
   attachListeners();
-
-  // Only run homepage animations when on the homepage
-  if (path === "/") {
-    requestAnimationFrame(() => initAnimations());
-  }
-
+  requestAnimationFrame(() => initAnimations());
   window.scrollTo({ top: 0 });
 }
 
