@@ -32,6 +32,18 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const app = document.querySelector<HTMLDivElement>("#app")!;
 const WA_LINK = "https://wa.link/rk247org";
+const BASE_URL = "https://www.rk247.org";
+
+/* ─── Update canonical tag based on current route ─── */
+function updateCanonicalTag(path: string): void {
+  const canonicalLink = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+  if (!canonicalLink) return;
+
+  const canonicalUrl = path === "/" 
+    ? BASE_URL + "/" 
+    : BASE_URL + "/#" + path;
+  canonicalLink.href = canonicalUrl;
+}
 
 /* ─── Page registry ─── */
 const routes: Record<string, () => string> = {
@@ -92,6 +104,9 @@ function renderHome(): string {
 function render(path: string): void {
   // Kill existing GSAP ScrollTriggers to avoid stale triggers on re-render
   ScrollTrigger.getAll().forEach((t) => t.kill());
+
+  // Update canonical tag for current route
+  updateCanonicalTag(path);
 
   // Dynamic market-analysis detail routes
   if (path.startsWith("/market-analysis/")) {
