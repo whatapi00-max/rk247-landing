@@ -30,6 +30,62 @@ type MarketReport = {
  */
 export const marketReports: MarketReport[] = [
   {
+    slug: "commodity-july-16-2026",
+    date: "July 16, 2026",
+    tag: "Commodity",
+    title: "Commodity Markets Mixed as Gold Holds Firm While Oil Eases on Profit-Taking",
+    image: "/assets/Commodity july 16.jpeg",
+    summary:
+      "Commodity markets traded mixed on July 16, 2026, with gold remaining supported by a weaker U.S. Dollar and lower Treasury yields, while crude oil slipped slightly as traders booked profits after recent gains. Investors are now focused on U.S. Retail Sales data and global supply developments for the next market catalyst.",
+    overview:
+      "Global commodity markets remained volatile following softer U.S. inflation readings earlier this week. Gold continued to attract safe-haven demand as expectations for a less aggressive Federal Reserve weighed on the U.S. Dollar. Silver also traded with a positive bias, supported by improving industrial demand. Meanwhile, WTI and Brent crude oil edged lower as traders locked in profits after prices reached multi-week highs. However, ongoing geopolitical tensions and tight global supply continue to provide underlying support for energy prices. Copper traded in a narrow range as investors assessed China's economic outlook and global manufacturing demand.",
+    bullets: [
+      "Gold holds near weekly highs as the U.S. Dollar remains weak.",
+      "Silver extends gains on improving investor sentiment.",
+      "Crude oil slips on profit-taking after recent rally.",
+      "Copper remains stable amid mixed China economic data.",
+      "Markets await U.S. Retail Sales and fresh energy inventory data.",
+    ],
+    pairs: [
+      { pair: "Gold (XAU/USD)", sentiment: "Bullish", direction: "Buy", rsi: "62", resistance: "4,120 / 4,170", support: "4,050 / 3,990", suggestion: "Buy above 4,070 / TP 4,120 / SL 4,020" },
+      { pair: "Silver (XAG/USD)", sentiment: "Bullish", direction: "Buy", rsi: "61", resistance: "59.40 / 60.10", support: "58.10 / 57.20", suggestion: "Buy above 58.40 / TP 59.40 / SL 57.80" },
+      { pair: "WTI Crude Oil", sentiment: "Neutral", direction: "Hold", rsi: "55", resistance: "81.80 / 83.00", support: "78.90 / 77.50", suggestion: "Buy above 79.50 / TP 81.80 / SL 78.40" },
+      { pair: "Copper", sentiment: "Neutral-Bullish", direction: "Buy", rsi: "54", resistance: "5.95 / 6.08", support: "5.70 / 5.58", suggestion: "Buy above 5.75 / TP 5.95 / SL 5.66" },
+    ],
+    commentary: [
+      {
+        pair: "Gold (XAU/USD)",
+        text: "Gold remained firm as the weaker U.S. Dollar and declining Treasury yields continued supporting demand for safe-haven assets. Technical momentum remains positive, with buyers targeting $4,120. A break below $4,050 would weaken the short-term bullish outlook.",
+      },
+      {
+        pair: "Silver (XAG/USD)",
+        text: "Silver continued to outperform on the back of stronger precious metal sentiment and resilient industrial demand. A sustained move above $59.40 could trigger further gains toward $60.10, while $58.10 remains immediate support.",
+      },
+      {
+        pair: "WTI Crude Oil",
+        text: "WTI crude oil eased modestly after the recent rally as traders booked profits. Despite the pullback, supply concerns and geopolitical risks continue to support the broader trend. A move above $81.80 could resume the uptrend, while $78.90 is the key support zone.",
+      },
+      {
+        pair: "Copper",
+        text: "Copper remained range-bound as investors balanced optimism over infrastructure demand against uncertainty surrounding China's economic recovery. A breakout above 5.95 would strengthen bullish momentum, while 5.70 remains important support.",
+      },
+    ],
+    qa: [
+      { q: "Why is gold holding near recent highs?", a: "Gold is benefiting from a weaker U.S. Dollar, lower Treasury yields, and continued demand for safe-haven assets." },
+      { q: "Why did oil prices pull back today?", a: "Oil prices eased mainly due to profit-taking after the recent rally, although geopolitical risks continue to support prices." },
+      { q: "What is today's biggest event for commodity markets?", a: "Investors are closely watching the U.S. Retail Sales report and U.S. crude oil inventory data for fresh market direction." },
+      { q: "Which commodity currently has the strongest technical outlook?", a: "Gold continues to display the strongest bullish technical structure among major commodities." },
+    ],
+    takeaways: [
+      "Gold remains supported by a weaker U.S. Dollar and lower bond yields.",
+      "Silver continues trading with positive momentum.",
+      "Crude oil pauses after a strong rally but remains fundamentally supported.",
+      "Copper is consolidating while traders monitor global demand.",
+      "U.S. Retail Sales and energy inventory data are expected to determine the next major move across commodity markets.",
+      "This report is for informational purposes only and does not constitute financial advice.",
+    ],
+  },
+  {
     slug: "crypto-july-16-2026",
     date: "July 16, 2026",
     tag: "Crypto",
