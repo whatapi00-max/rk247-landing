@@ -30,6 +30,62 @@ type MarketReport = {
  */
 export const marketReports: MarketReport[] = [
   {
+    slug: "indices-july-16-2026",
+    date: "July 16, 2026",
+    tag: "Indices",
+    title: "Global Stock Indices Extend Gains as Cooling Inflation Boosts Risk Appetite",
+    image: "/assets/Indices july 16.jpeg",
+    summary:
+      "Global stock markets traded higher on July 16, 2026, as investors welcomed softer U.S. inflation data and growing expectations that the Federal Reserve may begin easing monetary policy later this year. Technology shares led the advance, while traders shifted their attention to U.S. Retail Sales data and the early stages of the corporate earnings season.",
+    overview:
+      "Global equity markets remained positive after weaker-than-expected U.S. CPI and PPI reports reinforced expectations of lower interest rates. U.S. index futures pointed higher, supported by strength in technology and communication services. European markets also advanced as investors priced in a more favorable interest-rate outlook, while most Asian markets ended the session in positive territory. Despite improving sentiment, investors remain cautious ahead of U.S. Retail Sales data, major bank earnings, and additional comments from Federal Reserve officials, all of which could influence the next market move.",
+    bullets: [
+      "Global equities extend gains after softer U.S. inflation.",
+      "Nasdaq outperforms as technology stocks rally.",
+      "S&P 500 remains near record highs.",
+      "Investors await U.S. Retail Sales data and major bank earnings.",
+      "Lower Treasury yields continue supporting global equities.",
+    ],
+    pairs: [
+      { pair: "S&P 500", sentiment: "Bullish", direction: "Buy", rsi: "63", resistance: "6,420 / 6,500", support: "6,320 / 6,250", suggestion: "Buy above 6,340 / TP 6,420 / SL 6,280" },
+      { pair: "Nasdaq 100", sentiment: "Bullish", direction: "Buy", rsi: "65", resistance: "23,500 / 23,850", support: "22,950 / 22,700", suggestion: "Buy above 23,050 / TP 23,500 / SL 22,850" },
+      { pair: "Dow Jones", sentiment: "Bullish", direction: "Buy", rsi: "58", resistance: "45,250 / 45,600", support: "44,500 / 44,150", suggestion: "Buy above 44,700 / TP 45,250 / SL 44,350" },
+      { pair: "Nikkei 225", sentiment: "Bullish", direction: "Buy", rsi: "60", resistance: "41,200 / 41,650", support: "40,350 / 39,900", suggestion: "Buy above 40,500 / TP 41,200 / SL 40,100" },
+    ],
+    commentary: [
+      {
+        pair: "S&P 500",
+        text: "The S&P 500 continues trading near record highs as improving inflation data strengthens expectations for lower interest rates. Investor confidence remains supported by strong corporate earnings expectations. A sustained move above 6,420 could extend gains toward 6,500, while 6,320 remains the first important support.",
+      },
+      {
+        pair: "Nasdaq 100",
+        text: "The Nasdaq 100 remains the strongest-performing major index as technology and AI-related companies continue attracting investors. A breakout above 23,500 could trigger another leg higher toward 23,850, while 22,950 remains immediate support.",
+      },
+      {
+        pair: "Dow Jones",
+        text: "The Dow Jones continues to benefit from improving sentiment across financial and industrial sectors ahead of earnings season. Holding above 44,500 keeps the broader bullish trend intact, while a move above 45,250 could encourage further buying.",
+      },
+      {
+        pair: "Nikkei 225",
+        text: "Japan's Nikkei 225 advanced as global risk appetite improved and exporter stocks benefited from favorable currency conditions. A breakout above 41,200 would strengthen the bullish outlook, while 40,350 remains a key support level.",
+      },
+    ],
+    qa: [
+      { q: "Why are global stock markets rising today?", a: "Cooling U.S. inflation has increased expectations that the Federal Reserve may ease monetary policy, improving investor confidence." },
+      { q: "Which index is leading the rally?", a: "The Nasdaq 100 continues to outperform due to strong gains in technology and AI-related stocks." },
+      { q: "What is today's biggest market event?", a: "Investors are closely monitoring U.S. Retail Sales data, corporate earnings, and additional Federal Reserve commentary." },
+      { q: "Which sectors are currently outperforming?", a: "Technology, communication services, and financial stocks continue to lead the broader market." },
+    ],
+    takeaways: [
+      "Global stock indices remain supported by softer U.S. inflation.",
+      "Technology shares continue driving gains across equity markets.",
+      "The S&P 500 is trading close to record highs.",
+      "Investors are awaiting U.S. Retail Sales data and major earnings releases.",
+      "Upcoming economic data and Federal Reserve guidance are expected to determine the next major direction for global stock markets.",
+      "This report is for informational purposes only and does not constitute financial advice.",
+    ],
+  },
+  {
     slug: "forex-july-15-2026",
     date: "July 15, 2026",
     tag: "Forex",
