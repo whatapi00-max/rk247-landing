@@ -30,6 +30,62 @@ type MarketReport = {
  */
 export const marketReports: MarketReport[] = [
   {
+    slug: "forex-july-16-2026",
+    date: "July 16, 2026",
+    tag: "Forex",
+    title: "Forex Markets Steady as Dollar Stabilizes Ahead of U.S. Retail Sales Data",
+    image: "/assets/forex july 16.jpeg",
+    summary:
+      "Global forex markets traded cautiously on July 16, 2026, with the U.S. Dollar stabilizing after recent losses as traders assessed cooling U.S. inflation data and shifted their attention to upcoming U.S. retail sales figures. Despite softer inflation reducing expectations of a near-term Federal Reserve rate hike, geopolitical tensions continue to provide underlying support for the greenback.",
+    overview:
+      "The U.S. Dollar Index (DXY) remained near a one-month low but showed signs of stabilization after weaker U.S. CPI and PPI data reduced expectations of additional Federal Reserve tightening. The euro traded near its strongest level in a month, while the British pound remained supported by improving U.K. political sentiment. USD/JPY stayed under pressure as lower U.S. Treasury yields weighed on the pair, although safe-haven demand limited further downside. Investors are now focused on U.S. Retail Sales, weekly jobless claims, and additional Federal Reserve commentary for fresh direction in the currency market.",
+    bullets: [
+      "U.S. Dollar stabilizes after recent inflation-driven losses.",
+      "Euro trades near a one-month high against the Dollar.",
+      "British Pound remains supported near two-month highs.",
+      "USD/JPY remains under pressure as Treasury yields soften.",
+      "Markets await U.S. Retail Sales data for the next major catalyst.",
+    ],
+    pairs: [
+      { pair: "EUR/USD", sentiment: "Bullish", direction: "Buy", rsi: "60", resistance: "1.1500 / 1.1540", support: "1.1430 / 1.1390", suggestion: "Buy above 1.1450 / TP 1.1500 / SL 1.1410" },
+      { pair: "GBP/USD", sentiment: "Bullish", direction: "Buy", rsi: "59", resistance: "1.3560 / 1.3620", support: "1.3470 / 1.3410", suggestion: "Buy above 1.3490 / TP 1.3560 / SL 1.3440" },
+      { pair: "USD/JPY", sentiment: "Bearish", direction: "Sell", rsi: "42", resistance: "162.80 / 163.60", support: "161.20 / 160.50", suggestion: "Sell below 161.80 / TP 161.20 / SL 162.70" },
+      { pair: "AUD/USD", sentiment: "Neutral-Bullish", direction: "Buy", rsi: "55", resistance: "0.7050 / 0.7090", support: "0.6970 / 0.6920", suggestion: "Buy above 0.6990 / TP 0.7050 / SL 0.6950" },
+    ],
+    commentary: [
+      {
+        pair: "EUR/USD",
+        text: "EUR/USD continues trading with a bullish bias after the weaker U.S. inflation data reduced demand for the Dollar. The pair remains close to its strongest level in several weeks. A sustained move above 1.1500 could extend gains toward 1.1540, while 1.1430 remains the first major support.",
+      },
+      {
+        pair: "GBP/USD",
+        text: "The British pound remains firm as investors continue reducing long-Dollar positions while expectations for stable U.K. fiscal policy support Sterling. A break above 1.3560 would strengthen bullish momentum, while 1.3470 remains the nearest support.",
+      },
+      {
+        pair: "USD/JPY",
+        text: "USD/JPY remains under pressure as lower U.S. Treasury yields offset safe-haven demand for the Dollar. A decline below 161.20 could trigger further downside, while 162.80 is the immediate resistance level.",
+      },
+      {
+        pair: "AUD/USD",
+        text: "The Australian Dollar remains supported by the weaker U.S. Dollar and improving global risk sentiment. Holding above 0.6970 keeps the bullish outlook intact, while a move above 0.7050 would confirm renewed buying momentum.",
+      },
+    ],
+    qa: [
+      { q: "Why is the U.S. Dollar stabilizing today?", a: "After falling on softer U.S. inflation data, the Dollar has stabilized as traders await U.S. retail sales data and monitor geopolitical developments." },
+      { q: "Why is EUR/USD strengthening?", a: "Reduced expectations for a near-term Federal Reserve rate hike have weakened the Dollar, allowing the euro to trade near a one-month high." },
+      { q: "What is today's biggest forex event?", a: "The U.S. Retail Sales report is expected to be the primary market-moving event for major currency pairs." },
+      { q: "Which pair currently has the strongest technical outlook?", a: "EUR/USD continues to display the strongest bullish technical structure among the major currency pairs." },
+    ],
+    takeaways: [
+      "The U.S. Dollar has stabilized after recent inflation-driven losses.",
+      "EUR/USD and GBP/USD remain supported by weaker Fed rate-hike expectations.",
+      "USD/JPY continues trading with a bearish bias.",
+      "Traders are focused on U.S. Retail Sales data and Federal Reserve commentary.",
+      "Upcoming U.S. economic data will likely determine the next major move across the forex market.",
+      "This report is for informational purposes only and does not constitute financial advice.",
+    ],
+  },
+  {
     slug: "commodity-july-16-2026",
     date: "July 16, 2026",
     tag: "Commodity",
