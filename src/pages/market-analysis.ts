@@ -30,6 +30,62 @@ type MarketReport = {
  */
 export const marketReports: MarketReport[] = [
   {
+    slug: "crypto-july-16-2026",
+    date: "July 16, 2026",
+    tag: "Crypto",
+    title: "Crypto Markets Edge Higher as Bitcoin Holds Key Support and Altcoins Stabilize",
+    image: "/assets/crypto july 16.jpeg",
+    summary:
+      "The cryptocurrency market traded with a positive bias on July 16, 2026, as Bitcoin remained above a major support level, while Ethereum and leading altcoins stabilized following recent gains. A weaker U.S. Dollar and improving global risk sentiment continued to support digital assets, though investors remained cautious ahead of fresh U.S. economic data.",
+    overview:
+      "The crypto market extended its recovery after softer U.S. inflation data reduced expectations of aggressive Federal Reserve tightening. Bitcoin continued consolidating near recent highs as institutional demand remained steady, while Ethereum, Solana, XRP, and Dogecoin traded within narrow ranges. Market volatility eased as traders awaited U.S. Retail Sales data and additional Federal Reserve commentary to determine the next major direction. Overall crypto market capitalization remained stable, supported by improving investor confidence and moderate ETF inflows.",
+    bullets: [
+      "Bitcoin holds above key technical support.",
+      "Ethereum trades steadily after recent recovery.",
+      "Solana and XRP remain resilient amid improving sentiment.",
+      "Crypto market volatility declines as investors await U.S. data.",
+      "Traders monitor U.S. Retail Sales and Federal Reserve commentary.",
+    ],
+    pairs: [
+      { pair: "Bitcoin (BTC)", sentiment: "Bullish", direction: "Buy", rsi: "60", resistance: "67,500 / 69,200", support: "65,000 / 63,500", suggestion: "Buy above 65,400 / TP 67,500 / SL 64,500" },
+      { pair: "Ethereum (ETH)", sentiment: "Bullish", direction: "Buy", rsi: "58", resistance: "3,240 / 3,360", support: "3,060 / 2,950", suggestion: "Buy above 3,100 / TP 3,240 / SL 3,020" },
+      { pair: "XRP", sentiment: "Neutral-Bullish", direction: "Buy", rsi: "55", resistance: "2.68 / 2.80", support: "2.46 / 2.35", suggestion: "Buy above 2.50 / TP 2.68 / SL 2.42" },
+      { pair: "Solana (SOL)", sentiment: "Bullish", direction: "Buy", rsi: "62", resistance: "160 / 168", support: "148 / 142", suggestion: "Buy above 150 / TP 160 / SL 145" },
+    ],
+    commentary: [
+      {
+        pair: "Bitcoin (BTC)",
+        text: "Bitcoin remained resilient above the $65,000 support level as investors continued accumulating positions following weaker U.S. inflation data. Momentum indicators remain positive. A sustained move above $67,500 could open the door toward $69,200, while $65,000 remains the most important support zone.",
+      },
+      {
+        pair: "Ethereum (ETH)",
+        text: "Ethereum traded steadily above $3,060, supported by improving market sentiment and stronger buying activity across large-cap cryptocurrencies. A breakout above $3,240 would strengthen the bullish outlook, while $3,060 remains immediate support.",
+      },
+      {
+        pair: "XRP",
+        text: "XRP continued consolidating with a positive bias as buyers defended the $2.46 support level. A move above $2.68 could trigger fresh upside momentum, while a break below $2.46 would weaken the short-term structure.",
+      },
+      {
+        pair: "Solana (SOL)",
+        text: "Solana remained one of the strongest-performing major altcoins, supported by continued ecosystem growth and positive investor sentiment. Holding above $148 keeps the bullish trend intact, while a breakout above $160 could accelerate gains toward $168.",
+      },
+    ],
+    qa: [
+      { q: "Why is the crypto market stable today?", a: "Improving global risk sentiment, a weaker U.S. Dollar, and reduced expectations for aggressive Federal Reserve tightening are supporting digital assets." },
+      { q: "What is Bitcoin's key support level?", a: "The $65,000 level remains the primary support for Bitcoin in the short term." },
+      { q: "Why is Ethereum holding its gains?", a: "Ethereum is benefiting from stronger market confidence and continued buying interest following recent inflation data." },
+      { q: "What could move crypto markets next?", a: "The U.S. Retail Sales report and further Federal Reserve commentary are expected to influence short-term cryptocurrency price movements." },
+    ],
+    takeaways: [
+      "Bitcoin remains firmly above key support levels.",
+      "Ethereum and Solana continue displaying bullish technical structures.",
+      "XRP remains stable as market volatility declines.",
+      "A weaker U.S. Dollar is supporting risk assets, including cryptocurrencies.",
+      "U.S. Retail Sales data and Federal Reserve guidance are likely to determine the next major move across the crypto market.",
+      "This report is for informational purposes only and does not constitute financial advice.",
+    ],
+  },
+  {
     slug: "indices-july-16-2026",
     date: "July 16, 2026",
     tag: "Indices",
