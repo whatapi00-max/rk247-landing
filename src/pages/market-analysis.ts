@@ -30,6 +30,62 @@ type MarketReport = {
  */
 export const marketReports: MarketReport[] = [
   {
+    slug: "indices-july-17-2026",
+    date: "July 17, 2026",
+    tag: "Indices",
+    title: "Global Stock Indices Advance as Earnings Optimism Offsets Geopolitical Risks",
+    image: "/assets/Indices july 17.jpeg",
+    summary:
+      "Global equity markets traded higher on July 17, 2026, as stronger-than-expected U.S. retail sales and resilient corporate earnings supported investor sentiment. While geopolitical tensions in the Middle East continued to create uncertainty, technology and financial stocks helped major indices remain near record levels.",
+    overview:
+      "Global stock markets ended the week on a positive note as investors balanced encouraging U.S. economic data with ongoing geopolitical risks. The S&P 500 and Nasdaq 100 remained close to record highs, supported by continued strength in technology shares and optimism surrounding the U.S. earnings season. European equities also advanced as investors assessed improving economic data, while Asian markets posted mixed performance amid concerns over regional growth. Attention now shifts to upcoming corporate earnings, central bank commentary, and geopolitical developments, which are expected to influence market direction next week.",
+    bullets: [
+      "S&P 500 trades near record highs.",
+      "Nasdaq extends gains as technology stocks outperform.",
+      "Strong U.S. retail sales support investor confidence.",
+      "Financial sector strengthens ahead of earnings.",
+      "Geopolitical tensions continue to limit broader market gains.",
+    ],
+    pairs: [
+      { pair: "S&P 500", sentiment: "Bullish", direction: "Buy", rsi: "64", resistance: "6,450 / 6,520", support: "6,340 / 6,260", suggestion: "Buy above 6,360 / TP 6,450 / SL 6,300" },
+      { pair: "Nasdaq 100", sentiment: "Bullish", direction: "Buy", rsi: "66", resistance: "23,700 / 24,000", support: "23,100 / 22,850", suggestion: "Buy above 23,250 / TP 23,700 / SL 23,000" },
+      { pair: "Dow Jones", sentiment: "Bullish", direction: "Buy", rsi: "59", resistance: "45,450 / 45,800", support: "44,700 / 44,350", suggestion: "Buy above 44,850 / TP 45,450 / SL 44,500" },
+      { pair: "Nikkei 225", sentiment: "Neutral-Bullish", direction: "Buy", rsi: "58", resistance: "41,350 / 41,700", support: "40,500 / 40,100", suggestion: "Buy above 40,650 / TP 41,350 / SL 40,250" },
+    ],
+    commentary: [
+      {
+        pair: "S&P 500",
+        text: "The S&P 500 continues trading near record highs as resilient economic data and positive earnings expectations support investor confidence. A sustained move above 6,450 could trigger another leg higher toward 6,520, while 6,340 remains the first important support level.",
+      },
+      {
+        pair: "Nasdaq 100",
+        text: "The Nasdaq 100 remains the strongest-performing major index as technology and AI-related companies continue attracting strong investor demand. A breakout above 23,700 would strengthen bullish momentum, while 23,100 remains key short-term support.",
+      },
+      {
+        pair: "Dow Jones",
+        text: "The Dow Jones continues benefiting from improving sentiment in financial and industrial stocks as the U.S. earnings season gains momentum. Holding above 44,700 keeps the broader uptrend intact, while a move above 45,450 would encourage additional buying.",
+      },
+      {
+        pair: "Nikkei 225",
+        text: "Japan's Nikkei 225 traded with a modest positive bias as exporter shares benefited from stable global demand despite ongoing geopolitical uncertainty. A move above 41,350 would confirm renewed bullish momentum, while 40,500 remains an important support level.",
+      },
+    ],
+    qa: [
+      { q: "Why are global stock markets rising today?", a: "Stronger U.S. retail sales, resilient corporate earnings expectations, and continued strength in technology stocks are supporting investor sentiment." },
+      { q: "Which index is leading the market?", a: "The Nasdaq 100 continues to outperform due to strong gains in technology and artificial intelligence companies." },
+      { q: "What is the biggest market focus now?", a: "Investors are monitoring the U.S. earnings season, central bank commentary, and geopolitical developments for the next major market catalyst." },
+      { q: "Which sectors are outperforming?", a: "Technology, financials, and communication services continue to lead global equity markets." },
+    ],
+    takeaways: [
+      "Global stock markets remain resilient despite geopolitical uncertainty.",
+      "The S&P 500 and Nasdaq continue trading near record highs.",
+      "Strong U.S. economic data is supporting investor confidence.",
+      "Technology stocks remain the primary driver of market gains.",
+      "Corporate earnings and central bank guidance are expected to determine the next major move across global equity markets.",
+      "This report is for informational purposes only and does not constitute financial advice.",
+    ],
+  },
+  {
     slug: "crypto-july-17-2026",
     date: "July 17, 2026",
     tag: "Crypto",
