@@ -30,6 +30,62 @@ type MarketReport = {
  */
 export const marketReports: MarketReport[] = [
   {
+    slug: "forex-july-17-2026",
+    date: "July 17, 2026",
+    tag: "Forex",
+    title: "Forex Markets Stabilize as Dollar Eyes Weekly Loss Despite Safe-Haven Demand",
+    image: "/assets/forex july 17.jpeg",
+    summary:
+      "The forex market traded cautiously on July 17, 2026, as the U.S. Dollar stabilized but remained on track for a weekly decline. Softer U.S. inflation data earlier in the week reduced expectations of a near-term Federal Reserve rate hike, while renewed geopolitical tensions in the Middle East boosted safe-haven demand for the greenback.",
+    overview:
+      "Currency markets remained range-bound as traders balanced weaker U.S. inflation against stronger-than-expected U.S. retail sales and labor market data. The euro and British pound were set to post weekly gains as expectations for immediate Fed tightening continued to fade. Meanwhile, the Japanese yen remained under pressure near multi-decade lows amid speculation that Japanese authorities could intervene if volatility increases. Investors are also monitoring developments in the Middle East, where geopolitical risks continue supporting demand for the U.S. Dollar as a safe-haven currency.",
+    bullets: [
+      "U.S. Dollar steadies but heads for a weekly loss.",
+      "Euro and Pound post weekly gains against the Dollar.",
+      "USD/JPY remains near multi-decade highs.",
+      "Strong U.S. retail sales provide temporary support to the Dollar.",
+      "Geopolitical tensions continue influencing forex sentiment.",
+    ],
+    pairs: [
+      { pair: "EUR/USD", sentiment: "Bullish", direction: "Buy", rsi: "61", resistance: "1.1480 / 1.1520", support: "1.1415 / 1.1370", suggestion: "Buy above 1.1430 / TP 1.1480 / SL 1.1395" },
+      { pair: "GBP/USD", sentiment: "Bullish", direction: "Buy", rsi: "59", resistance: "1.3520 / 1.3580", support: "1.3430 / 1.3380", suggestion: "Buy above 1.3450 / TP 1.3520 / SL 1.3400" },
+      { pair: "USD/JPY", sentiment: "Neutral-Bearish", direction: "Sell", rsi: "45", resistance: "162.90 / 163.70", support: "161.40 / 160.70", suggestion: "Sell below 161.80 / TP 161.40 / SL 162.60" },
+      { pair: "AUD/USD", sentiment: "Bullish", direction: "Buy", rsi: "57", resistance: "0.7070 / 0.7110", support: "0.6990 / 0.6950", suggestion: "Buy above 0.7010 / TP 0.7070 / SL 0.6970" },
+    ],
+    commentary: [
+      {
+        pair: "EUR/USD",
+        text: "EUR/USD remained firm as expectations for an immediate Federal Reserve rate hike continued to diminish. The pair is supported by broad Dollar weakness despite occasional safe-haven buying. A sustained move above 1.1480 could open the way toward 1.1520, while 1.1415 remains key support.",
+      },
+      {
+        pair: "GBP/USD",
+        text: "The British Pound continued its weekly advance as improving confidence in the U.K.'s fiscal outlook encouraged buying. A breakout above 1.3520 would strengthen bullish momentum, while 1.3430 remains the nearest support.",
+      },
+      {
+        pair: "USD/JPY",
+        text: "USD/JPY remained elevated as the yen traded near 40-year lows, keeping traders alert for possible intervention by Japanese authorities. A move below 161.40 could trigger further downside, while 162.90 remains immediate resistance.",
+      },
+      {
+        pair: "AUD/USD",
+        text: "The Australian Dollar remained supported by improving risk sentiment and broad Dollar weakness. Holding above 0.6990 maintains the bullish outlook, while a break above 0.7070 could extend gains.",
+      },
+    ],
+    qa: [
+      { q: "Why is the U.S. Dollar still under pressure?", a: "Cooling U.S. inflation has reduced expectations for near-term Federal Reserve rate hikes, weighing on the Dollar despite safe-haven demand." },
+      { q: "Why are EUR/USD and GBP/USD rising?", a: "Both currencies are benefiting from weaker Fed tightening expectations and broad Dollar selling." },
+      { q: "What is the biggest market focus today?", a: "Traders are monitoring geopolitical developments, Federal Reserve expectations, and incoming U.S. economic data for direction." },
+      { q: "Which pair has the strongest technical outlook?", a: "EUR/USD continues to display the strongest bullish structure among the major currency pairs." },
+    ],
+    takeaways: [
+      "The U.S. Dollar is stabilizing but remains on track for a weekly decline.",
+      "EUR/USD and GBP/USD continue outperforming on softer Fed expectations.",
+      "USD/JPY remains near multi-decade highs as intervention risks persist.",
+      "Geopolitical tensions are supporting safe-haven flows into the Dollar.",
+      "Traders are awaiting fresh economic data and policy signals to determine the next major move in the forex market.",
+      "This report is for informational purposes only and does not constitute financial advice.",
+    ],
+  },
+  {
     slug: "forex-july-16-2026",
     date: "July 16, 2026",
     tag: "Forex",
