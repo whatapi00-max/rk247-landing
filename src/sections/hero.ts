@@ -31,7 +31,7 @@ export function Hero(): string {
       <img
         src="${A.heroMan}"
         alt="Confident trader using RK247 platform"
-        class="hero-man pointer-events-none relative z-10 mt-2 w-[180px] max-w-[50vw] select-none sm:absolute sm:bottom-[7.5rem] sm:left-1/2 sm:mt-0 sm:w-[360px] sm:max-w-none sm:-translate-x-1/2 md:w-[420px]"
+        class="hero-man pointer-events-none relative z-10 mt-2 w-[180px] max-w-[50vw] select-none sm:absolute sm:bottom-[5rem] sm:left-1/2 sm:mt-0 sm:max-h-[calc(90svh-11rem)] sm:w-[360px] sm:max-w-none sm:-translate-x-1/2 md:w-[420px]"
         style="contain: layout style paint;"
       />
 
