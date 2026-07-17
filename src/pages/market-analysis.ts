@@ -992,7 +992,7 @@ function MarketCardHTML(report: MarketReport): string {
       <img
         src="${report.image}"
         alt="${report.title}"
-        class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+        class="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
         loading="lazy"
       />
     </div>
