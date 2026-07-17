@@ -30,6 +30,62 @@ type MarketReport = {
  */
 export const marketReports: MarketReport[] = [
   {
+    slug: "commodity-july-17-2026",
+    date: "July 17, 2026",
+    tag: "Commodity",
+    title: "Commodity Markets Mixed as Oil Surges on Middle East Tensions While Gold Faces Weekly Pressure",
+    image: "/assets/Commodity july 17.jpeg",
+    summary:
+      "Commodity markets traded mixed on July 17, 2026, with crude oil extending strong weekly gains as escalating U.S.–Iran tensions fueled supply concerns, while gold remained under pressure despite a modest rebound, weighed down by higher oil-driven inflation expectations and rising Treasury yields.",
+    overview:
+      "Global commodity markets remained highly volatile as geopolitical tensions in the Middle East continued to dominate investor sentiment. Brent and WTI crude oil were on track for their strongest weekly gains in months amid fears of disruptions through the Strait of Hormuz and the Red Sea. Meanwhile, gold attempted to recover after touching a two-week low but remained on course for its biggest weekly decline in six weeks as rising oil prices strengthened expectations that interest rates could remain elevated. Silver also traded lower, while copper remained broadly stable as traders balanced supply concerns with expectations for industrial demand.",
+    bullets: [
+      "Brent and WTI crude post weekly gains of nearly 12%.",
+      "Gold heads for its largest weekly decline in six weeks.",
+      "Rising oil prices revive global inflation concerns.",
+      "Silver and platinum remain under pressure.",
+      "Traders monitor geopolitical developments for further commodity volatility.",
+    ],
+    pairs: [
+      { pair: "Gold (XAU/USD)", sentiment: "Bearish", direction: "Sell", rsi: "45", resistance: "4,030 / 4,080", support: "3,960 / 3,900", suggestion: "Sell below 3,990 / TP 3,930 / SL 4,040" },
+      { pair: "Silver (XAG/USD)", sentiment: "Bearish", direction: "Sell", rsi: "43", resistance: "56.20 / 57.00", support: "54.80 / 53.90", suggestion: "Sell below 55.30 / TP 54.50 / SL 56.10" },
+      { pair: "WTI Crude Oil", sentiment: "Bullish", direction: "Buy", rsi: "69", resistance: "81.00 / 82.80", support: "78.60 / 77.40", suggestion: "Buy above 79.80 / TP 81.00 / SL 78.90" },
+      { pair: "Copper", sentiment: "Neutral", direction: "Hold", rsi: "52", resistance: "5.92 / 6.02", support: "5.70 / 5.58", suggestion: "Buy above 5.76 / TP 5.92 / SL 5.66" },
+    ],
+    commentary: [
+      {
+        pair: "Gold (XAU/USD)",
+        text: "Gold remained under pressure despite a slight recovery as surging oil prices increased inflation concerns and supported higher Treasury yields. Higher yields reduce the appeal of non-yielding assets such as gold. A sustained move below $3,960 could extend losses, while a recovery above $4,030 would improve short-term sentiment.",
+      },
+      {
+        pair: "Silver (XAG/USD)",
+        text: "Silver followed gold lower as investors shifted toward the U.S. Dollar and higher-yielding assets. Industrial demand remains supportive over the longer term, but short-term momentum has weakened.",
+      },
+      {
+        pair: "WTI Crude Oil",
+        text: "WTI crude oil continued climbing as escalating U.S.–Iran tensions raised concerns over supply disruptions through key global shipping routes. A break above $81.00 could trigger another bullish leg toward $82.80, while $78.60 remains immediate support.",
+      },
+      {
+        pair: "Copper",
+        text: "Copper traded sideways as traders weighed geopolitical uncertainty against expectations for resilient industrial demand. A breakout above 5.92 would strengthen bullish momentum, while 5.70 remains the key support level.",
+      },
+    ],
+    qa: [
+      { q: "Why is crude oil rising sharply today?", a: "Escalating U.S.–Iran tensions and concerns over potential disruptions to oil shipments through the Strait of Hormuz and Red Sea have lifted crude prices." },
+      { q: "Why is gold under pressure despite geopolitical risks?", a: "Higher oil prices are increasing inflation expectations, pushing Treasury yields higher and reducing the appeal of gold." },
+      { q: "What is the biggest risk for commodity markets?", a: "Further escalation in the Middle East could increase volatility across both energy and precious metals markets." },
+      { q: "Which commodity has the strongest momentum today?", a: "WTI crude oil remains the strongest-performing major commodity due to ongoing geopolitical supply concerns." },
+    ],
+    takeaways: [
+      "Crude oil is on track for its strongest weekly gain in months.",
+      "Gold is heading for its biggest weekly decline in six weeks.",
+      "Rising energy prices are reviving global inflation concerns.",
+      "Precious metals remain under pressure while oil leads the commodity rally.",
+      "Geopolitical developments in the Middle East are expected to remain the primary driver of commodity markets in the near term.",
+      "This report is for informational purposes only and does not constitute financial advice.",
+    ],
+  },
+  {
     slug: "forex-july-17-2026",
     date: "July 17, 2026",
     tag: "Forex",
