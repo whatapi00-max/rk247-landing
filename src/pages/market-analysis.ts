@@ -30,6 +30,62 @@ type MarketReport = {
  */
 export const marketReports: MarketReport[] = [
   {
+    slug: "crypto-july-17-2026",
+    date: "July 17, 2026",
+    tag: "Crypto",
+    title: "Crypto Markets Trade Cautiously as Bitcoin Holds Near $64K Amid Macro and Geopolitical Uncertainty",
+    image: "/assets/crypto july 17.jpeg",
+    summary:
+      "The cryptocurrency market traded cautiously on July 17, 2026, with Bitcoin holding above the $64,000 level as traders balanced softer U.S. inflation data against renewed geopolitical tensions and uncertainty over future Federal Reserve policy. Ethereum and major altcoins remained range-bound while investors awaited fresh macroeconomic catalysts.",
+    overview:
+      "Digital assets remained relatively stable despite heightened global uncertainty. Bitcoin continued consolidating near $64,000–$65,000, supported by easing inflation expectations, although gains were capped by risk aversion linked to geopolitical developments in the Middle East. Ethereum traded sideways, while Solana and XRP also remained within established trading ranges. Institutional interest remained healthy following continued ETF inflows, but investors stayed cautious ahead of further economic data and regulatory developments in the United States.",
+    bullets: [
+      "Bitcoin holds above $64,000 despite geopolitical uncertainty.",
+      "Ethereum consolidates after recent recovery.",
+      "Institutional interest improves following major investment activity.",
+      "Crypto market sentiment remains cautious ahead of fresh U.S. macro data.",
+      "Traders continue monitoring regulatory developments and ETF flows.",
+    ],
+    pairs: [
+      { pair: "Bitcoin (BTC)", sentiment: "Neutral-Bullish", direction: "Buy", rsi: "56", resistance: "65,800 / 67,000", support: "63,800 / 62,500", suggestion: "Buy above 64,500 / TP 65,800 / SL 63,700" },
+      { pair: "Ethereum (ETH)", sentiment: "Neutral", direction: "Hold", rsi: "54", resistance: "3,220 / 3,350", support: "3,020 / 2,930", suggestion: "Buy above 3,080 / TP 3,220 / SL 2,980" },
+      { pair: "XRP", sentiment: "Neutral", direction: "Hold", rsi: "52", resistance: "2.62 / 2.74", support: "2.42 / 2.30", suggestion: "Buy above 2.48 / TP 2.62 / SL 2.40" },
+      { pair: "Solana (SOL)", sentiment: "Bullish", direction: "Buy", rsi: "59", resistance: "158 / 166", support: "147 / 140", suggestion: "Buy above 150 / TP 158 / SL 145" },
+    ],
+    commentary: [
+      {
+        pair: "Bitcoin (BTC)",
+        text: "Bitcoin continued consolidating near $64,500 as cooling U.S. inflation supported demand for risk assets, while geopolitical tensions prevented a stronger breakout. A sustained move above $65,800 could trigger fresh buying toward $67,000, whereas $63,800 remains the immediate support zone.",
+      },
+      {
+        pair: "Ethereum (ETH)",
+        text: "Ethereum traded within a narrow range as investors waited for stronger market catalysts. A breakout above $3,220 would improve the short-term outlook, while $3,020 remains an important support level.",
+      },
+      {
+        pair: "XRP",
+        text: "XRP continued consolidating with neutral momentum after recovering from recent lows. Holding above $2.42 keeps the broader recovery intact, while a break above $2.62 could encourage additional buying.",
+      },
+      {
+        pair: "Solana (SOL)",
+        text: "Solana remained one of the stronger-performing large-cap cryptocurrencies, supported by resilient ecosystem activity and improving investor confidence. A move above $158 would strengthen bullish momentum, while $147 serves as the key support level.",
+      },
+    ],
+    qa: [
+      { q: "Why is Bitcoin trading sideways today?", a: "Bitcoin is balancing support from softer U.S. inflation against geopolitical uncertainty and cautious investor sentiment." },
+      { q: "What is Bitcoin's key resistance level?", a: "The next major resistance is $65,800, followed by $67,000." },
+      { q: "What is supporting the crypto market?", a: "Improving institutional participation, ETF inflows, and expectations for less aggressive monetary policy continue supporting digital assets." },
+      { q: "What could drive the next crypto move?", a: "Upcoming U.S. economic data, Federal Reserve commentary, and geopolitical developments are expected to determine short-term market direction." },
+    ],
+    takeaways: [
+      "Bitcoin remains stable above the $64,000 support zone.",
+      "Ethereum and XRP continue consolidating within established ranges.",
+      "Solana maintains relatively stronger bullish momentum.",
+      "Institutional investment and ETF demand remain supportive for the crypto market.",
+      "Macroeconomic data and geopolitical developments are likely to dictate the next major move in digital assets.",
+      "This report is for informational purposes only and does not constitute financial advice.",
+    ],
+  },
+  {
     slug: "commodity-july-17-2026",
     date: "July 17, 2026",
     tag: "Commodity",
