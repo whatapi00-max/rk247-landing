@@ -13,7 +13,7 @@ export function Globe(): string {
           <img src="${A.people}" alt="Avatar icons representing global users" class="h-12 w-auto" />
           <span class="grid h-12 w-12 place-items-center rounded-full bg-rk-green text-2xl font-bold text-black ring-4 ring-ink-950">+</span>
         </div>
-        <a href="#footer" class="reveal mt-3 inline-flex items-center gap-1 text-xs font-semibold text-rk-green hover:text-rk-greenBright">Join our communities ${icons.chevronRight}</a>
+        <a href="/about/social" class="reveal mt-3 inline-flex items-center gap-1 text-xs font-semibold text-rk-green hover:text-rk-greenBright">Join our communities ${icons.chevronRight}</a>
       </div>
       <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-ink-950 to-transparent"></div>
     </div>

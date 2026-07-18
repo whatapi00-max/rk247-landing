@@ -3,38 +3,38 @@ import { icons } from "../icons";
 
 const colLinks: Record<string, Record<string, string>> = {
   Trading: {
-    "Flex": "#/trading/flex",
-    "Fixed Time": "#/trading/fixed-time",
-    "Forex": "#/trading/forex",
-    "Stocks": "#/trading/stocks",
-    "How to trade": "#/trading/how-to-trade",
-    "Account": "#/trading/account",
-    "Islamic Account": "#/trading/islamic-account",
-    "Free demo account": "#/trading/demo",
-    "Promotions": "#/trading/promotions",
-    "Withdrawals": "#/trading/withdrawals",
-    "Assets & Trading Conditions": "#/trading/assets",
+    "Flex": "/trading/flex",
+    "Fixed Time": "/trading/fixed-time",
+    "Forex": "/trading/forex",
+    "Stocks": "/trading/stocks",
+    "How to trade": "/trading/how-to-trade",
+    "Account": "/trading/account",
+    "Islamic Account": "/trading/islamic-account",
+    "Free demo account": "/trading/demo",
+    "Promotions": "/trading/promotions",
+    "Withdrawals": "/trading/withdrawals",
+    "Assets & Trading Conditions": "/trading/assets",
   },
   About: {
-    "Social media": "#/about/social",
-    "Contacts": "#/about/contacts",
-    "Market Analysis": "#/market-analysis",
-    "News": "#/about/news",
-    "Awards": "#/about/awards",
-    "Affiliate Program": "#/about",
-    "Reviews": "#/about/reviews",
+    "Social media": "/about/social",
+    "Contacts": "/about/contacts",
+    "Market Analysis": "/market-analysis",
+    "News": "/about/news",
+    "Awards": "/about/awards",
+    "Affiliate Program": "/about",
+    "Reviews": "/about/reviews",
   },
   "Download App": {
-    "Android": "#/download/android",
-    "Android APK": "#/download/android-apk",
-    "iOS": "#/download",
-    "Web App (PWA)": "#/download/web-app",
-    "Desktop": "#/download/desktop",
+    "Android": "/download/android",
+    "Android APK": "/download/android-apk",
+    "iOS": "/download",
+    "Web App (PWA)": "/download/web-app",
+    "Desktop": "/download/desktop",
   },
   Help: {
-    "FAQ": "#/help/faq",
-    "Support": "#/help/support",
-    "Learning Center": "#/help/learning",
+    "FAQ": "/help/faq",
+    "Support": "/help/support",
+    "Learning Center": "/help/learning",
   },
 };
 
@@ -124,8 +124,8 @@ export function Footer(): string {
           Trading financial instruments involves substantial risk and may not be suitable for everyone. Past performance is not indicative of future results. You may lose some or all of your invested capital, so you should not trade with money you cannot afford to lose. Before trading, please ensure you fully understand the risks involved and review the Service Agreement and Risk Disclosure. RK247 is a registered trading platform providing financial services to global clients.
         </p>
         <div class="mt-6 flex gap-6 text-sm">
-          <a href="#footer" class="text-white/60 hover:text-white">Legal information</a>
-          <a href="#footer" class="text-white/60 hover:text-white">Regulation</a>
+          <a href="/legal" class="text-white/60 hover:text-white">Legal information</a>
+          <a href="/regulation" class="text-white/60 hover:text-white">Regulation</a>
         </div>
       </div>
     </div>
@@ -141,7 +141,7 @@ export function Overlays(): string {
 
   <!-- Cookie banner -->
   <div id="cookie" class="fixed bottom-5 left-5 z-40 hidden max-w-sm items-center gap-3 rounded-2xl bg-ink-800 p-4 text-sm ring-1 ring-white/10 sm:flex">
-    <p class="text-white/70">By continuing to browse, you agree to our <a href="#footer" class="text-rk-green underline">Cookies Policy</a>.</p>
+    <p class="text-white/70">By continuing to browse, you agree to our <a href="/cookie-policy" class="text-rk-green underline">Cookies Policy</a>.</p>
     <button id="cookie-ok" class="btn-green shrink-0 px-4 py-2">Ok</button>
   </div>
 

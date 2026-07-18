@@ -117,7 +117,7 @@ export function FaqPage(): string {
         },
         {
           q: "Is my money safe with RK247?",
-          a: "Yes. RK247 is licensed and regulated. Client funds are held in segregated bank accounts and are not used for company operations.",
+          a: "Trading carries risk. Before funding an account, review your account agreement and verify the legal entity, regulatory status and customer protections that apply to your location.",
         },
         {
           q: "What is Negative Balance Protection?",

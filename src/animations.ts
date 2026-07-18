@@ -6,23 +6,18 @@ gsap.registerPlugin(ScrollTrigger);
 export function initAnimations(): void {
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // Helper to check if element exists
-  const exists = (selector: string) => document.querySelector(selector) !== null;
-
   // Hero intro timeline
-  if (exists(".hero-bar")) {
-    const heroTl = gsap.timeline({ defaults: { ease: "power3.out" } });
-    heroTl
-      .from(".hero-bar", {
-        scaleY: 0,
-        transformOrigin: "bottom",
-        stagger: 0.06,
-        duration: 0.9,
-      })
-      .from(".hero-man", { y: 60, opacity: 0, duration: 1 }, "-=0.5")
-      .from(".hero-title", { y: 30, opacity: 0, duration: 0.8 }, "-=0.6")
-      .from(".chip", { y: 16, opacity: 0, stagger: 0.05, duration: 0.5 }, "-=0.4");
-  }
+  const heroTl = gsap.timeline({ defaults: { ease: "power3.out" } });
+  heroTl
+    .from(".hero-bar", {
+      scaleY: 0,
+      transformOrigin: "bottom",
+      stagger: 0.06,
+      duration: 0.9,
+    })
+    .from(".hero-man", { y: 60, opacity: 0, duration: 1 }, "-=0.5")
+    .from(".hero-title", { y: 30, opacity: 0, duration: 0.8 }, "-=0.6")
+    .from(".chip", { y: 16, opacity: 0, stagger: 0.05, duration: 0.5 }, "-=0.4");
 
   if (prefersReduced) return;
 
@@ -42,78 +37,68 @@ export function initAnimations(): void {
   });
 
   // Anniversary "11" pop + parallax
-  if (exists(".anniv-img")) {
-    gsap.fromTo(
-      ".anniv-img",
-      { scale: 0.8, opacity: 0 },
-      {
-        scale: 1,
-        opacity: 1,
-        duration: 1,
-        ease: "back.out(1.4)",
-        scrollTrigger: { trigger: ".anniv-img", start: "top 80%" },
-      }
-    );
-  }
+  gsap.fromTo(
+    ".anniv-img",
+    { scale: 0.8, opacity: 0 },
+    {
+      scale: 1,
+      opacity: 1,
+      duration: 1,
+      ease: "back.out(1.4)",
+      scrollTrigger: { trigger: ".anniv-img", start: "top 80%" },
+    }
+  );
 
   // Statement headline word emphasis
-  if (exists(".statement")) {
-    gsap.from(".statement", {
-      opacity: 0,
-      y: 50,
-      duration: 1,
-      ease: "power3.out",
-      scrollTrigger: { trigger: ".statement", start: "top 80%" },
-    });
-  }
+  gsap.from(".statement", {
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    ease: "power3.out",
+    scrollTrigger: { trigger: ".statement", start: "top 80%" },
+  });
 
   // Phone in hand subtle float driven by scroll
-  if (exists(".platform-phone")) {
-    gsap.to(".platform-phone", {
-      y: -30,
+  gsap.to(".platform-phone", {
+    y: -30,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".platform-phone",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+
+  // Broker logo rotate-in
+  gsap.fromTo(
+    ".broker-logo",
+    { rotate: -8, scale: 0.9, opacity: 0 },
+    {
+      rotate: 0,
+      scale: 1,
+      opacity: 1,
+      duration: 1,
+      ease: "power3.out",
+      scrollTrigger: { trigger: ".broker-logo", start: "top 80%" },
+    }
+  );
+
+  // Globe parallax zoom
+  gsap.fromTo(
+    ".globe-img",
+    { scale: 1.15 },
+    {
+      scale: 1,
       ease: "none",
       scrollTrigger: {
-        trigger: ".platform-phone",
+        trigger: ".globe-img",
         start: "top bottom",
         end: "bottom top",
         scrub: true,
       },
-    });
-  }
-
-  // Broker logo rotate-in
-  if (exists(".broker-logo")) {
-    gsap.fromTo(
-      ".broker-logo",
-      { rotate: -8, scale: 0.9, opacity: 0 },
-      {
-        rotate: 0,
-        scale: 1,
-        opacity: 1,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: { trigger: ".broker-logo", start: "top 80%" },
-      }
-    );
-  }
-
-  // Globe parallax zoom
-  if (exists(".globe-img")) {
-    gsap.fromTo(
-      ".globe-img",
-      { scale: 1.15 },
-      {
-        scale: 1,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".globe-img",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-        },
-      }
-    );
-  }
+    }
+  );
 
   // Animated chart line draw
   gsap.utils.toArray<SVGPolylineElement>(".trade-line").forEach((line) => {
@@ -128,13 +113,11 @@ export function initAnimations(): void {
   });
 
   // Clock hand sweep
-  if (exists(".clock-hand")) {
-    gsap.to(".clock-hand", {
-      rotation: 360,
-      transformOrigin: "bottom center",
-      duration: 8,
-      repeat: -1,
-      ease: "none",
-    });
-  }
+  gsap.to(".clock-hand", {
+    rotation: 360,
+    transformOrigin: "bottom center",
+    duration: 8,
+    repeat: -1,
+    ease: "none",
+  });
 }

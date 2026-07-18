@@ -36,9 +36,9 @@ export function Broker(): string {
   return `
   <section class="relative overflow-hidden bg-ink-950 py-20 sm:py-28">
     <div class="container-rk relative text-center">
-      <h2 class="reveal text-2xl font-bold sm:text-3xl">RK247 is a licensed<br />and regulated online broker</h2>
-      <img src="${A.regulationIcons}" alt="Regulators" class="reveal mx-auto mt-6 h-10 w-auto opacity-90" />
-      <a href="#footer" class="reveal mt-3 inline-flex items-center gap-1 text-xs font-semibold text-rk-green hover:text-rk-greenBright">Learn more ${icons.chevronRight}</a>
+      <h2 class="reveal text-2xl font-bold sm:text-3xl">Review the legal entity<br />and regulatory information</h2>
+      <img src="${A.regulationIcons}" alt="Regulatory information" class="reveal mx-auto mt-6 h-10 w-auto opacity-90" />
+      <a href="/regulation" class="reveal mt-3 inline-flex items-center gap-1 text-xs font-semibold text-rk-green hover:text-rk-greenBright">Learn more ${icons.chevronRight}</a>
     </div>
   </section>`;
 }

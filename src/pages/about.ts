@@ -36,14 +36,14 @@ export function AboutPage(): string {
           24 hours a day, 7 days a week.
         </p>
         <p class="text-white/60 leading-relaxed">
-          We are regulated, licensed and committed to maintaining the highest standards
-          of financial integrity and client fund protection.
+          We are committed to transparent service information and encourage every customer
+          to verify the legal entity and protections that apply before funding an account.
         </p>
       </div>
 
       <h2 class="reveal text-2xl font-bold text-center mb-10">Our Values</h2>
       ${FeatureGrid([
-        { icon: "🔒", title: "Security First", desc: "Client funds are held in segregated accounts. We are licensed by multiple financial regulators." },
+        { icon: "🔒", title: "Security First", desc: "Review the account agreement and entity-specific customer protection terms before depositing funds." },
         { icon: "🌍", title: "Global Reach", desc: "Serving traders in 130+ countries with localised payment methods and multilingual support." },
         { icon: "📚", title: "Education", desc: "We invest heavily in free educational content so every trader can build real skills." },
         { icon: "⚡", title: "Innovation", desc: "Continuously improving our platform with cutting-edge technology and user feedback." },
@@ -208,12 +208,12 @@ export function AwardsPage(): string {
       </div>
 
       ${FeatureGrid([
-        { icon: "📜", title: "Licensed & Regulated", desc: "RK247 holds licences from multiple tier-1 financial regulators worldwide." },
-        { icon: "🔐", title: "Segregated Client Funds", desc: "Your money is kept separately from company operational funds at all times." },
-        { icon: "🌐", title: "IFSC Regulated", desc: "International Financial Services Commission oversight for global operations." },
-        { icon: "📋", title: "Annual Audits", desc: "Independent external financial audits conducted every year." },
-        { icon: "💼", title: "Professional Indemnity", desc: "All operations covered by professional indemnity insurance." },
-        { icon: "✅", title: "KYC/AML Compliant", desc: "Full compliance with Know Your Customer and Anti-Money Laundering laws." },
+        { icon: "📜", title: "Entity Verification", desc: "Confirm the legal entity named in your registration and account documents." },
+        { icon: "🔐", title: "Customer Protections", desc: "Review the protections and fund-handling terms that apply to your specific account." },
+        { icon: "🌐", title: "Regulator Verification", desc: "Request the applicable regulator and licence number, then verify them in the official register." },
+        { icon: "📋", title: "Legal Documents", desc: "Request current service terms and risk disclosures before funding your account." },
+        { icon: "💼", title: "Jurisdiction", desc: "Available products and protections may differ according to customer location." },
+        { icon: "✅", title: "Identity Checks", desc: "Identity and eligibility checks may be required before account features are available." },
       ])}
     </div>
   </section>

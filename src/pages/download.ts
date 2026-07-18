@@ -4,28 +4,28 @@ import { PageHero, CtaSection, FeatureGrid, StepList, BackLink, icons } from "./
 export function DownloadPage(): string {
   const options = [
     {
-      href: "#/download/android",
+      href: "/download/android",
       icon: "🤖",
       label: "Android",
       sub: "Google Play Store",
       desc: "Download from the Google Play Store for Android 5.0 and above.",
     },
     {
-      href: "#/download/android-apk",
+      href: "/download/android-apk",
       icon: "📦",
       label: "Android APK",
       sub: "Direct Install",
       desc: "Download the APK directly from RK247 — no Play Store required.",
     },
     {
-      href: "#/download/desktop",
+      href: "/download/desktop",
       icon: "🖥️",
       label: "Desktop App",
       sub: "Windows & macOS",
       desc: "Full-featured desktop trading platform for Windows 10+ and macOS.",
     },
     {
-      href: "#/download/web-app",
+      href: "/download/web-app",
       icon: "🌐",
       label: "Web App",
       sub: "Browser — No Install",

@@ -3,12 +3,12 @@ import { PageHero, CtaSection, FeatureGrid, StepList, BackLink, icons } from "./
 /* ─── Trading Overview ─── */
 export function TradingPage(): string {
   const instruments = [
-    { href: "#/trading/flex",       label: "Flex",         desc: "Trade with multipliers. Amplify gains on any market movement.", badge: "🔥 Popular" },
-    { href: "#/trading/fixed-time", label: "Fixed Time",   desc: "Predict price direction in a fixed duration. Know your max risk.", badge: "" },
-    { href: "#/trading/forex",      label: "Forex",        desc: "Trade 70+ currency pairs 24/5 with tight spreads.", badge: "💱 Most liquid" },
-    { href: "#/trading/stocks",     label: "Stocks",       desc: "CFDs on Apple, Tesla, Amazon, Google and hundreds more.", badge: "" },
-    { href: "#/trading/assets",     label: "Indices",      desc: "Trade global indices: S&P 500, NASDAQ, FTSE and more.", badge: "" },
-    { href: "#/trading/assets",     label: "Crypto",       desc: "Bitcoin, Ethereum, Litecoin and 30+ crypto assets.", badge: "" },
+    { href: "/trading/flex",       label: "Flex",         desc: "Trade with multipliers. Amplify gains on any market movement.", badge: "🔥 Popular" },
+    { href: "/trading/fixed-time", label: "Fixed Time",   desc: "Predict price direction in a fixed duration. Know your max risk.", badge: "" },
+    { href: "/trading/forex",      label: "Forex",        desc: "Trade 70+ currency pairs 24/5 with tight spreads.", badge: "💱 Most liquid" },
+    { href: "/trading/stocks",     label: "Stocks",       desc: "CFDs on Apple, Tesla, Amazon, Google and hundreds more.", badge: "" },
+    { href: "/trading/assets",     label: "Indices",      desc: "Trade global indices: S&P 500, NASDAQ, FTSE and more.", badge: "" },
+    { href: "/trading/assets",     label: "Crypto",       desc: "Bitcoin, Ethereum, Litecoin and 30+ crypto assets.", badge: "" },
   ];
 
   return `
@@ -34,7 +34,7 @@ export function TradingPage(): string {
 
   ${FeatureGrid([
     { icon: "⚡", title: "Lightning Fast Execution", desc: "Trade orders are executed in under 100ms. No slippage, no requotes." },
-    { icon: "🛡️", title: "Regulated Broker", desc: "RK247 is a fully licensed and regulated broker operating in 130+ countries." },
+    { icon: "🛡️", title: "Regulatory Information", desc: "Review and verify the legal entity and regulatory details that apply to your account before funding it." },
     { icon: "💰", title: "Start from $1", desc: "Open a real account and start trading with just $1. No barriers to entry." },
     { icon: "📱", title: "Trade Anywhere", desc: "Desktop, mobile or web — your account syncs across all devices." },
     { icon: "📊", title: "Advanced Charting", desc: "Professional-grade charts with 100+ indicators and drawing tools." },
@@ -361,7 +361,7 @@ export function IslamicAccountPage(): string {
         { icon: "✅", title: "Same Features", desc: "Full access to all 300+ assets, tools, bonuses and the complete platform." },
         { icon: "💰", title: "From $1", desc: "Same low minimum deposit as the Standard Account — just $1." },
         { icon: "⚡", title: "Instant Activation", desc: "Enable Islamic mode instantly from your account settings." },
-        { icon: "🛡️", title: "Regulated", desc: "The same regulated and licensed broker. Your funds are fully protected." },
+        { icon: "🛡️", title: "Account Protection", desc: "Review the entity-specific account terms and available customer protections before trading." },
         { icon: "🤝", title: "Dedicated Support", desc: "Our multilingual support team understands your specific needs." },
       ])}
     </div>

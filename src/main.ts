@@ -26,7 +26,9 @@ import {
 import {
   SupportPage, FaqPage, LearningPage,
 } from "./pages/help";
-import { MarketAnalysisPage, MarketAnalysisDetailPage } from "./pages/market-analysis";
+import { MarketAnalysisPage, MarketAnalysisDetailPage, marketReports } from "./pages/market-analysis";
+import { CookiePolicyPage, LegalPage, RegulationPage } from "./pages/legal";
+import { defaultSeo, routeSeo } from "./seo";
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -35,15 +37,39 @@ const WA_LINK = "https://wa.link/rk247org";
 const BASE_URL = "https://www.rk247.org";
 
 /* ─── Update canonical tag based on current route ─── */
-function updateCanonicalTag(path: string): void {
-  const canonicalLink = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
-  if (!canonicalLink) return;
+function updateSeoMetadata(path: string): void {
+  const reportSlug = path.startsWith("/market-analysis/")
+    ? path.slice("/market-analysis/".length)
+    : "";
+  const report = reportSlug ? marketReports.find((item) => item.slug === reportSlug) : undefined;
+  const metadata = report
+    ? { title: `${report.title} | RK247`, description: report.summary, image: report.image }
+    : routeSeo[path] ?? defaultSeo;
+  const canonicalUrl = path === "/" ? `${BASE_URL}/` : `${BASE_URL}${path}`;
+  const imageUrl = new URL(metadata.image ?? defaultSeo.image!, BASE_URL).href;
 
-  const canonicalUrl = path === "/" 
-    ? BASE_URL + "/" 
-    : BASE_URL + path;
-  canonicalLink.href = canonicalUrl;
-}
+  document.title = metadata.title;
+
+  const setMeta = (selector: string, value: string): void => {
+    document.querySelector<HTMLMetaElement>(selector)?.setAttribute("content", value);
+  };
+
+  document.querySelector<HTMLLinkElement>('link[rel="canonical"]')?.setAttribute("href", canonicalUrl);
+  document.querySelectorAll<HTMLLinkElement>('link[rel="alternate"][hreflang]').forEach((link) => {
+    link.href = canonicalUrl;
+  });
+  setMeta('meta[name="description"]', metadata.description);
+  setMeta('meta[property="og:url"]', canonicalUrl);
+  setMeta('meta[property="og:title"]', metadata.title);
+  setMeta('meta[property="og:description"]', metadata.description);
+  setMeta('meta[property="og:image"]', imageUrl);
+  setMeta('meta[property="og:image:width"]', report ? "1536" : "1200");
+  setMeta('meta[property="og:image:height"]', report ? "1024" : "630");
+  setMeta('meta[name="twitter:url"]', canonicalUrl);
+  setMeta('meta[name="twitter:title"]', metadata.title);
+  setMeta('meta[name="twitter:description"]', metadata.description);
+  setMeta('meta[name="twitter:image"]', imageUrl);
+} 
 
 /* ─── Page registry ─── */
 const routes: Record<string, () => string> = {
@@ -75,6 +101,9 @@ const routes: Record<string, () => string> = {
   "/help/faq":               () => PageLayout(FaqPage()),
   "/help/learning":          () => PageLayout(LearningPage()),
   "/market-analysis":        () => PageLayout(MarketAnalysisPage()),
+  "/legal":                  () => PageLayout(LegalPage()),
+  "/regulation":             () => PageLayout(RegulationPage()),
+  "/cookie-policy":          () => PageLayout(CookiePolicyPage()),
 };
 
 function renderHome(): string {
@@ -106,7 +135,7 @@ function render(path: string): void {
   ScrollTrigger.getAll().forEach((t) => t.kill());
 
   // Update canonical tag for current route
-  updateCanonicalTag(path);
+  updateSeoMetadata(path);
 
   // Dynamic market-analysis detail routes
   if (path.startsWith("/market-analysis/")) {
@@ -167,11 +196,11 @@ function attachListeners(): void {
   // Bonus popup
   const bonus = document.querySelector("#bonus");
   const closeBonus = () => bonus?.classList.replace("flex", "hidden");
-  if (!sessionStorage.getItem("rk_bonus_seen")) {
+  if (!sessionStorage.getItem("rk_bonus_seen") && window.matchMedia("(min-width: 1024px)").matches) {
     setTimeout(() => {
       bonus?.classList.replace("hidden", "flex");
       sessionStorage.setItem("rk_bonus_seen", "1");
-    }, 4500);
+    }, 15000);
   }
   document.querySelector("#bonus-close")?.addEventListener("click", closeBonus);
   bonus?.addEventListener("click", (e) => {
