@@ -26,6 +26,120 @@ const reportSeo = Object.fromEntries(
 );
 const allSeo = { ...routeSeo, ...reportSeo };
 
+const breadcrumbs = {
+  "/": [{ name: "Home", path: "/" }],
+  "/trading": [{ name: "Home", path: "/" }, { name: "Trading", path: "/trading" }],
+  "/trading/flex": [{ name: "Home", path: "/" }, { name: "Trading", path: "/trading" }, { name: "Flex Trading", path: "/trading/flex" }],
+  "/trading/fixed-time": [{ name: "Home", path: "/" }, { name: "Trading", path: "/trading" }, { name: "Fixed Time Trading", path: "/trading/fixed-time" }],
+  "/trading/forex": [{ name: "Home", path: "/" }, { name: "Trading", path: "/trading" }, { name: "Forex Trading", path: "/trading/forex" }],
+  "/trading/stocks": [{ name: "Home", path: "/" }, { name: "Trading", path: "/trading" }, { name: "Stock Trading", path: "/trading/stocks" }],
+  "/trading/how-to-trade": [{ name: "Home", path: "/" }, { name: "Trading", path: "/trading" }, { name: "How to Trade", path: "/trading/how-to-trade" }],
+  "/trading/account": [{ name: "Home", path: "/" }, { name: "Trading", path: "/trading" }, { name: "Account", path: "/trading/account" }],
+  "/trading/islamic-account": [{ name: "Home", path: "/" }, { name: "Trading", path: "/trading" }, { name: "Islamic Account", path: "/trading/islamic-account" }],
+  "/trading/demo": [{ name: "Home", path: "/" }, { name: "Trading", path: "/trading" }, { name: "Demo Account", path: "/trading/demo" }],
+  "/trading/promotions": [{ name: "Home", path: "/" }, { name: "Trading", path: "/trading" }, { name: "Promotions", path: "/trading/promotions" }],
+  "/trading/withdrawals": [{ name: "Home", path: "/" }, { name: "Trading", path: "/trading" }, { name: "Withdrawals", path: "/trading/withdrawals" }],
+  "/trading/assets": [{ name: "Home", path: "/" }, { name: "Trading", path: "/trading" }, { name: "Assets", path: "/trading/assets" }],
+  "/download": [{ name: "Home", path: "/" }, { name: "Download", path: "/download" }],
+  "/download/desktop": [{ name: "Home", path: "/" }, { name: "Download", path: "/download" }, { name: "Desktop App", path: "/download/desktop" }],
+  "/download/android": [{ name: "Home", path: "/" }, { name: "Download", path: "/download" }, { name: "Android App", path: "/download/android" }],
+  "/download/android-apk": [{ name: "Home", path: "/" }, { name: "Download", path: "/download" }, { name: "Android APK", path: "/download/android-apk" }],
+  "/download/web-app": [{ name: "Home", path: "/" }, { name: "Download", path: "/download" }, { name: "Web App", path: "/download/web-app" }],
+  "/about": [{ name: "Home", path: "/" }, { name: "About", path: "/about" }],
+  "/about/contacts": [{ name: "Home", path: "/" }, { name: "About", path: "/about" }, { name: "Contacts", path: "/about/contacts" }],
+  "/about/social": [{ name: "Home", path: "/" }, { name: "About", path: "/about" }, { name: "Social", path: "/about/social" }],
+  "/about/awards": [{ name: "Home", path: "/" }, { name: "About", path: "/about" }, { name: "Awards", path: "/about/awards" }],
+  "/about/news": [{ name: "Home", path: "/" }, { name: "About", path: "/about" }, { name: "News", path: "/about/news" }],
+  "/about/reviews": [{ name: "Home", path: "/" }, { name: "About", path: "/about" }, { name: "Reviews", path: "/about/reviews" }],
+  "/help/support": [{ name: "Home", path: "/" }, { name: "Help", path: "/help/support" }],
+  "/help/faq": [{ name: "Home", path: "/" }, { name: "Help", path: "/help/faq" }],
+  "/help/learning": [{ name: "Home", path: "/" }, { name: "Help", path: "/help/learning" }],
+  "/market-analysis": [{ name: "Home", path: "/" }, { name: "Market Analysis", path: "/market-analysis" }],
+  "/legal": [{ name: "Home", path: "/" }, { name: "Legal", path: "/legal" }],
+  "/regulation": [{ name: "Home", path: "/" }, { name: "Regulation", path: "/regulation" }],
+  "/cookie-policy": [{ name: "Home", path: "/" }, { name: "Cookie Policy", path: "/cookie-policy" }],
+};
+
+const getBreadcrumbSchema = (path, metadata) => {
+  let items = breadcrumbs[path];
+  if (!items) {
+    if (path.startsWith("/market-analysis/")) {
+      items = [{ name: "Home", path: "/" }, { name: "Market Analysis", path: "/market-analysis" }, { name: metadata.title.replace(/ \| RK247$/, ""), path }];
+    } else {
+      items = [{ name: "Home", path: "/" }];
+    }
+  }
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.path === "/" ? baseUrl : `${baseUrl}${item.path}`,
+    })),
+  };
+};
+
+const getPageSchema = (path, metadata) => {
+  const breadcrumbSchema = getBreadcrumbSchema(path, metadata);
+  const schemas = [breadcrumbSchema];
+
+  if (path.startsWith("/trading") || path === "/") {
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "FinancialService",
+      name: "RK247",
+      description: metadata.description,
+      url: path === "/" ? baseUrl : `${baseUrl}${path}`,
+      provider: {
+        "@type": "Organization",
+        name: "RK247",
+        url: baseUrl,
+      },
+    });
+  } else if (path.startsWith("/market-analysis/")) {
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: metadata.title,
+      description: metadata.description,
+      url: `${baseUrl}${path}`,
+      image: metadata.image ? `${baseUrl}${metadata.image}` : `${baseUrl}${defaultSeo.image}`,
+      publisher: {
+        "@type": "Organization",
+        name: "RK247",
+        url: baseUrl,
+      },
+    });
+  } else {
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: metadata.title,
+      description: metadata.description,
+      url: path === "/" ? baseUrl : `${baseUrl}${path}`,
+    });
+  }
+
+  return schemas.map((schema) => `<script type="application/ld+json">${JSON.stringify(schema)}</script>`).join("\n    ");
+};
+
+const pageContent = {
+  "/": {
+    h1: "Build confidence with every single trade",
+    p: "Trade Forex, stocks, indices and crypto on RK247 with fast execution, trading tools and educational resources.",
+  },
+  "/trading": {
+    h1: "Trade Any Market, Any Time",
+    p: "Access Forex, Stocks, Crypto, Indices and more — all from one account with ultra-fast execution.",
+  },
+  "/market-analysis": {
+    h1: "Daily Market Analysis",
+    p: "Read daily RK247 market analysis covering Forex, crypto, commodities and global stock indices with technical levels and commentary.",
+  },
+};
+
 const escapeHtml = (value) => value
   .replaceAll("&", "&amp;")
   .replaceAll("<", "&lt;")
@@ -34,20 +148,20 @@ const escapeHtml = (value) => value
 
 const replaceMeta = (html, selector, value) => {
   const escapedSelector = selector.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  return html.replace(
-    new RegExp(`(<meta ${escapedSelector} content=")[^"]*("\\s*/?>)`),
-    `$1${escapeHtml(value)}$2`,
-  );
+  const escapedValue = escapeHtml(value);
+  const regex = new RegExp(`(<meta ${escapedSelector} content=")([^"]*)("\\s*/?>)`);
+  return html.replace(regex, (match, p1, p2, p3) => `${p1}${escapedValue}${p3}`);
 };
 
 for (const [path, metadata] of Object.entries(allSeo)) {
   const canonicalUrl = path === "/" ? `${baseUrl}/` : `${baseUrl}${path}`;
   const imageUrl = new URL(metadata.image ?? defaultSeo.image, baseUrl).href;
   let html = template
-    .replace(/<title>[\s\S]*?<\/title>/, `<title>${escapeHtml(metadata.title)}</title>`)
+    .replace(/<title>[\s\S]*?<\/title>/, (match) => `<title>${escapeHtml(metadata.title)}</title>`)
     .replace(/<link rel="canonical" href="[^"]*"\s*\/>/, `<link rel="canonical" href="${canonicalUrl}" />`)
     .replace(/<link rel="alternate" hreflang="en" href="[^"]*"\s*\/>/, `<link rel="alternate" hreflang="en" href="${canonicalUrl}" />`)
-    .replace(/<link rel="alternate" hreflang="x-default" href="[^"]*"\s*\/>/, `<link rel="alternate" hreflang="x-default" href="${canonicalUrl}" />`);
+    .replace(/<link rel="alternate" hreflang="x-default" href="[^"]*"\s*\/>/, `<link rel="alternate" hreflang="x-default" href="${canonicalUrl}" />`)
+    .replace(/<meta name="robots"[^>]*>/, `<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">`);
 
   html = replaceMeta(html, 'name="description"', metadata.description);
   html = replaceMeta(html, 'property="og:url"', canonicalUrl);
@@ -61,7 +175,11 @@ for (const [path, metadata] of Object.entries(allSeo)) {
   html = replaceMeta(html, 'name="twitter:description"', metadata.description);
   html = replaceMeta(html, 'name="twitter:image"', imageUrl);
 
-  const crawlableContent = `<main><section><h1>${escapeHtml(metadata.title.replace(/ \| RK247$| – RK247.*$| - RK247.*$/, ""))}</h1><p>${escapeHtml(metadata.description)}</p><nav aria-label="Related pages"><a href="/">RK247 home</a> <a href="/trading">Trading markets</a> <a href="/market-analysis">Market analysis</a> <a href="/help/support">Support</a></nav></section></main>`;
+  const pageSchema = getPageSchema(path, metadata);
+  html = html.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>\s*<script type="application\/ld\+json">[\s\S]*?<\/script>/, pageSchema);
+
+  const content = pageContent[path] || { h1: metadata.title.replace(/ \| RK247$| – RK247.*$| - RK247.*$/, ""), p: metadata.description };
+  const crawlableContent = `<main><section><h1>${escapeHtml(content.h1)}</h1><p>${escapeHtml(content.p)}</p><nav aria-label="Related pages"><a href="/">RK247 home</a> <a href="/trading">Trading markets</a> <a href="/market-analysis">Market analysis</a> <a href="/help/support">Support</a></nav></section></main>`;
   html = html.replace(/<div id="app">[\s\S]*?<\/div>\s*<noscript>/, `<div id="app">${crawlableContent}</div>\n    <noscript>`);
 
   const outputPath = path === "/"
