@@ -84,7 +84,7 @@ export function StepList(
 export function BackLink(label = "← Back to Home"): string {
   return `
   <div class="container-rk pt-6">
-    <a href="#/" class="text-sm font-medium text-white/50 hover:text-rk-green transition-colors">${label}</a>
+    <a href="/" class="text-sm font-medium text-white/50 hover:text-rk-green transition-colors">${label}</a>
   </div>`;
 }
 

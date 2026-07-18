@@ -88,7 +88,7 @@ export function Footer(): string {
             ${[icons.facebook, icons.instagram, icons.telegram, icons.youtube]
               .map(
                 (s) =>
-                  `<a href="#/about/social" class="grid h-9 w-9 place-items-center rounded-full bg-white/5 text-white/70 ring-1 ring-white/10 transition-colors hover:bg-white/10 hover:text-white">${s}</a>`
+                  `<a href="/about/social" class="grid h-9 w-9 place-items-center rounded-full bg-white/5 text-white/70 ring-1 ring-white/10 transition-colors hover:bg-white/10 hover:text-white">${s}</a>`
               )
               .join("")}
           </div>
@@ -99,7 +99,7 @@ export function Footer(): string {
           </div>
           <div>
             <p class="text-sm font-bold leading-tight">Your financial future<br />is in your hands</p>
-            <a href="#/download" class="mt-1 inline-flex items-center gap-1 text-xs font-bold text-rk-green hover:text-rk-greenBright">Download app now ${icons.chevronRight}</a>
+            <a href="/download" class="mt-1 inline-flex items-center gap-1 text-xs font-bold text-rk-green hover:text-rk-greenBright">Download app now ${icons.chevronRight}</a>
           </div>
         </div>
       </div>

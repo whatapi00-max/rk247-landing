@@ -41,7 +41,7 @@ function updateCanonicalTag(path: string): void {
 
   const canonicalUrl = path === "/" 
     ? BASE_URL + "/" 
-    : BASE_URL + "/#" + path;
+    : BASE_URL + path;
   canonicalLink.href = canonicalUrl;
 }
 

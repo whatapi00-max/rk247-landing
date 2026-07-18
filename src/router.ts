@@ -9,21 +9,37 @@ export function registerRoutes(map: Record<string, RouteHandler>): void {
 }
 
 /**
- * Returns the SPA route path from the current hash.
- *  '#/trading/forex' → '/trading/forex'
- *  '#top'            → null  (section anchor, ignore)
- *  '' | '#'          → '/'   (home)
+ * Returns the SPA route path from the current URL path.
+ *  '/trading/forex' → '/trading/forex'
+ *  ''               → '/'   (home)
  */
-export function getRoutePath(): string | null {
-  const hash = window.location.hash;
-  if (!hash || hash === "#") return "/";
-  if (hash.startsWith("#/")) return hash.slice(1); // '/trading' etc.
-  return null; // plain anchor link, not a page route
+export function getRoutePath(): string {
+  const path = window.location.pathname;
+  return path || "/";
 }
 
 export function initRouter(onNavigate: (path: string) => void): void {
-  window.addEventListener("hashchange", () => {
+  window.addEventListener("popstate", () => {
     const path = getRoutePath();
-    if (path !== null) onNavigate(path);
+    onNavigate(path);
+  });
+
+  // Intercept all link clicks for internal navigation
+  document.addEventListener("click", (e) => {
+    const link = (e.target as HTMLElement).closest("a");
+    if (!link) return;
+
+    const href = link.getAttribute("href");
+    if (!href) return;
+
+    // Skip external links, anchors, and links with target="_blank"
+    if (href.startsWith("http") || href.startsWith("#") || link.target === "_blank") {
+      return;
+    }
+
+    e.preventDefault();
+    const newPath = href || "/";
+    window.history.pushState({}, "", newPath);
+    onNavigate(newPath);
   });
 }

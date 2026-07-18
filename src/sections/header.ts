@@ -4,42 +4,42 @@ import { A } from "../assets";
 type MenuGroup = { label: string; href: string };
 
 const tradingMenu: MenuGroup[] = [
-  { label: "Trading", href: "#/trading" },
-  { label: "Market Analysis", href: "#/market-analysis" },
-  { label: "Flex", href: "#/trading/flex" },
-  { label: "Fixed Time", href: "#/trading/fixed-time" },
-  { label: "Forex", href: "#/trading/forex" },
-  { label: "Stocks", href: "#/trading/stocks" },
-  { label: "How to trade", href: "#/trading/how-to-trade" },
-  { label: "Account", href: "#/trading/account" },
-  { label: "Islamic Account", href: "#/trading/islamic-account" },
-  { label: "Free demo account", href: "#/trading/demo" },
-  { label: "Promotions", href: "#/trading/promotions" },
-  { label: "Withdrawals", href: "#/trading/withdrawals" },
-  { label: "Assets & Trading Conditions", href: "#/trading/assets" },
+  { label: "Trading", href: "/trading" },
+  { label: "Market Analysis", href: "/market-analysis" },
+  { label: "Flex", href: "/trading/flex" },
+  { label: "Fixed Time", href: "/trading/fixed-time" },
+  { label: "Forex", href: "/trading/forex" },
+  { label: "Stocks", href: "/trading/stocks" },
+  { label: "How to trade", href: "/trading/how-to-trade" },
+  { label: "Account", href: "/trading/account" },
+  { label: "Islamic Account", href: "/trading/islamic-account" },
+  { label: "Free demo account", href: "/trading/demo" },
+  { label: "Promotions", href: "/trading/promotions" },
+  { label: "Withdrawals", href: "/trading/withdrawals" },
+  { label: "Assets & Trading Conditions", href: "/trading/assets" },
 ];
 
 const downloadMenu: MenuGroup[] = [
-  { label: "Download App", href: "#/download" },
-  { label: "Desktop", href: "#/download/desktop" },
-  { label: "Android", href: "#/download/android" },
-  { label: "Android APK", href: "#/download/android-apk" },
-  { label: "Web App", href: "#/download/web-app" },
+  { label: "Download App", href: "/download" },
+  { label: "Desktop", href: "/download/desktop" },
+  { label: "Android", href: "/download/android" },
+  { label: "Android APK", href: "/download/android-apk" },
+  { label: "Web App", href: "/download/web-app" },
 ];
 
 const aboutMenu: MenuGroup[] = [
-  { label: "About", href: "#/about" },
-  { label: "Contacts", href: "#/about/contacts" },
-  { label: "Social media", href: "#/about/social" },
-  { label: "Awards", href: "#/about/awards" },
-  { label: "News", href: "#/about/news" },
-  { label: "Reviews", href: "#/about/reviews" },
+  { label: "About", href: "/about" },
+  { label: "Contacts", href: "/about/contacts" },
+  { label: "Social media", href: "/about/social" },
+  { label: "Awards", href: "/about/awards" },
+  { label: "News", href: "/about/news" },
+  { label: "Reviews", href: "/about/reviews" },
 ];
 
 const helpMenu: MenuGroup[] = [
-  { label: "Support", href: "#/help/support" },
-  { label: "FAQ", href: "#/help/faq" },
-  { label: "Learning Center", href: "#/help/learning" },
+  { label: "Support", href: "/help/support" },
+  { label: "FAQ", href: "/help/faq" },
+  { label: "Learning Center", href: "/help/learning" },
 ];
 
 const dropdown = (label: string, items: MenuGroup[]) => `
@@ -61,7 +61,7 @@ export function Header(): string {
   return `
   <header id="header" class="fixed inset-x-0 top-0 z-50 border-b border-transparent transition-colors duration-300">
     <div class="container-rk flex h-16 items-center justify-between gap-4">
-      <a href="#/" class="flex items-center font-extrabold tracking-tight">
+      <a href="/" class="flex items-center font-extrabold tracking-tight">
         <img src="${A.logo}" alt="RK247" class="h-10 w-auto" />
       </a>
 
@@ -86,7 +86,7 @@ export function Header(): string {
   <!-- Mobile menu -->
   <div id="mobile-menu" class="fixed inset-0 z-[9999] hidden bg-black lg:hidden overflow-hidden flex flex-col">
     <div class="h-16 flex items-center justify-between border-b border-white/10 px-4 flex-shrink-0">
-      <a href="#/" class="flex items-center font-extrabold"><img src="${A.logo}" alt="RK247" class="h-10 w-auto" /></a>
+      <a href="/" class="flex items-center font-extrabold"><img src="${A.logo}" alt="RK247" class="h-10 w-auto" /></a>
       <button id="menu-close" class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20" aria-label="Close menu">${icons.close}</button>
     </div>
     <div class="flex-1 overflow-y-auto">

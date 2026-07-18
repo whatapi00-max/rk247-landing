@@ -116,7 +116,7 @@ export function AndroidPage(): string {
         <p class="text-white/55 mb-6">Requires Android 5.0 or higher. Free download.</p>
         <div class="flex flex-col sm:flex-row gap-3 justify-center">
           <button class="btn-green px-10 py-3.5 text-base" data-wa>Get on Google Play</button>
-          <a href="#/download/android-apk" class="btn-ghost px-8 py-3.5 text-base">Download APK directly</a>
+          <a href="/download/android-apk" class="btn-ghost px-8 py-3.5 text-base">Download APK directly</a>
         </div>
         <div class="mt-6 flex items-center justify-center gap-2 text-yellow-400 text-sm font-semibold">
           ★★★★★ <span class="text-white/50 font-normal">4.8 / 5 — 500,000+ downloads</span>

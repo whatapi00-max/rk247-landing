@@ -1155,7 +1155,7 @@ function sentimentColor(s: string): string {
 
 function MarketCardHTML(report: MarketReport): string {
   return `
-  <a href="#/market-analysis/${report.slug}" class="reveal card group overflow-hidden block hover:ring-2 hover:ring-rk-green/50 transition-all duration-300">
+  <a href="/market-analysis/${report.slug}" class="reveal card group overflow-hidden block hover:ring-2 hover:ring-rk-green/50 transition-all duration-300">
     <div class="aspect-[16/10] overflow-hidden bg-ink-800">
       <img
         src="${report.image}"
@@ -1209,7 +1209,7 @@ export function MarketAnalysisDetailPage(slug: string): string {
       <div class="container-rk">
         <h1 class="text-2xl font-bold mb-4">Report not found</h1>
         <p class="text-white/60 mb-8">The market analysis report you are looking for does not exist.</p>
-        <a href="#/market-analysis" class="btn-green">Back to Market Analysis</a>
+        <a href="/market-analysis" class="btn-green">Back to Market Analysis</a>
       </div>
     </section>`;
   }
