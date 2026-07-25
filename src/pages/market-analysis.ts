@@ -34,7 +34,7 @@ export const marketReports: MarketReport[] = [
     date: "July 25, 2026",
     tag: "Forex",
     title: "Dollar Firm on Safe-Haven Demand Amid Geopolitical Risk — Market Challenge & Consideration Breakdown",
-    image: "/assets/Forex july 25.jpeg",
+    image: "/assets/forex july 25.jpeg",
     summary:
       "Global forex markets traded cautiously on July 25, 2026, as the U.S. Dollar remained firm on safe-haven demand amid escalating Middle East tensions and rising oil prices. Investors also continued assessing the European Central Bank's latest policy decision while awaiting next week's Federal Reserve and Bank of Japan meetings.",
     overview:
@@ -146,7 +146,7 @@ export const marketReports: MarketReport[] = [
     date: "July 25, 2026",
     tag: "Crypto",
     title: "Bitcoin Holds Near $65K Ahead of Key Macro Events — Market Challenge & Consideration Breakdown",
-    image: "/assets/Crypto july 25.jpeg",
+    image: "/assets/crypto july 25.jpeg",
     summary:
       "The cryptocurrency market traded cautiously on July 25, 2026, with Bitcoin hovering near $65,000 as investors balanced improving ETF demand against geopolitical tensions and uncertainty ahead of next week's U.S. Federal Reserve meeting. Ethereum and major altcoins also traded lower as risk appetite remained subdued.",
     overview:
