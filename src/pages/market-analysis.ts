@@ -30,6 +30,62 @@ type MarketReport = {
  */
 export const marketReports: MarketReport[] = [
   {
+    slug: "forex-july-25-2026",
+    date: "July 25, 2026",
+    tag: "Forex",
+    title: "Dollar Firm on Safe-Haven Demand Amid Geopolitical Risk — Market Challenge & Consideration Breakdown",
+    image: "/assets/forex july 25.jpeg",
+    summary:
+      "Global forex markets traded cautiously on July 25, 2026, as the U.S. Dollar remained firm on safe-haven demand amid escalating Middle East tensions and rising oil prices. Investors also continued assessing the European Central Bank's latest policy decision while awaiting next week's Federal Reserve and Bank of Japan meetings.",
+    overview:
+      "The U.S. Dollar maintained its strength against most major currencies after geopolitical uncertainty increased demand for safe-haven assets. Brent crude trading above $100 per barrel reinforced inflation concerns, prompting traders to reduce expectations for near-term interest rate cuts. The euro remained under pressure after the ECB kept interest rates unchanged, while the Japanese yen weakened further, allowing the Dollar to reach fresh multi-decade highs against the Japanese currency. Sterling also struggled as investors prepared for the upcoming Bank of England policy meeting.",
+    bullets: [
+      "U.S. Dollar remains supported by safe-haven demand.",
+      "USD/JPY trades near a fresh 40-year high.",
+      "Euro weakens after the ECB leaves rates unchanged.",
+      "Pound heads for its first weekly decline in four weeks.",
+      "Markets await the Federal Reserve, Bank of Japan, and Bank of England policy meetings next week.",
+    ],
+    pairs: [
+      { pair: "EUR/USD", sentiment: "Bearish", direction: "Sell", rsi: "44 (Bearish)", resistance: "1.1380 / 1.1430", support: "1.1280 / 1.1230", suggestion: "Sell below 1.1320 / TP 1.1280 / SL 1.1360" },
+      { pair: "GBP/USD", sentiment: "Bearish", direction: "Sell", rsi: "46 (Neutral)", resistance: "1.3360 / 1.3420", support: "1.3260 / 1.3200", suggestion: "Sell below 1.3300 / TP 1.3260 / SL 1.3350" },
+      { pair: "USD/JPY", sentiment: "Bullish", direction: "Buy", rsi: "68 (Bullish)", resistance: "166.00 / 167.20", support: "164.30 / 163.40", suggestion: "Buy above 165.50 / TP 166.00 / SL 164.80" },
+      { pair: "AUD/USD", sentiment: "Bearish", direction: "Sell", rsi: "45 (Bearish)", resistance: "0.6980 / 0.7030", support: "0.6890 / 0.6840", suggestion: "Sell below 0.6950 / TP 0.6890 / SL 0.6980" },
+    ],
+    commentary: [
+      {
+        pair: "EUR/USD",
+        text: "EUR/USD is caught between a Dollar strengthened by safe-haven flows and an ECB that has signaled no near-term change in policy, leaving the pair without an internal catalyst to reverse its slide. A sustained break below 1.1280 could extend losses, while 1.1380 is cited as the immediate resistance level.",
+      },
+      {
+        pair: "GBP/USD",
+        text: "Sterling faces uncertainty heading into next week's Bank of England meeting, compounded by softer U.K. inflation data that complicates the rate outlook. A move below 1.3260 could accelerate selling pressure, with 1.3360 cited as the first resistance level.",
+      },
+      {
+        pair: "USD/JPY",
+        text: "The pair's climb to multi-decade highs raises the question of how much further the widening U.S.–Japan rate gap can push it before a policy shift or intervention risk emerges. A breakout above 166.00 could extend toward 167.20, while 164.30 is cited as the key support level.",
+      },
+      {
+        pair: "AUD/USD",
+        text: "The Australian Dollar remains exposed to broad Dollar strength and cautious global risk sentiment, both of which limit near-term recovery potential. Holding below 0.6980 keeps the bearish outlook intact, with 0.6890 cited as the next downside target.",
+      },
+    ],
+    qa: [
+      { q: "Why is the U.S. Dollar strengthening today?", a: "Safe-haven demand driven by geopolitical tensions and higher oil prices continues to support the U.S. Dollar." },
+      { q: "Why is EUR/USD falling?", a: "The euro weakened after the ECB kept interest rates unchanged while investors favored the Dollar amid global uncertainty." },
+      { q: "Why is USD/JPY at multi-decade highs?", a: "Higher U.S. interest rates and continued policy divergence with the Bank of Japan have strengthened the Dollar against the yen." },
+      { q: "What will drive the forex market next week?", a: "The Federal Reserve, Bank of Japan, and Bank of England policy meetings, along with geopolitical developments, are expected to be the primary market drivers." },
+    ],
+    takeaways: [
+      "The U.S. Dollar remains supported by safe-haven demand.",
+      "EUR/USD and GBP/USD continue to face downside pressure.",
+      "USD/JPY is trading near a fresh 40-year high.",
+      "Central bank meetings next week are likely to drive market volatility.",
+      "Geopolitical tensions and elevated oil prices remain key themes for the global forex market.",
+      "This report summarizes third-party market commentary and technical levels for informational purposes only. It is not personalized financial or investment advice.",
+    ],
+  },
+  {
     slug: "commodity-july-25-2026",
     date: "July 25, 2026",
     tag: "Commodities",
