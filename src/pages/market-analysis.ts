@@ -34,7 +34,7 @@ export const marketReports: MarketReport[] = [
     date: "July 25, 2026",
     tag: "Crypto",
     title: "Bitcoin Holds Near $65K Ahead of Key Macro Events — Market Challenge & Consideration Breakdown",
-    image: "/assets/crypto july 17.jpeg",
+    image: "/assets/crypto july 25.jpeg",
     summary:
       "The cryptocurrency market traded cautiously on July 25, 2026, with Bitcoin hovering near $65,000 as investors balanced improving ETF demand against geopolitical tensions and uncertainty ahead of next week's U.S. Federal Reserve meeting. Ethereum and major altcoins also traded lower as risk appetite remained subdued.",
     overview:
