@@ -30,6 +30,62 @@ type MarketReport = {
  */
 export const marketReports: MarketReport[] = [
   {
+    slug: "crypto-july-25-2026",
+    date: "July 25, 2026",
+    tag: "Crypto",
+    title: "Bitcoin Holds Near $65K Ahead of Key Macro Events — Market Challenge & Consideration Breakdown",
+    image: "/assets/crypto july 25.jpeg",
+    summary:
+      "The cryptocurrency market traded cautiously on July 25, 2026, with Bitcoin hovering near $65,000 as investors balanced improving ETF demand against geopolitical tensions and uncertainty ahead of next week's U.S. Federal Reserve meeting. Ethereum and major altcoins also traded lower as risk appetite remained subdued.",
+    overview:
+      "The crypto market remained range-bound as traders refrained from taking aggressive positions ahead of several major macroeconomic events. Bitcoin held above the important $64,000–$65,000 support zone despite renewed geopolitical concerns. Ethereum, Solana, and XRP also traded modestly lower as investors shifted toward safer assets. However, continued inflows into U.S. spot Bitcoin ETFs helped limit broader losses and suggested that institutional demand remains resilient.",
+    bullets: [
+      "Bitcoin holds near $65,000 despite geopolitical uncertainty.",
+      "Ethereum trades lower alongside major altcoins.",
+      "Spot Bitcoin ETF inflows continue supporting market sentiment.",
+      "Investors await next week's Federal Reserve policy decision.",
+      "Crypto markets remain cautious amid weaker risk appetite.",
+    ],
+    pairs: [
+      { pair: "Bitcoin (BTC)", sentiment: "Neutral", direction: "Hold", rsi: "51 (Neutral)", resistance: "66,200 / 67,500", support: "64,000 / 62,800", suggestion: "Hold — watch for sustained move above $66,200 for fresh bullish momentum" },
+      { pair: "Ethereum (ETH)", sentiment: "Bearish", direction: "Sell", rsi: "47 (Bearish)", resistance: "1,920 / 1,980", support: "1,820 / 1,760", suggestion: "Sell on rallies — recovery above $1,920 would improve sentiment" },
+      { pair: "XRP", sentiment: "Neutral", direction: "Hold", rsi: "49 (Neutral)", resistance: "1.12 / 1.18", support: "1.02 / 0.98", suggestion: "Hold — holding above $1.02 keeps the short-term structure intact" },
+      { pair: "Solana (SOL)", sentiment: "Neutral-Bearish", direction: "Hold", rsi: "46 (Neutral)", resistance: "152 / 160", support: "142 / 135", suggestion: "Hold — move above $152 would strengthen bullish momentum" },
+    ],
+    commentary: [
+      {
+        pair: "Bitcoin (BTC)",
+        text: "Bitcoin's consolidation depends on institutional ETF demand continuing to offset geopolitical uncertainty and cautious broader sentiment. A sustained move above $66,200 is the trigger for fresh bullish momentum toward $67,500, with $64,000 cited as the primary support zone.",
+      },
+      {
+        pair: "Ethereum (ETH)",
+        text: "Ethereum has failed to reclaim key resistance and continues losing short-term momentum as traders reduce exposure to higher-risk assets. A recovery above $1,920 would improve sentiment, while $1,820 remains cited as immediate support.",
+      },
+      {
+        pair: "XRP",
+        text: "XRP remains stuck in a narrow range with buyers and sellers balanced, leaving the token without a clear near-term direction. Holding above $1.02 keeps the short-term structure intact, while a breakout above $1.12 could attract renewed buying interest.",
+      },
+      {
+        pair: "Solana (SOL)",
+        text: "Solana continues to face broader market weakness even as it holds above key support, leaving its next move contingent on overall risk appetite improving. A move above $152 would strengthen bullish momentum, with $142 cited as the critical support level.",
+      },
+    ],
+    qa: [
+      { q: "Why is Bitcoin trading sideways today?", a: "Investors are waiting for the Federal Reserve meeting while geopolitical tensions continue to limit risk appetite." },
+      { q: "What is supporting Bitcoin prices?", a: "Continued inflows into U.S. spot Bitcoin ETFs have helped offset broader market weakness." },
+      { q: "Why are altcoins underperforming?", a: "Ethereum and other major altcoins are facing pressure as investors shift toward safer assets amid macroeconomic uncertainty." },
+      { q: "What is the biggest catalyst for crypto next week?", a: "The U.S. Federal Reserve policy decision and broader macroeconomic developments are expected to determine the market's next major move." },
+    ],
+    takeaways: [
+      "Bitcoin remains stable near $65,000 despite geopolitical uncertainty.",
+      "ETF inflows continue supporting institutional demand.",
+      "Ethereum and major altcoins remain under short-term pressure.",
+      "Investors are focused on next week's Federal Reserve meeting.",
+      "Macroeconomic developments are likely to drive the next significant move in the cryptocurrency market.",
+      "This report summarizes third-party market commentary and technical levels for informational purposes only. It is not personalized financial or investment advice.",
+    ],
+  },
+  {
     slug: "indices-july-25-2026",
     date: "July 25, 2026",
     tag: "Indices",
