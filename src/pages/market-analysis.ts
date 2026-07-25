@@ -30,6 +30,62 @@ type MarketReport = {
  */
 export const marketReports: MarketReport[] = [
   {
+    slug: "commodity-july-25-2026",
+    date: "July 25, 2026",
+    tag: "Commodities",
+    title: "Oil Extends Gains While Gold Climbs on Safe-Haven Demand — Market Challenge & Consideration Breakdown",
+    image: "/assets/commodity july 25.jpeg",
+    summary:
+      "Global commodity markets traded higher on July 25, 2026, with crude oil extending its rally above $100 per barrel amid persistent geopolitical tensions in the Middle East, while gold advanced as investors sought safe-haven assets ahead of next week's major central bank meetings. Silver also posted modest gains, whereas copper remained range-bound on mixed demand signals.",
+    overview:
+      "Commodity markets ended the week with strong momentum as supply concerns continued to dominate sentiment. Brent and WTI crude oil remained elevated following reports of potential disruptions to Middle East energy supplies. Gold benefited from increased safe-haven demand despite a stronger U.S. Dollar, as investors positioned themselves ahead of the upcoming Federal Reserve, Bank of Japan, and Bank of England policy decisions. Silver followed gold higher, supported by both investment demand and industrial optimism, while copper traded sideways as markets assessed China's economic recovery and global manufacturing activity.",
+    bullets: [
+      "Brent crude remains above $100 amid supply concerns.",
+      "WTI crude extends weekly gains on geopolitical risks.",
+      "Gold rises on safe-haven buying despite a firm U.S. Dollar.",
+      "Silver advances alongside precious metals.",
+      "Copper trades sideways as traders assess China's demand outlook.",
+    ],
+    pairs: [
+      { pair: "Gold (XAU/USD)", sentiment: "Bullish", direction: "Buy", rsi: "63 (Bullish)", resistance: "3,445 / 3,490", support: "3,390 / 3,340", suggestion: "Buy above 3,400 / TP 3,445 / SL 3,370" },
+      { pair: "Silver (XAG/USD)", sentiment: "Bullish", direction: "Buy", rsi: "61 (Bullish)", resistance: "39.80 / 40.40", support: "38.90 / 38.20", suggestion: "Buy above 39.20 / TP 39.80 / SL 38.80" },
+      { pair: "WTI Crude Oil", sentiment: "Bullish", direction: "Buy", rsi: "71 (Bullish)", resistance: "101.80 / 103.20", support: "99.20 / 97.80", suggestion: "Buy above 100.50 / TP 101.80 / SL 99.50" },
+      { pair: "Copper", sentiment: "Neutral", direction: "Hold", rsi: "53 (Neutral)", resistance: "5.98 / 6.08", support: "5.80 / 5.68", suggestion: "Hold — move above 5.98 would improve bullish momentum" },
+    ],
+    commentary: [
+      {
+        pair: "Gold (XAU/USD)",
+        text: "Gold's advance has to compete against a stronger U.S. Dollar, which normally weighs on the metal; the rally depends on safe-haven demand continuing to outweigh that headwind. A sustained move above 3,445 could extend the rally toward 3,490, with 3,390 cited as the first major support.",
+      },
+      {
+        pair: "Silver (XAG/USD)",
+        text: "Silver's momentum relies on both investment demand and industrial optimism holding up together — a combination that can diverge if industrial data disappoints. A breakout above 39.80 could open the way toward 40.40, while 38.90 remains cited as the key support zone.",
+      },
+      {
+        pair: "WTI Crude Oil",
+        text: "Oil's rally depends on Middle East supply-disruption concerns persisting; any de-escalation or supply reassurance could quickly remove the current support for prices. A break above 101.80 would strengthen the bullish outlook, with 99.20 cited as immediate support.",
+      },
+      {
+        pair: "Copper",
+        text: "Copper remains stuck between optimism over infrastructure demand and lingering uncertainty about China's economic recovery, leaving its next move unclear. A move above 5.98 would improve bullish momentum, while 5.80 remains cited as the primary support level.",
+      },
+    ],
+    qa: [
+      { q: "Why are oil prices remaining above $100?", a: "Persistent geopolitical tensions and concerns about potential supply disruptions in the Middle East continue supporting crude oil prices." },
+      { q: "Why is gold rising despite a stronger U.S. Dollar?", a: "Safe-haven demand driven by geopolitical uncertainty is outweighing pressure from the stronger Dollar." },
+      { q: "Why is copper trading sideways?", a: "Copper prices remain balanced as traders assess China's economic outlook and global industrial demand." },
+      { q: "What could move commodity markets next week?", a: "The Federal Reserve, Bank of Japan, and Bank of England policy meetings, along with geopolitical developments, are expected to be the primary market catalysts." },
+    ],
+    takeaways: [
+      "Crude oil remains above $100 as supply concerns persist.",
+      "Gold and silver continue benefiting from safe-haven demand.",
+      "Copper remains range-bound amid mixed global demand signals.",
+      "Geopolitical developments remain the dominant driver of commodity markets.",
+      "Central bank policy decisions next week could significantly influence commodity price direction.",
+      "This report summarizes third-party market commentary and technical levels for informational purposes only. It is not personalized financial or investment advice.",
+    ],
+  },
+  {
     slug: "crypto-july-25-2026",
     date: "July 25, 2026",
     tag: "Crypto",
