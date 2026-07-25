@@ -30,6 +30,62 @@ type MarketReport = {
  */
 export const marketReports: MarketReport[] = [
   {
+    slug: "indices-july-25-2026",
+    date: "July 25, 2026",
+    tag: "Indices",
+    title: "Global Stock Index Analysis – Indices Trade Mixed as Oil Prices and Earnings Keep Investors on Edge",
+    image: "/assets/indices july 25.jpeg",
+    summary:
+      "Global stock markets traded mixed on July 25, 2026, as investors weighed strong corporate earnings against rising geopolitical tensions, elevated oil prices, and concerns that persistent inflation could keep interest rates higher for longer. Attention is now shifting to next week's Federal Reserve, Bank of Japan, and Bank of England policy meetings.",
+    overview:
+      "Global equities ended the week cautiously. U.S. markets recovered from earlier losses as energy prices eased slightly from recent highs, while Treasury yields remained near multi-year highs. Technology stocks remained volatile following mixed earnings reactions, whereas financial and energy sectors outperformed. European markets stabilized after the ECB's recent policy decision, while Asian equities remained mixed as investors monitored geopolitical developments and the outlook for global interest rates.",
+    bullets: [
+      "S&P 500 ends the session nearly unchanged.",
+      "Dow Jones outperforms as energy and financial stocks advance.",
+      "Nasdaq remains under pressure following technology weakness.",
+      "Rising oil prices continue to fuel inflation concerns.",
+      "Investors await major central bank meetings next week.",
+    ],
+    pairs: [
+      { pair: "S&P 500", sentiment: "Neutral", direction: "Hold", rsi: "54 (Neutral)", resistance: "7,470 / 7,550", support: "7,360 / 7,280", suggestion: "Hold — watch for sustained move above 7,470 for renewed buying" },
+      { pair: "Nasdaq 100", sentiment: "Bearish", direction: "Sell", rsi: "46 (Bearish)", resistance: "24,950 / 25,300", support: "24,300 / 24,000", suggestion: "Sell on rallies — recovery above 24,950 would improve short-term sentiment" },
+      { pair: "Dow Jones", sentiment: "Bullish", direction: "Buy", rsi: "61 (Bullish)", resistance: "52,200 / 52,600", support: "51,600 / 51,250", suggestion: "Buy — holding above 51,600 keeps the broader bullish trend intact" },
+      { pair: "Nikkei 225", sentiment: "Neutral", direction: "Hold", rsi: "50 (Neutral)", resistance: "41,850 / 42,300", support: "41,000 / 40,500", suggestion: "Hold — breakout above 41,850 could strengthen bullish momentum" },
+    ],
+    commentary: [
+      {
+        pair: "S&P 500",
+        text: "The index is caught between strong corporate earnings pulling it higher and inflation/bond-yield concerns weighing it down, leaving it without a clear directional edge. A sustained move above 7,470 is the trigger for renewed buying, with 7,360 cited as the first key support.",
+      },
+      {
+        pair: "Nasdaq 100",
+        text: "The index faces rotation out of high-growth technology names following mixed earnings and mounting concern over the scale of AI-related spending. A recovery above 24,950 would improve short-term sentiment, while 24,300 remains cited as immediate support.",
+      },
+      {
+        pair: "Dow Jones",
+        text: "The index's outperformance depends on financial and energy stocks continuing to benefit from higher oil prices and resilient economic data — a tailwind that could fade if either condition reverses. Holding above 51,600 keeps the broader bullish trend intact.",
+      },
+      {
+        pair: "Nikkei 225",
+        text: "The index is trading sideways as investors stay cautious ahead of next week's Bank of Japan meeting, with currency volatility adding to the uncertainty. A breakout above 41,850 is what could strengthen bullish momentum.",
+      },
+    ],
+    qa: [
+      { q: "Why are global stock markets trading mixed today?", a: "Markets are balancing strong corporate earnings with rising oil prices, geopolitical risks, and expectations that interest rates could remain elevated." },
+      { q: "Why is the Nasdaq underperforming?", a: "Technology stocks remain under pressure following mixed earnings results and concerns over heavy AI investment spending." },
+      { q: "Which sector is performing the best?", a: "Energy and financial stocks continue outperforming as higher oil prices support earnings." },
+      { q: "What is the biggest market event next week?", a: "The Federal Reserve, Bank of Japan, and Bank of England policy meetings are expected to be the primary drivers of global equity markets." },
+    ],
+    takeaways: [
+      "Global equities remain cautious despite resilient corporate earnings.",
+      "The Dow Jones continues outperforming while the Nasdaq faces pressure.",
+      "Rising oil prices and Treasury yields remain major market concerns.",
+      "Investors are closely watching central bank policy meetings next week.",
+      "Earnings results and geopolitical developments are expected to determine the next major move in global stock markets.",
+      "This report summarizes third-party market commentary and technical levels for informational purposes only. It is not personalized financial or investment advice.",
+    ],
+  },
+  {
     slug: "indices-july-17-2026",
     date: "July 17, 2026",
     tag: "Indices",
