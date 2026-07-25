@@ -34,7 +34,7 @@ export const marketReports: MarketReport[] = [
     date: "July 25, 2026",
     tag: "Indices",
     title: "Global Stock Index Analysis – Indices Trade Mixed as Oil Prices and Earnings Keep Investors on Edge",
-    image: "/assets/indices july 25.jpeg",
+    image: "/assets/Indices july 25.jpeg",
     summary:
       "Global stock markets traded mixed on July 25, 2026, as investors weighed strong corporate earnings against rising geopolitical tensions, elevated oil prices, and concerns that persistent inflation could keep interest rates higher for longer. Attention is now shifting to next week's Federal Reserve, Bank of Japan, and Bank of England policy meetings.",
     overview:
