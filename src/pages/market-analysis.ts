@@ -30,6 +30,61 @@ type MarketReport = {
  */
 export const marketReports: MarketReport[] = [
   {
+    slug: "forex-july-27-2026",
+    date: "July 27, 2026",
+    tag: "Forex",
+    title: "Dollar Weakens Following Middle East De-escalation — Market Challenge & Consideration Breakdown",
+    image: "/assets/forex july 27.jpeg",
+    summary:
+      "The forex market opened the week with the U.S. Dollar under pressure after a temporary pause in U.S.–Iran hostilities reduced demand for safe-haven assets. The euro, pound, Australian dollar, and New Zealand dollar strengthened as oil prices fell sharply and investor sentiment improved ahead of this week's Federal Reserve meeting.",
+    overview:
+      "Currency markets traded cautiously as investors shifted toward risk-sensitive currencies following reports of easing geopolitical tensions. The U.S. Dollar Index slipped while EUR/USD and GBP/USD advanced. The Japanese yen strengthened as the dollar retreated, and commodity-linked currencies benefited from the sharp decline in crude oil prices. Traders are now focused on the Federal Reserve, Bank of Japan, and Bank of England meetings later this week.",
+    bullets: [
+      "U.S. Dollar weakens after easing Middle East tensions.",
+      "EUR/USD and GBP/USD move higher.",
+      "Oil prices fall more than 4%, improving market sentiment.",
+      "Investors await Federal Reserve policy decision.",
+      "Risk appetite improves across global financial markets.",
+    ],
+    pairs: [
+      { pair: "EUR/USD", sentiment: "Bullish", direction: "Buy", rsi: "60 (Bullish)", resistance: "1.1450 / 1.1500", support: "1.1360 / 1.1310", suggestion: "Buy above 1.1400 / TP 1.1450 / SL 1.1370" },
+      { pair: "GBP/USD", sentiment: "Bullish", direction: "Buy", rsi: "58 (Bullish)", resistance: "1.3400 / 1.3460", support: "1.3310 / 1.3260", suggestion: "Buy above 1.3350 / TP 1.3400 / SL 1.3320" },
+      { pair: "USD/JPY", sentiment: "Bearish", direction: "Sell", rsi: "45 (Neutral)", resistance: "164.40 / 165.20", support: "162.90 / 162.10", suggestion: "Sell below 163.50 / TP 162.90 / SL 163.80" },
+      { pair: "AUD/USD", sentiment: "Bullish", direction: "Buy", rsi: "57 (Bullish)", resistance: "0.7040 / 0.7090", support: "0.6960 / 0.6910", suggestion: "Buy above 0.7000 / TP 0.7040 / SL 0.6980" },
+    ],
+    commentary: [
+      {
+        pair: "EUR/USD",
+        text: "The euro's gains depend on the U.S. Dollar staying weak and broader risk sentiment continuing to improve — both conditions tied to geopolitical developments that could reverse quickly. A break above 1.1450 could extend gains toward 1.1500, while 1.1360 remains key support.",
+      },
+      {
+        pair: "GBP/USD",
+        text: "Sterling's strength relies on the broader move away from safe-haven Dollar positions continuing; a shift back toward caution could quickly stall the advance. Holding above 1.3310 maintains the bullish outlook.",
+      },
+      {
+        pair: "USD/JPY",
+        text: "The Dollar's retreat against the yen is tied directly to easing geopolitical risk; any renewed escalation could reverse the pair's recent direction. A break below 162.90 may trigger additional downside momentum.",
+      },
+      {
+        pair: "AUD/USD",
+        text: "The Australian Dollar's advance depends on global risk appetite and lower oil prices both persisting, conditions that remain sensitive to geopolitical headlines. Sustained trading above 0.7000 supports further upside.",
+      },
+    ],
+    qa: [
+      { q: "Why is the U.S. Dollar weakening today?", a: "A pause in U.S.–Iran hostilities reduced safe-haven demand, while falling oil prices improved investor confidence." },
+      { q: "What is supporting the Euro and Pound?", a: "Improved global risk sentiment and a softer U.S. Dollar are supporting both currencies." },
+      { q: "What is the biggest event this week?", a: "The U.S. Federal Reserve policy meeting, along with decisions from the Bank of Japan and Bank of England." },
+      { q: "Which pair has the strongest technical outlook?", a: "EUR/USD currently shows the strongest bullish technical structure." },
+    ],
+    takeaways: [
+      "The U.S. Dollar started the week lower as geopolitical tensions eased.",
+      "EUR/USD and GBP/USD benefited from improved market sentiment.",
+      "Commodity-linked currencies strengthened following the sharp decline in oil prices.",
+      "Central bank meetings later this week are expected to drive the next major move in the forex market.",
+      "This document summarizes market commentary and technical levels for informational purposes only. It is not personalized financial or investment advice.",
+    ],
+  },
+  {
     slug: "forex-july-25-2026",
     date: "July 25, 2026",
     tag: "Forex",
