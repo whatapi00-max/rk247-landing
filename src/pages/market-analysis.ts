@@ -141,6 +141,62 @@ export const marketReports: MarketReport[] = [
     ],
   },
   {
+    slug: "indices-july-27-2026",
+    date: "July 27, 2026",
+    tag: "Indices",
+    title: "Indices Trade Higher as Earnings Optimism Offsets Rate Uncertainty — Market Challenge & Consideration Breakdown",
+    image: "/assets/Indices july 27.jpeg",
+    summary:
+      "Global equity markets traded with a positive bias on July 27, 2026, as investors welcomed strong corporate earnings and easing geopolitical tensions. However, caution remained ahead of this week's Federal Reserve, Bank of Japan, and Bank of England policy meetings, which are expected to determine the next direction for global markets.",
+    overview:
+      "Global stock markets opened the week on a stronger footing as improving risk sentiment supported buying across major indices. The S&P 500 and Nasdaq 100 remained close to record highs, driven by continued strength in technology and AI-related stocks. The Dow Jones benefited from gains in financial and industrial shares, while Japan's Nikkei 225 advanced as exporters gained from a stable yen. Investors remain focused on upcoming central bank decisions and earnings from several large-cap companies, both of which could drive market volatility during the week.",
+    bullets: [
+      "S&P 500 remains near record highs.",
+      "Nasdaq gains as technology stocks continue to outperform.",
+      "Dow Jones advances on strong financial sector performance.",
+      "Nikkei 225 rises as investor confidence improves.",
+      "Markets await Federal Reserve, Bank of Japan, and Bank of England policy decisions.",
+    ],
+    pairs: [
+      { pair: "S&P 500", sentiment: "Bullish", direction: "Buy", rsi: "63 (Bullish)", resistance: "7,560 / 7,650", support: "7,450 / 7,360", suggestion: "Buy above 7,500 / TP 7,560 / SL 7,470" },
+      { pair: "Nasdaq 100", sentiment: "Bullish", direction: "Buy", rsi: "65 (Bullish)", resistance: "25,300 / 25,550", support: "24,900 / 24,700", suggestion: "Buy above 25,100 / TP 25,300 / SL 25,000" },
+      { pair: "Dow Jones", sentiment: "Bullish", direction: "Buy", rsi: "60 (Bullish)", resistance: "52,650 / 53,000", support: "52,000 / 51,700", suggestion: "Buy above 52,300 / TP 52,650 / SL 52,150" },
+      { pair: "Nikkei 225", sentiment: "Neutral-Bullish", direction: "Buy", rsi: "58 (Bullish)", resistance: "42,300 / 42,650", support: "41,700 / 41,300", suggestion: "Buy above 42,000 / TP 42,300 / SL 41,800" },
+    ],
+    commentary: [
+      {
+        pair: "S&P 500",
+        text: "The index's push near record highs depends on corporate earnings and economic data continuing to come in strong; any disappointment could quickly stall the rally. A sustained move above 7,560 could extend the rally toward 7,650, while 7,450 remains the first key support level.",
+      },
+      {
+        pair: "Nasdaq 100",
+        text: "The index's outperformance depends on investor demand for technology and AI-related stocks staying strong, a narrow driver that leaves it more exposed if sentiment shifts. A breakout above 25,300 would strengthen bullish momentum, while 24,900 remains immediate support.",
+      },
+      {
+        pair: "Dow Jones",
+        text: "The index's gains rely on financial, industrial, and energy stocks continuing to perform well together. Holding above 52,000 keeps the broader uptrend intact, while a move above 52,650 could attract additional buying.",
+      },
+      {
+        pair: "Nikkei 225",
+        text: "The index's advance depends on global risk sentiment and yen stability continuing to support exporter shares, both of which are sensitive to shifts ahead of this week's central bank meetings. A sustained move above 42,300 would confirm renewed bullish momentum, while 41,700 remains the primary support level.",
+      },
+    ],
+    qa: [
+      { q: "Why are global stock markets rising today?", a: "Improving corporate earnings, easing geopolitical tensions, and stronger investor confidence are supporting global equities." },
+      { q: "Which index is leading the market?", a: "The Nasdaq 100 continues to outperform due to sustained strength in technology and AI-related companies." },
+      { q: "What is the biggest market focus this week?", a: "Investors are closely watching the Federal Reserve, Bank of Japan, and Bank of England policy meetings, along with major corporate earnings." },
+      { q: "Which sectors are performing best?", a: "Technology, financials, and industrials continue to lead global equity markets." },
+    ],
+    takeaways: [
+      "Global equity markets opened the week with positive momentum.",
+      "The S&P 500 and Nasdaq remain close to record highs.",
+      "Technology stocks continue to lead market gains.",
+      "Investors are awaiting key central bank decisions and major earnings releases.",
+      "Monetary policy announcements are expected to be the primary driver of market direction this week.",
+      "This document summarizes market commentary and technical levels for informational purposes only. It is not personalized financial or investment advice.",
+    ],
+  },
+  {
     slug: "forex-july-25-2026",
     date: "July 25, 2026",
     tag: "Forex",
