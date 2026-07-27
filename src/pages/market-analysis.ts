@@ -197,6 +197,62 @@ export const marketReports: MarketReport[] = [
     ],
   },
   {
+    slug: "crypto-july-27-2026",
+    date: "July 27, 2026",
+    tag: "Crypto",
+    title: "Bitcoin Holds Above $66K Ahead of Federal Reserve Meeting — Market Challenge & Consideration Breakdown",
+    image: "/assets/crypto july 27.jpeg",
+    summary:
+      "The cryptocurrency market traded with a positive bias on July 27, 2026, as Bitcoin held above $66,000 following improving global risk sentiment. Investors continued to monitor ETF inflows and looked ahead to this week's U.S. Federal Reserve policy meeting, which is expected to be the next major catalyst for digital assets.",
+    overview:
+      "Crypto markets opened the week on firmer footing as easing geopolitical tensions encouraged investors to return to risk assets. Bitcoin remained resilient above the $66,000 level, while Ethereum stabilised after recent weakness. XRP traded in a narrow range, and Solana outperformed several large-cap cryptocurrencies. Continued institutional interest through spot Bitcoin ETF inflows helped support overall market sentiment, although traders remained cautious ahead of the Federal Reserve's interest rate decision.",
+    bullets: [
+      "Bitcoin holds above $66,000 as risk appetite improves.",
+      "Ethereum stabilises after recent selling pressure.",
+      "Spot Bitcoin ETF inflows continue supporting institutional demand.",
+      "Solana outperforms several major cryptocurrencies.",
+      "Markets await this week's Federal Reserve meeting.",
+    ],
+    pairs: [
+      { pair: "Bitcoin (BTC)", sentiment: "Bullish", direction: "Buy", rsi: "61 (Bullish)", resistance: "67,200 / 68,500", support: "65,400 / 64,200", suggestion: "Buy above 66,500 / TP 67,200 / SL 66,200" },
+      { pair: "Ethereum (ETH)", sentiment: "Neutral-Bullish", direction: "Buy", rsi: "56 (Neutral)", resistance: "1,940 / 2,000", support: "1,850 / 1,790", suggestion: "Buy above 1,890 / TP 1,940 / SL 1,870" },
+      { pair: "XRP", sentiment: "Neutral", direction: "Hold", rsi: "52 (Neutral)", resistance: "1.15 / 1.20", support: "1.08 / 1.03", suggestion: "Hold — holding above $1.08 keeps the broader recovery intact" },
+      { pair: "Solana (SOL)", sentiment: "Bullish", direction: "Buy", rsi: "60 (Bullish)", resistance: "156 / 164", support: "147 / 140", suggestion: "Buy above 152 / TP 156 / SL 150" },
+    ],
+    commentary: [
+      {
+        pair: "Bitcoin (BTC)",
+        text: "Bitcoin's support above $66,000 depends on improving market sentiment and continued ETF inflows persisting through the Federal Reserve meeting, an event that could shift conditions either way. A sustained move above $67,200 could open the way toward $68,500, while $65,400 remains the key support zone.",
+      },
+      {
+        pair: "Ethereum (ETH)",
+        text: "Ethereum's stabilization after recent weakness still needs to build enough momentum to confirm a genuine recovery rather than a pause. Ethereum is attempting to build momentum above $1,890; a breakout above $1,940 would strengthen the short-term bullish outlook.",
+      },
+      {
+        pair: "XRP",
+        text: "XRP remains stuck in a sideways range with neutral momentum, leaving its next move unclear until it breaks out of the current band. Holding above $1.08 keeps the broader recovery intact, while $1.15 remains the next major resistance.",
+      },
+      {
+        pair: "Solana (SOL)",
+        text: "Solana's outperformance depends on investor sentiment and ecosystem activity continuing to stay strong relative to other large-cap cryptocurrencies. A move above $156 would reinforce bullish momentum.",
+      },
+    ],
+    qa: [
+      { q: "Why is Bitcoin strengthening today?", a: "Improved global risk sentiment and continued spot Bitcoin ETF inflows are supporting prices ahead of the Federal Reserve meeting." },
+      { q: "What is Bitcoin's next key resistance?", a: "The immediate resistance is $67,200, followed by $68,500." },
+      { q: "Why are investors focused on the Federal Reserve?", a: "The Fed's interest-rate decision could influence liquidity conditions and overall demand for risk assets, including cryptocurrencies." },
+      { q: "Which cryptocurrency has the strongest technical outlook today?", a: "Bitcoin and Solana currently show the strongest bullish technical momentum among major cryptocurrencies." },
+    ],
+    takeaways: [
+      "Bitcoin remains firmly above $66,000.",
+      "Ethereum is attempting to recover after recent weakness.",
+      "ETF inflows continue to support institutional participation.",
+      "Solana remains one of the strongest-performing large-cap cryptocurrencies.",
+      "The Federal Reserve meeting is expected to be the primary catalyst for crypto markets this week.",
+      "This document summarizes market commentary and technical levels for informational purposes only. It is not personalized financial or investment advice.",
+    ],
+  },
+  {
     slug: "forex-july-25-2026",
     date: "July 25, 2026",
     tag: "Forex",
