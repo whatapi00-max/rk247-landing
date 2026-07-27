@@ -85,6 +85,62 @@ export const marketReports: MarketReport[] = [
     ],
   },
   {
+    slug: "commodity-july-27-2026",
+    date: "July 27, 2026",
+    tag: "Commodities",
+    title: "Gold Climbs While Oil Slumps on Middle East De-escalation — Market Challenge & Consideration Breakdown",
+    image: "/assets/Commodity july 27.jpeg",
+    summary:
+      "Commodity markets opened the week with mixed performance as gold rallied more than 1% on a weaker U.S. Dollar and easing inflation expectations, while crude oil plunged over 5% after the United States and Iran paused military strikes, reducing fears of immediate supply disruptions.",
+    overview:
+      "Global commodity markets experienced sharp moves as geopolitical tensions eased. Gold attracted safe-haven demand despite the temporary pause in hostilities, supported by a weaker U.S. Dollar and lower Treasury yields. Brent and WTI crude oil fell to their lowest levels in nearly a week as hopes for renewed diplomacy reduced concerns over disruptions in the Strait of Hormuz. Silver, platinum, and palladium also advanced, while copper traded in a narrow range as investors awaited this week's Federal Reserve policy decision.",
+    bullets: [
+      "Gold rises more than 1% as the U.S. Dollar weakens.",
+      "Brent and WTI crude oil fall over 5%.",
+      "Middle East de-escalation eases supply disruption concerns.",
+      "Silver, platinum, and palladium move higher.",
+      "Investors await this week's Federal Reserve meeting.",
+    ],
+    pairs: [
+      { pair: "Gold (XAU/USD)", sentiment: "Bullish", direction: "Buy", rsi: "62 (Bullish)", resistance: "4,120 / 4,160", support: "4,060 / 4,000", suggestion: "Buy above 4,090 / TP 4,120 / SL 4,070" },
+      { pair: "Silver (XAG/USD)", sentiment: "Bullish", direction: "Buy", rsi: "59 (Bullish)", resistance: "58.90 / 59.80", support: "57.80 / 56.90", suggestion: "Buy above 58.40 / TP 58.90 / SL 58.00" },
+      { pair: "WTI Crude Oil", sentiment: "Bearish", direction: "Sell", rsi: "42 (Bearish)", resistance: "87.20 / 89.50", support: "84.00 / 82.20", suggestion: "Sell below 85.50 / TP 84.00 / SL 86.00" },
+      { pair: "Copper", sentiment: "Neutral", direction: "Hold", rsi: "51 (Neutral)", resistance: "6.40 / 6.50", support: "6.25 / 6.15", suggestion: "Hold — holding above 6.25 keeps the medium-term outlook stable" },
+    ],
+    commentary: [
+      {
+        pair: "Gold (XAU/USD)",
+        text: "Gold's rally depends on the U.S. Dollar staying weak and investors continuing to seek protection ahead of this week's Federal Reserve meeting, both of which could shift once the decision is announced. A sustained move above 4,120 could open the door to 4,160, while 4,060 remains the key support level.",
+      },
+      {
+        pair: "Silver (XAG/USD)",
+        text: "Silver's advance depends on precious-metals demand and investor sentiment continuing to improve alongside gold. A break above 58.90 would reinforce bullish momentum, while 57.80 remains immediate support.",
+      },
+      {
+        pair: "WTI Crude Oil",
+        text: "Oil's sharp decline depends on the U.S.–Iran pause holding; any renewed escalation could quickly reverse the drop and reintroduce supply-disruption risk through the Strait of Hormuz. A move below 84.00 could extend losses, while 87.20 is now the first resistance level.",
+      },
+      {
+        pair: "Copper",
+        text: "Copper remains range-bound as traders balance improving market sentiment against uncertainty over global industrial demand. Holding above 6.25 keeps the medium-term outlook stable.",
+      },
+    ],
+    qa: [
+      { q: "Why did oil prices fall sharply today?", a: "The U.S. and Iran paused military strikes, reducing fears of supply disruptions and easing geopolitical risk premiums." },
+      { q: "Why is gold rising despite easing tensions?", a: "A weaker U.S. Dollar and lower inflation expectations increased gold's attractiveness ahead of the Federal Reserve meeting." },
+      { q: "What is the biggest event for commodity markets this week?", a: "The U.S. Federal Reserve policy meeting is expected to influence precious metals, energy prices, and the U.S. Dollar." },
+      { q: "Which commodity has the strongest momentum today?", a: "Gold is currently showing the strongest bullish momentum, while crude oil remains under selling pressure." },
+    ],
+    takeaways: [
+      "Gold leads gains as the U.S. Dollar weakens.",
+      "Oil prices drop more than 5% after Middle East tensions ease.",
+      "Silver and other precious metals also move higher.",
+      "Copper remains range-bound amid mixed demand signals.",
+      "The Federal Reserve meeting is expected to be the key catalyst for commodity markets this week.",
+      "This document summarizes market commentary and technical levels for informational purposes only. It is not personalized financial or investment advice.",
+    ],
+  },
+  {
     slug: "forex-july-25-2026",
     date: "July 25, 2026",
     tag: "Forex",
