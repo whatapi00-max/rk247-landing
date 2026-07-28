@@ -86,6 +86,62 @@ export const marketReports: MarketReport[] = [
     ],
   },
   {
+    slug: "commodity-july-28-2026",
+    date: "July 28, 2026",
+    tag: "Commodities",
+    title: "Gold Slips and Oil Extends Losses Ahead of Fed Decision — Market Challenge & Consideration Breakdown",
+    image: "/assets/Commodity july 28.jpeg",
+    summary:
+      "Commodity markets traded lower on 28 July 2026 as a stronger U.S. Dollar weighed on precious metals, while crude oil extended its decline after easing U.S.–Iran tensions reduced concerns over Middle East supply disruptions. Investors are now focused on the Federal Reserve's policy decision, expected to be the week's biggest catalyst.",
+    overview:
+      "Global commodity markets remained cautious as traders avoided aggressive positions ahead of the Federal Reserve meeting. Gold retreated after the Dollar strengthened to a one-month high, reducing demand for non-yielding assets. Silver, platinum, and palladium also moved lower. Meanwhile, Brent and WTI crude oil extended losses as hopes for diplomacy between the United States and Iran eased fears of immediate supply disruptions, despite lingering geopolitical risks in the Middle East.",
+    bullets: [
+      "Gold falls as the U.S. Dollar strengthens.",
+      "Brent and WTI crude oil extend recent losses.",
+      "Markets assess easing U.S.–Iran tensions.",
+      "Precious metals remain under pressure ahead of the Fed meeting.",
+      "Investors await the Federal Reserve's interest-rate decision.",
+    ],
+    pairs: [
+      { pair: "Gold (XAU/USD)", sentiment: "Bearish", direction: "Sell", rsi: "46 (Bearish)", resistance: "4,085 / 4,120", support: "4,020 / 3,980", suggestion: "Sell below 4,050 / TP 4,020 / SL 4,070" },
+      { pair: "Silver (XAG/USD)", sentiment: "Bearish", direction: "Sell", rsi: "45 (Bearish)", resistance: "58.10 / 59.00", support: "56.80 / 56.00", suggestion: "Sell below 57.50 / TP 56.80 / SL 57.80" },
+      { pair: "WTI Crude Oil", sentiment: "Bearish", direction: "Sell", rsi: "41 (Bearish)", resistance: "83.80 / 85.20", support: "81.00 / 79.50", suggestion: "Sell below 82.50 / TP 81.00 / SL 83.00" },
+      { pair: "Copper", sentiment: "Neutral", direction: "Hold", rsi: "50 (Neutral)", resistance: "6.38 / 6.45", support: "6.22 / 6.15", suggestion: "Hold — copper traded within a narrow range as investors balanced competing forces" },
+    ],
+    commentary: [
+      {
+        pair: "Gold (XAU/USD)",
+        text: "Gold's decline depends on the U.S. Dollar staying strong; the metal's next move likely hinges on how the Federal Reserve's guidance shifts Dollar expectations. A sustained break below 4,020 could accelerate selling, while 4,085 is the first major resistance.",
+      },
+      {
+        pair: "Silver (XAG/USD)",
+        text: "Silver's weakness mirrors gold's, driven by rising Treasury yields and Dollar strength that continue to pressure precious metals. Holding above 56.80 is important to prevent a deeper correction.",
+      },
+      {
+        pair: "WTI Crude Oil",
+        text: "Oil's decline depends on the U.S.–Iran diplomatic thaw holding; any setback in negotiations could quickly reverse the drop and reintroduce supply-risk premiums. A break below 81.00 could extend losses, while 83.80 remains immediate resistance.",
+      },
+      {
+        pair: "Copper",
+        text: "Copper remains stuck between weaker overall commodity sentiment and expectations for stable industrial demand, leaving it without a clear directional signal. Copper traded within a narrow range as investors balanced these competing forces.",
+      },
+    ],
+    qa: [
+      { q: "Why is gold falling today?", a: "Gold is under pressure because the stronger U.S. Dollar makes the metal more expensive for international buyers, while traders await the Federal Reserve's policy announcement." },
+      { q: "Why are oil prices extending losses?", a: "Oil prices continue to decline as easing U.S.–Iran tensions reduce fears of supply disruptions and improve expectations for diplomatic progress." },
+      { q: "What is the biggest event for commodity markets this week?", a: "The U.S. Federal Reserve's interest-rate decision is expected to be the primary driver of precious metals and energy markets." },
+      { q: "Which commodity currently has the weakest technical outlook?", a: "WTI crude oil remains the weakest, with technical indicators continuing to favour sellers." },
+    ],
+    takeaways: [
+      "Gold remains under pressure due to a stronger U.S. Dollar.",
+      "Oil extends its decline as geopolitical tensions ease.",
+      "Precious metals continue to trade cautiously ahead of the Fed meeting.",
+      "Copper remains range-bound with neutral momentum.",
+      "The Federal Reserve's policy decision is expected to determine the next major move across commodity markets.",
+      "This document summarizes market commentary and technical levels for informational purposes only. It is not personalized financial or investment advice.",
+    ],
+  },
+  {
     slug: "forex-july-27-2026",
     date: "July 27, 2026",
     tag: "Forex",
