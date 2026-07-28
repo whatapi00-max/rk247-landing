@@ -197,6 +197,62 @@ export const marketReports: MarketReport[] = [
     ],
   },
   {
+    slug: "indices-july-28-2026",
+    date: "July 28, 2026",
+    tag: "Indices",
+    title: "Indices Hold Near Record Highs as Investors Await Key Central Bank Decisions — Market Challenge & Consideration Breakdown",
+    image: "/assets/Indices july 28.jpeg",
+    summary:
+      "Global equity markets traded cautiously on 28 July 2026 as investors balanced strong corporate earnings with uncertainty ahead of this week's Federal Reserve, Bank of Japan, and Bank of England policy meetings. Major indices remained close to record highs, while trading volumes were subdued as market participants awaited fresh policy guidance.",
+    overview:
+      "Global stock markets opened Tuesday with mixed performance as investors adopted a wait-and-see approach before several major central bank announcements. The S&P 500 and Nasdaq 100 remained supported by continued strength in technology and AI-related stocks, while the Dow Jones Industrial Average gained on resilient financial and industrial shares. In Asia, the Nikkei 225 traded higher as a stable yen supported export-oriented companies. Market sentiment remains constructive, but volatility is expected to increase following the Federal Reserve's interest-rate decision and upcoming earnings from several large-cap companies.",
+    bullets: [
+      "S&P 500 remains close to record highs.",
+      "Nasdaq continues to outperform on AI and technology gains.",
+      "Dow Jones supported by financial and industrial sectors.",
+      "Nikkei 225 advances on improving investor confidence.",
+      "Federal Reserve, Bank of Japan and Bank of England meetings remain the primary market focus.",
+    ],
+    pairs: [
+      { pair: "S&P 500", sentiment: "Bullish", direction: "Buy", rsi: "64 (Bullish)", resistance: "7,580 / 7,660", support: "7,470 / 7,390", suggestion: "Buy above 7,520 / TP 7,580 / SL 7,490" },
+      { pair: "Nasdaq 100", sentiment: "Bullish", direction: "Buy", rsi: "66 (Bullish)", resistance: "25,420 / 25,700", support: "25,000 / 24,800", suggestion: "Buy above 25,200 / TP 25,420 / SL 25,100" },
+      { pair: "Dow Jones", sentiment: "Bullish", direction: "Buy", rsi: "61 (Bullish)", resistance: "52,820 / 53,150", support: "52,150 / 51,850", suggestion: "Buy above 52,500 / TP 52,820 / SL 52,350" },
+      { pair: "Nikkei 225", sentiment: "Neutral-Bullish", direction: "Buy", rsi: "59 (Bullish)", resistance: "42,450 / 42,800", support: "41,900 / 41,500", suggestion: "Buy above 42,200 / TP 42,450 / SL 42,000" },
+    ],
+    commentary: [
+      {
+        pair: "S&P 500",
+        text: "The index's push near all-time highs depends on corporate earnings and economic data staying resilient through the central bank announcements. A sustained move above 7,580 could trigger another leg higher, while 7,470 remains the first important support.",
+      },
+      {
+        pair: "Nasdaq 100",
+        text: "The index's momentum depends on continued demand for technology and AI-related stocks holding up, with traders staying cautious ahead of the Federal Reserve's policy announcement. A breakout above 25,420 would reinforce the bullish trend.",
+      },
+      {
+        pair: "Dow Jones",
+        text: "The index's support relies on financial, healthcare, and industrial stocks continuing to perform well together. Holding above 52,150 keeps the broader uptrend intact.",
+      },
+      {
+        pair: "Nikkei 225",
+        text: "The index's advance depends on global sentiment and yen stability continuing to support exporter shares heading into this week's central bank decisions. A move above 42,450 could encourage additional buying from institutional investors.",
+      },
+    ],
+    qa: [
+      { q: "Why are global stock markets trading cautiously today?", a: "Investors are waiting for interest-rate decisions from the Federal Reserve, Bank of Japan, and Bank of England before taking larger positions." },
+      { q: "Which index is showing the strongest momentum?", a: "The Nasdaq 100 continues to lead thanks to sustained demand for technology and AI-related stocks." },
+      { q: "What is the biggest market event this week?", a: "The Federal Reserve's policy meeting is expected to be the key driver for global equity markets, alongside major corporate earnings." },
+      { q: "Which sectors are currently outperforming?", a: "Technology, financials, industrials, and artificial intelligence-related companies continue to outperform the broader market." },
+    ],
+    takeaways: [
+      "Global indices remain close to record highs.",
+      "Technology stocks continue to lead market performance.",
+      "Investors remain focused on upcoming central bank policy decisions.",
+      "Corporate earnings continue to support market sentiment.",
+      "This week's monetary policy announcements are expected to determine the next major direction for global equity markets.",
+      "This document summarizes market commentary and technical levels for informational purposes only. It is not personalized financial or investment advice.",
+    ],
+  },
+  {
     slug: "forex-july-27-2026",
     date: "July 27, 2026",
     tag: "Forex",
