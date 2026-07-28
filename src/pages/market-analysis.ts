@@ -30,6 +30,62 @@ type MarketReport = {
  */
 export const marketReports: MarketReport[] = [
   {
+    slug: "forex-july-28-2026",
+    date: "July 28, 2026",
+    tag: "Forex",
+    title: "Dollar Holds Firm Ahead of Fed Decision — Market Challenge & Consideration Breakdown",
+    image: "/assets/forex july 28.jpeg",
+    summary:
+      "Global currency markets traded cautiously on 28 July 2026 as the U.S. Dollar hovered near a one-month high ahead of the Federal Reserve's policy meeting. Investors continued to assess the possibility of a surprise rate hike while monitoring upcoming U.S. GDP and inflation data.",
+    overview:
+      "The forex market remained relatively range-bound as traders avoided large positions before this week's major central bank meetings. The U.S. Dollar Index stayed firm, supported by higher Treasury yields and expectations that the Federal Reserve could maintain a hawkish stance. The euro and British pound traded slightly lower, while the Japanese yen remained under pressure. Commodity-linked currencies such as the Australian and New Zealand dollars also softened amid cautious market sentiment.",
+    bullets: [
+      "U.S. Dollar trades near a one-month high.",
+      "Markets await the Federal Reserve interest-rate decision.",
+      "EUR/USD and GBP/USD remain under pressure.",
+      "Traders focus on U.S. GDP and Core PCE inflation data.",
+      "Bank of Japan and Bank of England meetings remain in focus.",
+    ],
+    pairs: [
+      { pair: "EUR/USD", sentiment: "Bearish", direction: "Sell", rsi: "45 (Bearish)", resistance: "1.1420 / 1.1480", support: "1.1350 / 1.1300", suggestion: "Sell below 1.1380 / TP 1.1350 / SL 1.1410" },
+      { pair: "GBP/USD", sentiment: "Bearish", direction: "Sell", rsi: "44 (Bearish)", resistance: "1.3340 / 1.3400", support: "1.3250 / 1.3200", suggestion: "Sell below 1.3300 / TP 1.3250 / SL 1.3330" },
+      { pair: "USD/JPY", sentiment: "Bullish", direction: "Buy", rsi: "59 (Bullish)", resistance: "164.50 / 165.20", support: "163.20 / 162.60", suggestion: "Buy above 164.00 / TP 164.50 / SL 163.70" },
+      { pair: "AUD/USD", sentiment: "Bearish", direction: "Sell", rsi: "43 (Bearish)", resistance: "0.7000 / 0.7050", support: "0.6920 / 0.6880", suggestion: "Sell below 0.6960 / TP 0.6920 / SL 0.6980" },
+    ],
+    commentary: [
+      {
+        pair: "EUR/USD",
+        text: "The euro's upside remains capped by a stronger U.S. Dollar and rising Treasury yields, both of which depend on how hawkish the Federal Reserve sounds this week. A sustained break below 1.1350 could expose the pair to further downside.",
+      },
+      {
+        pair: "GBP/USD",
+        text: "Sterling faces uncertainty ahead of the Bank of England meeting, with technical momentum currently favouring sellers. Traders remain focused on policy guidance and inflation expectations as the key drivers for the pair's next move.",
+      },
+      {
+        pair: "USD/JPY",
+        text: "The pair's strength depends on the U.S.–Japan yield differential continuing to widen; any narrowing could quickly remove its main support. A move above 164.50 would strengthen the bullish outlook.",
+      },
+      {
+        pair: "AUD/USD",
+        text: "The Australian Dollar remains under pressure as investors reduce exposure to risk-sensitive currencies ahead of key central bank announcements and inflation data. The pair's direction will likely hinge on how markets react to this week's Federal Reserve decision and U.S. data releases.",
+      },
+    ],
+    qa: [
+      { q: "Why is the U.S. Dollar strong today?", a: "The Dollar is supported by expectations that the Federal Reserve could maintain a hawkish stance, with markets also pricing in the possibility of future rate hikes." },
+      { q: "What is the biggest event for forex markets this week?", a: "The U.S. Federal Reserve policy decision, along with meetings from the Bank of Japan and the Bank of England, is expected to drive volatility." },
+      { q: "Why are EUR/USD and GBP/USD trading lower?", a: "A stronger U.S. Dollar and higher Treasury yields continue to weigh on both currency pairs." },
+      { q: "Which currency pair has the strongest technical outlook today?", a: "USD/JPY currently has the strongest bullish momentum, supported by interest-rate differentials and Dollar strength." },
+    ],
+    takeaways: [
+      "The U.S. Dollar remains close to a one-month high.",
+      "Markets are awaiting the Federal Reserve's policy decision.",
+      "EUR/USD and GBP/USD continue to face downside pressure.",
+      "USD/JPY maintains a bullish bias.",
+      "Central bank decisions and upcoming U.S. economic data are likely to determine the next major move in the forex market.",
+      "This document summarizes market commentary and technical levels for informational purposes only. It is not personalized financial or investment advice.",
+    ],
+  },
+  {
     slug: "forex-july-27-2026",
     date: "July 27, 2026",
     tag: "Forex",
