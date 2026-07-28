@@ -142,6 +142,61 @@ export const marketReports: MarketReport[] = [
     ],
   },
   {
+    slug: "crypto-july-28-2026",
+    date: "July 28, 2026",
+    tag: "Crypto",
+    title: "Bitcoin Slips Below $64K Ahead of Federal Reserve Decision — Market Challenge & Consideration Breakdown",
+    image: "/assets/crypto july 28.jpeg",
+    summary:
+      "Cryptocurrency markets traded cautiously on 28 July 2026 as Bitcoin slipped below $64,000 amid renewed concerns over a potential U.S. Federal Reserve rate hike. Investors also monitored continued spot Bitcoin ETF outflows, while Ethereum and major altcoins remained under selling pressure.",
+    overview:
+      "The crypto market remained under pressure as traders reduced risk exposure ahead of this week's Federal Reserve policy announcement. Bitcoin fell to its lowest level in nearly two weeks, while Ethereum, XRP, and Solana also traded lower. A stronger U.S. Dollar, uncertainty over U.S. interest rates, and continued ETF outflows weighed on sentiment across digital assets. Despite the recent decline, analysts believe the broader trend remains dependent on the Fed's policy guidance and institutional demand.",
+    bullets: [
+      "Bitcoin falls below $64,000 ahead of the Fed meeting.",
+      "Ethereum extends recent weakness.",
+      "Spot Bitcoin ETF outflows continue to pressure sentiment.",
+      "Traders reduce risk exposure before key macro events.",
+      "The Federal Reserve decision remains the week's biggest catalyst.",
+    ],
+    pairs: [
+      { pair: "Bitcoin (BTC)", sentiment: "Bearish", direction: "Sell", rsi: "43 (Bearish)", resistance: "64,800 / 66,000", support: "63,000 / 61,800", suggestion: "Sell below 64,000 / TP 63,000 / SL 64,500" },
+      { pair: "Ethereum (ETH)", sentiment: "Bearish", direction: "Sell", rsi: "42 (Bearish)", resistance: "1,930 / 1,980", support: "1,820 / 1,760", suggestion: "Sell below 1,880 / TP 1,820 / SL 1,900" },
+      { pair: "XRP", sentiment: "Neutral-Bearish", direction: "Hold", rsi: "46 (Neutral)", resistance: "1.10 / 1.16", support: "1.02 / 0.98", suggestion: "Hold — a break below $1.02 could trigger additional selling" },
+      { pair: "Solana (SOL)", sentiment: "Bearish", direction: "Sell", rsi: "44 (Bearish)", resistance: "149 / 156", support: "140 / 134", suggestion: "Sell below 145 / TP 140 / SL 147" },
+    ],
+    commentary: [
+      {
+        pair: "Bitcoin (BTC)",
+        text: "Bitcoin's slide below $64,000 depends on how the Federal Reserve's decision affects the Dollar and broader risk appetite; ETF outflows add further downside pressure. A sustained move below $63,000 could increase downside momentum, while a recovery above $64,800 would improve the short-term outlook.",
+      },
+      {
+        pair: "Ethereum (ETH)",
+        text: "Ethereum's defensive trading alongside Bitcoin reflects weak momentum and cautious investor sentiment that is likely to persist until the Fed meeting concludes. The market may remain volatile in the near term as traders wait for policy clarity.",
+      },
+      {
+        pair: "XRP",
+        text: "XRP's consolidation near support depends on buyers stepping in before a break lower triggers further selling. A break below $1.02 could trigger additional selling, while a move above $1.10 would signal renewed buying interest.",
+      },
+      {
+        pair: "Solana (SOL)",
+        text: "Solana remains under pressure as investors reduce exposure to higher-risk cryptocurrencies ahead of the Fed decision. The $140 level is the next important support zone to watch.",
+      },
+    ],
+    qa: [
+      { q: "Why is Bitcoin falling today?", a: "Bitcoin is under pressure due to uncertainty surrounding the Federal Reserve meeting, a stronger U.S. Dollar, and continued ETF outflows." },
+      { q: "What is Bitcoin's key support level?", a: "The immediate support is $63,000, followed by $61,800 if selling pressure intensifies." },
+      { q: "Why are investors watching the Federal Reserve?", a: "Interest-rate decisions can affect liquidity, the U.S. Dollar, and demand for risk assets such as cryptocurrencies." },
+      { q: "Which cryptocurrency has the weakest technical outlook today?", a: "Bitcoin and Ethereum currently show the weakest short-term technical momentum as markets remain cautious ahead of the Fed decision." },
+    ],
+    takeaways: [
+      "Bitcoin trades below $64,000 ahead of the Federal Reserve meeting.",
+      "Ethereum and major altcoins remain under selling pressure.",
+      "ETF outflows and a stronger U.S. Dollar continue to weigh on crypto sentiment.",
+      "Investors are awaiting the Fed's policy announcement for the next major market direction.",
+      "This document summarizes market commentary and technical levels for informational purposes only. It is not personalized financial or investment advice.",
+    ],
+  },
+  {
     slug: "forex-july-27-2026",
     date: "July 27, 2026",
     tag: "Forex",
