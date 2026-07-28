@@ -30,7 +30,7 @@ type MarketReport = {
  */
 export const marketReports: MarketReport[] = [
   {
-    slug: "forex-july-28-2026",
+    slug: "forex-dollar-holds-firm-ahead-of-fed",
     date: "July 28, 2026",
     tag: "Forex",
     title: "Dollar Holds Firm Ahead of Fed Decision — Market Challenge & Consideration Breakdown",
@@ -86,7 +86,7 @@ export const marketReports: MarketReport[] = [
     ],
   },
   {
-    slug: "commodity-july-28-2026",
+    slug: "commodities-gold-slips-and-oil-extends-losses",
     date: "July 28, 2026",
     tag: "Commodities",
     title: "Gold Slips and Oil Extends Losses Ahead of Fed Decision — Market Challenge & Consideration Breakdown",
@@ -142,7 +142,7 @@ export const marketReports: MarketReport[] = [
     ],
   },
   {
-    slug: "crypto-july-28-2026",
+    slug: "crypto-bitcoin-slips-below-64k-ahead-of",
     date: "July 28, 2026",
     tag: "Crypto",
     title: "Bitcoin Slips Below $64K Ahead of Federal Reserve Decision — Market Challenge & Consideration Breakdown",
@@ -197,7 +197,7 @@ export const marketReports: MarketReport[] = [
     ],
   },
   {
-    slug: "indices-july-28-2026",
+    slug: "indices-hold-near-record-highs-as-investors",
     date: "July 28, 2026",
     tag: "Indices",
     title: "Indices Hold Near Record Highs as Investors Await Key Central Bank Decisions — Market Challenge & Consideration Breakdown",
@@ -253,7 +253,7 @@ export const marketReports: MarketReport[] = [
     ],
   },
   {
-    slug: "forex-july-27-2026",
+    slug: "forex-dollar-weakens-following-middle-east-de-escalation",
     date: "July 27, 2026",
     tag: "Forex",
     title: "Dollar Weakens Following Middle East De-escalation — Market Challenge & Consideration Breakdown",
@@ -308,7 +308,7 @@ export const marketReports: MarketReport[] = [
     ],
   },
   {
-    slug: "commodity-july-27-2026",
+    slug: "commodities-gold-climbs-while-oil-slumps-on",
     date: "July 27, 2026",
     tag: "Commodities",
     title: "Gold Climbs While Oil Slumps on Middle East De-escalation — Market Challenge & Consideration Breakdown",
@@ -364,7 +364,7 @@ export const marketReports: MarketReport[] = [
     ],
   },
   {
-    slug: "indices-july-27-2026",
+    slug: "indices-trade-higher-as-earnings-optimism-offsets",
     date: "July 27, 2026",
     tag: "Indices",
     title: "Indices Trade Higher as Earnings Optimism Offsets Rate Uncertainty — Market Challenge & Consideration Breakdown",
@@ -420,7 +420,7 @@ export const marketReports: MarketReport[] = [
     ],
   },
   {
-    slug: "crypto-july-27-2026",
+    slug: "crypto-bitcoin-holds-above-66k-ahead-of",
     date: "July 27, 2026",
     tag: "Crypto",
     title: "Bitcoin Holds Above $66K Ahead of Federal Reserve Meeting — Market Challenge & Consideration Breakdown",
@@ -476,7 +476,7 @@ export const marketReports: MarketReport[] = [
     ],
   },
   {
-    slug: "forex-july-25-2026",
+    slug: "forex-dollar-firm-on-safe-haven-demand-amid",
     date: "July 25, 2026",
     tag: "Forex",
     title: "Dollar Firm on Safe-Haven Demand Amid Geopolitical Risk — Market Challenge & Consideration Breakdown",
@@ -532,7 +532,7 @@ export const marketReports: MarketReport[] = [
     ],
   },
   {
-    slug: "commodity-july-25-2026",
+    slug: "commodities-oil-extends-gains-while-gold-climbs",
     date: "July 25, 2026",
     tag: "Commodities",
     title: "Oil Extends Gains While Gold Climbs on Safe-Haven Demand — Market Challenge & Consideration Breakdown",
@@ -588,7 +588,7 @@ export const marketReports: MarketReport[] = [
     ],
   },
   {
-    slug: "crypto-july-25-2026",
+    slug: "crypto-bitcoin-holds-near-65k-ahead-of",
     date: "July 25, 2026",
     tag: "Crypto",
     title: "Bitcoin Holds Near $65K Ahead of Key Macro Events — Market Challenge & Consideration Breakdown",
@@ -644,7 +644,7 @@ export const marketReports: MarketReport[] = [
     ],
   },
   {
-    slug: "indices-july-25-2026",
+    slug: "indices-global-stock-index-analysis-indices",
     date: "July 25, 2026",
     tag: "Indices",
     title: "Global Stock Index Analysis – Indices Trade Mixed as Oil Prices and Earnings Keep Investors on Edge",
@@ -700,7 +700,7 @@ export const marketReports: MarketReport[] = [
     ],
   },
   {
-    slug: "indices-july-17-2026",
+    slug: "indices-global-stock-indices-advance-as-earnings",
     date: "July 17, 2026",
     tag: "Indices",
     title: "Global Stock Indices Advance as Earnings Optimism Offsets Geopolitical Risks",
@@ -756,7 +756,7 @@ export const marketReports: MarketReport[] = [
     ],
   },
   {
-    slug: "crypto-july-17-2026",
+    slug: "crypto-markets-trade-cautiously-as-bitcoin-holds",
     date: "July 17, 2026",
     tag: "Crypto",
     title: "Crypto Markets Trade Cautiously as Bitcoin Holds Near $64K Amid Macro and Geopolitical Uncertainty",
@@ -812,7 +812,7 @@ export const marketReports: MarketReport[] = [
     ],
   },
   {
-    slug: "commodity-july-17-2026",
+    slug: "commodity-markets-mixed-as-oil-surges-on",
     date: "July 17, 2026",
     tag: "Commodity",
     title: "Commodity Markets Mixed as Oil Surges on Middle East Tensions While Gold Faces Weekly Pressure",
@@ -868,7 +868,7 @@ export const marketReports: MarketReport[] = [
     ],
   },
   {
-    slug: "forex-july-17-2026",
+    slug: "forex-markets-stabilize-as-dollar-eyes-weekly",
     date: "July 17, 2026",
     tag: "Forex",
     title: "Forex Markets Stabilize as Dollar Eyes Weekly Loss Despite Safe-Haven Demand",
@@ -924,7 +924,7 @@ export const marketReports: MarketReport[] = [
     ],
   },
   {
-    slug: "forex-july-16-2026",
+    slug: "forex-markets-steady-as-dollar-stabilizes-ahead",
     date: "July 16, 2026",
     tag: "Forex",
     title: "Forex Markets Steady as Dollar Stabilizes Ahead of U.S. Retail Sales Data",
@@ -980,7 +980,7 @@ export const marketReports: MarketReport[] = [
     ],
   },
   {
-    slug: "commodity-july-16-2026",
+    slug: "commodity-markets-mixed-as-gold-holds-firm-2",
     date: "July 16, 2026",
     tag: "Commodity",
     title: "Commodity Markets Mixed as Gold Holds Firm While Oil Eases on Profit-Taking",
@@ -1036,7 +1036,7 @@ export const marketReports: MarketReport[] = [
     ],
   },
   {
-    slug: "crypto-july-16-2026",
+    slug: "crypto-markets-edge-higher-as-bitcoin-holds",
     date: "July 16, 2026",
     tag: "Crypto",
     title: "Crypto Markets Edge Higher as Bitcoin Holds Key Support and Altcoins Stabilize",
@@ -1092,7 +1092,7 @@ export const marketReports: MarketReport[] = [
     ],
   },
   {
-    slug: "indices-july-16-2026",
+    slug: "indices-global-stock-indices-extend-gains-as",
     date: "July 16, 2026",
     tag: "Indices",
     title: "Global Stock Indices Extend Gains as Cooling Inflation Boosts Risk Appetite",
@@ -1148,7 +1148,7 @@ export const marketReports: MarketReport[] = [
     ],
   },
   {
-    slug: "forex-july-15-2026",
+    slug: "forex-markets-rebound-softer-us-inflation-pressures",
     date: "July 15, 2026",
     tag: "Forex",
     title: "Forex Markets Rebound: Softer U.S. Inflation Pressures the Dollar",
@@ -1204,7 +1204,7 @@ export const marketReports: MarketReport[] = [
     ],
   },
   {
-    slug: "commodity-july-15-2026",
+    slug: "commodity-markets-rally-gold-extends-gains-and",
     date: "July 15, 2026",
     tag: "Commodity",
     title: "Commodity Markets Rally: Gold Extends Gains and Oil Holds Firm",
@@ -1260,7 +1260,7 @@ export const marketReports: MarketReport[] = [
     ],
   },
   {
-    slug: "crypto-july-15-2026",
+    slug: "crypto-markets-recover-bitcoin-climbs-on-weaker",
     date: "July 15, 2026",
     tag: "Crypto",
     title: "Crypto Markets Recover: Bitcoin Climbs on Weaker Dollar and Improving Risk Sentiment",
@@ -1316,7 +1316,7 @@ export const marketReports: MarketReport[] = [
     ],
   },
   {
-    slug: "indices-july-15-2026",
+    slug: "indices-global-indices-trade-mixed-investors-assess",
     date: "July 15, 2026",
     tag: "Indices",
     title: "Global Indices Trade Mixed: Investors Assess Inflation Outlook and Earnings Season",
@@ -1372,7 +1372,7 @@ export const marketReports: MarketReport[] = [
     ],
   },
   {
-    slug: "indices-july-14-2026",
+    slug: "indices-global-indices-decline-geopolitical-risks-and",
     date: "July 14, 2026",
     tag: "Indices",
     title: "Global Indices Decline: Geopolitical Risks and Inflation Concerns Weigh on Sentiment",
@@ -1428,7 +1428,7 @@ export const marketReports: MarketReport[] = [
     ],
   },
   {
-    slug: "crypto-july-14-2026",
+    slug: "crypto-markets-stabilize-bitcoin-holds-support-ahead",
     date: "July 14, 2026",
     tag: "Crypto",
     title: "Crypto Markets Stabilize: Bitcoin Holds Support Ahead of U.S. CPI",
@@ -1484,7 +1484,7 @@ export const marketReports: MarketReport[] = [
     ],
   },
   {
-    slug: "commodity-july-14-2026",
+    slug: "commodity-markets-mixed-gold-rebounds-while-oil",
     date: "July 14, 2026",
     tag: "Commodity",
     title: "Commodity Markets Mixed: Gold Rebounds While Oil Climbs on Supply Concerns",
@@ -1540,7 +1540,7 @@ export const marketReports: MarketReport[] = [
     ],
   },
   {
-    slug: "forex-july-14-2026",
+    slug: "forex-markets-hold-steady-dollar-awaits-us",
     date: "July 14, 2026",
     tag: "Forex",
     title: "Forex Markets Hold Steady: Dollar Awaits U.S. CPI Report and Federal Reserve Testimony",
@@ -1596,7 +1596,7 @@ export const marketReports: MarketReport[] = [
     ],
   },
   {
-    slug: "indices-july-13-2026",
+    slug: "indices-global-indices-trade-mixed-as-investors",
     date: "July 13, 2026",
     tag: "Indices",
     title: "Global Indices Trade Mixed as Investors Await Key Inflation Data",
@@ -1651,7 +1651,7 @@ export const marketReports: MarketReport[] = [
     ],
   },
   {
-    slug: "crypto-july-13-2026",
+    slug: "crypto-markets-consolidate-as-bitcoin-holds-key",
     date: "July 13, 2026",
     tag: "Crypto",
     title: "Crypto Markets Consolidate as Bitcoin Holds Key Support Ahead of Macro Catalysts",
@@ -1706,7 +1706,7 @@ export const marketReports: MarketReport[] = [
     ],
   },
   {
-    slug: "commodity-july-13-2026",
+    slug: "commodity-markets-mixed-as-gold-holds-firm",
     date: "July 13, 2026",
     tag: "Commodity",
     title: "Commodity Markets Mixed as Gold Holds Firm While Oil Extends Gains",
@@ -1761,7 +1761,7 @@ export const marketReports: MarketReport[] = [
     ],
   },
   {
-    slug: "july-13-2026",
+    slug: "forex-market-mixed-as-safe-haven-dollar-gains",
     date: "July 13, 2026",
     tag: "Forex",
     title: "Forex Market Mixed as Safe-Haven Dollar Gains on Geopolitical Tensions",
