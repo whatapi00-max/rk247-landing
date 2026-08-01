@@ -32,8 +32,19 @@ export function initRouter(onNavigate: (path: string) => void): void {
     const href = link.getAttribute("href");
     if (!href) return;
 
-    // Skip external links, anchors, and links with target="_blank"
-    if (href.startsWith("http") || href.startsWith("#") || link.target === "_blank") {
+    // Skip external links and links with target="_blank"
+    if (href.startsWith("http") || link.target === "_blank") {
+      return;
+    }
+
+    // Handle anchor links (same-page or cross-page)
+    if (href.startsWith("#")) {
+      const anchorId = href.slice(1);
+      const targetElement = document.getElementById(anchorId);
+      if (targetElement) {
+        e.preventDefault();
+        targetElement.scrollIntoView({ behavior: "smooth" });
+      }
       return;
     }
 
