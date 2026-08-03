@@ -41,7 +41,7 @@ export function TradingPage(): string {
     { icon: "🎓", title: "Learning Resources", desc: "Access free tutorials, strategy guides and live webinars." },
   ]).replace('<div class="grid', '<div class="container-rk pb-16 grid')}
 
-  ${CtaSection("Start Trading Today", "Open a free account in under 2 minutes. No credit card required.")}`;
+  ${CtaSection("Start Trading Today", "Open a free account in under 2 minutes. No credit card required.", "Try Demo First", "Practice with $10,000 virtual funds.")}`;
 }
 
 /* ─── Flex Trading ─── */
@@ -81,7 +81,7 @@ export function FlexPage(): string {
     { icon: "📱", title: "All assets available", desc: "Forex, Stocks, Crypto, Commodities and Indices — all on Flex." },
   ]).replace('<div class="grid', '<div class="container-rk pb-16 grid')}
 
-  ${CtaSection("Try Flex Trading Free", "Practice first with $10,000 virtual money. No risk, no commitment.")}`;
+  ${CtaSection("Try Flex Trading Free", "Practice first with $10,000 virtual money. No risk, no commitment.", "Try Demo", "Same platform, virtual funds.")}`;
 }
 
 /* ─── Fixed Time Trading ─── */
@@ -130,7 +130,7 @@ export function FixedTimePage(): string {
     </div>
   </section>
 
-  ${CtaSection("Start Fixed Time Trading", "Open a free account and get $10,000 demo balance instantly.")}`;
+  ${CtaSection("Start Fixed Time Trading", "Open a free account and get $10,000 demo balance instantly.", "Try Demo First", "Practice with virtual funds.")}`;
 }
 
 /* ─── Forex Trading ─── */
@@ -149,25 +149,11 @@ export function ForexPage(): string {
 
   <section class="py-16 bg-ink-950">
     <div class="container-rk">
-      <h2 class="reveal text-xl font-bold mb-6 text-center">Live Forex Rates (Sample)</h2>
-      <div class="reveal card overflow-hidden mb-12 mx-auto max-w-2xl">
-        <table class="w-full text-sm">
-          <thead>
-            <tr class="border-b border-white/10 text-white/40 text-xs uppercase">
-              <th class="text-left px-5 py-3">Pair</th>
-              <th class="text-right px-5 py-3">Price</th>
-              <th class="text-right px-5 py-3">Change</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${pairs.map(([pair, price, chg]) => `
-            <tr class="border-b border-white/5 hover:bg-white/[0.02]">
-              <td class="px-5 py-3.5 font-semibold">${pair}</td>
-              <td class="px-5 py-3.5 text-right font-mono">${price}</td>
-              <td class="px-5 py-3.5 text-right font-semibold ${chg.startsWith("+") ? "text-rk-green" : "text-red-400"}">${chg}</td>
-            </tr>`).join("")}
-          </tbody>
-        </table>
+      <h2 class="reveal text-xl font-bold mb-6 text-center">Live Forex Rates</h2>
+      <div class="reveal card overflow-hidden mb-12">
+        <div class="tradingview-widget-container" style="height:400px;">
+          <div class="tradingview-widget-container__widget" style="height:100%;width:100%"></div>
+        </div>
       </div>
 
       ${FeatureGrid([
@@ -181,7 +167,7 @@ export function ForexPage(): string {
     </div>
   </section>
 
-  ${CtaSection("Trade Forex Now", "Start with a free demo or open a live account from $1.")}`;
+  ${CtaSection("Trade Forex Now", "Start with a free demo or open a live account from $1.", "Try Demo", "Practice with virtual funds.")}`;
 }
 
 /* ─── Stocks Trading ─── */
@@ -223,7 +209,7 @@ export function StocksPage(): string {
     </div>
   </section>
 
-  ${CtaSection("Start Trading Stocks", "Buy and sell the world's most popular stocks from just $1.")}`;
+  ${CtaSection("Start Trading Stocks", "Buy and sell the world's most popular stocks from just $1.", "Try Demo", "Practice with virtual funds.")}`;
 }
 
 /* ─── How To Trade ─── */
@@ -286,7 +272,7 @@ export function HowToTradePage(): string {
     </div>
   </section>
 
-  ${CtaSection("Begin Your Trading Journey", "Create a free account and start with a demo — no deposit needed.")}`;
+  ${CtaSection("Begin Your Trading Journey", "Create a free account and start with a demo — no deposit needed.", "Try Demo Now", "Start with virtual funds.")}`;
 }
 
 /* ─── Account ─── */
@@ -331,7 +317,7 @@ export function AccountPage(): string {
     </div>
   </section>
 
-  ${CtaSection("Open Your Account Now", "It takes less than 2 minutes. Start trading today.")}`;
+  ${CtaSection("Open Your RK247 Account", "Get started in under 2 minutes. Deposit from just $1.", "Try Demo First", "Practice with virtual funds.")}`;
 }
 
 /* ─── Islamic Account ─── */
@@ -367,7 +353,7 @@ export function IslamicAccountPage(): string {
     </div>
   </section>
 
-  ${CtaSection("Open Islamic Account", "Create your swap-free account today. Start trading according to your principles.")}`;
+  ${CtaSection("Open Islamic Account", "Create your swap-free account today. Start trading according to your principles.", "Try Demo First", "Practice with virtual funds.")}`;
 }
 
 /* ─── Demo Account ─── */

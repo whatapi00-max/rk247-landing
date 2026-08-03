@@ -228,6 +228,29 @@ function attachListeners(): void {
       if (icon) icon.classList.toggle("rotate-180", !isOpen);
     });
   });
+
+  // TradingView widget (only present on Forex page)
+  const widgetContainer = document.querySelector(".tradingview-widget-container__widget");
+  if (widgetContainer) {
+    const script = document.createElement("script");
+    script.src = "https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js";
+    script.async = true;
+    script.innerHTML = JSON.stringify({
+      "symbols": [
+        { "proName": "FOREXCOM:SPXUSD", "title": "S&P 500" },
+        { "proName": "FOREXCOM:NSXUSD", "title": "US 100" },
+        { "proName": "FX_IDC:EURIDR", "title": "EUR/IDR" },
+        { "proName": "BITSTAMP:BTCUSD", "title": "Bitcoin" },
+        { "proName": "BITSTAMP:ETHUSD", "title": "Ethereum" }
+      ],
+      "showSymbolLogo": true,
+      "colorTheme": "dark",
+      "isTransparent": false,
+      "displayMode": "adaptive",
+      "locale": "en"
+    });
+    widgetContainer.appendChild(script);
+  }
 }
 
 /* ─── Boot ─── */
