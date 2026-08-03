@@ -273,6 +273,111 @@ function attachListeners(): void {
     });
     widgetContainer.appendChild(script);
   }
+
+  // TradingView widgets for Assets page
+  const forexWidget = document.querySelector(".tv-forex-widget");
+  if (forexWidget && !forexWidget.querySelector("script")) {
+    const script = document.createElement("script");
+    script.src = "https://s3.tradingview.com/external-embedding/embed-widget-forex-cross-rates.js";
+    script.async = true;
+    script.innerHTML = JSON.stringify({
+      "width": "100%",
+      "height": "100%",
+      "currencies": ["EUR", "USD", "JPY", "GBP", "AUD", "CAD", "CHF"],
+      "isTransparent": false,
+      "colorTheme": "dark",
+      "locale": "en"
+    });
+    forexWidget.appendChild(script);
+  }
+
+  const cryptoWidget = document.querySelector(".tv-crypto-widget");
+  if (cryptoWidget && !cryptoWidget.querySelector("script")) {
+    const script = document.createElement("script");
+    script.src = "https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js";
+    script.async = true;
+    script.innerHTML = JSON.stringify({
+      "symbols": [
+        ["BINANCE:BTCUSDT", "Bitcoin"],
+        ["BINANCE:ETHUSDT", "Ethereum"],
+        ["BINANCE:SOLUSDT", "Solana"],
+        ["BINANCE:XRPUSDT", "XRP"],
+        ["BINANCE:BNBUSDT", "BNB"]
+      ],
+      "chartOnly": false,
+      "width": "100%",
+      "height": "100%",
+      "locale": "en",
+      "colorTheme": "dark",
+      "isTransparent": false,
+      "autosize": true,
+      "showVolume": false,
+      "showMA": false,
+      "hideDateRanges": false,
+      "hideMarketStatus": false,
+      "hideSymbolLogo": false,
+      "scalePosition": "right",
+      "scaleMode": "normal",
+      "fontFamily": "-apple-system, BlinkMacSystemFont, Trebuchet MS, Roboto, Ubuntu, sans-serif",
+      "fontSize": 10,
+      "noTimeScale": false,
+      "valuesTracking": 1,
+      "changeMode": 1,
+      "chartType": "area",
+      "maLineColor": "#2962FF",
+      "maFillColor": "#2962FF",
+      "maLineWidth": 1,
+      "maLength": 9,
+      "lineWidth": 2,
+      "lineType": 0,
+      "dateRanges": ["1d|1D", "1m|30", "3m|60", "12m|1D", "60m|1W", "all|1M"]
+    });
+    cryptoWidget.appendChild(script);
+  }
+
+  const indicesWidget = document.querySelector(".tv-indices-widget");
+  if (indicesWidget && !indicesWidget.querySelector("script")) {
+    const script = document.createElement("script");
+    script.src = "https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js";
+    script.async = true;
+    script.innerHTML = JSON.stringify({
+      "symbols": [
+        ["FOREXCOM:SPXUSD", "S&P 500"],
+        ["FOREXCOM:NSXUSD", "US 100"],
+        ["FOREXCOM:UKXGBP", "UK 100"],
+        ["FOREXCOM:DAXEUR", "Germany 40"],
+        ["FOREXCOM:NKYJPY", "Japan 225"]
+      ],
+      "chartOnly": false,
+      "width": "100%",
+      "height": "100%",
+      "locale": "en",
+      "colorTheme": "dark",
+      "isTransparent": false,
+      "autosize": true,
+      "showVolume": false,
+      "showMA": false,
+      "hideDateRanges": false,
+      "hideMarketStatus": false,
+      "hideSymbolLogo": false,
+      "scalePosition": "right",
+      "scaleMode": "normal",
+      "fontFamily": "-apple-system, BlinkMacSystemFont, Trebuchet MS, Roboto, Ubuntu, sans-serif",
+      "fontSize": 10,
+      "noTimeScale": false,
+      "valuesTracking": 1,
+      "changeMode": 1,
+      "chartType": "area",
+      "maLineColor": "#2962FF",
+      "maFillColor": "#2962FF",
+      "maLineWidth": 1,
+      "maLength": 9,
+      "lineWidth": 2,
+      "lineType": 0,
+      "dateRanges": ["1d|1D", "1m|30", "3m|60", "12m|1D", "60m|1W", "all|1M"]
+    });
+    indicesWidget.appendChild(script);
+  }
 }
 
 /* ─── Boot ─── */

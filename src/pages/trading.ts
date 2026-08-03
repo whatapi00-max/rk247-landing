@@ -542,6 +542,32 @@ export function AssetsPage(): string {
 
   <section class="py-16 bg-ink-950">
     <div class="container-rk">
+      <h2 class="reveal text-xl font-bold mb-6 text-center">Live Market Data</h2>
+      
+      <!-- Forex Widget -->
+      <div class="reveal card overflow-hidden mb-6">
+        <div class="border-b border-white/10 px-5 py-3">
+          <h3 class="font-bold text-rk-green">Forex</h3>
+        </div>
+        <div class="tv-forex-widget" style="height:300px;"></div>
+      </div>
+
+      <!-- Crypto Widget -->
+      <div class="reveal card overflow-hidden mb-6">
+        <div class="border-b border-white/10 px-5 py-3">
+          <h3 class="font-bold text-rk-green">Crypto</h3>
+        </div>
+        <div class="tv-crypto-widget" style="height:300px;"></div>
+      </div>
+
+      <!-- Indices Widget -->
+      <div class="reveal card overflow-hidden mb-6">
+        <div class="border-b border-white/10 px-5 py-3">
+          <h3 class="font-bold text-rk-green">Indices</h3>
+        </div>
+        <div class="tv-indices-widget" style="height:300px;"></div>
+      </div>
+
       <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-14">
         ${categories.map(c => `
           <div class="reveal card p-6">
