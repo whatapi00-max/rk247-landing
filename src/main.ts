@@ -338,43 +338,21 @@ function attachListeners(): void {
   const indicesWidget = document.querySelector(".tv-indices-widget");
   if (indicesWidget && !indicesWidget.querySelector("script")) {
     const script = document.createElement("script");
-    script.src = "https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js";
+    script.src = "https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js";
     script.async = true;
     script.innerHTML = JSON.stringify({
       "symbols": [
-        ["SPX", "S&P 500"],
-        ["NASDAQ:NDX", "NASDAQ 100"],
-        ["UKX", "FTSE 100"],
-        ["DAX", "DAX 40"],
-        ["NKY", "Nikkei 225"]
+        { "proName": "INDEX:SPX", "title": "S&P 500" },
+        { "proName": "INDEX:NDX", "title": "NASDAQ 100" },
+        { "proName": "INDEX:UKX", "title": "FTSE 100" },
+        { "proName": "INDEX:DAX", "title": "DAX 40" },
+        { "proName": "INDEX:NKY", "title": "Nikkei 225" }
       ],
-      "chartOnly": false,
-      "width": "100%",
-      "height": "100%",
-      "locale": "en",
+      "showSymbolLogo": true,
       "colorTheme": "dark",
       "isTransparent": false,
-      "autosize": true,
-      "showVolume": false,
-      "showMA": false,
-      "hideDateRanges": false,
-      "hideMarketStatus": false,
-      "hideSymbolLogo": false,
-      "scalePosition": "right",
-      "scaleMode": "normal",
-      "fontFamily": "-apple-system, BlinkMacSystemFont, Trebuchet MS, Roboto, Ubuntu, sans-serif",
-      "fontSize": 10,
-      "noTimeScale": false,
-      "valuesTracking": 1,
-      "changeMode": 1,
-      "chartType": "area",
-      "maLineColor": "#2962FF",
-      "maFillColor": "#2962FF",
-      "maLineWidth": 1,
-      "maLength": 9,
-      "lineWidth": 2,
-      "lineType": 0,
-      "dateRanges": ["1d|1D", "1m|30", "3m|60", "12m|1D", "60m|1W", "all|1M"]
+      "displayMode": "adaptive",
+      "locale": "en"
     });
     indicesWidget.appendChild(script);
   }
