@@ -186,11 +186,11 @@ function attachListeners(): void {
   // Cookie banner
   const cookie = document.querySelector("#cookie");
   if (!localStorage.getItem("rk_cookie_ok")) {
-    setTimeout(() => cookie?.classList.remove("hidden"), 1200);
+    setTimeout(() => cookie?.classList.replace("hidden", "flex"), 1200);
   }
   document.querySelector("#cookie-ok")?.addEventListener("click", () => {
     localStorage.setItem("rk_cookie_ok", "1");
-    cookie?.classList.add("hidden");
+    cookie?.classList.replace("flex", "hidden");
   });
 
   // Bonus popup

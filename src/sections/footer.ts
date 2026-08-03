@@ -140,7 +140,7 @@ export function Overlays(): string {
   </button>
 
   <!-- Cookie banner -->
-  <div id="cookie" class="fixed bottom-5 left-5 z-40 hidden max-w-sm items-center gap-3 rounded-2xl bg-ink-800 p-4 text-sm ring-1 ring-white/10 sm:flex">
+  <div id="cookie" class="fixed bottom-5 left-5 right-5 sm:right-auto z-40 hidden max-w-sm items-center gap-3 rounded-2xl bg-ink-800 p-4 text-sm ring-1 ring-white/10">
     <p class="text-white/70">By continuing to browse, you agree to our <a href="/cookie-policy" class="text-rk-green underline">Cookies Policy</a>.</p>
     <button id="cookie-ok" class="btn-green shrink-0 px-4 py-2">Ok</button>
   </div>

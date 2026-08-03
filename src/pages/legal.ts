@@ -90,18 +90,86 @@ export function RegulationPage(): string {
 }
 
 export function CookiePolicyPage(): string {
+  const cookieTypes = [
+    {
+      title: "Essential Cookies",
+      icon: "🔒",
+      desc: "Required for the website to function properly. These enable core features such as page navigation, secure areas, session management, and remembering your cookie consent choice. The site cannot function properly without these cookies.",
+    },
+    {
+      title: "Performance & Analytics Cookies",
+      icon: "📊",
+      desc: "Help us understand how visitors interact with the website by collecting anonymous information such as pages visited, time spent, and navigation paths. This data helps us improve site performance and user experience.",
+    },
+    {
+      title: "Functional Cookies",
+      icon: "⚙️",
+      desc: "Allow the website to remember choices you make, such as your preferred language or region, and provide enhanced, more personalised features.",
+    },
+    {
+      title: "Marketing & Advertising Cookies",
+      icon: "📣",
+      desc: "May be used to track visitors across websites to display relevant advertisements and measure the effectiveness of marketing campaigns.",
+    },
+  ];
   return `
   ${BackLink()}
-  ${PageHero("Cookie Policy", "How RK247 uses cookies and similar browser technologies.", "Cookie Policy")}
+  ${PageHero("Cookie Policy", "How RK247 uses cookies and similar browser technologies to improve your experience.", "Cookie Policy")}
   <section class="bg-ink-950 py-16">
     <div class="container-rk max-w-4xl space-y-6">
       <div class="card p-8">
-        <h2 class="text-xl font-bold">Cookies we use</h2>
-        <p class="mt-3 leading-relaxed text-white/60">The site may use essential browser storage for preferences and session functions, analytics cookies to understand site usage, and functional cookies to support interactive features.</p>
+        <h2 class="text-xl font-bold">What are cookies?</h2>
+        <p class="mt-3 leading-relaxed text-white/60">Cookies are small text files that are placed on your computer or mobile device when you visit a website. They are widely used to make websites work more efficiently, remember your preferences, and provide information to the site owners.</p>
       </div>
+
+      <div class="card p-8">
+        <h2 class="text-xl font-bold mb-4">Types of cookies we use</h2>
+        <div class="grid gap-4 sm:grid-cols-2">
+          ${cookieTypes.map(c => `
+            <div class="rounded-2xl bg-white/[0.03] p-5 ring-1 ring-white/5">
+              <div class="text-2xl mb-2">${c.icon}</div>
+              <h3 class="font-semibold text-white mb-1">${c.title}</h3>
+              <p class="text-sm text-white/55 leading-relaxed">${c.desc}</p>
+            </div>`).join("")}
+        </div>
+      </div>
+
+      <div class="card p-8">
+        <h2 class="text-xl font-bold">Why we use cookies</h2>
+        <ul class="mt-4 list-disc space-y-2 pl-5 text-white/60 leading-relaxed">
+          <li>To keep you signed in and maintain your session securely.</li>
+          <li>To remember your cookie consent and site preferences.</li>
+          <li>To understand how our website is used so we can improve it.</li>
+          <li>To provide relevant content and measure the effectiveness of our communications.</li>
+          <li>To detect and prevent fraudulent or unauthorised activity.</li>
+        </ul>
+      </div>
+
+      <div class="card p-8">
+        <h2 class="text-xl font-bold">Third-party cookies</h2>
+        <p class="mt-3 leading-relaxed text-white/60">Some cookies on our site are placed by trusted third-party service providers, such as analytics and marketing partners. These parties may use cookies to collect information about your visits to this and other websites in order to provide relevant advertising and services.</p>
+      </div>
+
+      <div class="card p-8">
+        <h2 class="text-xl font-bold">How long do cookies last?</h2>
+        <p class="mt-3 leading-relaxed text-white/60"><span class="font-semibold text-white">Session cookies</span> are temporary and are deleted once you close your browser. <span class="font-semibold text-white">Persistent cookies</span> remain on your device for a set period of time or until you delete them manually, and are used to remember your preferences across visits.</p>
+      </div>
+
       <div class="card p-8">
         <h2 class="text-xl font-bold">Managing cookies</h2>
-        <p class="mt-3 leading-relaxed text-white/60">You can delete or block cookies using your browser settings. Blocking essential storage may affect site features such as saved consent and session preferences.</p>
+        <p class="mt-3 leading-relaxed text-white/60">You can control and manage cookies in several ways. Most web browsers allow you to view, delete, and block cookies through their settings menu. Please note that blocking essential cookies may affect the functionality of the website, including your ability to stay signed in or have your cookie preferences remembered.</p>
+        <p class="mt-3 leading-relaxed text-white/60">You can also opt out of interest-based advertising provided by certain third parties by visiting their respective opt-out pages.</p>
+      </div>
+
+      <div class="card p-8">
+        <h2 class="text-xl font-bold">Changes to this policy</h2>
+        <p class="mt-3 leading-relaxed text-white/60">We may update this Cookie Policy from time to time to reflect changes in technology, legislation, or our operations. Any changes will be posted on this page, so please check back periodically.</p>
+      </div>
+
+      <div class="card p-8">
+        <h2 class="text-xl font-bold">Questions about cookies?</h2>
+        <p class="mt-3 leading-relaxed text-white/60">If you have any questions about how we use cookies, please contact our support team.</p>
+        <a href="mailto:support@rk247.com" class="btn-green mt-5 inline-block">support@rk247.com</a>
       </div>
     </div>
   </section>`;
