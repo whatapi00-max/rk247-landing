@@ -193,7 +193,7 @@ export function RegulationPage(): string {
       <div class="card p-8">
         <h2 class="text-xl font-bold">Contacts</h2>
         <p class="mt-3 leading-relaxed text-white/60"><span class="font-semibold text-white">Financial Commission:</span> <a href="mailto:info@financialcommission.org" class="text-rk-green hover:underline">info@financialcommission.org</a></p>
-        <p class="mt-2 leading-relaxed text-white/60"><span class="font-semibold text-white">RK247:</span> <a href="mailto:support@rk247.com" class="text-rk-green hover:underline">support@rk247.com</a></p>
+        <p class="mt-2 leading-relaxed text-white/60"><span class="font-semibold text-white">RK247:</span> <a href="mailto:support@rk247.org" class="text-rk-green hover:underline">support@rk247.org</a></p>
       </div>
 
       <div class="card p-8">
@@ -299,7 +299,7 @@ export function CookiePolicyPage(): string {
       <div class="card p-8">
         <h2 class="text-xl font-bold">Questions about cookies?</h2>
         <p class="mt-3 leading-relaxed text-white/60">If you have any questions about how we use cookies, please contact our support team.</p>
-        <a href="mailto:support@rk247.com" class="btn-green mt-5 inline-block">support@rk247.com</a>
+        <a href="mailto:support@rk247.org" class="btn-green mt-5 inline-block">support@rk247.org</a>
       </div>
     </div>
   </section>`;

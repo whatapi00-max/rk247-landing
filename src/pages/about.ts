@@ -75,7 +75,7 @@ export function ContactsPage(): string {
           <div class="text-4xl mb-3">📧</div>
           <h3 class="font-bold text-xl mb-2">Email Support</h3>
           <p class="text-sm text-white/55 mb-5">Send a detailed query. We reply within 2 hours on business days.</p>
-          <a href="mailto:support@rk247.com" class="btn-ghost w-full">support@rk247.com</a>
+          <a href="mailto:support@rk247.org" class="btn-ghost w-full">support@rk247.org</a>
         </div>
       </div>
 
