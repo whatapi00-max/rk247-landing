@@ -72,9 +72,6 @@ export function Header(): string {
       </nav>
 
       <div class="flex items-center gap-2 sm:gap-3">
-        <button class="nav-link hidden lg:inline-flex" aria-label="Language">
-          ${icons.globe}<span class="hidden md:inline">EN</span>
-        </button>
         <button class="btn-ghost hidden lg:inline-flex" data-wa aria-label="Sign in">Sign in</button>
         <button class="btn-green hidden lg:inline-flex" data-wa>Try for free</button>
         <button id="menu-btn" class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white lg:hidden hover:bg-white/20" aria-label="Open menu">${icons.menu}</button>
