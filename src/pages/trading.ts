@@ -560,14 +560,6 @@ export function AssetsPage(): string {
         <div class="tv-crypto-widget" style="height:300px;"></div>
       </div>
 
-      <!-- Indices Widget -->
-      <div class="reveal card overflow-hidden mb-6">
-        <div class="border-b border-white/10 px-5 py-3">
-          <h3 class="font-bold text-rk-green">Indices</h3>
-        </div>
-        <div class="tv-indices-widget" style="height:300px;"></div>
-      </div>
-
       <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-14">
         ${categories.map(c => `
           <div class="reveal card p-6">

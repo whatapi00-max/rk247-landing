@@ -334,32 +334,6 @@ function attachListeners(): void {
     });
     cryptoWidget.appendChild(script);
   }
-
-  const indicesWidget = document.querySelector(".tv-indices-widget");
-  if (indicesWidget && !indicesWidget.querySelector("script")) {
-    const script = document.createElement("script");
-    script.src = "https://s3.tradingview.com/external-embedding/embed-widget-mini-chart-overview.js";
-    script.async = true;
-    script.innerHTML = JSON.stringify({
-      "symbols": [
-        { "symbol": "FOREXCOM:SPXUSD", "name": "S&P 500" },
-        { "symbol": "FOREXCOM:NSXUSD", "name": "NASDAQ 100" },
-        { "symbol": "FOREXCOM:UKXGBP", "name": "FTSE 100" },
-        { "symbol": "FOREXCOM:DAXEUR", "name": "DAX 40" },
-        { "symbol": "FOREXCOM:NKYJPY", "name": "Nikkei 225" }
-      ],
-      "market": "indices",
-      "width": "100%",
-      "height": "100%",
-      "locale": "en",
-      "colorTheme": "dark",
-      "isTransparent": false,
-      "autosize": true,
-      "largeChartUrl": "",
-      "chartHeight": 300
-    });
-    indicesWidget.appendChild(script);
-  }
 }
 
 /* ─── Boot ─── */
