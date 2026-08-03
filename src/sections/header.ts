@@ -24,7 +24,6 @@ const downloadMenu: MenuGroup[] = [
   { label: "Desktop", href: "/download/desktop" },
   { label: "Android", href: "/download/android" },
   { label: "Android APK", href: "/download/android-apk" },
-  { label: "Web App", href: "/download/web-app" },
 ];
 
 const aboutMenu: MenuGroup[] = [

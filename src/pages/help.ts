@@ -104,7 +104,7 @@ export function FaqPage(): string {
         },
         {
           q: "Is there a mobile app available?",
-          a: "Yes. RK247 has a highly-rated Android app on Google Play and a progressive web app (PWA) that works on iOS and any browser.",
+          a: "Yes. RK247 has a highly-rated Android app on Google Play and a desktop trading platform for Windows and macOS.",
         },
       ],
     },

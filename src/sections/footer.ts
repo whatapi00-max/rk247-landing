@@ -28,7 +28,6 @@ const colLinks: Record<string, Record<string, string>> = {
     "Android": "/download/android",
     "Android APK": "/download/android-apk",
     "iOS": "/download",
-    "Web App (PWA)": "/download/web-app",
     "Desktop": "/download/desktop",
   },
   Help: {

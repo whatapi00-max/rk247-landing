@@ -18,7 +18,7 @@ import {
   PromotionsPage, WithdrawalsPage, AssetsPage,
 } from "./pages/trading";
 import {
-  DownloadPage, DesktopPage, AndroidPage, AndroidApkPage, WebAppPage,
+  DownloadPage, DesktopPage, AndroidPage, AndroidApkPage,
 } from "./pages/download";
 import {
   AboutPage, ContactsPage, SocialPage, AwardsPage, NewsPage, ReviewsPage,
@@ -90,7 +90,6 @@ const routes: Record<string, () => string> = {
   "/download/desktop":       () => PageLayout(DesktopPage()),
   "/download/android":       () => PageLayout(AndroidPage()),
   "/download/android-apk":   () => PageLayout(AndroidApkPage()),
-  "/download/web-app":       () => PageLayout(WebAppPage()),
   "/about":                  () => PageLayout(AboutPage()),
   "/about/contacts":         () => PageLayout(ContactsPage()),
   "/about/social":           () => PageLayout(SocialPage()),

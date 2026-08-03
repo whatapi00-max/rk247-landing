@@ -62,7 +62,7 @@ export const routeSeo: Record<string, SeoMetadata> = {
   },
   "/download": {
     title: "Download the RK247 Trading App",
-    description: "Download RK247 for Android or desktop, or use the web app to access your trading account across devices.",
+    description: "Download RK247 for Android or desktop to access your trading account across devices.",
   },
   "/download/desktop": {
     title: "RK247 Desktop Trading App – Download",
@@ -75,10 +75,6 @@ export const routeSeo: Record<string, SeoMetadata> = {
   "/download/android-apk": {
     title: "RK247 Android APK – Direct Download",
     description: "Get information about installing the RK247 Android APK directly on a compatible device.",
-  },
-  "/download/web-app": {
-    title: "RK247 Web Trading App",
-    description: "Use the RK247 web trading app in a modern browser without installing additional software.",
   },
   "/about": {
     title: "About RK247 – Online Trading Platform",

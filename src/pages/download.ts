@@ -24,13 +24,6 @@ export function DownloadPage(): string {
       sub: "Windows & macOS",
       desc: "Full-featured desktop trading platform for Windows 10+ and macOS.",
     },
-    {
-      href: "/download/web-app",
-      icon: "🌐",
-      label: "Web App",
-      sub: "Browser — No Install",
-      desc: "Trade instantly in any modern browser. Nothing to install.",
-    },
   ];
   return `
   ${BackLink()}
@@ -169,36 +162,4 @@ export function AndroidApkPage(): string {
   </section>
 
   ${CtaSection("Get the RK247 APK", "Contact our support team to receive the latest verified APK.")}`;
-}
-
-/* ─── Web App ─── */
-export function WebAppPage(): string {
-  return `
-  ${BackLink("← Back to Download")}
-  ${PageHero("Web App — Trade in Your Browser", "No download, no install. Open your browser and start trading instantly.", "Download · Web App")}
-
-  <section class="py-16 bg-ink-950">
-    <div class="container-rk max-w-4xl">
-      <div class="reveal card p-8 sm:p-12 text-center mb-14">
-        <div class="text-6xl mb-4">🌐</div>
-        <h2 class="text-2xl font-bold mb-2">Trade Anywhere, Instantly</h2>
-        <p class="text-white/55 mb-8 max-w-xl mx-auto">
-          The RK247 Web App runs entirely in your browser. No installation needed.
-          Works on Windows, macOS, Linux, iOS, and Android.
-        </p>
-        <button class="btn-green px-10 py-4 text-base" data-wa>Open Web App</button>
-      </div>
-
-      ${FeatureGrid([
-        { icon: "🖥️", title: "Works on Any OS", desc: "Chrome, Firefox, Safari, Edge — any modern browser on any operating system." },
-        { icon: "⚡", title: "Instant Access", desc: "Just open the URL and log in. No waiting for downloads or updates." },
-        { icon: "📊", title: "Full Feature Set", desc: "All charts, indicators, order types and tools available in the browser." },
-        { icon: "🔒", title: "Secure Session", desc: "TLS encryption and 2FA keep your browser session secure." },
-        { icon: "📱", title: "PWA Support", desc: "Add to your home screen on iOS or Android for an app-like experience." },
-        { icon: "🔄", title: "Always Updated", desc: "Web app is always the latest version — updates apply automatically." },
-      ])}
-    </div>
-  </section>
-
-  ${CtaSection("Start Trading in Your Browser", "No download required. Open an account and trade immediately.")}`;
 }
