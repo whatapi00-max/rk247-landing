@@ -338,21 +338,25 @@ function attachListeners(): void {
   const indicesWidget = document.querySelector(".tv-indices-widget");
   if (indicesWidget && !indicesWidget.querySelector("script")) {
     const script = document.createElement("script");
-    script.src = "https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js";
+    script.src = "https://s3.tradingview.com/external-embedding/embed-widget-mini-chart-overview.js";
     script.async = true;
     script.innerHTML = JSON.stringify({
       "symbols": [
-        { "proName": "INDEX:SPX", "title": "S&P 500" },
-        { "proName": "INDEX:NDX", "title": "NASDAQ 100" },
-        { "proName": "INDEX:UKX", "title": "FTSE 100" },
-        { "proName": "INDEX:DAX", "title": "DAX 40" },
-        { "proName": "INDEX:NKY", "title": "Nikkei 225" }
+        { "symbol": "FOREXCOM:SPXUSD", "name": "S&P 500" },
+        { "symbol": "FOREXCOM:NSXUSD", "name": "NASDAQ 100" },
+        { "symbol": "FOREXCOM:UKXGBP", "name": "FTSE 100" },
+        { "symbol": "FOREXCOM:DAXEUR", "name": "DAX 40" },
+        { "symbol": "FOREXCOM:NKYJPY", "name": "Nikkei 225" }
       ],
-      "showSymbolLogo": true,
+      "market": "indices",
+      "width": "100%",
+      "height": "100%",
+      "locale": "en",
       "colorTheme": "dark",
       "isTransparent": false,
-      "displayMode": "adaptive",
-      "locale": "en"
+      "autosize": true,
+      "largeChartUrl": "",
+      "chartHeight": 300
     });
     indicesWidget.appendChild(script);
   }
