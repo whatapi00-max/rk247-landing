@@ -32,7 +32,8 @@ export function CtaSection(
   headline = "Ready to start trading?",
   sub = "Join millions of traders on RK247 today.",
   btn2Text?: string,
-  btn2Sub?: string
+  btn2Sub?: string,
+  btn2Link?: string
 ): string {
   return `
   <section class="py-20 bg-ink-900 text-center">
@@ -41,7 +42,12 @@ export function CtaSection(
       <p class="mt-3 text-white/55">${sub}</p>
       <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
         <button class="btn-green px-10 py-4 text-base" data-wa>Create Free Account</button>
-        ${btn2Text ? `<button class="btn-ghost px-8 py-4 text-base" data-wa>${btn2Text}</button>` : `<button class="btn-ghost px-8 py-4 text-base" data-wa>Sign In</button>`}
+        ${btn2Text
+          ? btn2Link
+            ? `<a href="${btn2Link}" class="btn-ghost px-8 py-4 text-base inline-flex items-center justify-center">${btn2Text}</a>`
+            : `<button class="btn-ghost px-8 py-4 text-base" data-wa>${btn2Text}</button>`
+          : `<button class="btn-ghost px-8 py-4 text-base" data-wa>Sign In</button>`
+        }
       </div>
       ${btn2Sub ? `<p class="mt-3 text-sm text-white/40">${btn2Sub}</p>` : ""}
     </div>
