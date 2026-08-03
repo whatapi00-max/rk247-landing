@@ -342,11 +342,11 @@ function attachListeners(): void {
     script.async = true;
     script.innerHTML = JSON.stringify({
       "symbols": [
-        ["FOREXCOM:SPXUSD", "S&P 500"],
-        ["FOREXCOM:NSXUSD", "US 100"],
-        ["FOREXCOM:UKXGBP", "UK 100"],
-        ["FOREXCOM:DAXEUR", "Germany 40"],
-        ["FOREXCOM:NKYJPY", "Japan 225"]
+        ["SPX", "S&P 500"],
+        ["NASDAQ:NDX", "NASDAQ 100"],
+        ["UKX", "FTSE 100"],
+        ["DAX", "DAX 40"],
+        ["NKY", "Nikkei 225"]
       ],
       "chartOnly": false,
       "width": "100%",
