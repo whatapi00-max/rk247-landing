@@ -51,7 +51,7 @@ export function SupportPage(): string {
     </div>
   </section>
 
-  ${CtaSection("Contact Support Now", "Our team is online and ready to help you right now.")}`;
+  ${CtaSection("Contact Support Now", "Our team is online and ready to help you right now.", "Try Demo", "Practice with virtual funds.", "/trading/demo")}`;
 }
 
 /* ─── FAQ ─── */
@@ -160,7 +160,7 @@ export function FaqPage(): string {
     </div>
   </section>
 
-  ${CtaSection("Ready to Start Trading?", "Create your free account and try the platform risk-free with a demo.")}`;
+  ${CtaSection("Ready to Start Trading?", "Create your free account and try the platform risk-free with a demo.", "Try Demo", "Practice with virtual funds.", "/trading/demo")}`;
 }
 
 /* ─── Learning Center ─── */
@@ -248,5 +248,5 @@ export function LearningPage(): string {
     </div>
   </section>
 
-  ${CtaSection("Start Learning for Free", "Register now and unlock the full Learning Center at no cost.")}`;
+  ${CtaSection("Start Learning for Free", "Register now and unlock the full Learning Center at no cost.", "Try Demo", "Practice with virtual funds.", "/trading/demo")}`;
 }

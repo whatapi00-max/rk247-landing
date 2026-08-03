@@ -1867,7 +1867,7 @@ export function MarketAnalysisPage(): string {
     </div>
   </section>
 
-  ${CtaSection("Trade the Market Today", "Apply today's analysis on RK247 with a free demo or live account.")}`;
+  ${CtaSection("Trade the Market Today", "Apply today's analysis on RK247 with a free demo or live account.", "Try Demo", "Practice with virtual funds.", "/trading/demo")}`;
 }
 
 export function MarketAnalysisDetailPage(slug: string): string {
@@ -2066,5 +2066,5 @@ export function MarketAnalysisDetailPage(slug: string): string {
     </div>
   </article>
 
-  ${CtaSection("Trade the Market Today", "Apply today's analysis on RK247 with a free demo or live account.")}`;
+  ${CtaSection("Trade the Market Today", "Apply today's analysis on RK247 with a free demo or live account.", "Try Demo", "Practice with virtual funds.", "/trading/demo")}`;
 }

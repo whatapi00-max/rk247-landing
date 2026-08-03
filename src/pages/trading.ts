@@ -390,7 +390,7 @@ export function DemoPage(): string {
     </div>
   </section>
 
-  ${CtaSection("Get Your Free Demo Account", "Register now and receive $10,000 virtual money instantly.")}`;
+  ${CtaSection("Get Your Free Demo Account", "Register now and receive $10,000 virtual money instantly.", "Start Trading", "Open a live account from $1.", "/trading/account")}`;
 }
 
 /* ─── Promotions ─── */
@@ -451,7 +451,7 @@ export function PromotionsPage(): string {
     </div>
   </section>
 
-  ${CtaSection("Claim Your Bonus Today", "Register or log in to activate your preferred promotion.")}`;
+  ${CtaSection("Claim Your Bonus Today", "Register or log in to activate your preferred promotion.", "Try Demo", "Practice with virtual funds.", "/trading/demo")}`;
 }
 
 /* ─── Withdrawals ─── */
@@ -493,7 +493,7 @@ export function WithdrawalsPage(): string {
     </div>
   </section>
 
-  ${CtaSection("Withdraw Your Profits", "Log in to your account or contact support to initiate a withdrawal.")}`;
+  ${CtaSection("Withdraw Your Profits", "Log in to your account or contact support to initiate a withdrawal.", "Try Demo", "Practice with virtual funds.", "/trading/demo")}`;
 }
 
 /* ─── Assets & Trading Conditions ─── */
@@ -578,5 +578,5 @@ export function AssetsPage(): string {
     </div>
   </section>
 
-  ${CtaSection("Trade Any Asset Today", "Open a free account and access all 300+ instruments instantly.")}`;
+  ${CtaSection("Trade Any Asset Today", "Open a free account and access all 300+ instruments instantly.", "Try Demo", "Practice with virtual funds.", "/trading/demo")}`;
 }

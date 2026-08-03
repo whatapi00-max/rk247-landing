@@ -231,25 +231,45 @@ function attachListeners(): void {
 
   // TradingView widget (only present on Forex page)
   const widgetContainer = document.querySelector(".tradingview-widget-container__widget");
-  if (widgetContainer) {
+  if (widgetContainer && !widgetContainer.querySelector("script")) {
     const script = document.createElement("script");
-    script.src = "https://s3.tradingview.com/external-embedding/embed-widget-forex-cross-rates.js";
+    script.src = "https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js";
     script.async = true;
     script.innerHTML = JSON.stringify({
+      "symbols": [
+        ["FOREXCOM:EURUSD", "EUR/USD"],
+        ["FOREXCOM:GBPUSD", "GBP/USD"],
+        ["FOREXCOM:USDJPY", "USD/JPY"],
+        ["FOREXCOM:AUDUSD", "AUD/USD"],
+        ["FOREXCOM:USDCAD", "USD/CAD"]
+      ],
+      "chartOnly": false,
       "width": "100%",
       "height": "100%",
-      "currencies": [
-        "EUR",
-        "USD",
-        "JPY",
-        "GBP",
-        "AUD",
-        "CAD",
-        "CHF"
-      ],
-      "isTransparent": false,
+      "locale": "en",
       "colorTheme": "dark",
-      "locale": "en"
+      "isTransparent": false,
+      "autosize": true,
+      "showVolume": false,
+      "showMA": false,
+      "hideDateRanges": false,
+      "hideMarketStatus": false,
+      "hideSymbolLogo": false,
+      "scalePosition": "right",
+      "scaleMode": "normal",
+      "fontFamily": "-apple-system, BlinkMacSystemFont, Trebuchet MS, Roboto, Ubuntu, sans-serif",
+      "fontSize": 10,
+      "noTimeScale": false,
+      "valuesTracking": 1,
+      "changeMode": 1,
+      "chartType": "area",
+      "maLineColor": "#2962FF",
+      "maFillColor": "#2962FF",
+      "maLineWidth": 1,
+      "maLength": 9,
+      "lineWidth": 2,
+      "lineType": 0,
+      "dateRanges": ["1d|1D", "1m|30", "3m|60", "12m|1D", "60m|1W", "all|1M"]
     });
     widgetContainer.appendChild(script);
   }

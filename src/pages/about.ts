@@ -53,7 +53,7 @@ export function AboutPage(): string {
     </div>
   </section>
 
-  ${CtaSection("Join the RK247 Community", "Trade with a broker you can trust. Open your free account today.")}`;
+  ${CtaSection("Join the RK247 Community", "Trade with a broker you can trust. Open your free account today.", "Try Demo", "Practice with virtual funds.", "/trading/demo")}`;
 }
 
 /* ─── Contacts ─── */
@@ -105,7 +105,7 @@ export function ContactsPage(): string {
     </div>
   </section>
 
-  ${CtaSection("Need Help? We're Here.", "Message us now and get an instant response from our support team.")}`;
+  ${CtaSection("Need Help? We're Here.", "Message us now and get an instant response from our support team.", "Try Demo", "Practice with virtual funds.", "/trading/demo")}`;
 }
 
 /* ─── Social Media ─── */
@@ -176,7 +176,7 @@ export function SocialPage(): string {
     </div>
   </section>
 
-  ${CtaSection("Start Trading with the Community", "Join thousands of active traders on RK247 today.")}`;
+  ${CtaSection("Start Trading with the Community", "Join thousands of active traders on RK247 today.", "Try Demo", "Practice with virtual funds.", "/trading/demo")}`;
 }
 
 /* ─── Awards ─── */
@@ -218,7 +218,7 @@ export function AwardsPage(): string {
     </div>
   </section>
 
-  ${CtaSection("Trade with an Award-Winning Broker", "Open your account with a platform recognised for excellence.")}`;
+  ${CtaSection("Trade with an Award-Winning Broker", "Open your account with a platform recognised for excellence.", "Try Demo", "Practice with virtual funds.", "/trading/demo")}`;
 }
 
 /* ─── News ─── */
@@ -281,7 +281,7 @@ export function NewsPage(): string {
     </div>
   </section>
 
-  ${CtaSection("Stay Updated with RK247", "Follow us on social media for daily market news and platform updates.")}`;
+  ${CtaSection("Stay Updated with RK247", "Follow us on social media for daily market news and platform updates.", "Try Demo", "Practice with virtual funds.", "/trading/demo")}`;
 }
 
 /* ─── Reviews ─── */
@@ -366,5 +366,5 @@ export function ReviewsPage(): string {
     </div>
   </section>
 
-  ${CtaSection("Join 50 Million Happy Traders", "Experience the platform that traders rate 4.8 stars. Sign up free.")}`;
+  ${CtaSection("Join 50 Million Happy Traders", "Experience the platform that traders rate 4.8 stars. Sign up free.", "Try Demo", "Practice with virtual funds.", "/trading/demo")}`;
 }

@@ -55,7 +55,7 @@ export function DownloadPage(): string {
     </div>
   </section>
 
-  ${CtaSection("Download & Start Trading", "Create your free account and choose your preferred platform.")}`;
+  ${CtaSection("Download & Start Trading", "Create your free account and choose your preferred platform.", "Try Demo", "Practice with virtual funds.", "/trading/demo")}`;
 }
 
 /* ─── Desktop App ─── */
@@ -92,7 +92,7 @@ export function DesktopPage(): string {
     </div>
   </section>
 
-  ${CtaSection("Download the Desktop App", "Create your free account first, then download the platform.")}`;
+  ${CtaSection("Download the Desktop App", "Create your free account first, then download the platform.", "Try Demo", "Practice with virtual funds.", "/trading/demo")}`;
 }
 
 /* ─── Android App ─── */
@@ -127,7 +127,7 @@ export function AndroidPage(): string {
     </div>
   </section>
 
-  ${CtaSection("Download the Android App", "Free to download. Create your account and start trading in minutes.")}`;
+  ${CtaSection("Download the Android App", "Free to download. Create your account and start trading in minutes.", "Try Demo", "Practice with virtual funds.", "/trading/demo")}`;
 }
 
 /* ─── Android APK ─── */
@@ -161,5 +161,5 @@ export function AndroidApkPage(): string {
     </div>
   </section>
 
-  ${CtaSection("Get the RK247 APK", "Contact our support team to receive the latest verified APK.")}`;
+  ${CtaSection("Get the RK247 APK", "Contact our support team to receive the latest verified APK.", "Try Demo", "Practice with virtual funds.", "/trading/demo")}`;
 }
