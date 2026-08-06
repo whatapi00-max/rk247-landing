@@ -361,7 +361,7 @@ export function ReviewsPage(): string {
 
       <div class="text-center">
         <p class="text-sm text-white/40 mb-4">Verified reviews from Trustpilot, Google, and App Store</p>
-        <button class="btn-ghost" data-wa>Leave Your Review</button>
+        <a href="https://www.trustpilot.com" target="_blank" rel="noopener noreferrer" class="btn-ghost">Leave Your Review</a>
       </div>
     </div>
   </section>

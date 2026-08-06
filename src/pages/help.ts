@@ -34,11 +34,11 @@ export function SupportPage(): string {
       <h2 class="reveal text-xl font-bold text-center mb-8">How can we help?</h2>
       <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-12">
         ${topics.map(t => `
-          <button class="reveal card p-6 text-left hover:ring-1 hover:ring-rk-green transition-all" data-wa>
+          <a href="/help/faq" class="reveal card p-6 text-left hover:ring-1 hover:ring-rk-green transition-all">
             <div class="text-2xl mb-3">${t.icon}</div>
             <h3 class="font-semibold mb-1">${t.title}</h3>
             <p class="text-sm text-white/50 leading-relaxed">${t.desc}</p>
-          </button>`).join("")}
+          </a>`).join("")}
       </div>
 
       <div class="reveal card p-6 max-w-2xl mx-auto text-center bg-rk-green/5 ring-1 ring-rk-green/20">
@@ -225,14 +225,14 @@ export function LearningPage(): string {
             <h2 class="font-bold text-lg mb-4 ${cat.color}">${cat.level}</h2>
             <div class="space-y-3">
               ${cat.items.map(item => `
-                <button class="w-full card p-4 text-left flex items-center gap-3 hover:ring-1 hover:ring-white/10 transition-all" data-wa>
+                <a href="#" class="w-full card p-4 text-left flex items-center gap-3 hover:ring-1 hover:ring-white/10 transition-all">
                   <span class="text-lg flex-shrink-0">${item.type === "Video" ? "▶️" : item.type === "Course" ? "📚" : "📄"}</span>
                   <div class="flex-1 min-w-0">
                     <p class="text-sm font-semibold leading-snug">${item.title}</p>
                     <p class="text-xs text-white/40 mt-0.5">${item.type} · ${item.dur}</p>
                   </div>
                   <span class="text-rk-green flex-shrink-0">${icons.chevronRight}</span>
-                </button>`).join("")}
+                </a>`).join("")}
             </div>
           </div>`).join("")}
       </div>
