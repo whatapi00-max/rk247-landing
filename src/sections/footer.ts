@@ -68,7 +68,6 @@ export function SeoText(): string {
         <div class="reveal">
           <h3 class="text-base font-bold text-white/85">${i.t}</h3>
           <p class="mt-3 text-sm leading-relaxed text-white/35">${i.p}</p>
-          ${idx === 0 ? `<button class="btn-ghost mt-4 gap-1">Read all ${icons.chevronDown}</button>` : ""}
         </div>`
         )
         .join("")}
