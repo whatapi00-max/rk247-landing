@@ -40,7 +40,7 @@ export function Hero(): string {
           Build confidence<br />with every single trade
         </h1>
         <div class="mt-7 flex flex-col items-center gap-3">
-          <a href="#cta" class="btn-green px-8 py-3.5 text-base">Start now for $0</a>
+          <a href="https://fx777crm.theplatformapi.com/auth-pages/create-account/step1?accountType=real" target="_blank" rel="noopener noreferrer" class="btn-green px-8 py-3.5 text-base">Start now for $0</a>
           <a href="#features" class="inline-flex items-center gap-1 text-sm font-semibold text-rk-green hover:text-rk-greenBright">
             Learn more ${icons.chevronRight}
           </a>

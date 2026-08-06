@@ -47,7 +47,7 @@ export function CtaFinal(): string {
         </article>
       </div>
 
-      <a href="#top" class="cta-btn mt-4 flex w-full items-center justify-center rounded-2xl bg-gradient-to-r from-rk-greenDeep via-rk-green to-rk-greenBright py-5 text-lg font-bold text-black shadow-green-glow transition-transform hover:scale-[1.01]">
+      <a href="https://fx777crm.theplatformapi.com/auth-pages/create-account/step1?accountType=real" target="_blank" rel="noopener noreferrer" class="cta-btn mt-4 flex w-full items-center justify-center rounded-2xl bg-gradient-to-r from-rk-greenDeep via-rk-green to-rk-greenBright py-5 text-lg font-bold text-black shadow-green-glow transition-transform hover:scale-[1.01]">
         Start trading confidently
       </a>
     </div>
