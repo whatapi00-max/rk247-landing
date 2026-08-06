@@ -72,8 +72,8 @@ export function Header(): string {
       </nav>
 
       <div class="flex items-center gap-2 sm:gap-3">
-        <button class="btn-ghost hidden lg:inline-flex" data-wa aria-label="Sign in">Sign in</button>
-        <button class="btn-green hidden lg:inline-flex" data-wa>Try for free</button>
+        <a href="https://fx777crm.theplatformapi.com/" target="_blank" rel="noopener noreferrer" class="btn-ghost hidden lg:inline-flex" aria-label="Sign in">Sign in</a>
+        <a href="https://fx777crm.theplatformapi.com/auth-pages/create-account/step1?accountType=real" target="_blank" rel="noopener noreferrer" class="btn-green hidden lg:inline-flex">Try for free</a>
         <button id="menu-btn" class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white lg:hidden hover:bg-white/20" aria-label="Open menu">${icons.menu}</button>
       </div>
     </div>
@@ -97,8 +97,8 @@ export function Header(): string {
     </div>
     <div class="h-auto border-t border-white/10 px-4 py-4 flex-shrink-0">
       <div class="flex gap-3">
-        <button class="btn-ghost flex-1" data-wa>Sign in</button>
-        <button class="btn-green flex-1" data-wa>Try for free</button>
+        <a href="https://fx777crm.theplatformapi.com/" target="_blank" rel="noopener noreferrer" class="btn-ghost flex-1">Sign in</a>
+        <a href="https://fx777crm.theplatformapi.com/auth-pages/create-account/step1?accountType=real" target="_blank" rel="noopener noreferrer" class="btn-green flex-1">Try for free</a>
       </div>
     </div>
   </div>`;

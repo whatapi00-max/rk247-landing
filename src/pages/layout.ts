@@ -41,12 +41,12 @@ export function CtaSection(
       <h2 class="text-2xl font-bold sm:text-3xl">${headline}</h2>
       <p class="mt-3 text-white/55">${sub}</p>
       <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-        <button class="btn-green px-10 py-4 text-base" data-wa>Create Free Account</button>
+        <a href="https://fx777crm.theplatformapi.com/auth-pages/create-account/step1?accountType=real" target="_blank" rel="noopener noreferrer" class="btn-green px-10 py-4 text-base inline-flex items-center justify-center">Create Free Account</a>
         ${btn2Text
           ? btn2Link
             ? `<a href="${btn2Link}" class="btn-ghost px-8 py-4 text-base inline-flex items-center justify-center">${btn2Text}</a>`
-            : `<button class="btn-ghost px-8 py-4 text-base" data-wa>${btn2Text}</button>`
-          : `<button class="btn-ghost px-8 py-4 text-base" data-wa>Sign In</button>`
+            : `<a href="https://fx777crm.theplatformapi.com/auth-pages/create-account/step1?accountType=real" target="_blank" rel="noopener noreferrer" class="btn-ghost px-8 py-4 text-base inline-flex items-center justify-center">${btn2Text}</a>`
+          : `<a href="https://fx777crm.theplatformapi.com/" target="_blank" rel="noopener noreferrer" class="btn-ghost px-8 py-4 text-base inline-flex items-center justify-center">Sign In</a>`
         }
       </div>
       ${btn2Sub ? `<p class="mt-3 text-sm text-white/40">${btn2Sub}</p>` : ""}
