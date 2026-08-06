@@ -41,11 +41,11 @@ export function CtaSection(
       <h2 class="text-2xl font-bold sm:text-3xl">${headline}</h2>
       <p class="mt-3 text-white/55">${sub}</p>
       <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="https://fx777crm.theplatformapi.com/auth-pages/create-account/step1?accountType=real" target="_blank" rel="noopener noreferrer" class="btn-green px-10 py-4 text-base inline-flex items-center justify-center">Create Free Account</a>
+        <a href="https://web.theplatformapi.com/create-company-user?companyName=FX777&isDemo=false&parentId=29103" target="_blank" rel="noopener noreferrer" class="btn-green px-10 py-4 text-base inline-flex items-center justify-center">Create Free Account</a>
         ${btn2Text
           ? btn2Link
             ? `<a href="${btn2Link}" class="btn-ghost px-8 py-4 text-base inline-flex items-center justify-center">${btn2Text}</a>`
-            : `<a href="https://fx777crm.theplatformapi.com/auth-pages/create-account/step1?accountType=real" target="_blank" rel="noopener noreferrer" class="btn-ghost px-8 py-4 text-base inline-flex items-center justify-center">${btn2Text}</a>`
+            : `<a href="https://web.theplatformapi.com/create-company-user?companyName=FX777&isDemo=false&parentId=29103" target="_blank" rel="noopener noreferrer" class="btn-ghost px-8 py-4 text-base inline-flex items-center justify-center">${btn2Text}</a>`
           : `<a href="https://fx777crm.theplatformapi.com/" target="_blank" rel="noopener noreferrer" class="btn-ghost px-8 py-4 text-base inline-flex items-center justify-center">Sign In</a>`
         }
       </div>

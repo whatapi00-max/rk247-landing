@@ -4,7 +4,7 @@ import { PageHero, CtaSection, FeatureGrid, StepList, BackLink, icons } from "./
 export function DownloadPage(): string {
   const options = [
     {
-      href: "https://web.theplatformapi.com/",
+      href: "https://web.theplatformapi.com/create-company-user?companyName=FX777&isDemo=false&parentId=29103",
       icon: "🌐",
       label: "Web Trader",
       sub: "Browser-based",
