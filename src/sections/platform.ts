@@ -25,7 +25,7 @@ export function Platform(): string {
           </div>
           <div>
             <p class="text-sm font-bold leading-tight">Your financial future<br />is in your hands</p>
-            <a href="#download" class="mt-1 inline-flex items-center gap-1 text-xs font-bold underline-offset-2 hover:underline">
+            <a href="/download" class="mt-1 inline-flex items-center gap-1 text-xs font-bold underline-offset-2 hover:underline">
               Download app now ${icons.chevronRight}
             </a>
           </div>

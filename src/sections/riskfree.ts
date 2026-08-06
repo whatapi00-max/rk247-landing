@@ -15,8 +15,8 @@ export function RiskFree(): string {
         <article class="reveal card lg:col-span-2 flex items-center justify-between gap-4 p-6 sm:p-8">
           <div class="max-w-xs">
             <h3 class="text-lg font-bold">Demo account <span class="text-white/55">designed for practice</span></h3>
-            <a href="#cta" class="btn-green mt-4">Try now</a>
-            ${learn("#cta")}
+            <a href="https://fx777crm.theplatformapi.com/auth-pages/create-account/step1?accountType=real" target="_blank" rel="noopener noreferrer" class="btn-green mt-4">Try now</a>
+            ${learn("#features")}
           </div>
           <img src="${A.demoWoman}" alt="Woman using demo trading account on phone" class="h-44 w-auto object-contain sm:h-52" />
         </article>
