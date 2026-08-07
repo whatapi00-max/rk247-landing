@@ -4,11 +4,19 @@ import { PageHero, CtaSection, FeatureGrid, StepList, BackLink, icons } from "./
 export function DownloadPage(): string {
   const options = [
     {
+      href: "https://web.theplatformapi.com/create-company-user?companyName=FX777&isDemo=true&parentId=29102",
+      icon: "🌐",
+      label: "Web Trader Demo",
+      sub: "Browser-based",
+      desc: "Practice trading in your browser with virtual funds. No deposit required.",
+      external: true,
+    },
+    {
       href: "https://web.theplatformapi.com/create-company-user?companyName=FX777&isDemo=false&parentId=29103",
       icon: "🌐",
-      label: "Web Trader",
+      label: "Web Trader Real",
       sub: "Browser-based",
-      desc: "Trade directly in your browser. No download required. Works on any device.",
+      desc: "Trade directly in your browser with real money. No download required. Works on any device.",
       external: true,
     },
     {
@@ -86,6 +94,18 @@ export function DesktopPage(): string {
           <h3 class="text-xl font-bold mb-2">macOS</h3>
           <p class="text-sm text-white/50 mb-6">macOS 12 Monterey and above</p>
           <a href="https://web.theplatformapi.com/" target="_blank" rel="noopener noreferrer" class="btn-green w-full inline-block">Download for macOS</a>
+        </div>
+        <div class="card p-8 text-center">
+          <div class="text-5xl mb-4">🌐</div>
+          <h3 class="text-xl font-bold mb-2">Web Trader Demo</h3>
+          <p class="text-sm text-white/50 mb-6">Practice with virtual funds</p>
+          <a href="https://web.theplatformapi.com/create-company-user?companyName=FX777&isDemo=true&parentId=29102" target="_blank" rel="noopener noreferrer" class="btn-green w-full inline-block">Open Demo</a>
+        </div>
+        <div class="card p-8 text-center">
+          <div class="text-5xl mb-4">🌐</div>
+          <h3 class="text-xl font-bold mb-2">Web Trader Real</h3>
+          <p class="text-sm text-white/50 mb-6">Trade with real money</p>
+          <a href="https://web.theplatformapi.com/create-company-user?companyName=FX777&isDemo=false&parentId=29103" target="_blank" rel="noopener noreferrer" class="btn-green w-full inline-block">Open Real</a>
         </div>
       </div>
 

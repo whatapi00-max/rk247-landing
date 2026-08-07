@@ -387,6 +387,22 @@ export function DemoPage(): string {
         { icon: "🛠️", title: "Full Toolset", desc: "Signals, indicators, charts and all analytics tools are active on demo." },
         { icon: "🔄", title: "Switch Anytime", desc: "Toggle between demo and real accounts with a single tap." },
       ])}
+
+      <h3 class="reveal text-xl font-bold mt-16 mb-6 text-center">Or start with Web Trader</h3>
+      <div class="reveal grid gap-4 sm:grid-cols-2 max-w-2xl mx-auto">
+        <a href="https://web.theplatformapi.com/create-company-user?companyName=FX777&isDemo=true&parentId=29102" target="_blank" rel="noopener noreferrer" class="card p-6 text-center hover:ring-1 hover:ring-rk-green transition-all">
+          <p class="text-3xl mb-2">🌐</p>
+          <h4 class="font-bold mb-2">Web Trader Demo</h4>
+          <p class="text-sm text-white/55 mb-4">Practice in your browser</p>
+          <span class="inline-flex items-center gap-1 text-xs font-semibold text-rk-green">Open ${icons.chevronRight}</span>
+        </a>
+        <a href="https://web.theplatformapi.com/create-company-user?companyName=FX777&isDemo=false&parentId=29103" target="_blank" rel="noopener noreferrer" class="card p-6 text-center hover:ring-1 hover:ring-rk-green transition-all">
+          <p class="text-3xl mb-2">🌐</p>
+          <h4 class="font-bold mb-2">Web Trader Real</h4>
+          <p class="text-sm text-white/55 mb-4">Trade with real funds</p>
+          <span class="inline-flex items-center gap-1 text-xs font-semibold text-rk-green">Open ${icons.chevronRight}</span>
+        </a>
+      </div>
     </div>
   </section>
 
