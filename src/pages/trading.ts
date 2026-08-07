@@ -390,7 +390,7 @@ export function DemoPage(): string {
     </div>
   </section>
 
-  ${CtaSection("Get Your Free Demo Account", "Register now and receive $10,000 virtual money instantly.", "Start Trading", "Open a live account from $1.", "/trading/account")}`;
+  ${CtaSection("Get Your Free Demo Account", "Register now and receive $10,000 virtual money instantly.", "Open Demo Account", "Start with virtual funds.", "https://fx777crm.theplatformapi.com/auth-pages/create-account/step1?accountType=demo")}`;
 }
 
 /* ─── Promotions ─── */

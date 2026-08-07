@@ -44,7 +44,7 @@ export function CtaSection(
         <a href="https://fx777crm.theplatformapi.com/auth-pages/create-account/step1?accountType=real" target="_blank" rel="noopener noreferrer" class="btn-green px-10 py-4 text-base inline-flex items-center justify-center">Create Free Account</a>
         ${btn2Text
           ? btn2Link
-            ? `<a href="${btn2Link}" class="btn-ghost px-8 py-4 text-base inline-flex items-center justify-center">${btn2Text}</a>`
+            ? `<a href="${btn2Link}" target="_blank" rel="noopener noreferrer" class="btn-ghost px-8 py-4 text-base inline-flex items-center justify-center">${btn2Text}</a>`
             : `<a href="https://fx777crm.theplatformapi.com/auth-pages/create-account/step1?accountType=real" target="_blank" rel="noopener noreferrer" class="btn-ghost px-8 py-4 text-base inline-flex items-center justify-center">${btn2Text}</a>`
           : `<a href="https://fx777crm.theplatformapi.com/" target="_blank" rel="noopener noreferrer" class="btn-ghost px-8 py-4 text-base inline-flex items-center justify-center">Sign In</a>`
         }
