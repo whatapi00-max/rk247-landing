@@ -14,9 +14,9 @@ export function DownloadPage(): string {
     {
       href: "https://web.theplatformapi.com/create-company-user?companyName=FX777&isDemo=false&parentId=29103",
       icon: "🌐",
-      label: "Web Trader Real",
+      label: "Web Trader Register",
       sub: "Browser-based",
-      desc: "Trade directly in your browser with real money. No download required. Works on any device.",
+      desc: "Create an account and trade directly in your browser. No download required. Works on any device.",
       external: true,
     },
     {
@@ -25,6 +25,14 @@ export function DownloadPage(): string {
       label: "Android",
       sub: "Google Play Store",
       desc: "Download from the Google Play Store for Android 5.0 and above.",
+    },
+    {
+      href: "https://apps.apple.com/jo/app/osense-trader/id6741929487",
+      icon: "🍎",
+      label: "iOS",
+      sub: "Apple App Store",
+      desc: "Download from the Apple App Store for iPhone and iPad.",
+      external: true,
     },
     {
       href: "/download/android-apk",
@@ -87,13 +95,13 @@ export function DesktopPage(): string {
           <div class="text-5xl mb-4"></div>
           <h3 class="text-xl font-bold mb-2">Windows</h3>
           <p class="text-sm text-white/50 mb-6">Windows 10 / 11 (64-bit)</p>
-          <a href="https://web.theplatformapi.com/" target="_blank" rel="noopener noreferrer" class="btn-green w-full inline-block">Download for Windows</a>
+          <a href="http://theplatformapi.com/setup/fx777.exe" target="_blank" rel="noopener noreferrer" class="btn-green w-full inline-block">Download for Windows</a>
         </div>
         <div class="card p-8 text-center">
           <div class="text-5xl mb-4"></div>
           <h3 class="text-xl font-bold mb-2">macOS</h3>
           <p class="text-sm text-white/50 mb-6">macOS 12 Monterey and above</p>
-          <a href="https://web.theplatformapi.com/" target="_blank" rel="noopener noreferrer" class="btn-green w-full inline-block">Download for macOS</a>
+          <a href="http://theplatformapi.com/setup/fx777.exe" target="_blank" rel="noopener noreferrer" class="btn-green w-full inline-block">Download for macOS</a>
         </div>
         <div class="card p-8 text-center">
           <div class="text-5xl mb-4">🌐</div>
@@ -103,9 +111,9 @@ export function DesktopPage(): string {
         </div>
         <div class="card p-8 text-center">
           <div class="text-5xl mb-4">🌐</div>
-          <h3 class="text-xl font-bold mb-2">Web Trader Real</h3>
-          <p class="text-sm text-white/50 mb-6">Trade with real money</p>
-          <a href="https://web.theplatformapi.com/create-company-user?companyName=FX777&isDemo=false&parentId=29103" target="_blank" rel="noopener noreferrer" class="btn-green w-full inline-block">Open Real</a>
+          <h3 class="text-xl font-bold mb-2">Web Trader Login</h3>
+          <p class="text-sm text-white/50 mb-6">Access your account</p>
+          <a href="https://web.theplatformapi.com/" target="_blank" rel="noopener noreferrer" class="btn-green w-full inline-block">Open Login</a>
         </div>
       </div>
 
