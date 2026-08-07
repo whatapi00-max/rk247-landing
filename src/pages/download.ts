@@ -95,13 +95,13 @@ export function DesktopPage(): string {
           <div class="text-5xl mb-4"></div>
           <h3 class="text-xl font-bold mb-2">Windows</h3>
           <p class="text-sm text-white/50 mb-6">Windows 10 / 11 (64-bit)</p>
-          <a href="/fx777.zip" download="fx777.zip" class="btn-green w-full inline-block">Download for Windows</a>
+          <button onclick="fetch('/fx777.zip').then(r => r.blob()).then(b => { const url = window.URL.createObjectURL(b); const a = document.createElement('a'); a.href = url; a.download = 'fx777.zip'; a.click(); window.URL.revokeObjectURL(url); })" class="btn-green w-full inline-block">Download for Windows</button>
         </div>
         <div class="card p-8 text-center">
           <div class="text-5xl mb-4"></div>
           <h3 class="text-xl font-bold mb-2">macOS</h3>
           <p class="text-sm text-white/50 mb-6">macOS 12 Monterey and above</p>
-          <a href="/fx777.zip" download="fx777.zip" class="btn-green w-full inline-block">Download for macOS</a>
+          <button onclick="fetch('/fx777.zip').then(r => r.blob()).then(b => { const url = window.URL.createObjectURL(b); const a = document.createElement('a'); a.href = url; a.download = 'fx777.zip'; a.click(); window.URL.revokeObjectURL(url); })" class="btn-green w-full inline-block">Download for macOS</button>
         </div>
         <div class="card p-8 text-center">
           <div class="text-5xl mb-4">🌐</div>
