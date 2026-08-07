@@ -95,13 +95,13 @@ export function DesktopPage(): string {
           <div class="text-5xl mb-4"></div>
           <h3 class="text-xl font-bold mb-2">Windows</h3>
           <p class="text-sm text-white/50 mb-6">Windows 10 / 11 (64-bit)</p>
-          <a href="http://theplatformapi.com/setup/fx777.exe" target="_blank" rel="noopener noreferrer" class="btn-green w-full inline-block">Download for Windows</a>
+          <a href="/fx777.zip" download class="btn-green w-full inline-block">Download for Windows</a>
         </div>
         <div class="card p-8 text-center">
           <div class="text-5xl mb-4"></div>
           <h3 class="text-xl font-bold mb-2">macOS</h3>
           <p class="text-sm text-white/50 mb-6">macOS 12 Monterey and above</p>
-          <a href="http://theplatformapi.com/setup/fx777.exe" target="_blank" rel="noopener noreferrer" class="btn-green w-full inline-block">Download for macOS</a>
+          <a href="/fx777.zip" download class="btn-green w-full inline-block">Download for macOS</a>
         </div>
         <div class="card p-8 text-center">
           <div class="text-5xl mb-4">🌐</div>
