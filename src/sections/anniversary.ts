@@ -15,10 +15,6 @@ export function Anniversary(): string {
       <p class="reveal mt-3 max-w-md text-sm text-white/55">
         Discover RK247's transformed and enhanced trading experience. Feel care that counts.
       </p>
-      <div class="reveal mt-5 flex items-center gap-6 text-sm font-semibold text-rk-green">
-        <a href="#features" class="inline-flex items-center gap-1 hover:text-rk-greenBright">Learn more ${icons.chevronRight}</a>
-        <a href="#about" class="inline-flex items-center gap-1 hover:text-rk-greenBright">Read news ${icons.chevronRight}</a>
-      </div>
     </div>
   </section>`;
 }
