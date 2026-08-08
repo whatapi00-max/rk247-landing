@@ -27,7 +27,7 @@ export function SupportPage(): string {
           <div class="text-4xl mb-3">📧</div>
           <h3 class="font-bold text-xl mb-2">Email</h3>
           <p class="text-sm text-white/55 mb-5">For detailed queries. Average reply time: under 2 hours.</p>
-          <a href="mailto:support@rk247.org" class="btn-ghost w-full block text-center">support@rk247.org</a>
+          <a href="mailto:rk247mail@gmail.com" class="btn-ghost w-full block text-center">rk247mail@gmail.com</a>
         </div>
       </div>
 
