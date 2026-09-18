@@ -13,6 +13,7 @@ import walletRoutes from './routes/wallet.js';
 import withdrawalRoutes from './routes/withdrawal.js';
 import adminRoutes from './routes/admin.js';
 import webhookRoutes, { handleApayCallback } from './routes/webhook.js';
+import { startDepositReconciliation } from './jobs/reconcileDeposits.js';
 import { generalLimiter } from './middleware/rateLimiter.js';
 import logger from './config/logger.js';
 
@@ -99,6 +100,7 @@ app.listen(PORT, () => {
   logger.info(`🚀 RK247 Wallet API server running on port ${PORT}`);
   logger.info(`Environment: ${process.env.NODE_ENV || 'development'}`);
   logger.info(`Health check: http://localhost:${PORT}/health`);
+  startDepositReconciliation();
 });
 
 export default app;

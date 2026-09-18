@@ -1,0 +1,100 @@
+import supabase from '../config/database.js';
+import apayService from '../services/apayService.js';
+import walletService from '../services/walletService.js';
+import logger from '../config/logger.js';
+
+// Poll A-Pay for deposits stuck in "pending" so a missed/delayed webhook
+// still results in the wallet being credited. Runs alongside the webhook —
+// the atomic claim on transactions.status='pending' guarantees a deposit can
+// never be credited twice, whichever path processes it first.
+
+const POLL_INTERVAL_MS = 5 * 60 * 1000;   // check every 5 minutes
+const MIN_AGE_MS = 2 * 60 * 1000;         // give the webhook 2 min to arrive first
+const MAX_AGE_MS = 24 * 60 * 60 * 1000;   // stop checking after 24h (page expired)
+
+async function processDeposit(payment) {
+  const info = await apayService.getPaymentStatus(payment.order_id);
+
+  if (!info || info.success !== true || !info.status) {
+    logger.warn(`Reconcile: no status for order ${payment.order_id}`, info);
+    return;
+  }
+
+  if (info.status === 'Success') {
+    // Atomically claim — only succeeds while still pending, so a webhook
+    // arriving at the same moment cannot double-credit
+    const { data: claimed, error: claimError } = await supabase
+      .from('transactions')
+      .update({ status: 'completed', updated_at: new Date().toISOString() })
+      .eq('id', payment.transaction_id)
+      .eq('status', 'pending')
+      .select('wallet_id')
+      .single();
+
+    await supabase
+      .from('apay_payments')
+      .update({ status: 'completed', callback_data: info, updated_at: new Date().toISOString() })
+      .eq('id', payment.id);
+
+    if (claimError || !claimed) {
+      logger.info(`Reconcile: transaction ${payment.transaction_id} already processed — status synced only`);
+      return;
+    }
+
+    await walletService.updateWalletBalance(claimed.wallet_id, payment.amount, 'add');
+    logger.info(`Reconcile: credited ${payment.amount} to wallet ${claimed.wallet_id} (order ${payment.order_id} — webhook was missed)`);
+  } else if (info.status === 'Failed' || info.status === 'Rejected') {
+    const status = info.status === 'Failed' ? 'failed' : 'rejected';
+
+    await supabase
+      .from('transactions')
+      .update({ status, updated_at: new Date().toISOString() })
+      .eq('id', payment.transaction_id)
+      .eq('status', 'pending');
+
+    await supabase
+      .from('apay_payments')
+      .update({ status, callback_data: info, updated_at: new Date().toISOString() })
+      .eq('id', payment.id);
+
+    logger.info(`Reconcile: marked order ${payment.order_id} as ${status}`);
+  }
+  // Still pending on A-Pay's side — check again next cycle
+}
+
+async function reconcile() {
+  try {
+    const cutoffMin = new Date(Date.now() - MAX_AGE_MS).toISOString();
+    const cutoffMax = new Date(Date.now() - MIN_AGE_MS).toISOString();
+
+    const { data: pending, error } = await supabase
+      .from('apay_payments')
+      .select('id, order_id, amount, transaction_id')
+      .eq('status', 'pending')
+      .lt('created_at', cutoffMax)
+      .gt('created_at', cutoffMin)
+      .limit(50);
+
+    if (error) {
+      logger.error('Reconcile: failed to fetch pending deposits:', error);
+      return;
+    }
+
+    for (const payment of pending || []) {
+      try {
+        await processDeposit(payment);
+      } catch (err) {
+        logger.error(`Reconcile: error processing order ${payment.order_id}:`, err.message);
+      }
+    }
+  } catch (err) {
+    logger.error('Reconcile: unexpected error:', err);
+  }
+}
+
+export function startDepositReconciliation() {
+  logger.info(`Deposit reconciliation started (every ${POLL_INTERVAL_MS / 60000} min)`);
+  const timer = setInterval(reconcile, POLL_INTERVAL_MS);
+  timer.unref(); // don't keep the process alive just for this
+  reconcile();   // run once at startup
+}
