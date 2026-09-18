@@ -1,6 +1,7 @@
 import express from 'express';
 import apayService from '../services/apayService.js';
 import walletService from '../services/walletService.js';
+import withdrawalService from '../services/withdrawalService.js';
 import supabase from '../config/database.js';
 import logger from '../config/logger.js';
 
@@ -20,6 +21,17 @@ export const handleApayCallback = async (req, res) => {
       const { transaction_id, status, amount } = result;
 
       try {
+        // Withdrawal payout result (A-Pay sends these to the same webhook)
+        if (result.type === 'withdrawal') {
+          if (status === 'completed') {
+            await withdrawalService.markWithdrawalPaid(result.withdrawal_id);
+          } else {
+            await withdrawalService.markWithdrawalFailed(result.withdrawal_id, status);
+          }
+          continue;
+        }
+
+
         if (status === 'completed') {
           // Atomically claim the transaction — only succeeds while it is
           // still pending, so retried/duplicate callbacks cannot credit twice

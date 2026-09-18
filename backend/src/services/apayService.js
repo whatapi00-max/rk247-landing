@@ -166,6 +166,32 @@ class APayService {
           .single();
 
         if (error || !apayPayment) {
+          // Not a deposit — check whether this order_id belongs to a withdrawal payout
+          const { data: wTx } = await supabase
+            .from('transactions')
+            .select('id, order_id')
+            .eq('order_id', transaction.order_id)
+            .single();
+
+          if (wTx) {
+            const { data: wd } = await supabase
+              .from('withdrawals')
+              .select('*')
+              .eq('transaction_id', wTx.id)
+              .single();
+
+            if (wd) {
+              results.push({
+                type: 'withdrawal',
+                withdrawal_id: wd.id,
+                status: transaction.status === 'Success' ? 'completed' :
+                        transaction.status === 'Failed' ? 'failed' : 'rejected',
+                amount: wd.amount
+              });
+              continue;
+            }
+          }
+
           logger.error(`Payment record not found for order_id: ${transaction.order_id}`);
           continue;
         }
@@ -192,6 +218,73 @@ class APayService {
       return results;
     } catch (error) {
       logger.error('Payment verification error:', error);
+      throw error;
+    }
+  }
+
+  buildWithdrawalData(paymentSystem, accountData) {
+    const { account_name, account_number } = accountData || {};
+    switch (paymentSystem) {
+      case 'easypaisa':
+        return { wallet_type: 'easypaisa', account_name, account_number };
+      case 'jazzcash':
+        return { wallet_type: 'jazzcash', account_name, account_number };
+      case 'nayapay_l':
+        return { account_name, account_number };
+      default:
+        throw new Error(`Automatic payout is not supported for payment system: ${paymentSystem}`);
+    }
+  }
+
+  async createWithdrawal(withdrawal) {
+    try {
+      if (!this.apiKey || !this.projectId) {
+        throw new Error('A-Pay credentials not configured');
+      }
+
+      const body = {
+        amount: parseInt(withdrawal.amount),
+        currency: 'PKR',
+        payment_system: withdrawal.payment_system,
+        custom_user_id: String(withdrawal.user_id),
+        custom_transaction_id: `RK247_W_${withdrawal.id}`,
+        data: this.buildWithdrawalData(withdrawal.payment_system, withdrawal.account_data)
+      };
+
+      logger.info('Creating A-Pay withdrawal:', { withdrawal_id: withdrawal.id, amount: body.amount, payment_system: body.payment_system });
+
+      const response = await axios.post(
+        `${this.apiUrl}/Remotes/create-withdrawal?project_id=${this.projectId}`,
+        body,
+        { headers: { 'Content-Type': 'application/json', 'apikey': this.apiKey } }
+      );
+
+      if (!response.data.success) {
+        throw new Error(response.data.message || 'A-Pay withdrawal request failed');
+      }
+
+      logger.info('A-Pay withdrawal created:', response.data);
+      return response.data; // { success, status, order_id, ... }
+    } catch (error) {
+      logger.error('A-Pay withdrawal error:', {
+        message: error.message,
+        response: error.response?.data,
+        status: error.response?.status
+      });
+      const msg = error.response?.data?.message || error.message;
+      throw new Error(`A-Pay payout failed: ${msg}`);
+    }
+  }
+
+  async getWithdrawalInfo(orderId) {
+    try {
+      const response = await axios.get(
+        `${this.apiUrl}/Remotes/withdrawal-info?project_id=${this.projectId}&order_id=${orderId}`,
+        { headers: { 'apikey': this.apiKey } }
+      );
+      return response.data;
+    } catch (error) {
+      logger.error('Error fetching withdrawal status:', error);
       throw error;
     }
   }

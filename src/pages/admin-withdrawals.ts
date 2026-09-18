@@ -358,6 +358,7 @@ function renderPagination(pagination: any, currentPage: number, status: string):
 function getStatusColor(status: string): string {
   const colors: Record<string, string> = {
     pending: 'bg-yellow-500/20 text-yellow-300',
+    processing: 'bg-blue-500/20 text-blue-300',
     approved: 'bg-rk-green/20 text-rk-green',
     rejected: 'bg-red-500/20 text-red-300',
     completed: 'bg-blue-500/20 text-blue-300'

@@ -1,6 +1,7 @@
 import supabase from '../config/database.js';
 import apayService from '../services/apayService.js';
 import walletService from '../services/walletService.js';
+import withdrawalService from '../services/withdrawalService.js';
 import logger from '../config/logger.js';
 
 // Poll A-Pay for deposits stuck in "pending" so a missed/delayed webhook
@@ -64,6 +65,17 @@ async function processDeposit(payment) {
   // Still pending on A-Pay's side — check again next cycle
 }
 
+async function processWithdrawal(withdrawal) {
+  const info = await apayService.getWithdrawalInfo(withdrawal.order_id);
+  if (!info || info.success !== true || !info.status) return;
+
+  if (info.status === 'Success') {
+    await withdrawalService.markWithdrawalPaid(withdrawal.id);
+  } else if (info.status === 'Failed' || info.status === 'Rejected') {
+    await withdrawalService.markWithdrawalFailed(withdrawal.id, info.status.toLowerCase());
+  }
+}
+
 async function reconcile() {
   try {
     const cutoffMin = new Date(Date.now() - MAX_AGE_MS).toISOString();
@@ -88,6 +100,29 @@ async function reconcile() {
         await processDeposit(payment);
       } catch (err) {
         logger.error(`Reconcile: error processing order ${payment.order_id}:`, err.message);
+      }
+    }
+
+    // Withdrawal payouts stuck in "processing" — same missed-callback safety net
+    const { data: procList } = await supabase
+      .from('withdrawals')
+      .select('id, transaction_id')
+      .eq('status', 'processing')
+      .limit(50);
+
+    for (const wd of procList || []) {
+      try {
+        const { data: tx } = await supabase
+          .from('transactions')
+          .select('order_id')
+          .eq('id', wd.transaction_id)
+          .single();
+
+        if (tx?.order_id) {
+          await processWithdrawal({ id: wd.id, order_id: tx.order_id });
+        }
+      } catch (err) {
+        logger.error(`Reconcile: error processing withdrawal ${wd.id}:`, err.message);
       }
     }
   } catch (err) {

@@ -1,5 +1,6 @@
 import logger from '../config/logger.js';
 import supabase from '../config/database.js';
+import apayService from './apayService.js';
 
 class WithdrawalService {
   async createWithdrawal(walletId, userId, amount, paymentSystem, accountData) {
@@ -169,6 +170,54 @@ class WithdrawalService {
         throw new Error('Only pending withdrawals can be approved');
       }
 
+      // Automatic payout via A-Pay — enabled with APAY_AUTO_PAYOUT=true and
+      // only for payment systems whose data shape we can build. Any A-Pay
+      // failure leaves the withdrawal 'pending' so the admin can retry.
+      const autoPayoutSystems = ['easypaisa', 'jazzcash', 'nayapay_l'];
+      const autoPayout = process.env.APAY_AUTO_PAYOUT === 'true' &&
+        autoPayoutSystems.includes(withdrawal.payment_system);
+
+      if (autoPayout) {
+        const apayResult = await apayService.createWithdrawal(withdrawal);
+
+        // Store APay order_id on the linked transaction so callbacks and the
+        // reconciler can find this withdrawal again.
+        await supabase
+          .from('transactions')
+          .update({
+            order_id: apayResult.order_id,
+            description: `Withdrawal via ${withdrawal.payment_system} — A-Pay payout processing (order ${apayResult.order_id})`
+          })
+          .eq('id', withdrawal.transaction_id);
+
+        const { data: processingWithdrawal, error: pwError } = await supabase
+          .from('withdrawals')
+          .update({ status: 'processing', updated_at: new Date().toISOString() })
+          .eq('id', withdrawalId)
+          .select()
+          .single();
+
+        if (pwError) throw pwError;
+
+        await supabase.from('admin_actions').insert({
+          admin_id: adminId,
+          action_type: 'approve_withdrawal',
+          target_user_id: withdrawal.user_id,
+          target_wallet_id: withdrawal.wallet_id,
+          details: {
+            withdrawal_id: withdrawalId,
+            amount: withdrawal.amount,
+            payment_system: withdrawal.payment_system,
+            transaction_id: withdrawal.transaction_id,
+            apay_order_id: apayResult.order_id,
+            note: 'Payout sent to A-Pay — completes when A-Pay confirms'
+          }
+        });
+
+        logger.info(`Withdrawal ${withdrawalId} approved — A-Pay payout ${apayResult.order_id} processing`);
+        return processingWithdrawal;
+      }
+
       // Update withdrawal status to approved
       const { data: updatedWithdrawal, error: withdrawalError } = await supabase
         .from('withdrawals')
@@ -305,6 +354,87 @@ class WithdrawalService {
       logger.error('Complete withdrawal error:', error);
       throw error;
     }
+  }
+
+  // Called when the A-Pay withdrawal webhook/reconciler reports Success —
+  // the payout has reached the user's account.
+  async markWithdrawalPaid(withdrawalId) {
+    const withdrawal = await this.getWithdrawalStatus(withdrawalId);
+
+    if (withdrawal.status !== 'processing') {
+      logger.info(`Withdrawal ${withdrawalId} already ${withdrawal.status} — skipping paid marking`);
+      return withdrawal;
+    }
+
+    const { data: updated, error } = await supabase
+      .from('withdrawals')
+      .update({ status: 'completed', updated_at: new Date().toISOString() })
+      .eq('id', withdrawalId)
+      .select()
+      .single();
+
+    if (error) throw error;
+
+    await supabase
+      .from('transactions')
+      .update({
+        status: 'completed',
+        description: `Withdrawal via ${withdrawal.payment_system} — paid out by A-Pay`
+      })
+      .eq('id', withdrawal.transaction_id);
+
+    logger.info(`Withdrawal ${withdrawalId} marked paid — PKR ${withdrawal.amount} reached user's ${withdrawal.payment_system} account`);
+    return updated;
+  }
+
+  // Called when the A-Pay withdrawal webhook/reconciler reports Failed/Rejected —
+  // payout failed, so the deducted amount is refunded to the user's wallet.
+  async markWithdrawalFailed(withdrawalId, apayStatus = 'failed') {
+    const withdrawal = await this.getWithdrawalStatus(withdrawalId);
+
+    if (withdrawal.status !== 'processing') {
+      logger.info(`Withdrawal ${withdrawalId} already ${withdrawal.status} — skipping failed marking`);
+      return withdrawal;
+    }
+
+    const { data: updated, error } = await supabase
+      .from('withdrawals')
+      .update({ status: 'rejected', updated_at: new Date().toISOString() })
+      .eq('id', withdrawalId)
+      .select()
+      .single();
+
+    if (error) throw error;
+
+    await supabase
+      .from('transactions')
+      .update({
+        status: 'failed',
+        description: `Withdrawal via ${withdrawal.payment_system} — A-Pay payout ${apayStatus}. Amount refunded.`
+      })
+      .eq('id', withdrawal.transaction_id);
+
+    // Refund the deducted amount back to the wallet
+    const { data: wallet, error: walletFetchError } = await supabase
+      .from('wallets')
+      .select('balance')
+      .eq('id', withdrawal.wallet_id)
+      .single();
+
+    if (walletFetchError || !wallet) {
+      throw new Error('Wallet not found for refund');
+    }
+
+    const refundedBalance = parseFloat(wallet.balance) + parseFloat(withdrawal.amount);
+    const { error: refundError } = await supabase
+      .from('wallets')
+      .update({ balance: refundedBalance })
+      .eq('id', withdrawal.wallet_id);
+
+    if (refundError) throw refundError;
+
+    logger.info(`Withdrawal ${withdrawalId} payout ${apayStatus} — PKR ${withdrawal.amount} refunded to wallet (new balance ${refundedBalance})`);
+    return updated;
   }
 }
 
