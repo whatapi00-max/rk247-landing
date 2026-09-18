@@ -189,6 +189,7 @@ async function loadWithdrawals(page: number = 1, status: string = '', limit: num
             <th class="text-left py-4 px-6 text-white/70 font-medium">Payment Method</th>
             <th class="text-left py-4 px-6 text-white/70 font-medium">Account Details</th>
             <th class="text-left py-4 px-6 text-white/70 font-medium">Status</th>
+            <th class="text-left py-4 px-6 text-white/70 font-medium">A-Pay Status</th>
             <th class="text-left py-4 px-6 text-white/70 font-medium">Actions</th>
           </tr>
         </thead>
@@ -204,6 +205,13 @@ async function loadWithdrawals(page: number = 1, status: string = '', limit: num
                 <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getStatusColor(wd.status)}">
                   ${wd.status}
                 </span>
+              </td>
+              <td class="py-4 px-6">
+                ${wd.transactions?.order_id ? `
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getApayStatusColor(wd.transactions.status)}">
+                    ${getApayStatusLabel(wd.transactions.status)}
+                  </span>
+                ` : `<span class="text-white/30 text-sm">—</span>`}
               </td>
               <td class="py-4 px-6">
                 ${wd.status === 'pending' ? `
@@ -362,6 +370,26 @@ function getStatusColor(status: string): string {
     approved: 'bg-rk-green/20 text-rk-green',
     rejected: 'bg-red-500/20 text-red-300',
     completed: 'bg-blue-500/20 text-blue-300'
+  };
+  return colors[status] || 'bg-white/10 text-white/60';
+}
+
+function getApayStatusLabel(status: string): string {
+  const labels: Record<string, string> = {
+    pending: 'Pending',
+    completed: 'Success',
+    failed: 'Failed',
+    rejected: 'Rejected'
+  };
+  return labels[status] || status;
+}
+
+function getApayStatusColor(status: string): string {
+  const colors: Record<string, string> = {
+    pending: 'bg-yellow-500/20 text-yellow-300',
+    completed: 'bg-rk-green/20 text-rk-green',
+    failed: 'bg-red-500/20 text-red-300',
+    rejected: 'bg-red-500/20 text-red-300'
   };
   return colors[status] || 'bg-white/10 text-white/60';
 }

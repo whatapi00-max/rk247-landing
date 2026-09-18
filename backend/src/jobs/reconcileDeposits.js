@@ -103,22 +103,25 @@ async function reconcile() {
       }
     }
 
-    // Withdrawal payouts stuck in "processing" — same missed-callback safety net
+    // Approved withdrawals whose A-Pay payout may still be in flight — the
+    // linked transaction carries the APay order_id and stays 'pending' until
+    // the callback (or this job) marks it. Manual approvals have no order_id
+    // and are skipped automatically.
     const { data: procList } = await supabase
       .from('withdrawals')
       .select('id, transaction_id')
-      .eq('status', 'processing')
+      .in('status', ['approved', 'processing'])
       .limit(50);
 
     for (const wd of procList || []) {
       try {
         const { data: tx } = await supabase
           .from('transactions')
-          .select('order_id')
+          .select('order_id, status')
           .eq('id', wd.transaction_id)
           .single();
 
-        if (tx?.order_id) {
+        if (tx?.order_id && tx.status === 'pending') {
           await processWithdrawal({ id: wd.id, order_id: tx.order_id });
         }
       } catch (err) {

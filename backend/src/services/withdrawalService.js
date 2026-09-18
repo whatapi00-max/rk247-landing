@@ -104,7 +104,8 @@ class WithdrawalService {
           payment_system,
           status,
           created_at,
-          updated_at
+          updated_at,
+          transactions(status, order_id)
         `)
         .eq('user_id', userId)
         .order('created_at', { ascending: false })
@@ -192,7 +193,7 @@ class WithdrawalService {
 
         const { data: processingWithdrawal, error: pwError } = await supabase
           .from('withdrawals')
-          .update({ status: 'processing', updated_at: new Date().toISOString() })
+          .update({ status: 'approved', updated_at: new Date().toISOString() })
           .eq('id', withdrawalId)
           .select()
           .single();
@@ -361,7 +362,7 @@ class WithdrawalService {
   async markWithdrawalPaid(withdrawalId) {
     const withdrawal = await this.getWithdrawalStatus(withdrawalId);
 
-    if (withdrawal.status !== 'processing') {
+    if (!['approved', 'processing'].includes(withdrawal.status)) {
       logger.info(`Withdrawal ${withdrawalId} already ${withdrawal.status} — skipping paid marking`);
       return withdrawal;
     }
@@ -392,7 +393,7 @@ class WithdrawalService {
   async markWithdrawalFailed(withdrawalId, apayStatus = 'failed') {
     const withdrawal = await this.getWithdrawalStatus(withdrawalId);
 
-    if (withdrawal.status !== 'processing') {
+    if (!['approved', 'processing'].includes(withdrawal.status)) {
       logger.info(`Withdrawal ${withdrawalId} already ${withdrawal.status} — skipping failed marking`);
       return withdrawal;
     }

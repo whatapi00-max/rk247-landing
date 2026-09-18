@@ -284,8 +284,8 @@ async function loadWithdrawals(): Promise<void> {
                 <td class="py-3 px-4 font-semibold text-white">PKR ${w.amount.toLocaleString()}</td>
                 <td class="py-3 px-4 text-white/60">${w.payment_system}</td>
                 <td class="py-3 px-4">
-                  <span class="px-3 py-1 rounded-full text-xs font-semibold ${getStatusColor(w.status)}">
-                    ${w.status.charAt(0).toUpperCase() + w.status.slice(1)}
+                  <span class="px-3 py-1 rounded-full text-xs font-semibold ${getStatusColor(getDisplayStatus(w))}">
+                    ${getDisplayStatus(w).charAt(0).toUpperCase() + getDisplayStatus(w).slice(1)}
                   </span>
                 </td>
                 <td class="py-3 px-4 text-white/60">${new Date(w.created_at).toLocaleDateString()}</td>
@@ -298,6 +298,17 @@ async function loadWithdrawals(): Promise<void> {
   } catch (error) {
     console.error('Failed to load withdrawals:', error);
   }
+}
+
+// Users only ever see Pending until A-Pay confirms the payout — an admin
+// approval with an APay order still in flight displays as Pending. The final
+// state (completed/rejected) appears only once A-Pay reports it.
+function getDisplayStatus(w: any): string {
+  const tx = w.transactions;
+  if (w.status === 'approved' && tx?.order_id && tx.status === 'pending') {
+    return 'pending';
+  }
+  return w.status;
 }
 
 function getStatusColor(status: string): string {

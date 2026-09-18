@@ -474,7 +474,8 @@ router.get('/withdrawals', async (req, res) => {
         wallets!inner(
           user_id,
           users!inner(email, username)
-        )
+        ),
+        transactions(status, order_id)
       `);
 
     if (status) {
