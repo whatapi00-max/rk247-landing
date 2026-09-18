@@ -20,6 +20,12 @@
   ::selection {
     background: rgba(21, 227, 114, 0.3);
   }
+  /* Native select dropdown lists render with a light OS background —
+     keep option text readable on the dark theme */
+  select option {
+    background-color: #0c0c0c;
+    color: #ffffff;
+  }
 }
 
 @layer components {
@@ -154,4 +160,23 @@
     rgba(21, 227, 114, 0.45) 0%,
     rgba(0, 0, 0, 0) 70%
   );
+}
+
+/* Ensure hidden class works for mobile menu */
+#mobile-menu.hidden {
+  display: none !important;
+}
+
+/* Cookie banner styling */
+#cookie.hidden {
+  display: none !important;
+}
+
+/* Bonus popup styling */
+#bonus.hidden {
+  display: none !important;
+}
+
+#bonus.flex {
+  display: flex !important;
 }

@@ -144,14 +144,18 @@ export function Overlays(): string {
   </div>
 
   <!-- Bonus popup -->
-  <div id="bonus" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/70 p-4 backdrop-blur-sm">
-    <div class="relative w-full max-w-md overflow-hidden rounded-3xl bg-ink-850 ring-1 ring-white/10">
-      <button id="bonus-close" class="absolute right-3 top-3 z-10 grid h-8 w-8 place-items-center rounded-full bg-white/10 text-white hover:bg-white/20">${icons.close}</button>
-      <img src="${A.bonusBottle}" alt="Bonus bottle representing deposit bonus offer" class="h-48 w-full object-cover" />
-      <div class="p-6 text-center">
-        <h2 class="text-2xl font-extrabold text-rk-green">Bonus up to 100%</h2>
-        <p class="mt-2 text-sm text-white/60">Supercharge your funds with a deposit bonus, and unlock a withdrawable reward.</p>
-        <button id="bonus-claim" class="btn-green mt-5 w-full py-3.5" data-wa>Claim now</button>
+  <div id="bonus" class="fixed inset-0 z-50 items-center justify-center bg-black/60 backdrop-blur-sm p-4" style="display: none;">
+    <div class="relative max-w-md w-full bg-ink-800 rounded-2xl p-6 ring-1 ring-white/10 shadow-2xl">
+      <button id="bonus-close" class="absolute top-4 right-4 text-white/50 hover:text-white transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      <div class="flex flex-col items-center text-center">
+        <img src="${A.bonusBottle}" alt="Bonus" class="w-32 h-32 object-contain mb-4" />
+        <h3 class="text-2xl font-bold text-white mb-2">🎁 Special Bonus Offer!</h3>
+        <p class="text-white/70 mb-4">Get 100% deposit bonus on your first deposit up to $5,000. Don't miss out!</p>
+        <a href="/trading/promotions" class="btn-green w-full py-3 rounded-lg font-bold text-center">Claim Your Bonus</a>
       </div>
     </div>
   </div>`;

@@ -3,3 +3,15 @@ dist
 .DS_Store
 *.local
 .vite
+
+# Environment / secrets
+.env
+*.env
+!.env.example
+
+# Logs
+*.log
+
+# Test artifacts & stray files
+.playwright-mcp/
+nul

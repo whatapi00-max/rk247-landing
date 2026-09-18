@@ -72,8 +72,51 @@ export function Header(): string {
       </nav>
 
       <div class="flex items-center gap-2 sm:gap-3">
-        <a href="https://fx777crm.theplatformapi.com/" target="_blank" rel="noopener noreferrer" class="btn-ghost hidden lg:inline-flex" aria-label="Sign in">Sign in</a>
-        <a href="https://fx777crm.theplatformapi.com/auth-pages/create-account/step1?accountType=real" target="_blank" rel="noopener noreferrer" class="btn-green hidden lg:inline-flex">Try for free</a>
+        <!-- Wallet Button (shown when logged in) -->
+        <div id="wallet-dropdown" class="hidden relative">
+          <button id="wallet-btn" class="flex items-center gap-1.5 sm:gap-2 bg-white/[0.04] border border-white/10 rounded-full px-2.5 py-1.5 sm:px-4 sm:py-2 hover:bg-white/[0.08] transition-colors text-sm sm:text-base">
+            <span class="text-white/60 font-medium text-xs sm:text-sm">PKR</span>
+            <span id="header-balance" class="text-white font-semibold text-xs sm:text-sm">0.00</span>
+            <span class="text-white/40 text-xs">${icons.chevronDown}</span>
+          </button>
+          <div id="wallet-menu" class="absolute right-0 top-full mt-2 hidden min-w-[180px] sm:min-w-[200px] rounded-xl bg-ink-800 border border-white/10 p-2 shadow-card">
+            <button id="depositBtn" class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-white/75 hover:bg-white/5 hover:text-white transition-colors w-full text-left">
+              <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+              </svg>
+              <span>Deposit</span>
+            </button>
+            <button id="withdrawBtn" class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-white/75 hover:bg-white/5 hover:text-white transition-colors w-full text-left">
+              <svg class="w-4 h-4 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+              </svg>
+              <span>Withdraw</span>
+            </button>
+            <div class="border-t border-white/10 my-1"></div>
+            <a href="/profile" class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-white/75 hover:bg-white/5 hover:text-white transition-colors">
+              <svg class="w-4 h-4 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+              </svg>
+              <span>My Profile</span>
+            </a>
+            <a href="/account-statement" class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-white/75 hover:bg-white/5 hover:text-white transition-colors">
+              <svg class="w-4 h-4 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+              <span>Account Statement</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Auth Buttons (shown when logged out) -->
+        <div id="auth-buttons">
+          <a href="/login" class="btn-ghost hidden lg:inline-flex" aria-label="Sign in">Sign in</a>
+          <a href="/register" class="btn-green hidden lg:inline-flex">Try for free</a>
+        </div>
+
+        <!-- Logout Button (shown when logged in) -->
+        <button id="desktopLogoutBtn" class="hidden lg:inline-flex btn-ghost" aria-label="Logout">Logout</button>
+
         <button id="menu-btn" class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white lg:hidden hover:bg-white/20" aria-label="Open menu">${icons.menu}</button>
       </div>
     </div>
@@ -83,22 +126,29 @@ export function Header(): string {
   <div id="mobile-menu" class="fixed inset-0 z-[9999] hidden bg-black lg:hidden overflow-hidden flex flex-col">
     <div class="h-16 flex items-center justify-between border-b border-white/10 px-4 flex-shrink-0">
       <a href="/" class="flex items-center font-extrabold"><img src="${A.logo}" alt="RK247" class="h-10 w-auto" /></a>
-      <button id="menu-close" class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20" aria-label="Close menu">${icons.close}</button>
+      <button id="menu-close" onclick="closeMobileMenu()" class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20" aria-label="Close menu">
+        <svg onclick="closeMobileMenu()" viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18" stroke-linecap="round"></path></svg>
+      </button>
     </div>
     <div class="flex-1 overflow-y-auto">
       <div class="px-4 py-4 flex flex-col gap-1">
         ${[...tradingMenu.slice(0, 6), ...aboutMenu.slice(0, 4), ...helpMenu]
           .map(
             (i) =>
-              `<a href="${i.href}" class="mobile-link rounded-xl px-2 py-3 text-lg font-medium text-white/80 hover:text-white">${i.label}</a>`
+              `<a href="${i.href}" onclick="document.getElementById('mobile-menu').style.display='none'; document.body.style.overflow=''" class="mobile-link rounded-xl px-2 py-3 text-lg font-medium text-white/80 hover:text-white">${i.label}</a>`
           )
           .join("")}
       </div>
     </div>
     <div class="h-auto border-t border-white/10 px-4 py-4 flex-shrink-0">
-      <div class="flex gap-3">
-        <a href="https://fx777crm.theplatformapi.com/" target="_blank" rel="noopener noreferrer" class="btn-ghost flex-1">Sign in</a>
-        <a href="https://fx777crm.theplatformapi.com/auth-pages/create-account/step1?accountType=real" target="_blank" rel="noopener noreferrer" class="btn-green flex-1">Try for free</a>
+      <div id="mobile-auth-buttons" class="flex gap-3">
+        <a href="/login" class="btn-ghost flex-1">Sign in</a>
+        <a href="/register" class="btn-green flex-1">Try for free</a>
+      </div>
+      <div id="mobile-logout-button" class="hidden">
+        <button id="mobileLogoutBtn" class="w-full bg-white/[0.04] border border-white/10 hover:bg-white/[0.08] text-white font-semibold py-3 rounded-lg transition">
+          Logout
+        </button>
       </div>
     </div>
   </div>`;

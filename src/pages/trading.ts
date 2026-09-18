@@ -281,7 +281,7 @@ export function AccountPage(): string {
     ["Min. deposit", "$1"],
     ["Max. leverage", "1:1000"],
     ["Min. trade size", "$1"],
-    ["Base currencies", "USD, EUR, GBP, BRL, INR, NGN +more"],
+    ["Base currencies", "USD, EUR, GBP, BRL, PKR, NGN +more"],
     ["Instruments", "300+ assets"],
     ["Demo balance", "$10,000 virtual"],
     ["Withdrawal", "Same-day processing"],

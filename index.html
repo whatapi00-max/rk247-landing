@@ -66,6 +66,12 @@
     </script>
   </head>
   <body class="bg-ink-950 text-white font-sans antialiased overflow-x-hidden">
+    <style>
+      #app > * { display: none; }
+      #app.ready > * { display: block; }
+      /* Pages whose root uses flexbox (login/register/admin) need flex display */
+      #app.ready > div[class*="min-h-screen"][class*="flex"] { display: flex; }
+    </style>
     <div id="app">
       <main>
         <section class="container-rk py-16">
