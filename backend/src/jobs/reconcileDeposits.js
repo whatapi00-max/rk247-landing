@@ -73,6 +73,7 @@ async function reconcile() {
       .from('apay_payments')
       .select('id, order_id, amount, transaction_id')
       .eq('status', 'pending')
+      .not('order_id', 'is', null)
       .lt('created_at', cutoffMax)
       .gt('created_at', cutoffMin)
       .limit(50);
