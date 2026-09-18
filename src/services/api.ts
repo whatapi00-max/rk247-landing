@@ -4,7 +4,7 @@ import axios, { AxiosInstance } from 'axios';
 // itself is served from localhost — deployed builds always hit production.
 const isLocal = typeof window !== 'undefined' &&
   ['localhost', '127.0.0.1'].includes(window.location.hostname);
-const API_BASE_URL = import.meta.env.VITE_API_URL ||
+export const API_BASE_URL = import.meta.env.VITE_API_URL ||
   (isLocal ? 'http://localhost:5000/api' : 'https://rk247.onrender.com/api');
 
 class ApiClient {

@@ -44,6 +44,7 @@ import { renderAdminLoginHistoryPage, initAdminLoginHistoryPage } from "./pages/
 import { defaultSeo, routeSeo } from "./seo";
 import { showForcePasswordChangeModal } from "./components/ForcePasswordChangeModal";
 import { authService } from "./services/auth";
+import { API_BASE_URL } from "./services/api";
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -466,7 +467,7 @@ function updateHeaderAuthState(): void {
     if (authButtons) (authButtons as HTMLElement).style.display = 'none';
     
     // Load balance
-    fetch('http://localhost:5000/api/wallet/balance', {
+    fetch(`${API_BASE_URL}/wallet/balance`, {
       headers: {
         'Authorization': `Bearer ${token}`
       }
@@ -641,7 +642,7 @@ function showDepositModal(): void {
 
     try {
       const token = localStorage.getItem('rk247_token');
-      const response = await fetch('http://localhost:5000/api/wallet/deposit/initiate', {
+      const response = await fetch(`${API_BASE_URL}/wallet/deposit/initiate`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -794,7 +795,7 @@ function showWithdrawModal(): void {
 
     try {
       const token = localStorage.getItem('rk247_token');
-      const response = await fetch('http://localhost:5000/api/withdrawal/initiate', {
+      const response = await fetch(`${API_BASE_URL}/withdrawal/initiate`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
