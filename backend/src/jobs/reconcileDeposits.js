@@ -8,8 +8,10 @@ import logger from '../config/logger.js';
 // the atomic claim on transactions.status='pending' guarantees a deposit can
 // never be credited twice, whichever path processes it first.
 
-const POLL_INTERVAL_MS = 5 * 60 * 1000;   // check every 5 minutes
-const MIN_AGE_MS = 2 * 60 * 1000;         // give the webhook 2 min to arrive first
+// Interval is configurable — the default of 10 min is a single lightweight
+// SELECT per cycle, and writes only happen for deposits that are actually stuck.
+const POLL_INTERVAL_MS = (parseInt(process.env.RECONCILE_INTERVAL_MINUTES, 10) || 10) * 60 * 1000;
+const MIN_AGE_MS = 3 * 60 * 1000;         // give the webhook 3 min to arrive first
 const MAX_AGE_MS = 24 * 60 * 60 * 1000;   // stop checking after 24h (page expired)
 
 async function processDeposit(payment) {
