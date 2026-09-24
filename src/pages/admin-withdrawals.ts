@@ -199,7 +199,7 @@ async function loadWithdrawals(page: number = 1, status: string = '', limit: num
               <td class="py-4 px-6 text-white/60">${new Date(wd.created_at).toLocaleString()}</td>
               <td class="py-4 px-6 text-white">${wd.wallets?.users?.email || 'N/A'}</td>
               <td class="py-4 px-6 text-white font-medium">PKR ${parseFloat(wd.amount).toLocaleString('en-PK')}</td>
-              <td class="py-4 px-6 text-white/60">${wd.payment_system || 'N/A'}</td>
+              <td class="py-4 px-6 text-white/60">${formatPaymentSystem(wd.payment_system)}</td>
               <td class="py-4 px-6 text-white/60 text-sm max-w-xs truncate">${wd.account_data ? JSON.stringify(wd.account_data) : 'N/A'}</td>
               <td class="py-4 px-6">
                 <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getStatusColor(wd.status)}">
@@ -372,6 +372,17 @@ function getStatusColor(status: string): string {
     completed: 'bg-blue-500/20 text-blue-300'
   };
   return colors[status] || 'bg-white/10 text-white/60';
+}
+
+function formatPaymentSystem(system: string): string {
+  const labels: Record<string, string> = {
+    raast_p2p: 'Raast P2P',
+    easypaisa: 'EasyPaisa',
+    jazzcash_fast: 'JazzCash Fast',
+    nayapay_l: 'NayaPay',
+    pkr_w: 'PKR Wallet'
+  };
+  return labels[system] || system || 'N/A';
 }
 
 function getApayStatusLabel(status: string): string {

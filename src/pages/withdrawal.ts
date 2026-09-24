@@ -1,6 +1,19 @@
 import api from '../services/api';
 import { AppNav, AppFooter, initAppNav } from './app-layout';
 
+// A-Pay per-system withdrawal limits (from the live project's payment-systems list)
+const MIN_WITHDRAWAL: Record<string, number> = {
+  'raast_p2p': 500,
+  'easypaisa': 1500,
+  'nayapay_l': 1500
+};
+
+const PAYMENT_LABELS: Record<string, string> = {
+  'raast_p2p': 'Raast P2P',
+  'easypaisa': 'EasyPaisa',
+  'nayapay_l': 'NayaPay'
+};
+
 export function renderWithdrawalPage(): string {
   return `
     <div class="min-h-screen bg-black text-white">
@@ -32,7 +45,7 @@ export function renderWithdrawalPage(): string {
                     max="150000"
                     step="100"
                   />
-                  <p class="text-[10px] sm:text-xs text-white/40 mt-1">Min: PKR 500 | Max: PKR 150,000</p>
+                  <p id="amountHint" class="text-[10px] sm:text-xs text-white/40 mt-1">Min: PKR 500 | Max: PKR 150,000</p>
                 </div>
 
                 <!-- Payment System -->
@@ -45,8 +58,7 @@ export function renderWithdrawalPage(): string {
                     <option value="">Select payment system</option>
                     <option value="raast_p2p">Raast P2P</option>
                     <option value="easypaisa">EasyPaisa</option>
-                    <option value="jazzcash">JazzCash</option>
-                    <option value="nayapay">NayaPay</option>
+                    <option value="nayapay_l">NayaPay</option>
                   </select>
                 </div>
 
@@ -100,7 +112,7 @@ export function renderWithdrawalPage(): string {
             <div class="bg-white/[0.04] border border-white/10 rounded-2xl p-4 sm:p-6">
               <h3 class="font-bold text-white/80 mb-3 text-sm sm:text-base">Withdrawal Info</h3>
               <ul class="space-y-2 text-xs sm:text-sm text-white/60">
-                <li>✓ Min: PKR 500</li>
+                <li>✓ Min: PKR 500 (Raast) / PKR 1,500 (EasyPaisa, NayaPay)</li>
                 <li>✓ Max: PKR 150,000</li>
                 <li>✓ Processing: 1-2 hours</li>
                 <li>✓ No fees</li>
@@ -111,10 +123,9 @@ export function renderWithdrawalPage(): string {
             <div class="bg-white/[0.04] border border-white/10 rounded-2xl p-4 sm:p-6">
               <h3 class="font-bold text-white/80 mb-3 text-sm sm:text-base">Supported Systems</h3>
               <ul class="space-y-2 text-xs sm:text-sm text-white/60">
-                <li>• Raast P2P</li>
-                <li>• EasyPaisa</li>
-                <li>• JazzCash</li>
-                <li>• NayaPay</li>
+                <li>• Raast P2P — min PKR 500</li>
+                <li>• EasyPaisa — min PKR 1,500</li>
+                <li>• NayaPay — min PKR 1,500</li>
               </ul>
             </div>
           </div>
@@ -141,6 +152,14 @@ export function initializeWithdrawalPage(): void {
   initAppNav();
 
   const form = document.getElementById('withdrawalForm') as HTMLFormElement;
+  const paymentSystem = document.getElementById('paymentSystem') as HTMLSelectElement;
+  const amountHint = document.getElementById('amountHint');
+
+  // Per-system minimum comes from A-Pay's configured withdrawal limits
+  paymentSystem?.addEventListener('change', () => {
+    const min = MIN_WITHDRAWAL[paymentSystem.value] || 500;
+    if (amountHint) amountHint.textContent = `Min: PKR ${min.toLocaleString()} | Max: PKR 150,000`;
+  });
 
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -164,18 +183,19 @@ async function handleWithdrawal(): Promise<void> {
   const accountNumber = accountNumberInput.value;
   const accountName = accountNameInput.value;
 
-  // Validation
-  if (amount < 500 || amount > 150000) {
+  // Validation — minimum depends on the payment system's A-Pay limits
+  if (!paymentSystem) {
     if (errorDiv) {
-      errorDiv.textContent = 'Amount must be between PKR 500 and PKR 150,000';
+      errorDiv.textContent = 'Please select a payment system';
       errorDiv.classList.remove('hidden');
     }
     return;
   }
 
-  if (!paymentSystem) {
+  const minAmount = MIN_WITHDRAWAL[paymentSystem] || 500;
+  if (amount < minAmount || amount > 150000) {
     if (errorDiv) {
-      errorDiv.textContent = 'Please select a payment system';
+      errorDiv.textContent = `Amount must be between PKR ${minAmount.toLocaleString()} and PKR 150,000 for this payment system`;
       errorDiv.classList.remove('hidden');
     }
     return;
@@ -282,7 +302,7 @@ async function loadWithdrawals(): Promise<void> {
             ${withdrawals.map((w: any) => `
               <tr class="border-b border-white/5 hover:bg-white/5">
                 <td class="py-3 px-4 font-semibold text-white">PKR ${w.amount.toLocaleString()}</td>
-                <td class="py-3 px-4 text-white/60">${w.payment_system}</td>
+                <td class="py-3 px-4 text-white/60">${PAYMENT_LABELS[w.payment_system] || w.payment_system}</td>
                 <td class="py-3 px-4">
                   <span class="px-3 py-1 rounded-full text-xs font-semibold ${getStatusColor(getDisplayStatus(w))}">
                     ${getDisplayStatus(w).charAt(0).toUpperCase() + getDisplayStatus(w).slice(1)}

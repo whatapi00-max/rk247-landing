@@ -227,8 +227,6 @@ class APayService {
     switch (paymentSystem) {
       case 'easypaisa':
         return { wallet_type: 'easypaisa', account_name, account_number };
-      case 'jazzcash':
-        return { wallet_type: 'jazzcash', account_name, account_number };
       case 'nayapay_l':
         return { account_name, account_number };
       default:

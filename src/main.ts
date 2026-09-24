@@ -697,8 +697,7 @@ function showWithdrawModal(): void {
             <option value="" class="bg-ink-800 text-white/60">Select payment system</option>
             <option value="raast_p2p" class="bg-ink-800 text-white">Raast P2P</option>
             <option value="easypaisa" class="bg-ink-800 text-white">EasyPaisa</option>
-            <option value="jazzcash" class="bg-ink-800 text-white">JazzCash</option>
-            <option value="nayapay" class="bg-ink-800 text-white">NayaPay</option>
+            <option value="nayapay_l" class="bg-ink-800 text-white">NayaPay</option>
           </select>
         </div>
         <div>

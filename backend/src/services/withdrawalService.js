@@ -2,12 +2,23 @@ import logger from '../config/logger.js';
 import supabase from '../config/database.js';
 import apayService from './apayService.js';
 
+// Per-system minimums from the A-Pay project's configured withdrawal limits
+const MIN_WITHDRAWAL = {
+  raast_p2p: 500,
+  easypaisa: 1500,
+  nayapay_l: 1500
+};
+
 class WithdrawalService {
   async createWithdrawal(walletId, userId, amount, paymentSystem, accountData) {
     try {
-      // Validate amount
-      if (amount < 500) {
-        throw new Error('Minimum withdrawal amount is PKR 500');
+      const minAmount = MIN_WITHDRAWAL[paymentSystem];
+      if (!minAmount) {
+        throw new Error(`Withdrawals are not enabled for ${paymentSystem}`);
+      }
+
+      if (amount < minAmount) {
+        throw new Error(`Minimum withdrawal amount for ${paymentSystem} is PKR ${minAmount.toLocaleString()}`);
       }
 
       if (amount > 150000) {
@@ -174,7 +185,9 @@ class WithdrawalService {
       // Automatic payout via A-Pay — enabled with APAY_AUTO_PAYOUT=true and
       // only for payment systems whose data shape we can build. Any A-Pay
       // failure leaves the withdrawal 'pending' so the admin can retry.
-      const autoPayoutSystems = ['easypaisa', 'jazzcash', 'nayapay_l'];
+      // Only systems that have withdrawals enabled on the A-Pay project.
+      // raast_p2p stays manual — A-Pay requires bank_name which we don't collect.
+      const autoPayoutSystems = ['easypaisa', 'nayapay_l'];
       const autoPayout = process.env.APAY_AUTO_PAYOUT === 'true' &&
         autoPayoutSystems.includes(withdrawal.payment_system);
 

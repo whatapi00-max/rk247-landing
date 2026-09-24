@@ -52,10 +52,27 @@ router.get('/transactions', authenticate, async (req, res) => {
   }
 });
 
+// Per-system maximums from the A-Pay project's configured deposit limits
+const MAX_DEPOSIT = {
+  raast_p2p: 250000,
+  easypaisa: 150000,
+  jazzcash_fast: 50000,
+  nayapay_l: 150000
+};
+
 router.post('/deposit/initiate', authenticate, paymentLimiter, validate(schemas.deposit), async (req, res) => {
   try {
     const { amount, payment_system } = req.body;
     const paymentSystem = payment_system || 'raast_p2p';
+
+    const maxDeposit = MAX_DEPOSIT[paymentSystem] || 150000;
+    if (amount > maxDeposit) {
+      return res.status(400).json({
+        success: false,
+        error: `Maximum deposit for ${paymentSystem} is PKR ${maxDeposit.toLocaleString()}`
+      });
+    }
+
     const wallet = await walletService.getWalletByUserId(req.user.id);
     
     const transaction = await walletService.createTransaction(
