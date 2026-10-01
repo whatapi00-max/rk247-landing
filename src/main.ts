@@ -682,11 +682,11 @@ function showWithdrawModal(): void {
           <input
             type="number"
             id="headerWithdrawAmount"
-            min="500"
+            min="1500"
             max="150000"
             required
             class="w-full px-3 sm:px-4 py-2 sm:py-3 bg-white/[0.04] border border-white/10 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-white/20 text-sm sm:text-base"
-            placeholder="Enter amount (min PKR 500)"
+            placeholder="Enter amount (min PKR 1,500)"
           />
         </div>
         <div>
@@ -800,9 +800,9 @@ function showWithdrawModal(): void {
     const accountNumber = accountNumberInput.value;
     const accountName = accountNameInput.value;
 
-    if (amount < 500 || amount > 150000) {
+    if (amount < 1500 || amount > 150000) {
       if (errorDiv) {
-        errorDiv.textContent = 'Amount must be between PKR 500 and PKR 150,000';
+        errorDiv.textContent = 'Amount must be between PKR 1,500 and PKR 150,000';
         errorDiv.classList.remove('hidden');
       }
       return;

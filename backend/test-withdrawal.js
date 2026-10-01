@@ -76,13 +76,13 @@ async function main() {
   r = await req('POST', '/withdrawal/initiate', userJwt, { amount: 150001, payment_system: 'easypaisa', account_data: accountData });
   check('Above maximum (150001) rejected', r.status === 400, r.data.error || r.data.details?.[0]?.message);
 
-  r = await req('POST', '/withdrawal/initiate', userJwt, { amount: 500, account_data: accountData });
+  r = await req('POST', '/withdrawal/initiate', userJwt, { amount: 1500, account_data: accountData });
   check('Missing payment_system rejected', r.status === 400);
 
-  r = await req('POST', '/withdrawal/initiate', userJwt, { amount: 500, payment_system: 'easypaisa' });
+  r = await req('POST', '/withdrawal/initiate', userJwt, { amount: 1500, payment_system: 'easypaisa' });
   check('Missing account_data rejected', r.status === 400);
 
-  r = await req('POST', '/withdrawal/initiate', null, { amount: 500, payment_system: 'easypaisa', account_data: accountData });
+  r = await req('POST', '/withdrawal/initiate', null, { amount: 1500, payment_system: 'easypaisa', account_data: accountData });
   check('Unauthenticated rejected', r.status === 401);
 
   console.log('\n— Insufficient balance —');
@@ -92,7 +92,9 @@ async function main() {
   check('Balance unchanged after rejection', balAfter === balance, `PKR ${balAfter}`);
 
   console.log('\n— Valid withdrawal #1 (approve path) —');
-  r = await req('POST', '/withdrawal/initiate', userJwt, { amount: 500, payment_system: 'easypaisa', account_data: accountData });
+  // NOTE: easypaisa is used so approval stays on the manual path — a raast_p2p
+  // approval with APAY_AUTO_PAYOUT=true would send real money to this fake account.
+  r = await req('POST', '/withdrawal/initiate', userJwt, { amount: 1500, payment_system: 'easypaisa', account_data: accountData });
   const w1 = r.data.data;
   check('Withdrawal created', r.status === 200 && w1?.status === 'pending', r.data.error || `id=${w1?.withdrawal_id}`);
 
@@ -110,11 +112,11 @@ async function main() {
 
   console.log('\n— Valid withdrawal #2 (reject + refund path) —');
   const { data: wallet } = await supabase.from('wallets').select('id').eq('user_id', user.id).single();
-  await req('POST', `/admin/wallet/${wallet.id}/adjust`, adminJwt, { amount: 500, type: 'credit', description: 'Test top-up for withdrawal test' });
+  await req('POST', `/admin/wallet/${wallet.id}/adjust`, adminJwt, { amount: 1500, type: 'credit', description: 'Test top-up for withdrawal test' });
   balance = await getBalance(user.id);
-  console.log(`  (topped up +500 → PKR ${balance})`);
+  console.log(`  (topped up +1500 → PKR ${balance})`);
 
-  r = await req('POST', '/withdrawal/initiate', userJwt, { amount: 500, payment_system: 'jazzcash', account_data: accountData });
+  r = await req('POST', '/withdrawal/initiate', userJwt, { amount: 1500, payment_system: 'easypaisa', account_data: accountData });
   const w2 = r.data.data;
   const balAfterW2 = await getBalance(user.id);
   check('Second withdrawal created', r.status === 200 && w2?.status === 'pending', r.data.error);
@@ -124,7 +126,7 @@ async function main() {
   check('Admin reject works', r.status === 200 && r.data.data?.status === 'rejected', r.data.error);
 
   const balAfterReject = await getBalance(user.id);
-  check('Balance refunded on reject', balAfterReject === balAfterW2 + 500, `PKR ${balAfterReject}`);
+  check('Balance refunded on reject', balAfterReject === balAfterW2 + 1500, `PKR ${balAfterReject}`);
 
   console.log('\n— Auth separation —');
   r = await req('GET', '/admin/withdrawals', userJwt);

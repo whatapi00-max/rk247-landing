@@ -2,8 +2,8 @@ import api from '../services/api';
 import { AppNav, AppFooter, initAppNav } from './app-layout';
 import { RAAST_BANKS } from '../constants';
 
-// Systems enabled for withdrawals on the A-Pay project
-const MIN_WITHDRAWAL = 500;
+// A-Pay confirmed withdrawal limits: min PKR 1,500 / max PKR 150,000
+const MIN_WITHDRAWAL = 1500;
 
 const PAYMENT_LABELS: Record<string, string> = {
   'raast_p2p': 'Raast P2P',
@@ -38,11 +38,11 @@ export function renderWithdrawalPage(): string {
                     id="withdrawalAmount" 
                     placeholder="Enter amount" 
                     class="w-full bg-white/[0.04] border border-white/10 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-white placeholder-white/40 text-xs sm:text-sm focus:outline-none focus:border-white/20"
-                    min="500"
+                    min="1500"
                     max="150000"
                     step="100"
                   />
-                  <p id="amountHint" class="text-[10px] sm:text-xs text-white/40 mt-1">Min: PKR 500 | Max: PKR 150,000</p>
+                  <p id="amountHint" class="text-[10px] sm:text-xs text-white/40 mt-1">Min: PKR 1,500 | Max: PKR 150,000</p>
                 </div>
 
                 <!-- Payment System -->
@@ -121,7 +121,7 @@ export function renderWithdrawalPage(): string {
             <div class="bg-white/[0.04] border border-white/10 rounded-2xl p-4 sm:p-6">
               <h3 class="font-bold text-white/80 mb-3 text-sm sm:text-base">Withdrawal Info</h3>
               <ul class="space-y-2 text-xs sm:text-sm text-white/60">
-                <li>✓ Min: PKR 500</li>
+                <li>✓ Min: PKR 1,500</li>
                 <li>✓ Max: PKR 150,000</li>
                 <li>✓ Processing: 1-2 hours</li>
                 <li>✓ No fees</li>
@@ -217,7 +217,7 @@ async function handleWithdrawal(): Promise<void> {
 
   if (amount < MIN_WITHDRAWAL || amount > 150000) {
     if (errorDiv) {
-      errorDiv.textContent = 'Amount must be between PKR 500 and PKR 150,000';
+      errorDiv.textContent = 'Amount must be between PKR 1,500 and PKR 150,000';
       errorDiv.classList.remove('hidden');
     }
     return;

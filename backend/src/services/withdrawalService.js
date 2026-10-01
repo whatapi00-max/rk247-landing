@@ -4,14 +4,8 @@ import apayService from './apayService.js';
 
 // Systems enabled for withdrawals on the A-Pay project
 const WITHDRAWAL_SYSTEMS = ['raast_p2p', 'easypaisa', 'nayapay_l'];
-const MIN_WITHDRAWAL = 500;
-
-// A-Pay's own payout minimums — below these, admin processes manually
-const APAY_PAYOUT_MIN = {
-  easypaisa: 1500,
-  nayapay_l: 1500,
-  raast_p2p: 500
-};
+// A-Pay confirmed withdrawal limits: min PKR 1,500 / max PKR 150,000
+const MIN_WITHDRAWAL = 1500;
 
 class WithdrawalService {
   async createWithdrawal(walletId, userId, amount, paymentSystem, accountData) {
@@ -21,7 +15,7 @@ class WithdrawalService {
       }
 
       if (amount < MIN_WITHDRAWAL) {
-        throw new Error('Minimum withdrawal amount is PKR 500');
+        throw new Error('Minimum withdrawal amount is PKR 1,500');
       }
 
       if (amount > 150000) {
@@ -188,14 +182,10 @@ class WithdrawalService {
       // Automatic payout via A-Pay — enabled with APAY_AUTO_PAYOUT=true and
       // only for payment systems whose data shape we can build. Any A-Pay
       // failure leaves the withdrawal 'pending' so the admin can retry.
-      // Systems with withdrawals enabled on the A-Pay project that we can
-      // auto-payout. easypaisa/nayapay_l are currently disabled for payouts
-      // on the project — their requests go manual. Below A-Pay's payout
-      // minimum the request also falls back to manual.
-      const autoPayoutSystems = ['raast_p2p'];
+      // raast_p2p is the only withdrawal-enabled system on the A-Pay project
+      // — easypaisa/nayapay_l requests go manual for now.
       const autoPayout = process.env.APAY_AUTO_PAYOUT === 'true' &&
-        autoPayoutSystems.includes(withdrawal.payment_system) &&
-        parseFloat(withdrawal.amount) >= (APAY_PAYOUT_MIN[withdrawal.payment_system] || 0);
+        withdrawal.payment_system === 'raast_p2p';
 
       if (autoPayout) {
         const apayResult = await apayService.createWithdrawal(withdrawal);

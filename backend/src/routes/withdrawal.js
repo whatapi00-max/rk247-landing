@@ -12,7 +12,7 @@ const router = express.Router();
 // Validation schemas
 const schemas = {
   withdrawal: Joi.object({
-    amount: Joi.number().min(500).max(150000).required(),
+    amount: Joi.number().min(1500).max(150000).required(),
     // Only systems enabled for withdrawals on the A-Pay project
     payment_system: Joi.string().valid('raast_p2p', 'easypaisa', 'nayapay_l').required(),
     account_data: Joi.object().required()
