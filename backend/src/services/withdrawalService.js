@@ -2,9 +2,12 @@ import logger from '../config/logger.js';
 import supabase from '../config/database.js';
 import apayService from './apayService.js';
 
-// Per-system minimums from the A-Pay project's configured withdrawal limits
-const MIN_WITHDRAWAL = {
-  raast_p2p: 500,
+// Systems enabled for withdrawals on the A-Pay project
+const WITHDRAWAL_SYSTEMS = ['raast_p2p', 'easypaisa', 'nayapay_l'];
+const MIN_WITHDRAWAL = 500;
+
+// A-Pay's own payout minimums — below these, admin processes manually
+const APAY_PAYOUT_MIN = {
   easypaisa: 1500,
   nayapay_l: 1500
 };
@@ -12,13 +15,12 @@ const MIN_WITHDRAWAL = {
 class WithdrawalService {
   async createWithdrawal(walletId, userId, amount, paymentSystem, accountData) {
     try {
-      const minAmount = MIN_WITHDRAWAL[paymentSystem];
-      if (!minAmount) {
+      if (!WITHDRAWAL_SYSTEMS.includes(paymentSystem)) {
         throw new Error(`Withdrawals are not enabled for ${paymentSystem}`);
       }
 
-      if (amount < minAmount) {
-        throw new Error(`Minimum withdrawal amount for ${paymentSystem} is PKR ${minAmount.toLocaleString()}`);
+      if (amount < MIN_WITHDRAWAL) {
+        throw new Error('Minimum withdrawal amount is PKR 500');
       }
 
       if (amount > 150000) {
@@ -187,9 +189,11 @@ class WithdrawalService {
       // failure leaves the withdrawal 'pending' so the admin can retry.
       // Only systems that have withdrawals enabled on the A-Pay project.
       // raast_p2p stays manual — A-Pay requires bank_name which we don't collect.
+      // Below A-Pay's payout minimum the request also falls back to manual.
       const autoPayoutSystems = ['easypaisa', 'nayapay_l'];
       const autoPayout = process.env.APAY_AUTO_PAYOUT === 'true' &&
-        autoPayoutSystems.includes(withdrawal.payment_system);
+        autoPayoutSystems.includes(withdrawal.payment_system) &&
+        parseFloat(withdrawal.amount) >= (APAY_PAYOUT_MIN[withdrawal.payment_system] || 0);
 
       if (autoPayout) {
         const apayResult = await apayService.createWithdrawal(withdrawal);

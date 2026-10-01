@@ -1,12 +1,8 @@
 import api from '../services/api';
 import { AppNav, AppFooter, initAppNav } from './app-layout';
 
-// A-Pay per-system withdrawal limits (from the live project's payment-systems list)
-const MIN_WITHDRAWAL: Record<string, number> = {
-  'raast_p2p': 500,
-  'easypaisa': 1500,
-  'nayapay_l': 1500
-};
+// Systems enabled for withdrawals on the A-Pay project
+const MIN_WITHDRAWAL = 500;
 
 const PAYMENT_LABELS: Record<string, string> = {
   'raast_p2p': 'Raast P2P',
@@ -112,7 +108,7 @@ export function renderWithdrawalPage(): string {
             <div class="bg-white/[0.04] border border-white/10 rounded-2xl p-4 sm:p-6">
               <h3 class="font-bold text-white/80 mb-3 text-sm sm:text-base">Withdrawal Info</h3>
               <ul class="space-y-2 text-xs sm:text-sm text-white/60">
-                <li>✓ Min: PKR 500 (Raast) / PKR 1,500 (EasyPaisa, NayaPay)</li>
+                <li>✓ Min: PKR 500</li>
                 <li>✓ Max: PKR 150,000</li>
                 <li>✓ Processing: 1-2 hours</li>
                 <li>✓ No fees</li>
@@ -123,9 +119,9 @@ export function renderWithdrawalPage(): string {
             <div class="bg-white/[0.04] border border-white/10 rounded-2xl p-4 sm:p-6">
               <h3 class="font-bold text-white/80 mb-3 text-sm sm:text-base">Supported Systems</h3>
               <ul class="space-y-2 text-xs sm:text-sm text-white/60">
-                <li>• Raast P2P — min PKR 500</li>
-                <li>• EasyPaisa — min PKR 1,500</li>
-                <li>• NayaPay — min PKR 1,500</li>
+                <li>• Raast P2P</li>
+                <li>• EasyPaisa</li>
+                <li>• NayaPay</li>
               </ul>
             </div>
           </div>
@@ -152,14 +148,6 @@ export function initializeWithdrawalPage(): void {
   initAppNav();
 
   const form = document.getElementById('withdrawalForm') as HTMLFormElement;
-  const paymentSystem = document.getElementById('paymentSystem') as HTMLSelectElement;
-  const amountHint = document.getElementById('amountHint');
-
-  // Per-system minimum comes from A-Pay's configured withdrawal limits
-  paymentSystem?.addEventListener('change', () => {
-    const min = MIN_WITHDRAWAL[paymentSystem.value] || 500;
-    if (amountHint) amountHint.textContent = `Min: PKR ${min.toLocaleString()} | Max: PKR 150,000`;
-  });
 
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -192,10 +180,9 @@ async function handleWithdrawal(): Promise<void> {
     return;
   }
 
-  const minAmount = MIN_WITHDRAWAL[paymentSystem] || 500;
-  if (amount < minAmount || amount > 150000) {
+  if (amount < MIN_WITHDRAWAL || amount > 150000) {
     if (errorDiv) {
-      errorDiv.textContent = `Amount must be between PKR ${minAmount.toLocaleString()} and PKR 150,000 for this payment system`;
+      errorDiv.textContent = 'Amount must be between PKR 500 and PKR 150,000';
       errorDiv.classList.remove('hidden');
     }
     return;
