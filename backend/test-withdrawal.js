@@ -30,7 +30,7 @@ if (!email) {
 }
 
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
-const API = 'http://localhost:5000/api';
+const API = process.env.API_URL || 'http://localhost:5000/api';
 
 let passed = 0, failed = 0;
 function check(name, ok, extra = '') {

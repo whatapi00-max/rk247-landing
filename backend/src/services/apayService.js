@@ -223,12 +223,15 @@ class APayService {
   }
 
   buildWithdrawalData(paymentSystem, accountData) {
-    const { account_name, account_number } = accountData || {};
+    const { account_name, account_number, bank_name } = accountData || {};
     switch (paymentSystem) {
       case 'easypaisa':
         return { wallet_type: 'easypaisa', account_name, account_number };
       case 'nayapay_l':
         return { account_name, account_number };
+      case 'raast_p2p':
+        if (!bank_name) throw new Error('bank_name is required for Raast withdrawals');
+        return { account_number, bank_name };
       default:
         throw new Error(`Automatic payout is not supported for payment system: ${paymentSystem}`);
     }

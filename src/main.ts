@@ -45,6 +45,7 @@ import { defaultSeo, routeSeo } from "./seo";
 import { showForcePasswordChangeModal } from "./components/ForcePasswordChangeModal";
 import { authService } from "./services/auth";
 import { API_BASE_URL } from "./services/api";
+import { RAAST_BANKS } from "./constants";
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -700,6 +701,16 @@ function showWithdrawModal(): void {
             <option value="nayapay_l" class="bg-ink-800 text-white">NayaPay</option>
           </select>
         </div>
+        <div id="headerBankNameWrapper" class="hidden">
+          <label class="block text-sm font-medium text-white/80 mb-2">Bank Name</label>
+          <select
+            id="headerBankName"
+            class="w-full bg-white/[0.04] border border-white/10 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-white focus:outline-none focus:border-white/20 text-sm sm:text-base"
+          >
+            <option value="" class="bg-ink-800 text-white/60">Select your bank</option>
+          </select>
+          <p class="text-xs text-white/40 mt-1">For EasyPaisa/JazzCash via Raast, enter CNIC (no dashes) as account number</p>
+        </div>
         <div>
           <label class="block text-sm font-medium text-white/80 mb-2">Account Number</label>
           <input
@@ -751,6 +762,21 @@ function showWithdrawModal(): void {
   const cancelBtn = modal.querySelector('#headerCancelWithdrawBtn') as HTMLButtonElement;
   const errorDiv = modal.querySelector('#headerWithdrawError') as HTMLDivElement;
 
+  // Raast payouts need a bank name — populate + show only for raast_p2p
+  const psSelect = modal.querySelector('#headerPaymentSystem') as HTMLSelectElement;
+  const bankWrapper = modal.querySelector('#headerBankNameWrapper') as HTMLDivElement;
+  const bankSelect = modal.querySelector('#headerBankName') as HTMLSelectElement;
+  RAAST_BANKS.forEach(b => {
+    const opt = document.createElement('option');
+    opt.value = b;
+    opt.textContent = b;
+    opt.className = 'bg-ink-800 text-white';
+    bankSelect.appendChild(opt);
+  });
+  psSelect?.addEventListener('change', () => {
+    bankWrapper?.classList.toggle('hidden', psSelect.value !== 'raast_p2p');
+  });
+
   const closeModal = () => {
     modal.remove();
     document.body.style.overflow = '';
@@ -790,6 +816,15 @@ function showWithdrawModal(): void {
       return;
     }
 
+    const bankName = (modal.querySelector('#headerBankName') as HTMLSelectElement)?.value;
+    if (paymentSystem === 'raast_p2p' && !bankName) {
+      if (errorDiv) {
+        errorDiv.textContent = 'Please select your bank for Raast withdrawal';
+        errorDiv.classList.remove('hidden');
+      }
+      return;
+    }
+
     errorDiv?.classList.add('hidden');
 
     try {
@@ -805,7 +840,8 @@ function showWithdrawModal(): void {
           payment_system: paymentSystem,
           account_data: {
             account_number: accountNumber,
-            account_name: accountName
+            account_name: accountName,
+            ...(paymentSystem === 'raast_p2p' ? { bank_name: bankName } : {})
           }
         })
       });

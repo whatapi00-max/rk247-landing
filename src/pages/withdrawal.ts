@@ -1,5 +1,6 @@
 import api from '../services/api';
 import { AppNav, AppFooter, initAppNav } from './app-layout';
+import { RAAST_BANKS } from '../constants';
 
 // Systems enabled for withdrawals on the A-Pay project
 const MIN_WITHDRAWAL = 500;
@@ -58,6 +59,17 @@ export function renderWithdrawalPage(): string {
                   </select>
                 </div>
 
+                <!-- Bank Name (Raast only) -->
+                <div id="bankNameWrapper" class="hidden">
+                  <label class="block text-xs sm:text-sm font-semibold text-white/80 mb-1.5 sm:mb-2">Bank Name</label>
+                  <select
+                    id="bankName"
+                    class="w-full bg-white/[0.04] border border-white/10 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-white text-xs sm:text-sm focus:outline-none focus:border-white/20"
+                  >
+                    <option value="" class="bg-ink-800 text-white/60">Select your bank</option>
+                  </select>
+                </div>
+
                 <!-- Account Number -->
                 <div>
                   <label class="block text-xs sm:text-sm font-semibold text-white/80 mb-1.5 sm:mb-2">Account Number</label>
@@ -67,6 +79,7 @@ export function renderWithdrawalPage(): string {
                     placeholder="Enter your account number" 
                     class="w-full bg-white/[0.04] border border-white/10 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-white placeholder-white/40 text-xs sm:text-sm focus:outline-none focus:border-white/20"
                   />
+                  <p id="accountNumberHint" class="hidden text-[10px] sm:text-xs text-white/40 mt-1">For EasyPaisa/JazzCash via Raast, enter your CNIC (no dashes)</p>
                 </div>
 
                 <!-- Account Name -->
@@ -148,6 +161,28 @@ export function initializeWithdrawalPage(): void {
   initAppNav();
 
   const form = document.getElementById('withdrawalForm') as HTMLFormElement;
+  const paymentSystemSelect = document.getElementById('paymentSystem') as HTMLSelectElement;
+  const bankNameWrapper = document.getElementById('bankNameWrapper');
+  const bankNameSelect = document.getElementById('bankName') as HTMLSelectElement;
+  const accountNumberHint = document.getElementById('accountNumberHint');
+
+  // Populate Raast bank list once
+  if (bankNameSelect) {
+    RAAST_BANKS.forEach(b => {
+      const opt = document.createElement('option');
+      opt.value = b;
+      opt.textContent = b;
+      opt.className = 'bg-ink-800 text-white';
+      bankNameSelect.appendChild(opt);
+    });
+  }
+
+  // Raast payouts require a bank name — show the field only for that system
+  paymentSystemSelect?.addEventListener('change', () => {
+    const isRaast = paymentSystemSelect.value === 'raast_p2p';
+    bankNameWrapper?.classList.toggle('hidden', !isRaast);
+    accountNumberHint?.classList.toggle('hidden', !isRaast);
+  });
 
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -196,15 +231,27 @@ async function handleWithdrawal(): Promise<void> {
     return;
   }
 
+  const bankName = (document.getElementById('bankName') as HTMLSelectElement)?.value;
+  if (paymentSystem === 'raast_p2p' && !bankName) {
+    if (errorDiv) {
+      errorDiv.textContent = 'Please select your bank for Raast withdrawal';
+      errorDiv.classList.remove('hidden');
+    }
+    return;
+  }
+
   errorDiv?.classList.add('hidden');
   submitBtn.disabled = true;
   submitBtn.textContent = 'Processing...';
 
   try {
-    const response = await api.withdrawal.initiateWithdrawal(amount, paymentSystem, {
+    const accountData: Record<string, string> = {
       account_number: accountNumber,
       account_name: accountName
-    });
+    };
+    if (paymentSystem === 'raast_p2p') accountData.bank_name = bankName;
+
+    const response = await api.withdrawal.initiateWithdrawal(amount, paymentSystem, accountData);
 
     if (errorDiv) {
       errorDiv.classList.add('hidden');
