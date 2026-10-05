@@ -118,7 +118,7 @@ class WalletService {
 
       const { data, error, count } = await supabase
         .from('transactions')
-        .select('*, apay_payments(*)', { count: 'exact' })
+        .select('*, apay_payments(*), withdrawals(payment_system, account_data, status)', { count: 'exact' })
         .eq('wallet_id', wallet.id)
         .order('created_at', { ascending: false })
         .range(offset, offset + limit - 1);

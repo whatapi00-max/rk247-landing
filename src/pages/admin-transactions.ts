@@ -299,7 +299,7 @@ async function loadTransactions(page: number = 1, type: string = '', status: str
                     ${tx.status.charAt(0).toUpperCase() + tx.status.slice(1)}
                   </span>
                 </td>
-                <td class="py-3 px-4 text-white/60 whitespace-nowrap">${tx.apay_payments?.payment_method ? formatPaymentMethod(tx.apay_payments.payment_method) : '-'}</td>
+                <td class="py-3 px-4 text-white/60 whitespace-nowrap">${getPaymentMethod(tx)}</td>
                 <td class="py-3 px-4 text-white/60 max-w-[200px] break-words">${tx.description || '-'}</td>
                 <td class="py-3 px-4 text-white/60 font-mono break-all max-w-[120px]" title="${(tx.order_id || tx.apay_payments?.order_id || tx.apay_payments?.apay_transaction_id || '-')}">${(tx.order_id || tx.apay_payments?.order_id || tx.apay_payments?.apay_transaction_id || '-')}</td>
                 <td class="py-3 px-4 whitespace-nowrap">
@@ -431,6 +431,8 @@ function renderPagination(pagination: any, currentPage: number, type: string, st
     }
 
     const apay = tx.apay_payments || {};
+    const wd = tx.withdrawals?.[0];
+    const wdData = wd?.account_data || {};
 
     content.innerHTML = `
       <div class="space-y-5 text-sm">
@@ -498,6 +500,38 @@ function renderPagination(pagination: any, currentPage: number, type: string, st
           </div>
         </div>
 
+        ${wd ? `
+          <div>
+            <h4 class="text-white/50 text-xs uppercase tracking-wider mb-2">Withdrawal</h4>
+            <div class="bg-white/[0.03] rounded-xl p-4 space-y-3 border border-white/5">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <p class="text-white/40 text-xs">Payment System</p>
+                  <p class="text-white">${formatPaymentMethod(wd.payment_system)}</p>
+                </div>
+                <div>
+                  <p class="text-white/40 text-xs">Withdrawal Status</p>
+                  <p class="text-white">${wd.status || '-'}</p>
+                </div>
+                <div>
+                  <p class="text-white/40 text-xs">Account Number</p>
+                  <p class="text-white font-mono text-xs break-all">${wdData.account_number || '-'}</p>
+                </div>
+                <div>
+                  <p class="text-white/40 text-xs">Account Name</p>
+                  <p class="text-white break-all">${wdData.account_name || '-'}</p>
+                </div>
+                ${wdData.bank_name ? `
+                  <div>
+                    <p class="text-white/40 text-xs">Bank</p>
+                    <p class="text-white">${wdData.bank_name}</p>
+                  </div>
+                ` : ''}
+              </div>
+            </div>
+          </div>
+        ` : ''}
+
         ${apay.apay_transaction_id || apay.order_id ? `
           <div>
             <h4 class="text-white/50 text-xs uppercase tracking-wider mb-2">A-Pay Payment</h4>
@@ -513,7 +547,7 @@ function renderPagination(pagination: any, currentPage: number, type: string, st
                 </div>
                 <div>
                   <p class="text-white/40 text-xs">Payment Method</p>
-                  <p class="text-white">${apay.payment_method ? formatPaymentMethod(apay.payment_method) : '-'}</p>
+                  <p class="text-white">${getPaymentMethod(tx)}</p>
                 </div>
                 <div>
                   <p class="text-white/40 text-xs">Payment Status</p>
@@ -587,6 +621,11 @@ function getStatusColor(status: string): string {
 
 function formatType(type: string): string {
   return type.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+}
+
+function getPaymentMethod(tx: any): string {
+  const method = tx.apay_payments?.payment_method || tx.withdrawals?.[0]?.payment_system;
+  return method ? formatPaymentMethod(method) : '-';
 }
 
 function formatPaymentMethod(method: string): string {

@@ -218,6 +218,11 @@ router.get('/transactions', async (req, res) => {
           payment_method,
           status,
           callback_data
+        ),
+        withdrawals!left(
+          payment_system,
+          account_data,
+          status
         )
       `);
 
@@ -257,6 +262,11 @@ router.get('/transactions', async (req, res) => {
             payment_method,
             status,
             callback_data
+          ),
+          withdrawals!left(
+            payment_system,
+            account_data,
+            status
           )
         `);
 

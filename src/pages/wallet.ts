@@ -261,7 +261,7 @@ async function loadTransactions(): Promise<void> {
                     ${tx.status}
                   </span>
                 </td>
-                <td class="py-3 px-4 text-white/60 text-xs">${tx.apay_payments?.payment_method ? formatPaymentMethod(tx.apay_payments.payment_method) : '-'}</td>
+                <td class="py-3 px-4 text-white/60 text-xs">${getPaymentMethod(tx)}</td>
                 <td class="py-3 px-4 text-white/60 text-xs hidden md:table-cell truncate max-w-[150px]">${tx.description || '-'}</td>
                 <td class="py-3 px-4 text-white/60 text-xs font-mono">${tx.order_id || tx.apay_payments?.order_id || tx.apay_payments?.apay_transaction_id || '-'}</td>
                 <td class="py-3 px-4">
@@ -425,6 +425,11 @@ function formatType(type: string): string {
   return type.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 }
 
+function getPaymentMethod(tx: any): string {
+  const method = tx.apay_payments?.payment_method || tx.withdrawals?.[0]?.payment_system;
+  return method ? formatPaymentMethod(method) : '-';
+}
+
 function formatPaymentMethod(method: string): string {
   const methods: Record<string, string> = {
     'raast_p2p': 'Raast P2P',
@@ -495,7 +500,7 @@ function formatPaymentMethod(method: string): string {
               </div>
               <div>
                 <p class="text-white/40 text-xs">Payment Method</p>
-                <p class="text-white">${apay.payment_method ? formatPaymentMethod(apay.payment_method) : '-'}</p>
+                <p class="text-white">${getPaymentMethod(tx)}</p>
               </div>
               <div class="sm:col-span-2">
                 <p class="text-white/40 text-xs">Description</p>
@@ -524,7 +529,7 @@ function formatPaymentMethod(method: string): string {
                 </div>
                 <div>
                   <p class="text-white/40 text-xs">Payment Method</p>
-                  <p class="text-white">${apay.payment_method || '-'}</p>
+                  <p class="text-white">${apay.payment_method ? formatPaymentMethod(apay.payment_method) : '-'}</p>
                 </div>
                 <div>
                   <p class="text-white/40 text-xs">Payment Status</p>
