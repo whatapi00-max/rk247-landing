@@ -154,6 +154,11 @@ export function initAdminWithdrawalsPage(): void {
   });
 
   loadWithdrawals(currentPage, statusFilter);
+
+  // A-Pay payout statuses change asynchronously — refresh every 30s while visible
+  setInterval(() => {
+    if (!document.hidden) loadWithdrawals(currentPage, statusFilter);
+  }, 30000);
 }
 
 let currentPage = 1;

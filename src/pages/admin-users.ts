@@ -221,6 +221,11 @@ export function initAdminUsersPage(): void {
 
   loadUsers(currentPage, searchQuery, pageLimit, statusFilter);
 
+  // Keep balances fresh — silently refetch every 30s while the tab is visible
+  setInterval(() => {
+    if (!document.hidden) loadUsers(currentPage, searchQuery, pageLimit, statusFilter);
+  }, 30000);
+
   document.getElementById('closeModalBtn')?.addEventListener('click', () => {
     document.getElementById('userWalletModal')?.classList.add('hidden');
   });
