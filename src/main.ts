@@ -46,6 +46,7 @@ import { showForcePasswordChangeModal } from "./components/ForcePasswordChangeMo
 import { authService } from "./services/auth";
 import { API_BASE_URL } from "./services/api";
 import { RAAST_BANKS } from "./constants";
+import { watchDeposit } from "./deposit-watcher";
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -654,9 +655,13 @@ function showDepositModal(): void {
 
       const data = await response.json();
       if (data.success && data.data.payment_url) {
-        // Restore overflow before redirect
+        // Open A-Pay in a new tab; the watcher detects the webhook credit
+        // and refreshes the balance — no redirect-back needed.
+        window.open(data.data.payment_url, '_blank', 'noopener');
+        modal.remove();
         document.body.style.overflow = '';
-        window.location.href = data.data.payment_url;
+        document.documentElement.style.overflow = '';
+        watchDeposit(data.data.transaction_id, amount, () => updateHeaderAuthState());
       } else {
         throw new Error(data.error || 'Failed to initiate deposit');
       }

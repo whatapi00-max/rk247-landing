@@ -1,5 +1,6 @@
 import { api } from '../services/api';
 import { authService } from '../services/auth';
+import { watchDeposit } from '../deposit-watcher';
 import { AppNav, AppFooter, initAppNav } from './app-layout';
 
 export function renderWalletPage(): string {
@@ -321,14 +322,20 @@ async function handleDeposit(): Promise<void> {
 
   try {
     const response = await api.wallet.initiateDeposit(amount, paymentSystem);
-    const { payment_url } = response.data.data;
-    
+    const { payment_url, transaction_id } = response.data.data;
+
     if (!payment_url) {
       throw new Error('No payment URL received from server');
     }
-    
-    // Redirect to A-Pay payment page
-    window.location.href = payment_url;
+
+    // Open A-Pay in a new tab so the app stays open — the watcher detects
+    // the webhook credit and updates the balance automatically.
+    window.open(payment_url, '_blank', 'noopener');
+    document.getElementById('depositModal')?.classList.add('hidden');
+    (document.getElementById('depositForm') as HTMLFormElement)?.reset();
+    confirmBtn.disabled = false;
+    confirmBtn.textContent = 'Proceed to Payment';
+    watchDeposit(transaction_id, amount, () => loadBalance());
   } catch (error: any) {
     console.error('Deposit error:', error);
     if (errorDiv) {

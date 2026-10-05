@@ -142,8 +142,8 @@ export function initAdminWithdrawalsPage(): void {
     sidebarOverlay?.classList.add('hidden');
   };
 
-  let currentPage = 1;
-  let statusFilter = '';
+  currentPage = 1;
+  statusFilter = '';
 
   const statusSelect = document.getElementById('statusFilter') as HTMLSelectElement;
 
@@ -156,8 +156,13 @@ export function initAdminWithdrawalsPage(): void {
   loadWithdrawals(currentPage, statusFilter);
 }
 
+let currentPage = 1;
+let statusFilter = '';
+
 async function loadWithdrawals(page: number = 1, status: string = '', limit: number = 10): Promise<void> {
   try {
+    currentPage = page;
+    statusFilter = status;
     const params: any = { page, limit };
     if (status) params.status = status;
 
@@ -195,7 +200,7 @@ async function loadWithdrawals(page: number = 1, status: string = '', limit: num
         </thead>
         <tbody>
           ${withdrawals.map((wd: any) => `
-            <tr class="border-b border-white/5 hover:bg-white/[0.02]">
+            <tr id="wrow-${wd.id}" class="border-b border-white/5 hover:bg-white/[0.02]">
               <td class="py-4 px-6 text-white/60">${new Date(wd.created_at).toLocaleString()}</td>
               <td class="py-4 px-6 text-white">${wd.wallets?.users?.email || 'N/A'}</td>
               <td class="py-4 px-6 text-white font-medium">PKR ${parseFloat(wd.amount).toLocaleString('en-PK')}</td>
@@ -335,31 +340,64 @@ function renderPagination(pagination: any, currentPage: number, status: string):
   loadWithdrawals(page, status);
 };
 
+// Update a row in place after approve/reject — no blocking alert, no
+// full table reload. On error we reload so the true state shows.
+function updateWithdrawalRow(withdrawalId: string, status: string, apay: { hasOrder: boolean; status?: string }) {
+  const row = document.getElementById(`wrow-${withdrawalId}`);
+  if (!row) return;
+  const statusCell = row.children[5] as HTMLElement;
+  const apayCell = row.children[6] as HTMLElement;
+  const actionsCell = row.children[7] as HTMLElement;
+  if (statusCell) {
+    statusCell.innerHTML = `<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getStatusColor(status)}">${status}</span>`;
+  }
+  if (apayCell) {
+    apayCell.innerHTML = apay.hasOrder
+      ? `<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getApayStatusColor(apay.status || 'pending')}">${getApayStatusLabel(apay.status || 'pending')}</span>`
+      : '<span class="text-white/30 text-sm">—</span>';
+  }
+  if (actionsCell) {
+    actionsCell.innerHTML = '<span class="text-white/40 text-sm">No actions</span>';
+  }
+}
+
+function setRowBusy(withdrawalId: string, label: string) {
+  const row = document.getElementById(`wrow-${withdrawalId}`);
+  const actionsCell = row?.children[7] as HTMLElement | undefined;
+  if (actionsCell) actionsCell.innerHTML = `<span class="text-white/60 text-sm">${label}…</span>`;
+}
+
 (window as any).approveWithdrawal = async (withdrawalId: string) => {
+  setRowBusy(withdrawalId, 'Approving');
   try {
     const response = await api.admin.approveWithdrawal(withdrawalId);
     if (response.data.success) {
-      alert('Withdrawal approved successfully!');
-      loadWithdrawals(1, '');
+      updateWithdrawalRow(withdrawalId, 'approved', { hasOrder: true, status: 'pending' });
+      loadWithdrawals(currentPage, statusFilter); // silent sync for A-Pay status
     } else {
       alert('Failed to approve withdrawal: ' + response.data.error);
+      loadWithdrawals(currentPage, statusFilter);
     }
   } catch (error: any) {
     alert('Failed to approve withdrawal: ' + (error.response?.data?.error || error.message));
+    loadWithdrawals(currentPage, statusFilter);
   }
 };
 
 (window as any).rejectWithdrawal = async (withdrawalId: string) => {
+  setRowBusy(withdrawalId, 'Rejecting');
   try {
     const response = await api.admin.rejectWithdrawal(withdrawalId);
     if (response.data.success) {
-      alert('Withdrawal rejected successfully!');
-      loadWithdrawals(1, '');
+      updateWithdrawalRow(withdrawalId, 'rejected', { hasOrder: false });
+      loadWithdrawals(currentPage, statusFilter); // silent sync
     } else {
       alert('Failed to reject withdrawal: ' + response.data.error);
+      loadWithdrawals(currentPage, statusFilter);
     }
   } catch (error: any) {
     alert('Failed to reject withdrawal: ' + (error.response?.data?.error || error.message));
+    loadWithdrawals(currentPage, statusFilter);
   }
 };
 
