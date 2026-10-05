@@ -126,6 +126,12 @@ export function initWalletPage(): void {
   loadBalance();
   loadTransactions();
 
+  // Keep balance + history live — deposits credit via webhook asynchronously
+  setInterval(() => {
+    if (!document.hidden) { loadBalance(); loadTransactions(); }
+  }, 30000);
+  window.addEventListener('focus', () => { loadBalance(); loadTransactions(); });
+
   const depositBtn = document.getElementById('depositBtn');
   const depositModal = document.getElementById('depositModal');
   const cancelDepositBtn = document.getElementById('cancelDepositBtn');

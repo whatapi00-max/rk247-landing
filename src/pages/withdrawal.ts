@@ -191,6 +191,12 @@ export function initializeWithdrawalPage(): void {
 
   loadBalance();
   loadWithdrawals();
+
+  // Keep balance + history live — refunds/payout results arrive asynchronously
+  setInterval(() => {
+    if (!document.hidden) { loadBalance(); loadWithdrawals(); }
+  }, 30000);
+  window.addEventListener('focus', () => { loadBalance(); loadWithdrawals(); });
 }
 
 async function handleWithdrawal(): Promise<void> {

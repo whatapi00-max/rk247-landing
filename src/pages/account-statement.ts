@@ -47,6 +47,12 @@ export function renderAccountStatementPage(): string {
 export function initializeAccountStatementPage(): void {
   initAppNav();
   loadTransactions();
+
+  // Deposit/withdrawal statuses update via webhooks — refresh while visible
+  setInterval(() => {
+    if (!document.hidden) loadTransactions();
+  }, 30000);
+  window.addEventListener('focus', loadTransactions);
 }
 
 // Pagination state
