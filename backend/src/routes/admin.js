@@ -432,7 +432,7 @@ router.get('/dashboard/stats', async (req, res) => {
       supabase.from('transactions').select('amount').eq('type', 'deposit').eq('status', 'completed').gte('created_at', todayStart),
       supabase.from('transactions').select('id', { count: 'exact', head: true }).eq('status', 'pending'),
       supabase.from('withdrawals').select('id', { count: 'exact', head: true }).eq('status', 'pending'),
-      supabase.from('withdrawals').select('amount').eq('status', 'approved').gte('created_at', todayStart)
+      supabase.from('withdrawals').select('amount').in('status', ['approved', 'completed']).gte('created_at', todayStart)
     ]);
 
     const totalBalance = totalWallets?.reduce((sum, w) => sum + (parseFloat(w.balance) || 0), 0) || 0;

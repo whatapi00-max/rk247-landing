@@ -143,9 +143,10 @@ export function initAdminWithdrawalsPage(): void {
   };
 
   currentPage = 1;
-  statusFilter = '';
+  statusFilter = new URLSearchParams(window.location.search).get('status') || '';
 
   const statusSelect = document.getElementById('statusFilter') as HTMLSelectElement;
+  if (statusSelect) statusSelect.value = statusFilter;
 
   statusSelect?.addEventListener('change', (e) => {
     statusFilter = (e.target as HTMLSelectElement).value;

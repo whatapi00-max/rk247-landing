@@ -164,7 +164,21 @@ export function renderAdminDashboard(): string {
             <div id="pendingWithdrawals" class="text-2xl sm:text-3xl font-bold text-white">
               <div class="animate-pulse bg-white/10 h-8 sm:h-10 w-12 sm:w-16 rounded"></div>
             </div>
-            <p class="text-xs text-white/60 mt-2">Awaiting approval</p>
+            <a href="/admin/withdrawals?status=pending" class="text-xs text-orange-400 hover:text-orange-300 mt-2 inline-block">Awaiting approval — review now →</a>
+          </div>
+        </div>
+
+        <!-- Pending Withdrawal Requests -->
+        <div class="bg-ink-850 backdrop-blur-lg rounded-2xl p-4 sm:p-6 border border-white/10 shadow-card mb-6 sm:mb-8">
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 sm:mb-6 gap-2">
+            <h3 class="text-base sm:text-lg font-semibold text-white">Pending Withdrawal Requests</h3>
+            <a href="/admin/withdrawals?status=pending" class="text-rk-green hover:text-rk-greenBright text-sm">View All</a>
+          </div>
+          <div id="pendingWithdrawalsList" class="space-y-3 sm:space-y-4">
+            <div class="animate-pulse space-y-2 sm:space-y-3">
+              <div class="h-10 sm:h-12 bg-white/10 rounded"></div>
+              <div class="h-10 sm:h-12 bg-white/10 rounded"></div>
+            </div>
           </div>
         </div>
 
@@ -242,8 +256,56 @@ export function initAdminDashboard(): void {
     sidebarOverlay?.classList.add('hidden');
   };
 
-  loadDashboardStats();
-  loadRecentTransactions();
+  const refreshAll = () => {
+    loadDashboardStats();
+    loadRecentTransactions();
+    loadPendingWithdrawals();
+  };
+
+  refreshAll();
+
+  // Keep stats and pending requests live — refresh every 30s while visible
+  setInterval(() => {
+    if (!document.hidden) refreshAll();
+  }, 30000);
+  window.addEventListener('focus', refreshAll);
+}
+
+async function loadPendingWithdrawals(): Promise<void> {
+  try {
+    const response = await api.admin.getWithdrawals({ status: 'pending', limit: 5 });
+    const withdrawals = response.data.data.withdrawals || [];
+
+    const container = document.getElementById('pendingWithdrawalsList');
+    if (!container) return;
+
+    if (withdrawals.length === 0) {
+      container.innerHTML = '<p class="text-white/60 text-center py-4">No pending withdrawals</p>';
+      return;
+    }
+
+    container.innerHTML = withdrawals.map((w: any) => `
+      <div class="flex items-center justify-between py-3 border-b border-white/10 last:border-0 gap-3">
+        <div class="flex items-center gap-4 min-w-0">
+          <div class="w-10 h-10 rounded-full bg-orange-500/20 flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 13l-5 5m0 0l-5-5m5 5V6"></path>
+            </svg>
+          </div>
+          <div class="min-w-0">
+            <p class="text-white font-medium truncate">${w.wallets?.users?.username || w.wallets?.users?.email || 'Unknown'}</p>
+            <p class="text-white/60 text-sm truncate">${(w.payment_system || '').replace(/_/g, ' ')} · ${w.account_number || '—'} · ${new Date(w.created_at).toLocaleString()}</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 shrink-0">
+          <p class="text-white font-semibold">PKR ${parseFloat(w.amount).toLocaleString('en-PK')}</p>
+          <a href="/admin/withdrawals?status=pending" class="text-xs px-3 py-1.5 rounded-lg bg-rk-green/20 text-rk-green hover:bg-rk-green/30 transition">Review</a>
+        </div>
+      </div>
+    `).join('');
+  } catch (error) {
+    console.error('Failed to load pending withdrawals:', error);
+  }
 }
 
 async function loadDashboardStats(): Promise<void> {
