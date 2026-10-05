@@ -285,6 +285,7 @@ async function handleWithdrawal(): Promise<void> {
       errorDiv.textContent = error.response?.data?.error || 'Failed to create withdrawal request';
       errorDiv.classList.remove('hidden');
     }
+  } finally {
     submitBtn.disabled = false;
     submitBtn.textContent = 'Request Withdrawal';
   }
