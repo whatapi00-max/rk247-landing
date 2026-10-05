@@ -182,10 +182,11 @@ class WithdrawalService {
       // Automatic payout via A-Pay — enabled with APAY_AUTO_PAYOUT=true and
       // only for payment systems whose data shape we can build. Any A-Pay
       // failure leaves the withdrawal 'pending' so the admin can retry.
-      // raast_p2p is the only withdrawal-enabled system on the A-Pay project
-      // — easypaisa/nayapay_l requests go manual for now.
+      // Systems with withdrawals enabled on the A-Pay project.
+      // easypaisa enabled on rk247_prd; nayapay_l stays manual until enabled.
+      const autoPayoutSystems = ['raast_p2p', 'easypaisa'];
       const autoPayout = process.env.APAY_AUTO_PAYOUT === 'true' &&
-        withdrawal.payment_system === 'raast_p2p';
+        autoPayoutSystems.includes(withdrawal.payment_system);
 
       if (autoPayout) {
         const apayResult = await apayService.createWithdrawal(withdrawal);
