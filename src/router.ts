@@ -49,8 +49,10 @@ export function initRouter(onNavigate: (path: string) => void): void {
     }
 
     e.preventDefault();
-    const newPath = href || "/";
-    window.history.pushState({}, "", newPath);
+    window.history.pushState({}, "", href);
+    // Keep the query string in the URL but route on the pathname only —
+    // e.g. /admin/withdrawals?status=pending → route "/admin/withdrawals"
+    const newPath = href.split(/[?#]/)[0] || window.location.pathname || "/";
     onNavigate(newPath);
   });
 }
