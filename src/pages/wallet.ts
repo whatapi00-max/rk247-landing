@@ -1,6 +1,7 @@
 import { api } from '../services/api';
 import { authService } from '../services/auth';
 import { watchDeposit } from '../deposit-watcher';
+import { setPageInterval, onPageFocus } from '../services/pageLifecycle';
 import { AppNav, AppFooter, initAppNav } from './app-layout';
 
 export function renderWalletPage(): string {
@@ -127,10 +128,10 @@ export function initWalletPage(): void {
   loadTransactions();
 
   // Keep balance + history live — deposits credit via webhook asynchronously
-  setInterval(() => {
+  setPageInterval(() => {
     if (!document.hidden) { loadBalance(); loadTransactions(); }
   }, 30000);
-  window.addEventListener('focus', () => { loadBalance(); loadTransactions(); });
+  onPageFocus(() => { loadBalance(); loadTransactions(); });
 
   const depositBtn = document.getElementById('depositBtn');
   const depositModal = document.getElementById('depositModal');

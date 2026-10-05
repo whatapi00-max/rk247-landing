@@ -1,5 +1,6 @@
 import api from '../services/api';
 import { AppNav, AppFooter, initAppNav } from './app-layout';
+import { setPageInterval, onPageFocus } from '../services/pageLifecycle';
 
 export function renderAccountStatementPage(): string {
   return `
@@ -49,10 +50,10 @@ export function initializeAccountStatementPage(): void {
   loadTransactions();
 
   // Deposit/withdrawal statuses update via webhooks — refresh while visible
-  setInterval(() => {
+  setPageInterval(() => {
     if (!document.hidden) loadTransactions();
   }, 30000);
-  window.addEventListener('focus', loadTransactions);
+  onPageFocus(loadTransactions);
 }
 
 // Pagination state

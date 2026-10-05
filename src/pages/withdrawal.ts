@@ -1,6 +1,7 @@
 import api from '../services/api';
 import { AppNav, AppFooter, initAppNav } from './app-layout';
 import { RAAST_BANKS } from '../constants';
+import { setPageInterval, onPageFocus } from '../services/pageLifecycle';
 
 // A-Pay confirmed withdrawal limits: min PKR 1,500 / max PKR 150,000
 const MIN_WITHDRAWAL = 1500;
@@ -193,10 +194,10 @@ export function initializeWithdrawalPage(): void {
   loadWithdrawals();
 
   // Keep balance + history live — refunds/payout results arrive asynchronously
-  setInterval(() => {
+  setPageInterval(() => {
     if (!document.hidden) { loadBalance(); loadWithdrawals(); }
   }, 30000);
-  window.addEventListener('focus', () => { loadBalance(); loadWithdrawals(); });
+  onPageFocus(() => { loadBalance(); loadWithdrawals(); });
 }
 
 async function handleWithdrawal(): Promise<void> {

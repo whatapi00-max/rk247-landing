@@ -1,5 +1,6 @@
 import { api } from '../services/api';
 import { authService } from '../services/auth';
+import { setPageInterval } from '../services/pageLifecycle';
 
 export function renderAdminWithdrawalsPage(): string {
   return `
@@ -157,7 +158,7 @@ export function initAdminWithdrawalsPage(): void {
   loadWithdrawals(currentPage, statusFilter);
 
   // A-Pay payout statuses change asynchronously — refresh every 30s while visible
-  setInterval(() => {
+  setPageInterval(() => {
     if (!document.hidden) loadWithdrawals(currentPage, statusFilter);
   }, 30000);
 }

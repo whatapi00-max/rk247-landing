@@ -1,5 +1,6 @@
 import { api } from '../services/api';
 import { authService } from '../services/auth';
+import { setPageInterval, onPageFocus } from '../services/pageLifecycle';
 
 export function renderAdminDashboard(): string {
   return `
@@ -265,10 +266,10 @@ export function initAdminDashboard(): void {
   refreshAll();
 
   // Keep stats and pending requests live — refresh every 30s while visible
-  setInterval(() => {
+  setPageInterval(() => {
     if (!document.hidden) refreshAll();
   }, 30000);
-  window.addEventListener('focus', refreshAll);
+  onPageFocus(refreshAll);
 }
 
 async function loadPendingWithdrawals(): Promise<void> {

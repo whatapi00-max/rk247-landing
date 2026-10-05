@@ -11,6 +11,7 @@ import { Globe, CtaFinal } from "./sections/globe";
 import { SeoText, Footer, Overlays } from "./sections/footer";
 import { initAnimations } from "./animations";
 import { getRoutePath, initRouter } from "./router";
+import { clearPageState } from "./services/pageLifecycle";
 import { PageLayout } from "./pages/layout";
 import {
   TradingPage, FlexPage, FixedTimePage, ForexPage, StocksPage,
@@ -161,6 +162,10 @@ function renderHome(): string {
 
 /* ─── Core render ─── */
 function render(path: string): void {
+  // Clear previous page's intervals/focus listeners so stale pages can't
+  // keep writing into shared element IDs after navigation
+  clearPageState();
+
   // Kill existing GSAP ScrollTriggers to avoid stale triggers on re-render
   ScrollTrigger.getAll().forEach((t) => t.kill());
 

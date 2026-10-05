@@ -1,5 +1,6 @@
 import { api } from '../services/api';
 import { authService } from '../services/auth';
+import { setPageInterval } from '../services/pageLifecycle';
 
 export function renderAdminUsersPage(): string {
   return `
@@ -222,7 +223,7 @@ export function initAdminUsersPage(): void {
   loadUsers(currentPage, searchQuery, pageLimit, statusFilter);
 
   // Keep balances fresh — silently refetch every 30s while the tab is visible
-  setInterval(() => {
+  setPageInterval(() => {
     if (!document.hidden) loadUsers(currentPage, searchQuery, pageLimit, statusFilter);
   }, 30000);
 
