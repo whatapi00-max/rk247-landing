@@ -82,7 +82,7 @@ class ApiClient {
     getBalance: () =>
       this.client.get('/wallet/balance'),
     
-    getTransactions: (params?: { limit?: number; offset?: number }) =>
+    getTransactions: (params?: { page?: number; limit?: number; offset?: number }) =>
       this.client.get('/wallet/transactions', { params }),
     
     initiateDeposit: (amount: number, paymentSystem: string = 'raast_p2p') =>

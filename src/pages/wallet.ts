@@ -52,6 +52,7 @@ export function renderWalletPage(): string {
               </div>
             </div>
           </div>
+          <div id="walletPagination" class="mt-4 sm:mt-6"></div>
         </div>
       </div>
       ${AppFooter()}
@@ -212,14 +213,19 @@ async function loadBalance(): Promise<void> {
   }
 }
 
-async function loadTransactions(): Promise<void> {
+let currentPage = 1;
+const pageLimit = 10;
+
+async function loadTransactions(page: number = currentPage): Promise<void> {
   try {
-    const response = await api.wallet.getTransactions({ limit: 20 });
+    const response = await api.wallet.getTransactions({ page, limit: pageLimit });
     const transactions = response.data.data;
-    
+    const pagination = response.data.pagination;
+    currentPage = page;
+
     // Store transactions globally for modal access
     (window as any).walletTransactions = transactions;
-    
+
     const container = document.getElementById('transactionsContainer');
     if (!container) return;
 
@@ -229,6 +235,8 @@ async function loadTransactions(): Promise<void> {
           <p>No transactions yet</p>
         </div>
       `;
+      const pagEl = document.getElementById('walletPagination');
+      if (pagEl) pagEl.innerHTML = '';
       return;
     }
 
@@ -293,10 +301,76 @@ async function loadTransactions(): Promise<void> {
         </div>
       </div>
     `;
+
+    renderWalletPagination(pagination);
   } catch (error) {
     console.error('Failed to load transactions:', error);
   }
 }
+
+function renderWalletPagination(pagination: any): void {
+  const container = document.getElementById('walletPagination');
+  if (!container) return;
+
+  if (!pagination || !pagination.totalPages || pagination.totalPages <= 1) {
+    container.innerHTML = '';
+    return;
+  }
+
+  const { totalPages, total, limit } = pagination;
+  const startItem = (currentPage - 1) * limit + 1;
+  const endItem = Math.min(currentPage * limit, total);
+
+  const pages: (number | string)[] = [];
+  for (let i = 1; i <= totalPages; i++) {
+    if (i === 1 || i === totalPages || (i >= currentPage - 2 && i <= currentPage + 2)) {
+      pages.push(i);
+    } else if (pages[pages.length - 1] !== '...') {
+      pages.push('...');
+    }
+  }
+
+  container.innerHTML = `
+    <div class="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
+      <p class="text-white/60 text-xs sm:text-sm">
+        Showing ${startItem} to ${endItem} of ${total} transactions
+      </p>
+      <div class="flex items-center gap-1.5 sm:gap-2 flex-wrap justify-center">
+        <button
+          onclick="window.loadWalletTransactionsPage(${Math.max(1, currentPage - 1)})"
+          ${currentPage === 1 ? 'disabled' : ''}
+          class="px-2.5 sm:px-3 py-1 rounded bg-white/10 text-white/60 hover:bg-white/20 disabled:opacity-50 disabled:cursor-not-allowed transition text-xs sm:text-sm"
+        >
+          Previous
+        </button>
+        ${pages.map(page => {
+          if (page === '...') {
+            return '<span class="px-2 sm:px-3 py-1 text-white/40 text-xs sm:text-sm">...</span>';
+          }
+          return `
+            <button
+              onclick="window.loadWalletTransactionsPage(${page})"
+              class="px-2.5 sm:px-3 py-1 rounded text-xs sm:text-sm ${page === currentPage ? 'bg-white text-black font-semibold' : 'bg-white/10 text-white/60 hover:bg-white/20'} transition"
+            >
+              ${page}
+            </button>
+          `;
+        }).join('')}
+        <button
+          onclick="window.loadWalletTransactionsPage(${Math.min(totalPages, currentPage + 1)})"
+          ${currentPage === totalPages ? 'disabled' : ''}
+          class="px-2.5 sm:px-3 py-1 rounded bg-white/10 text-white/60 hover:bg-white/20 disabled:opacity-50 disabled:cursor-not-allowed transition text-xs sm:text-sm"
+        >
+          Next
+        </button>
+      </div>
+    </div>
+  `;
+}
+
+(window as any).loadWalletTransactionsPage = (page: number): void => {
+  loadTransactions(page);
+};
 
 async function handleDeposit(): Promise<void> {
   const paymentSystemSelect = document.getElementById('paymentSystem') as HTMLSelectElement;
